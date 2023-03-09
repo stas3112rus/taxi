@@ -16,7 +16,7 @@
            }
 
         $_SESSION['id_user'] = $user['id_user'];
-        header('Location: ./main.php');
+        header('Location: ./pages/cities/');
         die;
 
         } else {
