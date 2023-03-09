@@ -18,7 +18,7 @@
 </head>
 <body>
     <section class="main">
-        <div class="main__wpapper">
+        <div class="main__wrapper">
             <? include ('../../components/sidebar/sidebar.php')?>
             <div class="content">45622</div>
         </div>

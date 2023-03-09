@@ -10,7 +10,7 @@ body{
 .main{
     width: 100%;
    
-    &__wpapper{
+    &__wrapper{
         min-width: 1024px;
         display: flex;
         gap: 20px;
@@ -19,7 +19,7 @@ body{
 }
 
 .login{
-    &__wpapper{
+    &__wrapper{
         padding: 10px 20px;
         max-width: 1024px;
         margin: 0   auto;

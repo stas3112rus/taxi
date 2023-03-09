@@ -19,7 +19,7 @@
     </head>
     <body>
         <section class="main">
-            <div class="login__wpapper">
+            <div class="login__wrapper">
                 <h1>Authorization</h1>
                 <?php flash(); ?>
                 <?php include('./components/authorization/forms/authorizationForm.php')?>
