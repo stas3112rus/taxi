@@ -1,51 +1,57 @@
 <?
-    function isAuthorization($base) {
-        return isUserIdInSession() && isUserAuthorizated($base);
+
+function isAuthorization($base)
+{
+    return isUserIdInSession() && isUserAuthorizated($base);
+}
+
+function checkAuthorization($base)
+{
+    if (!isAuthorization($base)) {
+        flash('Сессия устарела');
+        header("Location: ./");
+        die;
     }
+}
 
-    function checkAuthorization($base){
-        if(!isAuthorization($base)){
-            flash('Сессия устарела');
-            header("Location: ./");
-            die; 
-        }
+function checkAuthorizationOnStart($base, $route)
+{
+    if (isAuthorization($base)) {
+        header("Location: " . $route);
+        die;
     }
+}
 
-    function checkAuthorizationOnStart($base){
-        if(isAuthorization($base)){
-            header("Location: ./main.php");
-            die; 
-        }
-    }
+function isUserIdInSession(): bool
+{
+    return !!($_SESSION['id_user'] ?? false);
+}
 
-    function isUserIdInSession():bool {
-        return !!($_SESSION['id_user'] ?? false);
-    }
+function isUserAuthorizated($base): bool
+{
+    $id = $_SESSION['id_user'];
 
-    function isUserAuthorizated($base): bool {
-        $id = $_SESSION['id_user'];
-
-        $sql = "SELECT 
+    $sql = "SELECT 
             *
             FROM `users`
             WHERE `id_user` = '$id'
         ";
-        $res = $base -> query($sql);
-        
-        return( $res -> num_rows > 0);
-    }
+    $res = $base->query($sql);
 
-    function flash(?string $message = null)
-    {
-        if ($message) {
-            $_SESSION['flash'] = $message;
-        } else {
-            if (!empty($_SESSION['flash'])) { ?>
+    return ($res->num_rows > 0);
+}
+
+function flash(?string $message = null)
+{
+    if ($message) {
+        $_SESSION['flash'] = $message;
+    } else {
+        if (!empty($_SESSION['flash'])) { ?>
             <div class="alert alert-danger mb-3">
-                <?=$_SESSION['flash']?>
+                <?= $_SESSION['flash'] ?>
             </div>
-            <?php }
-            unset($_SESSION['flash']);
-        }
+<?php }
+        unset($_SESSION['flash']);
     }
+}
 ?>

@@ -1,11 +1,15 @@
 <?
-    include('../../../../src/mysql.php');
-    include('../../components/authorization/utils/functions.php');
+include('../../../../src/mysql.php');
+include('../../components/authorization/utils/functions.php');
+include('../../constants/routs.php');
+include('../../../../src/admin/utils/cities/functions.php');
+include('../../components/cities/view/drawCityTable.php');
 
-    checkAuthorization($base);
+checkAuthorization($base);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,12 +20,21 @@
 
     <title>Admin page</title>
 </head>
+
 <body>
     <section class="main">
         <div class="main__wrapper">
-            <? include ('../../components/sidebar/sidebar.php')?>
-            <div class="content">45622</div>
+            <? include('../../components/sidebar/sidebar.php') ?>
+            <div class="content">
+                <div class="cities">
+                    <form action="">
+                        <?echo drawCityTable(getAllCities($base), $routs)?>
+                        <input class="btn btn-primary" type="submit" value="Обновить Главный сайт">
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 </body>
+
 </html>
