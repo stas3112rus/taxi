@@ -1,0 +1,27 @@
+<?
+    include('../../../../src/mysql.php');
+    include('../../components/authorization/utils/functions.php');
+
+    checkAuthorization($base);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/main.min.css">
+
+    <title>Admin page</title>
+</head>
+<body>
+    <section class="main">
+        <div class="main__wpapper">
+            <? include ('../../components/sidebar/sidebar.php')?>
+            <div class="content">45622</div>
+        </div>
+    </section>
+</body>
+</html>

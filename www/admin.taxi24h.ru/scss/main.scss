@@ -9,7 +9,21 @@ body{
 
 .main{
     width: 100%;
-    max-width: 1024px;   
-    margin: 0 auto;
-    padding: 10px 20px;
+   
+    &__wpapper{
+        min-width: 1024px;
+        display: flex;
+        gap: 20px;
+        
+    }
 }
+
+.login{
+    &__wpapper{
+        padding: 10px 20px;
+        max-width: 1024px;
+        margin: 0   auto;
+    }
+}
+
+@import "sidebar";

@@ -19,9 +19,11 @@
     </head>
     <body>
         <section class="main">
-            <h1>Authorization</h1>
-            <?php flash(); ?>
-            <?php include('./components/authorization/forms/authorizationForm.php')?>
+            <div class="login__wpapper">
+                <h1>Authorization</h1>
+                <?php flash(); ?>
+                <?php include('./components/authorization/forms/authorizationForm.php')?>
+            </div>            
         </section>  
     </body>
 </html>
