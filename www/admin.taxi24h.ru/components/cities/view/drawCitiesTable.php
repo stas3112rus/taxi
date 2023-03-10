@@ -1,11 +1,15 @@
 <?
-function drawCityTable($cities, $routs)
+function drawCitiesTable($cities, $routs)
 {
 
     $rows = "";
 
-    for ($i = 0; $i < count($cities); $i++) {
-        $rows .= drawCityRow($cities[$i], $i == 0 ? "checked" : "", $routs);
+    foreach ($cities as $city) {
+        $rows .= drawCityRow(
+            $city,
+            $city['main_city'] == '+' ? "checked" : "",
+            $routs
+        );
     }
 
     return ("
@@ -46,7 +50,7 @@ function drawCityRow($city, $checked, $routs)
                             </div>
                             <div class='cities__cellItem'>
                                 <a href='$routs[engEdit]?id=$city[id_city]' role='button' aria-pressed='true' class='btn btn-primary'>Eng</a>
-                                <a href='$routs[cityEdit]?id=$city[id_city]' role='button' aria-pressed='true' class='btn btn-success'>Склонения</a>
+                                <a href='$routs[cityEdit]?id=$city[id_city]' role='button' aria-pressed='true' class='btn btn-success'>Редактировать</a>
                                 <a href='$routs[tariffs]?id=$city[id_city]' role='button' aria-pressed='true' class='btn btn-danger'>Тарифы</a>
                                 <a href='$routs[not_published_cities]?id=$city[id_city]' role='button' aria-pressed='true' class='btn btn-warning'>Города, где не публикуем</a>
                             </div>
