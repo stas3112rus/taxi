@@ -1,0 +1,10 @@
+.cities{
+    &__mainSiteCol{
+        width: 150px;
+    }
+    &__cellWrapper{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+}
