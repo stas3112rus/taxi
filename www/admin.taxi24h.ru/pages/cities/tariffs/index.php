@@ -13,10 +13,10 @@ $city = getCityById($_GET['id'], $base) ?? false;
 
 if ($_POST) {
     if ($_GET['way'] == 1) {
-        $update = updateDirectionTariffs($_POST, $base);
+        $update = updateTariffs($_POST, $base);
     }
     if ($_GET['way'] == 2) {
-        $update = updateDirectionTariffs($_POST, $base, true);
+        $update = updateTariffs($_POST, $base, true);
     } 
 }
 

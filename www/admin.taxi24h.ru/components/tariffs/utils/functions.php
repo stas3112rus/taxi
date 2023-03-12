@@ -22,22 +22,20 @@ function getTypeTariff($value)
     return substr(stristr($value, '_'), 1);
 }
 
-function updateDirectionTariffs($post, $base, $allWays = false)
+function updateTariffs($post, $base, $two_ways = false)
 {
     $tariffs =  getTariffsList($post);
 
     $result = drawAlert("Тарифы успешно обновлены", "alert-success");
 
     foreach ($tariffs as $city_to_id => $tariff) {
-        $firstWay = updateTariff($tariff, $post['city_from_ref'], $city_to_id, $base);
+        $update =  $two_ways ?
+            updateTariffTwoWays($tariff, $post['city_from_ref'], $city_to_id, $base) :
+            updateTariffOneWay($tariff, $post['city_from_ref'], $city_to_id, $base);
 
-        $secondWay = 'Ok';
-        if ($allWays) {
-            $secondWay = updateTariff($tariff, $city_to_id, $post['city_from_ref'], $base);
-        }
 
-        if ($firstWay != 'Ok' || $secondWay != 'Ok') {
-            $result =  drawAlert($firstWay != 'Ok' ?? $secondWay, "alert-danger");
+        if ($update != 'Ok') {
+            $result =  drawAlert($update, "alert-danger");
             break;
         }
     }
