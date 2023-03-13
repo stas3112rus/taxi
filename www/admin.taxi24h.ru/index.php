@@ -3,7 +3,7 @@ include('../../src/mysql.php');
 include('./components/authorization/utils/functions.php');
 include('./constants/routs.php');
 
-checkAuthorizationOnStart($base, $routs["cities"]);
+checkAuthorizationOnStart($routs["cities"]);
 ?>
 
 <!DOCTYPE html>

@@ -1,5 +1,6 @@
 <?
-function getAllTariffsWithNameCitiesFrom($city_from_id, $base){
+function getAllTariffsWithNameCitiesFrom($city_from_id)
+{
     $sql = "SELECT
     city_to_ref, 
     economy, 
@@ -12,12 +13,11 @@ function getAllTariffsWithNameCitiesFrom($city_from_id, $base){
     WHERE `city_from_ref` = '$city_from_id'
     ORDER BY city_to_im 
     ";
-    $res = $base->query($sql);
 
-    return ($res->fetch_all(MYSQLI_ASSOC));
+    return getAllRowsFromDataBase($sql);
 }
 
-function updateTariffOneWay($tariff, $city_from_id, $city_to_id, $base)
+function updateTariffOneWay($tariff, $city_from_id, $city_to_id)
 {
     $sql = "UPDATE `tariffs` SET 
         `economy`= '$tariff[economy]',
@@ -25,14 +25,12 @@ function updateTariffOneWay($tariff, $city_from_id, $city_to_id, $base)
         `business`= '$tariff[business]',
         `minivan`= '$tariff[minivan]'
     WHERE `city_from_ref` = '$city_from_id' AND `city_to_ref` = '$city_to_id' ";
-    if ($base->query($sql)) {
-        return "Ok";
-    } else {
-        return "Ошибка при обновлении тарифа: " . "<br>" . $base->error;
-    }
+
+
+    return changeDataBaseRequest($sql, "Ошибка при обновлении тарифа");
 }
 
-function updateTariffTwoWays($tariff, $city_from_id, $city_to_id, $base)
+function updateTariffTwoWays($tariff, $city_from_id, $city_to_id)
 {
     $sql = "UPDATE `tariffs` SET 
         `economy`= '$tariff[economy]',
@@ -43,9 +41,6 @@ function updateTariffTwoWays($tariff, $city_from_id, $city_to_id, $base)
         (`city_from_ref` = '$city_from_id' AND `city_to_ref` = '$city_to_id') 
         OR
         (`city_from_ref` = '$city_to_id' AND `city_to_ref` = '$city_from_id') ";
-    if ($base->query($sql)) {
-        return "Ok";
-    } else {
-        return "Ошибка при обновлении тарифа: " . "<br>" . $base->error;
-    }
+
+    return changeDataBaseRequest($sql, "Ошибка при обновлении тарифа");
 }

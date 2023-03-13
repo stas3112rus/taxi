@@ -6,15 +6,15 @@ include('../../../components/alerts/drawAlert.php');
 include('../../../../../src/admin/utils/cities/functions.php');
 include('../../../components/cities/utils/functions-edit-city.php');
 
-checkAuthorization($base);
+checkAuthorization();
 
 
 if ($_POST) {
     if ($_POST['im'])
-        $editCity = editCity($_POST, $base);
+        $editCity = editCity($_POST);
 }
 
-$city = getCityById($_GET['id'], $base) ?? false;
+$city = getCityById($_GET['id']) ?? false;
 
 ?>
 <!DOCTYPE html>

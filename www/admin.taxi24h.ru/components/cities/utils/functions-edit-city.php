@@ -1,7 +1,7 @@
 <?
-function editCity($city, $base)
+function editCity($city)
 {
-    $result = updateCity($city, $base);
+    $result = updateCity($city);
     if ($result != "Ok")
         return drawAlert($result, "alert-danger");
 

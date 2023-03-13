@@ -1,5 +1,5 @@
 <?
-function updateMainCityByGet($base)
+function updateMainCityByGet()
 {
 
     $result_update = "";
@@ -7,23 +7,23 @@ function updateMainCityByGet($base)
     $main_city = $_GET['main_city'];
 
     if ($main_city) {
-        $main_city_in_base = getMainCity($base);
+        $main_city_in_base = getMainCity();
 
         if ($main_city_in_base['id_city'] != $main_city) {
-            $result_update = updateMainCity($main_city, $base);
+            $result_update = updateMainCity($main_city);
         }
     }
 
     return $result_update;
 }
 
-function updateMainCity($idMain, $base)
+function updateMainCity($idMain)
 {
-    $delete = deleteMainCity($base);
+    $delete = deleteMainCity();
     if ($delete != "Ok")
         return drawAlert($delete, "alert-danger");
 
-    $create = createMainCity($idMain, $base);
+    $create = createMainCity($idMain);
     if ($create != "Ok")
         return drawAlert($create, "alert-danger");
 

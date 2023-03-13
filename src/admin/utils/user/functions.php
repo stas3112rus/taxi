@@ -1,38 +1,32 @@
 <?
-    function isUserExist($user_name, $base){
+    function isUserExist($user_name){
         $sql = "SELECT 
                 *
                 FROM `users`
                 WHERE `user_name` = '$user_name'
             ";
-        $res = $base -> query($sql);
-        return( $res -> num_rows > 0);
+        return isExist($sql);
     }
 
-    function getUserByName($user_name, $base){
+    function getUserByName($user_name){
         $sql = "SELECT
             *
         FROM `users`
         WHERE `user_name` = '$user_name'  
         ";
-
-        $res = $base -> query($sql);
-        return $res ->fetch_assoc();
+        
+        return getOneRowFromDataBase($sql);
     }
 
-    function updatePassword($user, $password, $base) {
+    function updatePassword($user, $password) {
         if (password_needs_rehash($user['password'], PASSWORD_DEFAULT)) {
             $newHash = password_hash($password, PASSWORD_DEFAULT);
 
             $sql = "UPDATE `users` SET 
                     `password`='$newHash'
-                WHERE id_user = 'users['id_user']'";
-            
-            if ($base -> query($sql)){
-                return "OK";
-               } else{
-                return "Ошибка при обновлении пароля в базу данных: ". "<br>" . $base->error;
-               }
+                WHERE id_user = 'users['id_user']'";        
+
+               return changeDataBaseRequest($sql, "Ошибка при обновлении пароля в базу данных");
         }
 
         return "OK";
