@@ -10,6 +10,19 @@ function getAllCities()
     return getAllRowsFromDataBase($sql);
 }
 
+function getAllWithoutOneCities($id)
+{
+    $sql = "SELECT 
+    *
+    FROM `cities`
+    WHERE 
+        `id_city` <> '$id'
+    ORDER BY main_city  DESC 
+    ";
+
+    return getAllRowsFromDataBase($sql);
+}
+
 function getMainCity()
 {
     $sql = "SELECT 
