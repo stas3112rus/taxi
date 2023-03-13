@@ -8,8 +8,8 @@ include('../../components/alerts/drawAlert.php');
 include('../../components/cities/utils/functions-cities.php');
 
 
-checkAuthorization($base);
-$updateMain = updateMainCityByGet($base);
+checkAuthorization();
+$updateMain = updateMainCityByGet();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +33,7 @@ $updateMain = updateMainCityByGet($base);
                 <div class="cities">
                     <?echo $updateMain ?>
                     <form action="">
-                        <?echo drawCitiesTable(getAllCities($base), $routs)?>
+                        <?echo drawCitiesTable(getAllCities(), $routs)?>
                         <input class="btn btn-primary" type="submit" value="Обновить Главный сайт">
                     </form>
                 </div>

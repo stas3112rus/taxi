@@ -1,61 +1,51 @@
 <?
-function getAllCities($base)
+function getAllCities()
 {
     $sql = "SELECT 
     *
     FROM `cities`
     ORDER BY main_city  DESC 
     ";
-    $res = $base->query($sql);
 
-    return ($res->fetch_all(MYSQLI_ASSOC));
+    return getAllRowsFromDataBase($sql);
 }
 
-function getMainCity($base)
+function getMainCity()
 {
     $sql = "SELECT 
     *
     FROM `cities`
     WHERE main_city = '+'
     ";
-    $res = $base->query($sql);
 
-    return $res->fetch_assoc();
+    return getOneRowFromDataBase($sql);
 }
 
-function getCityById($id, $base)
+function getCityById($id)
 {
     $sql = "SELECT 
     *
     FROM `cities`
     WHERE id_city = '$id'
     ";
-    $res = $base->query($sql);
-
-    return $res->fetch_assoc();
+    return getOneRowFromDataBase($sql);
 }
 
-function deleteMainCity($base)
+function deleteMainCity()
 {
     $sql = "UPDATE `cities` SET `main_city`= NULL";
-    if ($base->query($sql)) {
-        return "Ok";
-    } else {
-        return "Ошибка при удалении главного сайта: " . "<br>" . $base->error;
-    }
+
+    return changeDataBaseRequest($sql, "Ошибка при удалении главного сайта");
 }
 
-function createMainCity($id, $base)
+function createMainCity($id)
 {
     $sql = "UPDATE `cities` SET `main_city`= '+' WHERE `id_city` = '$id'";
-    if ($base->query($sql)) {
-        return "Ok";
-    } else {
-        return "Ошибка при внесении главного сайта: " . "<br>" . $base->error;
-    }
+
+    return changeDataBaseRequest($sql, "Ошибка при внесении главного сайта");
 }
 
-function updateCity($city, $base)
+function updateCity($city)
 {
     $sql = "UPDATE `cities` SET 
     `im`= '$city[im]',
@@ -67,9 +57,5 @@ function updateCity($city, $base)
 
     WHERE `id_city` = '$city[id_city]'";
 
-    if ($base->query($sql)) {
-        return "Ok";
-    } else {
-        return "Ошибка при обновлении данных города: " . "<br>" . $base->error;
-    }
+    return changeDataBaseRequest($sql, "Ошибка при обновлении данных города");
 }

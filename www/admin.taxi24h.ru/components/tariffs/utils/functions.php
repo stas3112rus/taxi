@@ -22,7 +22,7 @@ function getTypeTariff($value)
     return substr(stristr($value, '_'), 1);
 }
 
-function updateTariffs($post, $base, $two_ways = false)
+function updateTariffs($post, $two_ways = false)
 {
     $tariffs =  getTariffsList($post);
 
@@ -30,8 +30,8 @@ function updateTariffs($post, $base, $two_ways = false)
 
     foreach ($tariffs as $city_to_id => $tariff) {
         $update =  $two_ways ?
-            updateTariffTwoWays($tariff, $post['city_from_ref'], $city_to_id, $base) :
-            updateTariffOneWay($tariff, $post['city_from_ref'], $city_to_id, $base);
+            updateTariffTwoWays($tariff, $post['city_from_ref'], $city_to_id) :
+            updateTariffOneWay($tariff, $post['city_from_ref'], $city_to_id);
 
 
         if ($update != 'Ok') {

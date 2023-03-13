@@ -8,15 +8,15 @@ include('../../../../../src/admin/utils/tariffs/functions.php');
 include('../../../components/tariffs/view/drawTariffs.php');
 include('../../../components/tariffs/utils/functions.php');
 
-checkAuthorization($base);
-$city = getCityById($_GET['id'], $base) ?? false;
+checkAuthorization();
+$city = getCityById($_GET['id']) ?? false;
 
 if ($_POST) {
     if ($_GET['way'] == 1) {
-        $update = updateTariffs($_POST, $base);
+        $update = updateTariffs($_POST);
     }
     if ($_GET['way'] == 2) {
-        $update = updateTariffs($_POST, $base, true);
+        $update = updateTariffs($_POST, true);
     } 
 }
 
@@ -60,7 +60,7 @@ if ($_POST) {
                                 <?
                                 echo drawAllTariffsRaws(
                                     $city['im'],
-                                    getAllTariffsWithNameCitiesFrom($city['id_city'], $base)
+                                    getAllTariffsWithNameCitiesFrom($city['id_city'])
                                 )
                                 ?>
                             </tbody>

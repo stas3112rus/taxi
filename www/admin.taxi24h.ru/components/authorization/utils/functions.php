@@ -1,22 +1,22 @@
 <?
 
-function isAuthorization($base)
+function isAuthorization()
 {
-    return isUserIdInSession() && isUserAuthorizated($base);
+    return isUserIdInSession() && isUserAuthorizated();
 }
 
-function checkAuthorization($base)
+function checkAuthorization()
 {
-    if (!isAuthorization($base)) {
+    if (!isAuthorization()) {
         flash('Сессия устарела');
         header("Location: ./");
         die;
     }
 }
 
-function checkAuthorizationOnStart($base, $route)
+function checkAuthorizationOnStart($route)
 {
-    if (isAuthorization($base)) {
+    if (isAuthorization()) {
         header("Location: " . $route);
         die;
     }
@@ -27,7 +27,7 @@ function isUserIdInSession(): bool
     return !!($_SESSION['id_user'] ?? false);
 }
 
-function isUserAuthorizated($base): bool
+function isUserAuthorizated(): bool
 {
     $id = $_SESSION['id_user'];
 
@@ -36,9 +36,7 @@ function isUserAuthorizated($base): bool
             FROM `users`
             WHERE `id_user` = '$id'
         ";
-    $res = $base->query($sql);
-
-    return ($res->num_rows > 0);
+    return($sql);
 }
 
 function flash(?string $message = null)

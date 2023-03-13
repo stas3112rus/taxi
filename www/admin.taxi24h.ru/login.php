@@ -8,11 +8,11 @@
     $password = $_POST['password'];
 
 
-    if (isUserExist($user_name, $base)) {
-        $user = getUserByName($user_name, $base);
+    if (isUserExist($user_name)) {
+        $user = getUserByName($user_name);
        
         if(password_verify($password, $user['password'])){
-           if (updatePassword($user, $password, $base) != "OK"){
+           if (updatePassword($user, $password) != "OK"){
             flash("Ошибка при обновлении пароля в базу данных");
            }
 
