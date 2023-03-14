@@ -11,7 +11,7 @@
         <li class="sidebar__item"><a href="" class="sidebar__link">Поддомен - направления</a></li>
         <li class="sidebar__item"><a href="" class="sidebar__link">Трансферы</a></li>
         <div class="sidebar__divider"></div>
-        <li class="sidebar__item"><a href="" class="sidebar__link sidebar_linkTop">Константы</a></li>
+        <li class="sidebar__item"><a href="<? echo $routs['defaults']?>" class="sidebar__link sidebar_linkTop">Константы</a></li>
         <div class="sidebar__divider"></div>
         <li class="sidebar__item"><a href="" class="sidebar__link sidebar_linkTop">Виджеты</a></li>
         <li class="sidebar__item"><a href="" class="sidebar__link">Типы виджетов</a></li>

@@ -1,0 +1,8 @@
+.buttons{
+    vertical-align: bottom;
+
+    &__block{
+        display: flex;
+        gap: 12px;
+    }
+}
