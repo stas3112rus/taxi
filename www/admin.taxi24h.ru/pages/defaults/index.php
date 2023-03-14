@@ -11,16 +11,16 @@ checkAuthorization();
 
 
 if ($_POST['type'] == 'update')
-    $alert = updateDefaultValue($_POST);
+    $alert .= updateDefaultValue($_POST);
 
-if ($_POST['type'] == 'add') {
-    $alert = addDefaultValue($_POST);
-}
+if ($_POST['type'] == 'add')
+    $alert .= addDefaultValue($_POST);
 
 
-if ($_GET['type'] == 'delete') {
-    $alert = deleteDefaultValue($_GET['id_default']);
-}
+
+if ($_GET['type'] == 'delete')
+    $alert .= deleteDefaultValue($_GET['id_default']);
+
 
 ?>
 <!DOCTYPE html>

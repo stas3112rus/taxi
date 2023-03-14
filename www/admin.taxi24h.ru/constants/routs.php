@@ -8,4 +8,6 @@ $routs = array(
     "tariffs" => "$mainRoute/pages/cities/tariffs/",
     "not_published_cities" => "$mainRoute/pages/cities/not-published/",
     "defaults" => "$mainRoute/pages/defaults/",
+    "widget-types" => "$mainRoute/pages/widgets/widget-types",
+
 );
