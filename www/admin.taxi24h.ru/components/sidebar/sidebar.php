@@ -4,7 +4,7 @@
         <li class="sidebar__item"><a href="" class="sidebar__link">Добавить город</a></li>
         <div class="sidebar__divider"></div>
         <li class="sidebar__item"><a href="" class="sidebar__link sidebar_linkTop">Тексты</a></li>
-        <li class="sidebar__item"><a href="" class="sidebar__link">Поля</a></li>
+        <li class="sidebar__item"><a href="<? echo $routs['text-fields'] ?>" class="sidebar__link">Текстовые поля</a></li>
         <li class="sidebar__item"><a href="" class="sidebar__link">Главный сайт - главная страница</a></li>
         <li class="sidebar__item"><a href="" class="sidebar__link">Главный сайт - направления</a></li>
         <li class="sidebar__item"><a href="" class="sidebar__link">Поддомен - главная страница</a></li>

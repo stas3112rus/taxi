@@ -9,5 +9,5 @@ $routs = array(
     "not_published_cities" => "$mainRoute/pages/cities/not-published/",
     "defaults" => "$mainRoute/pages/defaults/",
     "widget-types" => "$mainRoute/pages/widgets/widget-types",
-
+    "text-fields" => "$mainRoute/pages/text/text-fields",
 );
