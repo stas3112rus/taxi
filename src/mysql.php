@@ -8,6 +8,8 @@ $database = "taxi2023";
 
 $base = new mysqli($host, $user, $pass, $database);
 
+$adminRoute = "http://taxi2023/admin.taxi24h.ru";
+
 function changeDataBaseRequest($sql, $errorMessage)
 {
     global $base;

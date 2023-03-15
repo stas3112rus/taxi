@@ -44,10 +44,10 @@ function drawWidgetTypeForm($value)
             <? drawWidgetTypeFields($value) ?>
             <th scope='row' class="buttons">
                 <div class="buttons__block">
-                    <input type="hidden" name="id_widget" value="<? echo $value['id_widget'] ?>">
+                    <input type="hidden" name="id_widget_type" value="<? echo $value['id_widget_type'] ?>">
                     <input type="hidden" name="type" value="update">
                     <input class="btn btn-primary" type="submit" value="Изменить">
-                    <a href="./?type=delete&id_widget=<? echo $value['id_widget'] ?>" role="button" aria-pressed="true" class="btn btn-danger">Удалить</a>
+                    <a href="./?type=delete&id_widget_type=<? echo $value['id_widget_type'] ?>" role="button" aria-pressed="true" class="btn btn-danger">Удалить</a>
                 </div>
             </th>
         </tr>
@@ -60,8 +60,8 @@ function drawWidgetTypeFields($value = [])
 ?>
     <th scope='row'>
 
-        <input class="form-check-input" type="checkbox" id="showInHeader_<? echo $value['id_widget'] ?>" name="showInHeader" <? if ($value['showInHeader']) echo "checked" ?>> <br>
-        <label class="form-check-label" for="showInHeader_<? echo  $value['id_widget'] ?>">
+        <input class="form-check-input" type="checkbox" id="showInHeader_<? echo $value['id_widget_type'] ?>" name="showInHeader" <? if ($value['showInHeader']) echo "checked" ?>> <br>
+        <label class="form-check-label" for="showInHeader_<? echo  $value['id_widget_type'] ?>">
             В хедере
         </label>
     </th>

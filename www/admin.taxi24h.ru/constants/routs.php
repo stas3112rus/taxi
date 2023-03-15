@@ -1,13 +1,12 @@
 <?
-$mainRoute = "http://taxi2023/admin.taxi24h.ru";
-
 $routs = array(
-    "cities" => "$mainRoute/pages/cities/",
-    "engEdit" => "$mainRoute/pages/cities/eng/",
-    "cityEdit" => "$mainRoute/pages/cities/city-edit/",
-    "tariffs" => "$mainRoute/pages/cities/tariffs/",
-    "not_published_cities" => "$mainRoute/pages/cities/not-published/",
-    "defaults" => "$mainRoute/pages/defaults/",
-    "widget-types" => "$mainRoute/pages/widgets/widget-types",
-    "text-fields" => "$mainRoute/pages/text/text-fields",
+    "cities" => "$adminRoute/pages/cities/",
+    "engEdit" => "$adminRoute/pages/cities/eng/",
+    "cityEdit" => "$adminRoute/pages/cities/city-edit/",
+    "tariffs" => "$adminRoute/pages/cities/tariffs/",
+    "not_published_cities" => "$adminRoute/pages/cities/not-published/",
+    "defaults" => "$adminRoute/pages/defaults/",
+    "widgets" => "$adminRoute/pages/widgets/",
+    "widget-types" => "$adminRoute/pages/widgets/widget-types",
+    "text-fields" => "$adminRoute/pages/text/text-fields",
 );

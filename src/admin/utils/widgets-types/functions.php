@@ -13,7 +13,7 @@ function deleteWidgetType($id)
 {
     $sql = "DELETE 
     FROM `widgets_types`
-    WHERE `id_widget` = '$id';
+    WHERE `id_widget_type` = '$id';
     ";
 
     return changeDataBaseRequest($sql, "Ошибка при удалении типа виджета");
@@ -28,7 +28,7 @@ function updateWidgetType($value)
     `showInHeader`=  $showInHeader,
     `comment`= '$value[comment]'
 
-    WHERE `id_widget` = '$value[id_widget]'";
+    WHERE `id_widget_type` = '$value[id_widget_type]'";
 
     return changeDataBaseRequest($sql, "Ошибка при обновлении типа виджета");
 }
