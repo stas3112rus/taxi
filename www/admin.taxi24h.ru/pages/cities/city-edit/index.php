@@ -6,12 +6,19 @@ include('../../../components/alerts/drawAlert.php');
 include('../../../../../src/admin/utils/cities/functions.php');
 include('../../../components/cities/utils/functions-edit-city.php');
 
+include('../../../../../src/admin/utils/widgets-types/functions.php');
+include('../../../../../src/admin/utils/widgets/functions.php');
+include('../../../components/widgets/utils/functions.php');
+include('../../../components/widgets/view/drawWidgetForm.php');
+
 checkAuthorization();
 
+if ($_POST['type'] == 'declensions') {
+    $alert .= editCity($_POST);
+}
 
-if ($_POST) {
-    if ($_POST['im'])
-        $editCity = editCity($_POST);
+if ($_POST['type'] == 'editWidgets') {
+    $alert .= updateWidgets($_POST);
 }
 
 $city = getCityById($_GET['id']) ?? false;
@@ -38,14 +45,17 @@ $city = getCityById($_GET['id']) ?? false;
             <div class="content">
                 <?
                 if ($city) {
-                echo $editCity ?>
+                    echo $alert ?>
                     <h1><? echo "$city[im]" ?></h1>
                     <form action="" method="post">
                         <? include('../../../components/cities/view/drawDeclensionCityTable.php') ?>
+                        <input type="hidden" name="type" value="declensions">
                         <input type="hidden" name="id_city" value="<? echo $city['id_city'] ?>">
                         <input class="btn btn-primary" type="submit" value="Обновить склонения">
                     </form>
-
+                    <br><br>
+                    <h2>Виджеты</h2>
+                    <? drawWidgetForm($city['id_city']) ?>
                 <?
                 } else {
                     echo drawAlert("Информация о городе отсутствует", "alert-danger");
