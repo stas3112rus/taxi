@@ -2,26 +2,25 @@
 include('../../../../src/mysql.php');
 include('../../../../src/admin/utils/text-types/functions.php');
 include('../../components/authorization/utils/functions.php');
+include('../../../../src/admin/utils/cities/functions.php');
 include('../../constants/routs.php');
 include('../../components/alerts/drawAlert.php');
-include('../../../../src/admin/utils/defaults/functions.php');
-include('../../components/defaults/view/drawDefaults.php');
-include('../../components/defaults/utils/functions.php');
+include('../../../../src/admin/utils/text-fields/functions.php');
+include('../../../../src/admin/utils/text/functions.php');
+include('../../components/text/utils/functions.php');
+include('../../components/text/view/drawTextForm.php');
 
 checkAuthorization();
 
+$title = "Текстовое поле не найдено";
 
-if ($_POST['type'] == 'update')
-    $alert .= updateDefaultValue($_POST);
+if (isTextTypes($_GET['text-type'])) {
+    $text_type = getTextType($_GET['text-type']);
+    $title = "Тексты - " . $text_type['text_type_name'];
+}
 
-if ($_POST['type'] == 'add')
-    $alert .= addDefaultValue($_POST);
-
-
-
-if ($_GET['type'] == 'delete')
-    $alert .= deleteDefaultValue($_GET['id_default']);
-
+if ($_POST)
+    $alert .= updateTexts($_POST);
 
 ?>
 <!DOCTYPE html>
@@ -35,7 +34,7 @@ if ($_GET['type'] == 'delete')
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/main.min.css">
 
-    <title>Значения по умолчанию</title>
+    <title><? echo $title ?></title>
 </head>
 
 <body>
@@ -44,12 +43,15 @@ if ($_GET['type'] == 'delete')
             <? include('../../components/sidebar/sidebar.php') ?>
             <div class="content">
                 <? echo $alert ?>
+                <?php
+                if (isTextTypes($_GET['text-type'])) {
+                ?>
+                    <h1><? echo $title ?></h1>
+                    <? drawTextForm($text_type['id_text_type']) ?>
+                <? } else {
+                    echo drawAlert("Нет данного типа страницы", "alert-danger");
+                } ?>
 
-                <h1>Значения по умолчанию</h1>
-                <? drawDefaults(); ?>
-                <h2>Добавить значение по умолчанию</h2>
-
-                <? drawAddDefault() ?>
             </div>
         </div>
     </section>

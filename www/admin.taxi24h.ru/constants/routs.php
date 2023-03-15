@@ -5,6 +5,7 @@ $routs = array(
     "cityEdit" => "$adminRoute/pages/cities/city-edit/",
     "tariffs" => "$adminRoute/pages/cities/tariffs/",
     "not_published_cities" => "$adminRoute/pages/cities/not-published/",
+    "text" => "$adminRoute/pages/text/",
     "defaults" => "$adminRoute/pages/defaults/",
     "widgets" => "$adminRoute/pages/widgets/",
     "widget-types" => "$adminRoute/pages/widgets/widget-types",

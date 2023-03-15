@@ -1,5 +1,6 @@
 <?
 include('../../../../src/mysql.php');
+include('../../../../src/admin/utils/text-types/functions.php');
 include('../../components/authorization/utils/functions.php');
 include('../../../../src/admin/utils/cities/functions.php');
 include('../../constants/routs.php');
