@@ -5,11 +5,20 @@
         <div class="sidebar__divider"></div>
         <li class="sidebar__item"><a href="" class="sidebar__link sidebar_linkTop">Тексты</a></li>
         <li class="sidebar__item"><a href="<? echo $routs['text-fields'] ?>" class="sidebar__link">Текстовые поля</a></li>
-        <li class="sidebar__item"><a href="" class="sidebar__link">Главный сайт - главная страница</a></li>
-        <li class="sidebar__item"><a href="" class="sidebar__link">Главный сайт - направления</a></li>
-        <li class="sidebar__item"><a href="" class="sidebar__link">Поддомен - главная страница</a></li>
-        <li class="sidebar__item"><a href="" class="sidebar__link">Поддомен - направления</a></li>
-        <li class="sidebar__item"><a href="" class="sidebar__link">Трансферы</a></li>
+        <?
+        $text_pages = getAllTextTypes();
+        foreach ($text_pages as $text_page) {
+        ?>
+            <li class="sidebar__item">
+                <a href="<? echo $routs['text']."?text-type=".$text_page['id_page_type'] ?>" class="sidebar__link">
+                    <?echo $text_page['text_type_name']?>
+                </a>
+            </li>
+        <?
+        }
+        ?>
+
+
         <div class="sidebar__divider"></div>
         <li class="sidebar__item"><a href="<? echo $routs['defaults'] ?>" class="sidebar__link sidebar_linkTop">Константы</a></li>
         <div class="sidebar__divider"></div>

@@ -2,26 +2,12 @@
 include('../../../../src/mysql.php');
 include('../../../../src/admin/utils/text-types/functions.php');
 include('../../components/authorization/utils/functions.php');
+include('../../../../src/admin/utils/cities/functions.php');
 include('../../constants/routs.php');
 include('../../components/alerts/drawAlert.php');
-include('../../../../src/admin/utils/defaults/functions.php');
-include('../../components/defaults/view/drawDefaults.php');
-include('../../components/defaults/utils/functions.php');
+
 
 checkAuthorization();
-
-
-if ($_POST['type'] == 'update')
-    $alert .= updateDefaultValue($_POST);
-
-if ($_POST['type'] == 'add')
-    $alert .= addDefaultValue($_POST);
-
-
-
-if ($_GET['type'] == 'delete')
-    $alert .= deleteDefaultValue($_GET['id_default']);
-
 
 ?>
 <!DOCTYPE html>
@@ -35,7 +21,7 @@ if ($_GET['type'] == 'delete')
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/main.min.css">
 
-    <title>Значения по умолчанию</title>
+    <title>Тексты - </title>
 </head>
 
 <body>
@@ -44,12 +30,16 @@ if ($_GET['type'] == 'delete')
             <? include('../../components/sidebar/sidebar.php') ?>
             <div class="content">
                 <? echo $alert ?>
+                <?php
+                if ($main_city) {
+                ?>
+                    <h1>Виджеты</h1>
+                    <? drawWidgetForm($main_city['id_city']) ?>
 
-                <h1>Значения по умолчанию</h1>
-                <? drawDefaults(); ?>
-                <h2>Добавить значение по умолчанию</h2>
+                <? } else {
+                    echo drawAlert("Не задан главный сайт", "alert-danger");
+                } ?>
 
-                <? drawAddDefault() ?>
             </div>
         </div>
     </section>
