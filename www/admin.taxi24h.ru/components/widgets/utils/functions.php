@@ -31,6 +31,14 @@ function updateWidgets($post)
     return drawAlert("Виджеты обновлены", "alert-success");
 }
 
+function deleteWidgets($city_id){
+    $delete = deleteWidgetsByCityId($city_id);
+    if ($delete != 'Ok') {
+        return drawAlert($delete, "alert-danger");
+    }
+    return drawAlert("Виджеты удалены", "alert-success");
+}
+
 function upgradeWidgetDataPost($post)
 {
     $result = [];

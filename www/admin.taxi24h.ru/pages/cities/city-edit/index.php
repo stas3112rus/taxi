@@ -21,6 +21,9 @@ if ($_POST['type'] == 'editWidgets') {
     $alert .= updateWidgets($_POST);
 }
 
+if ($_GET['type'] == 'deleteWidget')
+    $alert .= deleteWidgets($_GET['id']);
+
 $city = getCityById($_GET['id']) ?? false;
 
 ?>
@@ -55,7 +58,10 @@ $city = getCityById($_GET['id']) ?? false;
                     </form>
                     <br><br>
                     <h2>Виджеты</h2>
+                    <a href='./?id=<? echo $city['id_city'] ?>&type=deleteWidget' role='button' aria-pressed='true' class='btn btn-danger'>Удалить виджеты для города</a>
                     <? drawWidgetForm($city['id_city']) ?>
+                    <br><br><br>
+
                 <?
                 } else {
                     echo drawAlert("Информация о городе отсутствует", "alert-danger");
