@@ -17,7 +17,7 @@ if ($_POST['type'] == 'add')
     $alert .= addWidgetTypeValue($_POST);
 
 if ($_GET['type'] == 'delete')
-    $alert .= deleteWidgetTypeValue($_GET['id_widget']);
+    $alert .= deleteWidgetTypeValue($_GET['id_widget_type']);
 
 
 ?>
