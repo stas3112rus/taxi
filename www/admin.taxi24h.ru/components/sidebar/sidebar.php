@@ -10,7 +10,7 @@
         foreach ($text_pages as $text_page) {
         ?>
             <li class="sidebar__item">
-                <a href="<? echo $routs['text']."?text-type=".$text_page['id_page_type'] ?>" class="sidebar__link">
+                <a href="<? echo $routs['text']."?text-type=".$text_page['id_text_type'] ?>" class="sidebar__link">
                     <?echo $text_page['text_type_name']?>
                 </a>
             </li>

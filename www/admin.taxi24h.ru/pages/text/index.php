@@ -5,9 +5,22 @@ include('../../components/authorization/utils/functions.php');
 include('../../../../src/admin/utils/cities/functions.php');
 include('../../constants/routs.php');
 include('../../components/alerts/drawAlert.php');
-
+include('../../../../src/admin/utils/text-fields/functions.php');
+include('../../../../src/admin/utils/text/functions.php');
+include('../../components/text/utils/functions.php');
+include('../../components/text/view/drawTextForm.php');
 
 checkAuthorization();
+
+$title = "Текстовое поле не найдено";
+
+if (isTextTypes($_GET['text-type'])) {
+    $text_type = getTextType($_GET['text-type']);
+    $title = "Тексты - " . $text_type['text_type_name'];
+}
+
+if ($_POST)
+    $alert .= updateTexts($_POST);
 
 ?>
 <!DOCTYPE html>
@@ -21,7 +34,7 @@ checkAuthorization();
     <link rel="stylesheet" href="../../css/bootstrap.min.css">
     <link rel="stylesheet" href="../../css/main.min.css">
 
-    <title>Тексты - </title>
+    <title><? echo $title ?></title>
 </head>
 
 <body>
@@ -31,13 +44,12 @@ checkAuthorization();
             <div class="content">
                 <? echo $alert ?>
                 <?php
-                if ($main_city) {
+                if (isTextTypes($_GET['text-type'])) {
                 ?>
-                    <h1>Виджеты</h1>
-                    <? drawWidgetForm($main_city['id_city']) ?>
-
+                    <h1><? echo $title ?></h1>
+                    <? drawTextForm($text_type['id_text_type']) ?>
                 <? } else {
-                    echo drawAlert("Не задан главный сайт", "alert-danger");
+                    echo drawAlert("Нет данного типа страницы", "alert-danger");
                 } ?>
 
             </div>
