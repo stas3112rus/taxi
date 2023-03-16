@@ -1,12 +1,12 @@
 <?
-include('../../../../src/mysql.php');
-include('../../../../src/admin/utils/text-types/functions.php');
+include('../../../../src/data/mysql.php');
+include('../../../../src/data/text-types/functions.php');
 include('../../components/authorization/utils/functions.php');
-include('../../../../src/admin/utils/cities/functions.php');
+include('../../../../src/data/cities/functions.php');
 include('../../constants/routs.php');
 include('../../components/alerts/drawAlert.php');
-include('../../../../src/admin/utils/text-fields/functions.php');
-include('../../../../src/admin/utils/text/functions.php');
+include('../../../../src/data/text-fields/functions.php');
+include('../../../../src/data/text/functions.php');
 include('../../components/text/utils/functions.php');
 include('../../components/text/view/drawTextForm.php');
 

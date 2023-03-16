@@ -1,11 +1,11 @@
 <?
-include('../../../../../src/mysql.php');
-include('../../../../../src/admin/utils/text-types/functions.php');
+include('../../../../../src/data/mysql.php');
+include('../../../../../src/data/text-types/functions.php');
 include('../../../components/authorization/utils/functions.php');
 include('../../../constants/routs.php');
 include('../../../components/alerts/drawAlert.php');
-include('../../../../../src/admin/utils/cities/functions.php');
-include('../../../../../src/admin/utils/tariffs/functions.php');
+include('../../../../../src/data/cities/functions.php');
+include('../../../../../src/data/tariffs/functions.php');
 include('../../../components/tariffs/view/drawTariffs.php');
 include('../../../components/tariffs/utils/functions.php');
 
