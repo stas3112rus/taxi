@@ -1,7 +1,7 @@
 <?
-    include ('../../src/mysql.php');
+    include ('../../src/data/mysql.php');
     include('./components/authorization/utils/functions.php');
-    include ('../../src/admin/utils/user/functions.php');
+    include ('../../src/data/user/functions.php');
     include ('./constants/routs.php');
 
     $user_name = $_POST['user_name'];

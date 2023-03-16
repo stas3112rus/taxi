@@ -6,7 +6,7 @@ function drawDefaults()
         <tbody>
             <?
             foreach (getAllDefaults() as $default) {
-                drawConstantForm($default);
+                drawDefaultForm($default);
             }
             ?>
         </tbody>
@@ -36,7 +36,7 @@ function drawAddDefault()
 <?
 }
 
-function drawConstantForm($default)
+function drawDefaultForm($default)
 {
 ?>
     <form method="post">
@@ -69,7 +69,7 @@ function drawDefaultFields($default = [])
     </th>
     <th scope='row'>
         <label for="comment">Комментарий</label>
-        <input type="text" value="<? echo $default['comment'] ?>" class="form-control" id="comment" name="comment" aria-describedby="constantComment" placeholder="Комментарий">
+        <input type="text" value="<? echo $default['comment'] ?>" class="form-control" id="comment" name="comment" aria-describedby="comment" placeholder="Комментарий">
     </th>
 <?
 }

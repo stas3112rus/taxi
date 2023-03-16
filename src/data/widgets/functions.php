@@ -15,6 +15,16 @@ function deleteWidgetsByCityId($city_id)
     return changeDataBaseRequest($sql, "Ошибка при удалении виджета по id города");
 }
 
+function deleteWidgetsByTypeId($widget_type)
+{
+    $sql = "DELETE 
+    FROM `widgets`
+    WHERE `widget_type_ref` = '$widget_type';
+    ";
+
+    return changeDataBaseRequest($sql, "Ошибка при удалении виджета по id типа");
+}
+
 function addWidget($value)
 {
 

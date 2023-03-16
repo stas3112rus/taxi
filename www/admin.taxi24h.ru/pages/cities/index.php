@@ -1,16 +1,16 @@
 <?
-include('../../../../src/mysql.php');
-include('../../../../src/admin/utils/text-types/functions.php');
+include('../../../../src/data/mysql.php');
+include('../../../../src/data/text-types/functions.php');
 include('../../components/authorization/utils/functions.php');
 include('../../constants/routs.php');
-include('../../../../src/admin/utils/cities/functions.php');
+include('../../../../src/data/cities/functions.php');
 include('../../components/cities/view/drawCitiesTable.php');
 include('../../components/alerts/drawAlert.php');
 include('../../components/cities/utils/functions-cities.php');
 
 
 checkAuthorization();
-$updateMain = updateMainCityByGet();
+$alert .= updateMainCityByGet();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,9 +32,9 @@ $updateMain = updateMainCityByGet();
             <? include('../../components/sidebar/sidebar.php') ?>
             <div class="content">
                 <div class="cities">
-                    <?echo $updateMain ?>
+                    <? echo $alert ?>
                     <form action="">
-                        <?echo drawCitiesTable(getAllCities(), $routs)?>
+                        <? drawCitiesTable() ?>
                         <input class="btn btn-primary" type="submit" value="Обновить Главный сайт">
                     </form>
                 </div>

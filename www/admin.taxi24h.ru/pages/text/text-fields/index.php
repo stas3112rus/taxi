@@ -1,10 +1,11 @@
 <?
-include('../../../../../src/mysql.php');
-include('../../../../../src/admin/utils/text-types/functions.php');
+include('../../../../../src/data/mysql.php');
+include('../../../../../src/data/text-types/functions.php');
 include('../../../components/authorization/utils/functions.php');
 include('../../../constants/routs.php');
 include('../../../components/alerts/drawAlert.php');
-include('../../../../../src/admin/utils/text-fields/functions.php');
+include('../../../../../src/data/text/functions.php');
+include('../../../../../src/data/text-fields/functions.php');
 include('../../../components/text-fields/view/drawTextFields.php');
 include('../../../components/text-fields/utils/functions.php');
 

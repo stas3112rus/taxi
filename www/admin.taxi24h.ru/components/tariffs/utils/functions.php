@@ -26,19 +26,14 @@ function updateTariffs($post, $two_ways = false)
 {
     $tariffs =  getTariffsList($post);
 
-    $result = drawAlert("Тарифы успешно обновлены", "alert-success");
-
     foreach ($tariffs as $city_to_id => $tariff) {
         $update =  $two_ways ?
             updateTariffTwoWays($tariff, $post['city_from_ref'], $city_to_id) :
             updateTariffOneWay($tariff, $post['city_from_ref'], $city_to_id);
 
-
-        if ($update != 'Ok') {
-            $result =  drawAlert($update, "alert-danger");
-            break;
-        }
+        if ($update != 'Ok')
+            return drawAlert($update, "alert-danger");
     }
 
-    return $result;
+    return drawAlert("Тарифы успешно обновлены", "alert-success");
 }

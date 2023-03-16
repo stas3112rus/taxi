@@ -1,12 +1,12 @@
 <?
-include('../../../../../src/mysql.php');
-include('../../../../../src/admin/utils/text-types/functions.php');
+include('../../../../../src/data/mysql.php');
+include('../../../../../src/data/text-types/functions.php');
 include('../../../components/authorization/utils/functions.php');
 include('../../../constants/routs.php');
 include('../../../components/alerts/drawAlert.php');
-include('../../../../../src/admin/utils/cities/functions.php');
-include('../../../../../src/admin/utils/not-published/functions.php');
-include('../../../components/not-published/view/drawNotPublishedRows.php');
+include('../../../../../src/data/cities/functions.php');
+include('../../../../../src/data/not-published/functions.php');
+include('../../../components/not-published/view/drawNotPublished.php');
 include('../../../components/not-published/utils/functions.php');
 
 checkAuthorization();
@@ -14,10 +14,8 @@ checkAuthorization();
 
 $city = getCityById($_GET['id']) ?? false;
 
-if ($_POST) {
-
-    $update = updateNotPublishedCities($_POST);
-}
+if ($_POST)
+    $alert .= updateNotPublishedCities($_POST);
 
 ?>
 <!DOCTYPE html>
@@ -41,23 +39,10 @@ if ($_POST) {
             <div class="content">
                 <?
                 if ($city) {
-                    echo $update;
+                    echo $alert;
                 ?>
                     <h1><? echo "$city[im]" ?></h1>
-                    <form method="post">
-                        <table class='table table-striped'>
-                            <tbody>
-                                <? drawNotPublishedRows(
-                                    getNotPublishedList(
-                                        getAllWithoutOneCities($city['id_city']),
-                                        $city['id_city']
-                                    )
-                                ) ?>
-                            </tbody>
-                        </table>
-                        <input type="hidden" name="id_city" value="<? echo $city['id_city'] ?>">
-                        <input class="btn btn-primary" type="submit" value="Города, где не публикуем">
-                    </form>
+                    <? drawNotPublishedForm($city['id_city']) ?>
 
                 <?
                 } else {

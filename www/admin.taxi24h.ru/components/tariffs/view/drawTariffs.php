@@ -1,11 +1,49 @@
 <?
+function drawTariffsForm($city)
+{
+?>
+    <form method="post">
+        <? drawTariffsTable($city) ?>
 
-function drawAllTariffsRaws($city_from_name, $cityTariffs)
+        <input type="hidden" name="city_from_ref" value="<? echo $city['id_city'] ?>">
+        <input class="btn btn-primary" formaction="./?id=<? echo $city['id_city'] ?>&way=1" formmethod="post" type="submit" value="Обновить в одну сторону">
+        <input class="btn btn-primary" formaction="./?id=<? echo $city['id_city'] ?>&way=2" formmethod="post" type="submit" value="Обновить туда и обратно">
+    </form>
+<?
+}
+
+function drawTariffsTable($city)
+{
+?>
+    <table class='table table-striped'>
+        <thead>
+            <tr>
+                <th scope='col' style="width: 20%;">Направление</th>
+                <th scope='col' style="width: 20%;">Эконом</th>
+                <th scope='col' style="width: 20%;">Комфорт</th>
+                <th scope='col' style="width: 20%;">Бизнес</th>
+                <th scope='col' style="width: 20%;">Минивэн</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?
+            drawAllTariffsRaws(
+                $city['im'],
+                getAllTariffsByCityFrom($city['id_city'])
+            )
+            ?>
+        </tbody>
+    </table>
+<?
+}
+
+
+function drawAllTariffsRaws($city_from_name, $tariffs)
 {
     $rows = "";
 
-    foreach ($cityTariffs as $citytariff) {
-        $rows .= drawOneRaw($city_from_name, $citytariff);
+    foreach ($tariffs as $tariff) {
+        $rows .= drawOneRaw($city_from_name, $tariff);
     }
 
     return $rows;
@@ -13,25 +51,23 @@ function drawAllTariffsRaws($city_from_name, $cityTariffs)
 
 function drawOneRaw($city_from_name, $tariff)
 {
-    return ("
-        <tr>
-            <th scope='row'>
-                $city_from_name - $tariff[city_to_im]
-            </th>
-            <td>
-                <input max='2147483647' type='number' class='form-control' placeholder='Эконом' aria-label='Эконом' aria-describedby='basic-addon1' name='$tariff[city_to_ref]_economy' value='$tariff[economy]'>
-
-            </td>
-            <td>
-                <input max='2147483647' type='number' class='form-control' placeholder='Комфорт' aria-label='Комфорт' aria-describedby='basic-addon1' name='$tariff[city_to_ref]_comfort' value='$tariff[comfort]'>
-            </td>
-            <td>
-                <input max='2147483647' type='number' class='form-control' placeholder='Бизнес' aria-label='Бизнес' aria-describedby='basic-addon1' name='$tariff[city_to_ref]_business' value='$tariff[business]'>
-            </td>
-            <td>
-                <input max='2147483647' type='number' class='form-control' placeholder='Минивен' aria-label='Минивен' aria-describedby='basic-addon1' name='$tariff[city_to_ref]_minivan' value='$tariff[minivan]'>
-            </td>
-         </tr>
-        "
-    );
+?>
+    <tr>
+        <th scope='row'>
+            <? echo $city_from_name . " - " . $tariff['city_to_im'] ?>
+        </th>
+        <td>
+            <input max='2147483647' type='number' class='form-control' placeholder='Эконом' aria-label='Эконом' aria-describedby='basic-addon1' name='<? echo $tariff['city_to_ref'] . "_economy" ?>' value='<? echo $tariff['economy'] ?>'>
+        </td>
+        <td>
+            <input max='2147483647' type='number' class='form-control' placeholder='Комфорт' aria-label='Комфорт' aria-describedby='basic-addon1' name='<? echo $tariff['city_to_ref'] . "_comfort" ?>' value='<? echo $tariff['comfort'] ?>'>
+        </td>
+        <td>
+            <input max='2147483647' type='number' class='form-control' placeholder='Бизнес' aria-label='Бизнес' aria-describedby='basic-addon1' name='<? echo $tariff['city_to_ref'] . "_business" ?>' value='<? echo $tariff['business'] ?>'>
+        </td>
+        <td>
+            <input max='2147483647' type='number' class='form-control' placeholder='Минивэн' aria-label='Минивэн' aria-describedby='basic-addon1' name='<? echo $tariff['city_to_ref'] . "_minivan" ?>' value='<? echo $tariff['minivan'] ?>'>
+        </td>
+    </tr>
+<?
 }

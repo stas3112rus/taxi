@@ -1,6 +1,8 @@
 <?
-function getNotPublishedList($cities, $city_from_id)
+function getNotPublishedList($city_from_id)
 {
+    $cities =  getAllWithoutOneCities($city_from_id);
+
     $notPublishedList = [];
 
     foreach ($cities as $city) {

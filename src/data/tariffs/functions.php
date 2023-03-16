@@ -1,5 +1,5 @@
 <?
-function getAllTariffsWithNameCitiesFrom($city_from_id)
+function getAllTariffsByCityFrom($city_from_id)
 {
     $sql = "SELECT
     city_to_ref, 

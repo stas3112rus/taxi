@@ -1,5 +1,5 @@
 <?
-include('../../src/mysql.php');
+include('../../src/data/mysql.php');
 include('./components/authorization/utils/functions.php');
 include('./constants/routs.php');
 
