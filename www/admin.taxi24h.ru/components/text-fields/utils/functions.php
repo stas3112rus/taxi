@@ -11,9 +11,14 @@ function updateTextFieldValue($post)
 
 function deleteTextFieldValue($id)
 {
-    $delete = deleteTextField($id);
-    if ($delete != 'Ok')
-        return  drawAlert($delete, "alert-danger");
+    $deleteTexts = deleteTextsByField($id);
+
+    if ($deleteTexts != 'Ok')
+        return  drawAlert($deleteTexts, "alert-danger");
+
+    $deleteTextField = deleteTextField($id);
+    if ($deleteTextField != 'Ok')
+        return  drawAlert($deleteTextField, "alert-danger");
 
 
     return drawAlert("Текстовое поле удалено", "alert-success");

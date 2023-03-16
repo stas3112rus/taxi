@@ -11,9 +11,15 @@ function updateWidgetTypeValue($post)
 
 function deleteWidgetTypeValue($id)
 {
-    $delete = deleteWidgetType($id);
-    if ($delete != 'Ok')
-        return  drawAlert($delete, "alert-danger");
+    $deleteWidgetsByType= deleteWidgetsByTypeId($id);
+
+    if ($deleteWidgetsByType != 'Ok'){
+        return  drawAlert($deleteWidgetsByType, "alert-danger");
+    }
+    
+    $deleteWidgetType = deleteWidgetType($id);
+    if ($deleteWidgetType != 'Ok')
+        return  drawAlert($deleteWidgetType, "alert-danger");
 
 
     return drawAlert("Тип виджета удален", "alert-success");

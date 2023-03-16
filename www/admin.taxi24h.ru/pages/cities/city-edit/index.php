@@ -23,7 +23,7 @@ if ($_POST['type'] == 'editWidgets') {
 }
 
 if ($_GET['type'] == 'deleteWidget')
-    $alert .= deleteWidgets($_GET['id']);
+    $alert .= deleteWidgetsByCity($_GET['id']);
 
 $city = getCityById($_GET['id']) ?? false;
 

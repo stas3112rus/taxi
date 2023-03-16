@@ -4,6 +4,7 @@ include('../../../../../src/admin/utils/text-types/functions.php');
 include('../../../components/authorization/utils/functions.php');
 include('../../../constants/routs.php');
 include('../../../components/alerts/drawAlert.php');
+include('../../../../../src/admin/utils/text/functions.php');
 include('../../../../../src/admin/utils/text-fields/functions.php');
 include('../../../components/text-fields/view/drawTextFields.php');
 include('../../../components/text-fields/utils/functions.php');

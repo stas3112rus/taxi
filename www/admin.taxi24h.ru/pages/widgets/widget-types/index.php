@@ -4,6 +4,7 @@ include('../../../../../src/admin/utils/text-types/functions.php');
 include('../../../components/authorization/utils/functions.php');
 include('../../../constants/routs.php');
 include('../../../components/alerts/drawAlert.php');
+include('../../../../../src/admin/utils/widgets/functions.php');
 include('../../../../../src/admin/utils/widgets-types/functions.php');
 include('../../../components/widget-types/view/drawWidgetType.php');
 include('../../../components/widget-types/utils/functions.php');

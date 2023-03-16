@@ -15,6 +15,16 @@ function deleteTextsByTextType($text_type_id)
     return changeDataBaseRequest($sql, "Ошибка при удалении текстов по типу");
 }
 
+function deleteTextsByField($text_field_id)
+{
+    $sql = "DELETE 
+    FROM `texts`
+    WHERE `text_field_ref` = '$text_field_id';
+    ";
+
+    return changeDataBaseRequest($sql, "Ошибка при удалении текстов по полю");
+}
+
 function addText($value)
 {
 
