@@ -10,6 +10,7 @@ include('../../../components/cities/utils/functions-edit-city.php');
 include('../../../../../src/data/widgets-types/functions.php');
 include('../../../../../src/data/widgets/functions.php');
 include('../../../components/widgets/utils/functions.php');
+include('../../../components/cities/view/drawDeclension.php');
 include('../../../components/widgets/view/drawWidgetForm.php');
 
 checkAuthorization();
@@ -51,12 +52,7 @@ $city = getCityById($_GET['id']) ?? false;
                 if ($city) {
                     echo $alert ?>
                     <h1><? echo "$city[im]" ?></h1>
-                    <form action="" method="post">
-                        <? include('../../../components/cities/view/drawDeclensionCityTable.php') ?>
-                        <input type="hidden" name="type" value="declensions">
-                        <input type="hidden" name="id_city" value="<? echo $city['id_city'] ?>">
-                        <input class="btn btn-primary" type="submit" value="Обновить склонения">
-                    </form>
+                    <? drawDeclensionForm($city) ?>
                     <br><br>
                     <h2>Виджеты</h2>
                     <a href='./?id=<? echo $city['id_city'] ?>&type=deleteWidget' role='button' aria-pressed='true' class='btn btn-danger'>Удалить виджеты для города</a>
