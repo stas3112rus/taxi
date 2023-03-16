@@ -13,12 +13,11 @@ checkAuthorization();
 $city = getCityById($_GET['id']) ?? false;
 
 if ($_POST) {
-    if ($_GET['way'] == 1) {
-        $update = updateTariffs($_POST);
-    }
-    if ($_GET['way'] == 2) {
-        $update = updateTariffs($_POST, true);
-    } 
+    if ($_GET['way'] == 1)
+        $alert .= updateTariffs($_POST);
+
+    if ($_GET['way'] == 2)
+        $alert .= updateTariffs($_POST, true);
 }
 
 ?>
@@ -43,33 +42,10 @@ if ($_POST) {
             <div class="content">
                 <?
                 if ($city) {
-                    echo $update;
+                    echo $alert;
                 ?>
                     <h1><? echo "$city[im]" ?></h1>
-                    <form method="post">
-                        <table class='table table-striped'>
-                            <thead>
-                                <tr>
-                                    <th scope='col' style="width: 20%;">Направление</th>
-                                    <th scope='col' style="width: 20%;">Эконом</th>
-                                    <th scope='col' style="width: 20%;">Комфорт</th>
-                                    <th scope='col' style="width: 20%;">Бизнес</th>
-                                    <th scope='col' style="width: 20%;">Минивэн</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?
-                                echo drawAllTariffsRaws(
-                                    $city['im'],
-                                    getAllTariffsWithNameCitiesFrom($city['id_city'])
-                                )
-                                ?>
-                            </tbody>
-                        </table>
-                        <input type="hidden" name="city_from_ref" value="<? echo $city['id_city'] ?>">
-                        <input class="btn btn-primary" formaction="./?id=<? echo $city['id_city'] ?>&way=1" formmethod="post" type="submit" value="Обновить в одну сторону">
-                        <input class="btn btn-primary" formaction="./?id=<? echo $city['id_city'] ?>&way=2" formmethod="post" type="submit" value="Обновить туда и обратно">
-                    </form>
+                    <? drawTariffsForm($city) ?>
 
                 <?
                 } else {
