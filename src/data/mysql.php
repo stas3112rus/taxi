@@ -6,7 +6,9 @@ $user = "root";
 $pass = "";
 $database = "taxi2023";
 
+
 $base = new mysqli($host, $user, $pass, $database);
+$base->set_charset('utf8mb4');
 
 $adminRoute = "http://taxi2023/admin.taxi24h.ru";
 
@@ -36,8 +38,9 @@ function getAllRowsFromDataBase($sql)
     return ($res->fetch_all(MYSQLI_ASSOC));
 }
 
-function isExist($sql): bool{
+function isExist($sql): bool
+{
     global $base;
-    $res = $base -> query($sql);
-    return( $res -> num_rows > 0);
+    $res = $base->query($sql);
+    return ($res->num_rows > 0);
 }
