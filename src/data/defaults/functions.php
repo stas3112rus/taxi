@@ -42,3 +42,14 @@ function addDefault($default)
         ('$default[default_name]','$default[default_value]', '$default[comment]')";
     return changeDataBaseRequest($sql, "Ошибка создании значения по умолчанию");
 }
+
+function getDefaultValueByName($name)
+{
+    $sql = "SELECT 
+    *
+    FROM `defaults`
+    WHERE `default_name` = '$name';
+    ";
+
+    return getOneRowFromDataBase($sql)['default_value'];
+}

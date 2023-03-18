@@ -116,3 +116,12 @@ function createTariffsWithValue($tariffs)
 
     return changeDataBaseRequest($sql, "Ошибка при создании тарифов");
 }
+
+function deleteTariffsById($id){
+    $sql = "DELETE 
+        FROM `tariffs` WHERE 
+        `city_from_ref` = '$id' OR `city_to_ref` = '$id'
+        ";
+
+    changeDataBaseRequest($sql, "Ошибка при удалении тарифов");
+}
