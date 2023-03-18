@@ -27,6 +27,7 @@ function deleteWidgetsByTypeId($widget_type)
 
 function addWidget($value)
 {
+    $value = trimValues($value);
 
     $sql = "INSERT 
     INTO 

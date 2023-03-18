@@ -1,6 +1,7 @@
 <?
 $routs = array(
     "cities" => "$adminRoute/pages/cities/",
+    "addCity" => "$adminRoute/pages/cities/add-city/",
     "engEdit" => "$adminRoute/pages/cities/eng/",
     "cityEdit" => "$adminRoute/pages/cities/city-edit/",
     "tariffs" => "$adminRoute/pages/cities/tariffs/",

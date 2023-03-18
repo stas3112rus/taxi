@@ -21,6 +21,7 @@ function deleteWidgetType($id)
 
 function updateWidgetType($value)
 {
+    $value = trimValues($value);
     $showInHeader = $value['showInHeader'] ? 1 : 0;
 
     $sql = "UPDATE `widgets_types` SET 
@@ -35,6 +36,7 @@ function updateWidgetType($value)
 
 function addWidgetType($value)
 {
+    $value = trimValues($value);
     $showInHeader = $value['showInHeader'] ? 1 : 0;
 
     $sql = "INSERT 

@@ -27,6 +27,7 @@ function deleteTextsByField($text_field_id)
 
 function addText($value)
 {
+    $value = trimValues($value);
 
     $sql = "INSERT 
     INTO 

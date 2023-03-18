@@ -10,7 +10,7 @@ include('../../../components/cities/utils/functions-edit-city.php');
 include('../../../../../src/data/widgets-types/functions.php');
 include('../../../../../src/data/widgets/functions.php');
 include('../../../components/widgets/utils/functions.php');
-include('../../../components/cities/view/drawDeclension.php');
+include('../../../components/cities/view/drawAddEditForms.php');
 include('../../../components/widgets/view/drawWidgetForm.php');
 
 checkAuthorization();
@@ -52,7 +52,7 @@ $city = getCityById($_GET['id']) ?? false;
                 if ($city) {
                     echo $alert ?>
                     <h1><? echo "$city[im]" ?></h1>
-                    <? drawDeclensionForm($city) ?>
+                    <? drawEditCityForm($city) ?>
                     <br><br>
                     <h2>Виджеты</h2>
                     <a href='./?id=<? echo $city['id_city'] ?>&type=deleteWidget' role='button' aria-pressed='true' class='btn btn-danger'>Удалить виджеты для города</a>

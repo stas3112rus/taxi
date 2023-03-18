@@ -20,6 +20,8 @@ function deleteTextField($id)
 
 function updateTextField($value)
 {
+    $value = trimValues($value);
+
     $sql = "UPDATE `text_fields` SET 
     `field_name`= '$value[field_name]',
     `comment`='$value[comment]'
@@ -31,6 +33,8 @@ function updateTextField($value)
 
 function addTextField($value)
 {
+    $value = trimValues($value);
+
     $sql = "INSERT 
     INTO 
     `text_fields`
