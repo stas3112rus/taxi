@@ -8,9 +8,11 @@ function createCity($city)
     $newCity = getCityByEng($city['eng']);
 
     $addTariffs = createTariffs($newCity['id_city'], $city['basic-city-id']);
-    if ($addTariffs != "Ok")
+    if ($addTariffs != "Ok"){
+        deleteCityById($newCity['id_city']);
         return drawAlert($addTariffs, "alert-danger");
-
+    }
+       
     return drawAlert("Город добавлен", "alert-success");
 }
 

@@ -116,3 +116,8 @@ function addCity($city)
 
     return changeDataBaseRequest($sql, "Ошибка при добавлении города в БД");
 }
+
+function deleteCityById($id){
+    $sql = "DELETE FROM `cities` WHERE `id_city` = '$id'";
+    return changeDataBaseRequest($sql, "Ошибка при добавлении города в БД");
+}
