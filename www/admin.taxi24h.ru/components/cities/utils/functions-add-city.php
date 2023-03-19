@@ -17,12 +17,12 @@ function createCity($city)
         return drawAlert($addTariffs, "alert-danger");
     }
 
-    $domainFolder = createFolderDomain($city['eng'], $domain);
+    $domainFolder = createFolder(getFullDirectionToDomain($city['eng'], $domain));
 
-    if ($domainFolder != 'Ok'){        
+    if ($domainFolder != 'Ok') {
         deleteTariffsById($newCity['id_city']);
         deleteCityById($newCity['id_city']);
-        
+
         return drawAlert($domainFolder, "alert-danger");
     }
 
