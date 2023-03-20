@@ -70,6 +70,14 @@ function deployNewDomain($city)
     if ($transferOutsideCity != "Ok")
         return drawAlert($transferOutsideCity, "alert-danger");
 
+    $robotDeploy = deployRobot($city);
+    if ($robotDeploy != "Ok")
+        return drawAlert($robotDeploy, "alert-danger");
+
+    $sitemapDeploy = deploySitemaps();
+    if ($sitemapDeploy != "Ok")
+        return drawAlert($sitemapDeploy, "alert-danger");
+
     return 'Ok';
 }
 

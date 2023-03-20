@@ -29,3 +29,13 @@ function getSubDomainName($eng, $isMain = false)
         return $eng . "." . $domain;
     }
 }
+
+
+function getMainUrl($eng, $isMain = false)
+{
+    if ($isMain) {
+        return "https://" . getSubDomainName($eng, true) . "/";
+    }
+
+    return "http://" . getSubDomainName($eng, false) . "/";
+}

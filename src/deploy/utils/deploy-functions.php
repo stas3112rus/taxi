@@ -64,3 +64,60 @@ function getDataForTransfer($city_from, $city_to, $reverse)
             getFullPathTransferFile($city_from, $city_to)
     ];
 }
+
+
+
+function deployRobot($city)
+{
+    $txt = getRobotTxt($city);
+    $dir =  getFullPathToRobotFile($city);
+
+    return createFile($dir, $txt);
+}
+
+function deployHtacces($city)
+{
+    $txt = getHtaccesTxt($city);
+    $dir =  getFullPathToHtaccesFile($city);
+
+    return createFile($dir, $txt);
+}
+
+function deploySitemaps()
+{
+    $deployMainSitemap = deployMainSitemapXML();
+    if ($deployMainSitemap != "Ok")
+        return $deployMainSitemap;
+
+    $deployNotMainSiteMapsXML = deployNotMainSitemapsXML();
+    if ($deployNotMainSiteMapsXML != "Ok")
+        return $deployNotMainSiteMapsXML;
+
+    return "Ok";
+}
+
+function deployMainSitemapXML()
+{
+    $txt = getMainSitemapTxt();
+    $dir =  getFullPathToSitemapXMLFile(getMainCity());
+
+    return createFile($dir, $txt);
+}
+
+function deployNotMainSitemapsXML()
+{
+    $mainCity = getMainCity();
+    $cities = getAllWithoutOneCities($mainCity['id_city']);
+
+    foreach ($cities as $city_from) {
+        $txt = getNotMainSitemapsTXT($city_from);
+        $dir =  getFullPathToSitemapXMLFile($city_from);
+
+        $create = createFile($dir, $txt);
+        if ($create != "Ok") {
+            return $create;
+        }
+    }
+
+    return "Ok";
+}
