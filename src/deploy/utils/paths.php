@@ -11,7 +11,7 @@ function getFullPathToStaticFiles()
 {
     $domain = getDomain();
 
-    return getRootPath($domain) . "src/files/siteStaticFiles/";
+    return getRootPath($domain) . "src/sites/staticFiles";
 }
 
 function getFullPathToInfoFile($city)
@@ -36,7 +36,7 @@ function getFullPathTransferFolder($city_from, $city_to)
 
 function getFullPathTransferFile($city_from, $city_to)
 {
-    return  getFullPathTransferFolder($city_from, $city_to). "index.php";
+    return  getFullPathTransferFolder($city_from, $city_to) . "index.php";
 }
 
 function getFullPathDirectionFile($city_from, $city_to)
