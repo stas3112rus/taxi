@@ -100,3 +100,8 @@ function getLevel($level)
 
     return $prev;
 }
+
+function getDomainForHtacces(){
+    $domain = getDomain();
+    return str_replace('.ru', '\.ru', $domain);
+}
