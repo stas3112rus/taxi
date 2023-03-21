@@ -1,4 +1,9 @@
 <?
-include('text-for-deploy/texts.php');
+include('text-for-deploy/htacces-text.php');
+include('text-for-deploy/index-and-info-texts.php');
+include('text-for-deploy/robot-texts.php');
+include('text-for-deploy/sitemap.php');
 include('utils/paths.php');
 include('utils/deploy-functions.php');
+include('utils/deploy-directions-and-transfers.php');
+include('utils/deploy-sitemap.php');
