@@ -1,6 +1,5 @@
 <?
 
-
 function createCity($city)
 {
     // Создали запись в БД
@@ -77,6 +76,10 @@ function deployNewDomain($city)
     $sitemapDeploy = deploySitemaps();
     if ($sitemapDeploy != "Ok")
         return drawAlert($sitemapDeploy, "alert-danger");
+
+    $htacces =  deployHtacces($city);
+    if ($htacces != "Ok")
+        return drawAlert($htacces, "alert-danger");
 
     return 'Ok';
 }
