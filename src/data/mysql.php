@@ -1,5 +1,6 @@
 <?
 session_start();
+include ('utils/functions.php');
 
 $host = "localhost";
 $user = "root";
@@ -12,35 +13,11 @@ $base->set_charset('utf8mb4');
 
 $adminRoute = "http://taxi2023/admin.taxi24h.ru";
 
-function changeDataBaseRequest($sql, $errorMessage)
-{
-    global $base;
-    if ($base->query($sql)) {
-        return "Ok";
-    } else {
-        return "$errorMessage: " . "<br>" . $base->error;
-    }
-}
+$MYSQL_CONSTANTS = [
+    'COMMA' => ", ",
+    'SEMICOLON' => ";",
+    'NULL' => "NULL"
+];
 
-function getOneRowFromDataBase($sql)
-{
-    global $base;
-    $res = $base->query($sql);
 
-    return $res->fetch_assoc();
-}
 
-function getAllRowsFromDataBase($sql)
-{
-    global $base;
-    $res = $base->query($sql);
-
-    return ($res->fetch_all(MYSQLI_ASSOC));
-}
-
-function isExist($sql): bool
-{
-    global $base;
-    $res = $base->query($sql);
-    return ($res->num_rows > 0);
-}

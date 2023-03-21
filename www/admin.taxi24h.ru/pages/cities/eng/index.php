@@ -5,26 +5,9 @@ include('../../../components/authorization/utils/functions.php');
 include('../../../constants/routs.php');
 include('../../../components/alerts/drawAlert.php');
 include('../../../../../src/data/cities/functions.php');
-include('../../../components/cities/utils/functions-edit-city.php');
-
-include('../../../../../src/data/widgets-types/functions.php');
-include('../../../../../src/data/widgets/functions.php');
-include('../../../components/widgets/utils/functions.php');
-include('../../../components/cities/view/drawAddEditForms.php');
-include('../../../components/widgets/view/drawWidgetForm.php');
+include('../../../components/cities/view/drawEngForm.php');
 
 checkAuthorization();
-
-if ($_POST['type'] == 'declensions') {
-    $alert .= editCity($_POST);
-}
-
-if ($_POST['type'] == 'editWidgets') {
-    $alert .= updateWidgets($_POST);
-}
-
-if ($_GET['type'] == 'deleteWidget')
-    $alert .= deleteWidgetsByCity($_GET['id']);
 
 $city = getCityById($_GET['id']) ?? false;
 
@@ -52,13 +35,7 @@ $city = getCityById($_GET['id']) ?? false;
                 if ($city) {
                     echo $alert ?>
                     <h1><? echo "$city[im]" ?></h1>
-                    <? drawEditCityForm($city) ?>
-                    <br><br>
-                    <h2>Виджеты</h2>
-                    <a href='./?id=<? echo $city['id_city'] ?>&type=deleteWidget' role='button' aria-pressed='true' class='btn btn-danger'>Удалить виджеты для города</a>
-                    <? drawWidgetForm($city['id_city']) ?>
-                    <br><br><br>
-
+                    <? echo drawEngForm($city) ?>
                 <?
                 } else {
                     echo drawAlert("Информация о городе отсутствует", "alert-danger");

@@ -20,6 +20,7 @@ function deleteDefault($id)
 
 function updateDefault($default)
 {
+    $default = trimValues($default);
     $sql = "UPDATE `defaults` SET 
     `default_name`= '$default[default_name]',
     `default_value`='$default[default_value]',
@@ -32,6 +33,7 @@ function updateDefault($default)
 
 function addDefault($default)
 {
+    $default = trimValues($default);
     $sql = "INSERT 
     INTO 
     `defaults`
@@ -39,4 +41,15 @@ function addDefault($default)
     VALUES 
         ('$default[default_name]','$default[default_value]', '$default[comment]')";
     return changeDataBaseRequest($sql, "Ошибка создании значения по умолчанию");
+}
+
+function getDefaultValueByName($name)
+{
+    $sql = "SELECT 
+    *
+    FROM `defaults`
+    WHERE `default_name` = '$name';
+    ";
+
+    return getOneRowFromDataBase($sql)['default_value'];
 }
