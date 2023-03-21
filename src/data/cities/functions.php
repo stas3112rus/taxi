@@ -87,6 +87,15 @@ function updateCity($city)
     return changeDataBaseRequest($sql, "Ошибка при обновлении данных города");
 }
 
+function updateCityEng($city)
+{
+    $sql = "UPDATE `cities` SET 
+    `eng`= '$city[eng]'
+    WHERE `id_city` = '$city[id_city]'";
+
+    return changeDataBaseRequest($sql, "Ошибка при обновлении данных города");
+}
+
 function addCity($city)
 {
     $city = trimValues($city);
@@ -117,7 +126,8 @@ function addCity($city)
     return changeDataBaseRequest($sql, "Ошибка при добавлении города в БД");
 }
 
-function deleteCityById($id){
+function deleteCityById($id)
+{
     $sql = "DELETE FROM `cities` WHERE `id_city` = '$id'";
     return changeDataBaseRequest($sql, "Ошибка при добавлении города в БД");
 }

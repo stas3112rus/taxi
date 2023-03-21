@@ -1,16 +1,16 @@
 <?
-
-
 function createCity($city)
 {
     // Создали запись в БД
+    $city['eng'] = mb_strtolower($city['eng']);
+
     $createCityInDataBase = addCity($city);
     if ($createCityInDataBase != "Ok")
         return drawAlert($createCityInDataBase, "alert-danger");
 
     $city['id_city'] = getCityByEng($city['eng'])['id_city'];
 
-    //Обновили тарифы
+
     $addTariffs = createTariffs($city['id_city'], $city['basic-city-id']);
     if ($addTariffs != "Ok") {
         deleteCityById($city['id_city']);
