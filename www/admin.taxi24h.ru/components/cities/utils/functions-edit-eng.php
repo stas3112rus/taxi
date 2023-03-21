@@ -20,6 +20,13 @@ function editEng($data)
     if ($deploySitemap != "Ok")
         return drawAlert($deploySitemap, "alert-danger");
 
+    $robotDeploy = deployRobot($new_city);
+    if ($robotDeploy != "Ok")
+        return $robotDeploy;
+
+    $htacces =  deployHtacces($new_city);
+    if ($htacces != "Ok")
+        return $htacces;
 
     return drawAlert("ENG обновлен", "alert-success");
 }

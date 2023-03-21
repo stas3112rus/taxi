@@ -2,6 +2,7 @@
 include('../../../../../src/data/mysql.php');
 include('../../../../../src/data/text-types/functions.php');
 include('../../../../../src/deploy/main.php');
+include('../../../../../src/files/utils/copy-delete-create.php');
 include('../../../../../src/utils/functions.php');
 include('../../../../../src/data/defaults/functions.php');
 include('../../../components/authorization/utils/functions.php');
@@ -15,7 +16,6 @@ checkAuthorization();
 
 
 if ($_POST) {
-    print_r($_POST);
     $alert .= editEng($_POST);
 }
 $city = getCityById($_GET['id']) ?? false;
