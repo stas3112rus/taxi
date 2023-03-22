@@ -40,7 +40,9 @@ function drawFormDeleteDomains()
     <form method="post">
         <tr>
             <th scope='row'>
-                <h3>Удалить файлы и папки доменов и поддоменов</h3>
+                <h3></h3>
+                <label for="password">Удалить файлы и папки доменов и поддоменов</label>
+                <input type="text" value="" class="form-control" id="password" name="password" aria-describedby="password" placeholder="Пароль" required>
             </th>
             <th scope='row' class="buttons">
                 <div class="buttons__block">
@@ -59,7 +61,8 @@ function drawFormDeployDomains()
     <form method="post">
         <tr>
             <th scope='row'>
-                <h3>Пересобрать все домены и поддомены</h3>
+                <label for="password">Пересобрать все домены и поддомены</label>
+                <input type="text" value="" class="form-control" id="password" name="password" aria-describedby="password" placeholder="Пароль" required>
             </th>
             <th scope='row' class="buttons">
                 <div class="buttons__block">
@@ -71,4 +74,3 @@ function drawFormDeployDomains()
     </form>
 <?
 }
-

@@ -36,7 +36,7 @@ function isUserAuthorizated(): bool
             FROM `users`
             WHERE `id_user` = '$id'
         ";
-    return($sql);
+    return ($sql);
 }
 
 function flash(?string $message = null)
@@ -53,3 +53,10 @@ function flash(?string $message = null)
     }
 }
 ?>
+<?
+function checkPassword($password)
+{
+    $user = getUserByID($_SESSION['id_user']);
+
+    return password_verify($password, $user['password']);
+}

@@ -36,37 +36,37 @@ function drawDeclensionCityRows($city = [])
 {
 ?>
     <tr>
-        <th scope='row' style='width: 200px;'>Именительный</th>
+        <th scope='row' style='width: 200px;'>Именительный <br>(Кто? Что?)</th>
         <td>
             <input type='text' class='form-control' placeholder='Именительный' aria-label='Именительный' aria-describedby='basic-addon1' name='im' value='<? echo $city['im'] ?? '' ?>' required>
         </td>
     </tr>
     <tr>
-        <th scope='row'>Родительный</th>
+        <th scope='row'>Родительный <br>(Кого? Чего?)</th>
         <td>
             <input type='text' class='form-control' placeholder='Родительный' aria-label='Родительный' aria-describedby='basic-addon1' name='rod' value='<? echo $city['rod'] ?? '' ?>' required>
         </td>
     </tr>
     <tr>
-        <th scope='row'>Дательный</th>
+        <th scope='row'>Дательный <br>(Кому? Чему?)</th>
         <td>
             <input type='text' class='form-control' placeholder='Дательный' aria-label='Дательный' aria-describedby='basic-addon1' name='dat' value='<? echo $city['dat'] ?? '' ?>' required>
         </td>
     </tr>
     <tr>
-        <th scope='row'>Винительный</th>
+        <th scope='row'>Винительный <br>(Кого? Что?)</th>
         <td>
             <input type='text' class='form-control' placeholder='Винительный' aria-label='Винительный' aria-describedby='basic-addon1' name='vin' value='<? echo $city['vin'] ?? '' ?>' required>
         </td>
     </tr>
     <tr>
-        <th scope='row'>Творительный</th>
+        <th scope='row'>Творительный <br>(Кем? Чем?)</th>
         <td>
             <input type='text' class='form-control' placeholder='Именительный' aria-label='Именительный' aria-describedby='basic-addon1' name='tvor' value='<? echo $city['tvor'] ?? '' ?>' required>
         </td>
     </tr>
     <tr>
-        <th scope='row'>Предложный</th>
+        <th scope='row'>Предложный <br>(О ком? О Чём?)</th>
         <td>
             <input type='text' class='form-control' placeholder='Предложный' aria-label='Предложный' aria-describedby='basic-addon1' name='pred' value='<? echo $city['pred'] ?? '' ?>' required>
         </td>

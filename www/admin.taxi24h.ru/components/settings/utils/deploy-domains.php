@@ -1,9 +1,12 @@
 <?
-function deployDomains()
+function deployDomains($password)
 {
+    if (!checkPassword($password))
+        return  drawAlert("Пароль не верен", "alert-danger");
+
     $alert = "";
 
-    $alert .= deleteDomains();
+    $alert .= deleteDomains($password);
 
     $copy = copyStaticFilesToAllDomains();
 

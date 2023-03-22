@@ -20,6 +20,17 @@ function getUserByName($user_name)
     return getOneRowFromDataBase($sql);
 }
 
+function getUserByID($user_id)
+{
+    $sql = "SELECT
+            *
+        FROM `users`
+        WHERE `id_user` = '$user_id'  
+        ";
+
+    return getOneRowFromDataBase($sql);
+}
+
 function updatePassword($user, $password)
 {
     if (password_needs_rehash($user['password'], PASSWORD_DEFAULT)) {
