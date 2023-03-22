@@ -1,7 +1,7 @@
 <?
 function deleteDomains()
 {
-    $domains = getListOfDomains();
+    $domains =  getListOfDomainsWithoutAdmin();
 
     foreach ($domains as $domain) {
         if ($domain) {

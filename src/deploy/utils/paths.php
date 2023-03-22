@@ -101,7 +101,7 @@ function getLevel($level)
     return $prev;
 }
 
-function getListOfDomains()
+function getListOfDomainsWithoutAdmin()
 {
 
     $domain = getDomain();
