@@ -40,7 +40,7 @@ function drawFormDeleteDomains()
     <form method="post">
         <tr>
             <th scope='row'>
-                <h3>Удалить домены и поддомены</h3>
+                <h3>Удалить файлы и папки доменов и поддоменов</h3>
             </th>
             <th scope='row' class="buttons">
                 <div class="buttons__block">

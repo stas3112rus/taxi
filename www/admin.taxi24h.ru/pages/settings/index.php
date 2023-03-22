@@ -1,12 +1,17 @@
 <?
 include('../../../../src/data/mysql.php');
 include('../../../../src/data/text-types/functions.php');
+include('../../../../src/files/utils/copy-delete-create.php');
+include('../../../../src/deploy/main.php');
+include('../../../../src/utils/functions.php');
+include('../../../../src/data/defaults/functions.php');
 include('../../../../src/data/user/functions.php');
 include('../../components/authorization/utils/functions.php');
 include('../../constants/routs.php');
 include('../../components/alerts/drawAlert.php');
 include('../../components/settings/view/drawSettingsTable.php');
 include('../../components/settings/utils/changePassword.php');
+include('../../components/settings/utils/delete-domains.php');
 
 checkAuthorization();
 
@@ -14,7 +19,7 @@ if ($_POST['type'] == 'changePassword')
     $alert .= changePassword($_POST['password']);
 
 if ($_POST['type'] == 'deleteDomains')
-    $alert .= "удалить домен";
+    $alert .= deleteDomains();
 
 if ($_POST['type'] == 'deployDomains')
     $alert .= "деплой";

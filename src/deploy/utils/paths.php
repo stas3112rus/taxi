@@ -101,7 +101,45 @@ function getLevel($level)
     return $prev;
 }
 
-function getDomainForHtacces(){
+function getListOfDomains()
+{
+
     $domain = getDomain();
+    $dir = getRootPath($domain) . "www/";
+
+    $files = scandir($dir);
+
+    foreach ($files as $key => $file) {
+        if (isAdminDomain($file) || isOnlyPoints($file)) {
+            $files[$key] = false;
+        } else {
+            $files[$key] = $dir . $file;
+        }
+    }
+
+    return $files;
+}
+
+function isAdminDomain($file)
+{
+    return is_int(stripos($file, 'admin'));
+}
+
+function isOnlyPoints($file)
+{
+    $chars = str_split($file);
+    foreach ($chars as $char) {
+        if ($char != '.')
+            return false;
+    }
+
+    return true;
+}
+
+function getDomainForHtacces()
+{
+    $domain = getDomain();
+
+
     return str_replace('.ru', '\.ru', $domain);
 }
