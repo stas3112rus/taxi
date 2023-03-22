@@ -39,3 +39,8 @@ function getMainUrl($eng, $isMain = false)
 
     return "http://" . getSubDomainName($eng, false) . "/";
 }
+
+function isNotPublicMainInDirections()
+{
+    return !!getDefaultValueByName('not_public_main_in_directions');    
+}

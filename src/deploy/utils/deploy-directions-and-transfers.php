@@ -2,14 +2,25 @@
 function deployDirectionsAndTransfer($city_from, $reverse = false, $transfer = false)
 {
     $cities_to = getAllWithoutOneCities('id_city');
+    $isNotPublicMainInDirections = isNotPublicMainInDirections();
+
     foreach ($cities_to as $city_to) {
         if ($city_to['id_city'] == $city_from['id_city']) {
             continue;
         }
 
-        $data = $transfer ?
-            getDataForTransfer($city_from, $city_to, $reverse) :
-            getDataForDirection($city_from, $city_to, $reverse);
+
+
+        if ($transfer) {
+            $data = getDataForTransfer($city_from, $city_to, $reverse);
+        } else {
+            if ($isNotPublicMainInDirections && $city_to['main_city']) {
+                continue;
+            }
+            $data = getDataForDirection($city_from, $city_to, $reverse);
+        }
+
+
 
         $createFolder = createFolder($data['dir_folder']);
         if ($createFolder != "Ok")

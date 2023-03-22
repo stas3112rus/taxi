@@ -14,14 +14,12 @@ include('../../../components/tariffs/utils/createTariffs.php');
 include('../../../components/cities/utils/functions-add-city.php');
 include('../../../components/cities/view/drawAddEditForms.php');
 
-
-
-
 checkAuthorization();
 
 if ($_POST) {
     $alert .= createCity($_POST);
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

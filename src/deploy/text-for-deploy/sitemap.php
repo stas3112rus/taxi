@@ -23,11 +23,18 @@ function getContentForOneCity($city_from)
         getMainUrl($city_from['eng'], $city_from['main_city'])
     );
 
+    $isNotPublicMainInDirections = isNotPublicMainInDirections();
+
     foreach (getAllCities() as $city_to) {
-        if ($city_from['id_city'] != $city_to['id_city']) {
-            $content .= getSitemapXmlLine(getDirectionUrl($city_from, $city_to));
-            $content .= getSitemapXmlLine(getTransferUrl($city_from, $city_to));
-        }
+        if ($city_from['id_city'] == $city_to['id_city'])
+            continue;
+
+        $content .= getSitemapXmlLine(getTransferUrl($city_from, $city_to));
+
+        if ($isNotPublicMainInDirections && $city_to['main_city'])
+            continue;
+
+        $content .= getSitemapXmlLine(getDirectionUrl($city_from, $city_to));
     }
 
     return $content;

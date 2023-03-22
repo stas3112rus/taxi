@@ -35,7 +35,7 @@ $alert .= updateMainCityByGet();
                     <? echo $alert ?>
                     <form action="">
                         <? drawCitiesTable() ?>
-                        <input class="btn btn-primary" type="submit" value="Обновить Главный сайт">
+                        <input class="btn btn-primary" type="submit" value="Обновить Главный сайт" disabled>
                     </form>
                 </div>
             </div>

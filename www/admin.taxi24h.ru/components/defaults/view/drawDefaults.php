@@ -47,7 +47,7 @@ function drawDefaultForm($default)
                     <input type="hidden" name="id_default" value="<? echo $default['id_default'] ?>">
                     <input type="hidden" name="type" value="update">
                     <input class="btn btn-primary" type="submit" value="Изменить">
-                    <a href="./?type=delete&id_default=<? echo $default['id_default'] ?>" role="button" aria-pressed="true" class="btn btn-danger">Удалить</a>
+                    <a href="./?type=delete&id_default=<? echo $default['id_default'] ?>" role="button" aria-pressed="true" class="btn btn-danger <? echo in_array($default['default_name'], getExceptionsForDelete()) ? 'disabled' :  '' ?>" <? echo in_array($default['default_name'], getExceptionsForDelete()) ? 'aria-disabled="true"' :  'aria-disabled="false"' ?>>Удалить</a>
                 </div>
             </th>
         </tr>

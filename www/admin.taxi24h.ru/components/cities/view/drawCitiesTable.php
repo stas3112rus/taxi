@@ -37,7 +37,7 @@ function drawOneCityRow($city, $checked)
 ?>
     <tr>
         <th scope='row'>
-            <input type='radio' class='form-check-input' id='radio<? echo $city['id_city'] ?>' name='main_city' value='<? echo $city['id_city'] ?>' <? echo $checked ?>>
+            <input type='radio' class='form-check-input' id='radio<? echo $city['id_city'] ?>' name='main_city' value='<? echo $city['id_city'] ?>' <? echo $checked ?> disabled>
             <label class='form-check-label' for='radio<? echo $city['id_city'] ?>'>Главный сайт</label>
         </th>
         <td>

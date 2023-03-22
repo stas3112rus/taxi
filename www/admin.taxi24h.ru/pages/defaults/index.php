@@ -7,6 +7,7 @@ include('../../components/alerts/drawAlert.php');
 include('../../../../src/data/defaults/functions.php');
 include('../../components/defaults/view/drawDefaults.php');
 include('../../components/defaults/utils/functions.php');
+include('../../components/defaults/constants/constants.php');
 
 checkAuthorization();
 
