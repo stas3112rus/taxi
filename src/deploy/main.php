@@ -7,3 +7,5 @@ include('utils/paths.php');
 include('utils/deploy-functions.php');
 include('utils/deploy-directions-and-transfers.php');
 include('utils/deploy-sitemap.php');
+include('utils/deploy-static-files.php');
+include('utils/deploy-one-site.php');
