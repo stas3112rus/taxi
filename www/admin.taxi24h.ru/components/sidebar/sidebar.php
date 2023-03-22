@@ -10,8 +10,8 @@
         foreach ($text_pages as $text_page) {
         ?>
             <li class="sidebar__item">
-                <a href="<? echo $routs['text']."?text-type=".$text_page['id_text_type'] ?>" class="sidebar__link">
-                    <?echo $text_page['text_type_name']?>
+                <a href="<? echo $routs['text'] . "?text-type=" . $text_page['id_text_type'] ?>" class="sidebar__link">
+                    <? echo $text_page['text_type_name'] ?>
                 </a>
             </li>
         <?
@@ -24,5 +24,7 @@
         <div class="sidebar__divider"></div>
         <li class="sidebar__item"><a href="<? echo $routs['widgets'] ?>" class="sidebar__link sidebar_linkTop">Виджеты</a></li>
         <li class="sidebar__item"><a href="<? echo $routs['widget-types'] ?>" class="sidebar__link">Типы виджетов</a></li>
+        <div class="sidebar__divider"></div>
+        <li class="sidebar__item"><a href="<? echo $routs['settings'] ?>" class="sidebar__link sidebar_linkTop">Настройки</a></li>
     </ul>
 </div>
