@@ -5,7 +5,11 @@ function drawNotPublishedForm($city_from_id)
     <form method="post">
         <? drawNotPublishedTable($city_from_id) ?>
         <input type="hidden" name="id_city" value="<? echo $city_from_id?>">
-        <input class="btn btn-primary" type="submit" value="Города, где не публикуем">
+       
+        <input class="btn btn-success" type="submit" value="Обновить">
+        <input class="btn btn-primary check-all" value="Отметить Все">
+        <input class="btn btn-primary uncheck-all" value="Снять выделение">
+
     </form>
 <?
 }

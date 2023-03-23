@@ -108,16 +108,19 @@ function getListOfDomainsWithoutAdmin()
     $dir = getRootPath($domain) . "www/";
 
     $files = scandir($dir);
+    $result = [];
 
-    foreach ($files as $key => $file) {
-        if (isAdminDomain($file) || isOnlyPoints($file)) {
-            $files[$key] = false;
-        } else {
-            $files[$key] = $dir . $file;
+    foreach ($files as $file) {
+        if (
+            isContentDomain($file, $domain) &&
+            !isAdminDomain($file) &&
+            !isOnlyPoints($file)
+        ) {
+            array_push($result, $dir . $file);
         }
     }
 
-    return $files;
+    return $result;
 }
 
 function isAdminDomain($file)
@@ -134,6 +137,11 @@ function isOnlyPoints($file)
     }
 
     return true;
+}
+
+function isContentDomain($file, $domain)
+{
+    return is_int(stripos($file, $domain));
 }
 
 function getDomainForHtacces()

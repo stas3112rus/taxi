@@ -20,10 +20,10 @@ if ($_POST['type'] == 'changePassword')
     $alert .= changePassword($_POST['password']);
 
 if ($_POST['type'] == 'deleteDomains')
-    $alert .= deleteDomains();
+    $alert .= deleteDomains($_POST['password']);
 
 if ($_POST['type'] == 'deployDomains')
-    $alert .= deployDomains();
+    $alert .= deployDomains($_POST['password']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
