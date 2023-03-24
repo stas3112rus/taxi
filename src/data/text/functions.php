@@ -38,3 +38,21 @@ function addText($value)
 
     return changeDataBaseRequest($sql, "Ошибка внесении текста");
 }
+
+function migrationText($values)
+{
+    $sql = "INSERT INTO `texts` (`text_field_ref`, `text_type_ref`, `value`)  VALUES ";
+
+    $count = 0;
+
+    foreach ($values as $value) {
+        $count++;
+
+        $value = trimValues($value);
+        $sql .= "($value[text_field_ref], '$value[text_type_ref]', '$value[value]')";
+
+        $sql .= $count == count($values) ? ";" : ",";
+    }
+
+    echo changeDataBaseRequest($sql, "Ошибка создании текстового поля");
+}
