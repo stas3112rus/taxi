@@ -1,1 +1,1 @@
-123
+git ftp -s test push
