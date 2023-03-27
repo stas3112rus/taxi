@@ -38,3 +38,21 @@ function addWidget($value)
 
     return changeDataBaseRequest($sql, "Ошибка создании виджета");
 }
+
+function getWidgets($showInHeader = false)
+{
+    global $CITY_FROM, $MAIN_CITY;
+
+    $sqlShowInHeader = $showInHeader ? " AND showInHeader = 1" : " AND showInHeader = 0";
+
+    $sql = "SELECT 
+        widget_code,
+        main_city,
+        widget_type_ref as widget_type
+        FROM `widgets` 
+        INNER JOIN cities ON city_ref = id_city
+        INNER JOIN widgets_types ON widget_type_ref = id_widget_type  
+    WHERE (`city_ref` = '$CITY_FROM[id_city]' OR `city_ref` = '$MAIN_CITY[id_city]') $sqlShowInHeader";
+
+    return getAllRowsFromDataBase($sql);
+}

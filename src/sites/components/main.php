@@ -1,0 +1,17 @@
+<?
+include('head/view/drawHead.php');
+include('widgets/view/drawWidgets.php');
+include('preloader/view/drawPreloader.php');
+include('hero/view/drawHero.php');
+include('forms/view/drawForms.php');
+include('header/view/drawHeader.php');
+include('scripts/view/drawScripts.php');
+include('why/view/drawWhy.php');
+include('tariffs/view/drawCars.php');
+include('tariffs/view/drawTariffsTable.php');
+include('tariffs/view/drawTariffs.php');
+include('steps/view/drawSteps.php');
+include('about/view/drawAbout.php');
+include('contact/view/drawContact.php');
+include('footer/view/drawFooter.php');
+include('oferta/view/drawOferta.php');

@@ -62,7 +62,7 @@ function getFullPathToSitemapXMLFile($city)
 
 function getPathToMainFile($level = 0)
 {
-    return getLevel($level) . "../../src/sites/build/main.php";
+    return getLevel($level) . "../../src/site-deploy.php";
 };
 
 function getPathToInfoFile($level = 0)
