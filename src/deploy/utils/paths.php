@@ -11,7 +11,7 @@ function getFullPathToDomainWithWWW($city)
 {
     $domain = getDomain();
 
-    return  getRootPath($domain) . "www/www." . getSubDomainName($city['eng'],  $city['main_city']) . "/";
+    return  getRootPath($domain) . "www/www." . getSubDomainName($city['eng'],  $city['main_city']);
 }
 
 function getFullPathToStaticFiles()
