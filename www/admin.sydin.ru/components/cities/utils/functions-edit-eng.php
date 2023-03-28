@@ -28,6 +28,12 @@ function editEng($data)
     if ($htacces != "Ok")
         return $htacces;
 
+    @deleteLink($old_city);
+
+    $link = deployLink($new_city);
+    if ($link != "Ok")
+        return $link;
+
     return drawAlert("ENG обновлен", "alert-success");
 }
 
