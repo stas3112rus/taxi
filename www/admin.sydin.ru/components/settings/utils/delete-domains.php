@@ -4,6 +4,10 @@ function deleteDomains($password)
     if (checkPassword($password)) {
         $domains =  getListOfDomainsWithoutAdmin();
 
+        foreach (getAllCities() as $city) {
+            @deleteLink($city);
+        }
+
         foreach ($domains as $domain) {
             if ($domain) {
                 deleteFolder($domain);
