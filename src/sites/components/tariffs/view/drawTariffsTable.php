@@ -48,31 +48,27 @@ function  drawTariffRowWithDiscount($tariff)
 ?>
     <tr>
         <td><? echo $tariff['cityFrom'] . "  - " . $tariff['cityTo'] ?> <span><b>АКЦИЯ</b> до <? echo $STOP_DISCOUNT_DAY ?></span></td>
-        <td><s><? echo $tariff['economy'] ?></s> <span><? echo getTariffWithDiscount($tariff['economy']) ?> руб</span></td>
-        <td><s><? echo $tariff['comfort'] ?></s> <span><? echo getTariffWithDiscount($tariff['comfort']) ?> руб</span></td>
-        <td><s><? echo $tariff['business'] ?></s> <span><? echo getTariffWithDiscount($tariff['business']) ?> руб</span></td>
-        <td><s><? echo $tariff['minivan'] ?></s> <span><? echo getTariffWithDiscount($tariff['minivan']) ?> руб</span></td>
-        <td>Договорная</td>
+        <td><? upgradeDiscountTariffForTable($tariff['economy']) ?></td>
+        <td><? upgradeDiscountTariffForTable($tariff['comfort']) ?></td>
+        <td><? upgradeDiscountTariffForTable($tariff['business']) ?></td>
+        <td><? upgradeDiscountTariffForTable($tariff['minivan']) ?></td>
+        <td><? upgradeDiscountTariffForTable($tariff['vip']) ?></td>
     </tr>
 <?
 }
 
-function getTariffWithDiscount($tariff)
-{
-    global $DISCOUNT_PERCENT;
-    return round($tariff - ($tariff * $DISCOUNT_PERCENT));
-}
+
 
 function drawTariffRow($tariff)
 {
 ?>
     <tr>
         <td><? echo $tariff['cityFrom'] . "  - " . $tariff['cityTo'] ?></td>
-        <td><? echo $tariff['economy'] ?></td>
-        <td><? echo $tariff['comfort'] ?></td>
-        <td><? echo $tariff['business'] ?></td>
-        <td><? echo $tariff['minivan'] ?></td>
-        <td>Договорная</td>
+        <td><? upgradeTariffForTable($tariff['economy']) ?></td>
+        <td><? upgradeTariffForTable($tariff['comfort']) ?></td>
+        <td><? upgradeTariffForTable($tariff['business']) ?></td>
+        <td><? upgradeTariffForTable($tariff['minivan']) ?></td>
+        <td><? upgradeTariffForTable($tariff['vip']) ?></td>
     </tr>
 <?
 }

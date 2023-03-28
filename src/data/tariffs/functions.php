@@ -94,7 +94,8 @@ function getTariff($city_from, $city_to)
         economy, 
         comfort, 
         business, 
-        minivan
+        minivan,
+        vip
     FROM `tariffs`
     JOIN cities cityFrom ON cityFrom.id_city = tariffs.city_from_ref
 	JOIN cities cityTo ON cityTo.id_city = tariffs.city_to_ref

@@ -46,3 +46,23 @@ function setDiscountField($tariff, $isDiscount)
 
     return $tariff;
 }
+
+function upgradeDiscountTariffForTable($tariff)
+{
+    if ($tariff) {
+        echo "<s>$tariff</s> <span>" . getTariffWithDiscount($tariff) . " руб</span>";
+    } else {
+        echo "Договорная";
+    }
+}
+
+function upgradeTariffForTable($tariff)
+{
+    echo $tariff ?? "Договорная";
+}
+
+function getTariffWithDiscount($tariff)
+{
+    global $DISCOUNT_PERCENT;
+    return round($tariff - ($tariff * $DISCOUNT_PERCENT));
+}
