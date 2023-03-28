@@ -4,7 +4,7 @@ function getAllCities()
     $sql = "SELECT 
     *
     FROM `cities`
-    ORDER BY main_city  DESC 
+    ORDER BY main_city  DESC, im
     ";
 
     return getAllRowsFromDataBase($sql);
