@@ -17,6 +17,28 @@ function getAllTariffsByCityFrom($city_from_id)
     return getAllRowsFromDataBase($sql);
 }
 
+function getEmptyTariffs()
+{
+    $sql = "SELECT
+    id_tariff, 
+	cityFrom.im as cityFrom,
+    cityTo.im as cityTo,    
+    tariffs.economy as economy, 
+    tariffs.comfort as comfort, 
+    tariffs.business as business, 
+    tariffs.minivan as minivan
+    FROM `tariffs`
+    JOIN cities cityFrom ON cityFrom.id_city = tariffs.city_from_ref
+	JOIN cities cityTo ON cityTo.id_city = tariffs.city_to_ref
+    WHERE
+    tariffs.economy IS NULL OR tariffs.economy = 0 OR
+    tariffs.comfort IS NULL OR tariffs.comfort = 0 OR
+    tariffs.business IS NULL OR tariffs.business = 0 OR
+    tariffs.minivan IS NULL OR tariffs.minivan = 0";
+
+    return getAllRowsFromDataBase($sql);
+}
+
 function getAllTariffForCity($city_id)
 {
     $sql = "SELECT
@@ -111,6 +133,19 @@ function updateTariffTwoWays($tariff, $city_from_id, $city_to_id)
     return changeDataBaseRequest($sql, "Ошибка при обновлении тарифа");
 }
 
+function updateTariffById($tariff)
+{
+    $tariff = emptyStringToNull($tariff);
+    $sql = "UPDATE `tariffs` SET 
+        `economy`= $tariff[economy],
+        `comfort`= $tariff[comfort],
+        `business`= $tariff[business],
+        `minivan`= $tariff[minivan]
+    WHERE id_tariff =  $tariff[id_tariff]";
+
+    return changeDataBaseRequest($sql, "Ошибка при обновлении тарифа");
+}
+
 function createTariffsWithNullValue($citiesCouples)
 {
     global $MYSQL_CONSTANTS;
@@ -178,3 +213,5 @@ function deleteTariffsById($id)
 
     changeDataBaseRequest($sql, "Ошибка при удалении тарифов");
 }
+
+
