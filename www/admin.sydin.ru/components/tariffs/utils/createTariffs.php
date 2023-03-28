@@ -71,6 +71,7 @@ function getTariffWithEmptyValue($from, $to)
         'economy' => NULL,
         'comfort' => NULL,
         'business' => NULL,
-        'minivan' => NULL
+        'minivan' => NULL,
+        'vip' => NULL
     ];
 }
