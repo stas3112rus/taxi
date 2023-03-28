@@ -1,6 +1,6 @@
 <?
 session_start();
-include ('utils/functions.php');
+include('utils/functions.php');
 
 $host = "localhost";
 $user = "root";
@@ -11,13 +11,10 @@ $database = "taxi2023";
 $base = new mysqli($host, $user, $pass, $database);
 $base->set_charset('utf8mb4');
 
-$adminRoute = "http://taxi2023/admin.taxi24h.ru";
+$adminRoute = "http://taxi2023/admin.sydin.ru";
 
 $MYSQL_CONSTANTS = [
     'COMMA' => ", ",
     'SEMICOLON' => ";",
     'NULL' => "NULL"
 ];
-
-
-

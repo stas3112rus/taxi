@@ -7,6 +7,7 @@ function getAllTariffsByCityFrom($city_from_id)
     comfort,
     business,
     minivan,
+    vip,
     im as city_to_im
     FROM `tariffs`
     INNER JOIN cities ON city_to_ref = id_city
@@ -26,7 +27,8 @@ function getEmptyTariffs()
     tariffs.economy as economy, 
     tariffs.comfort as comfort, 
     tariffs.business as business, 
-    tariffs.minivan as minivan
+    tariffs.minivan as minivan,
+    tariffs.vip as vip
     FROM `tariffs`
     JOIN cities cityFrom ON cityFrom.id_city = tariffs.city_from_ref
 	JOIN cities cityTo ON cityTo.id_city = tariffs.city_to_ref
@@ -59,7 +61,8 @@ function updateTariffOneWay($tariff, $city_from_id, $city_to_id)
         `economy`= $tariff[economy],
         `comfort`= $tariff[comfort],
         `business`= $tariff[business],
-        `minivan`= $tariff[minivan]
+        `minivan`= $tariff[minivan],
+        `vip`= $tariff[vip]
     WHERE `city_from_ref` = '$city_from_id' AND `city_to_ref` = '$city_to_id' ";
 
     return changeDataBaseRequest($sql, "Ошибка при обновлении тарифа");
@@ -72,7 +75,8 @@ function updateTariffTwoWays($tariff, $city_from_id, $city_to_id)
         `economy`= $tariff[economy],
         `comfort`= $tariff[comfort],
         `business`= $tariff[business],
-        `minivan`= $tariff[minivan]
+        `minivan`= $tariff[minivan],
+        `vip`= $tariff[vip]
     WHERE 
         (`city_from_ref` = '$city_from_id' AND `city_to_ref` = '$city_to_id') 
         OR
@@ -88,7 +92,8 @@ function updateTariffById($tariff)
         `economy`= $tariff[economy],
         `comfort`= $tariff[comfort],
         `business`= $tariff[business],
-        `minivan`= $tariff[minivan]
+        `minivan`= $tariff[minivan],
+        `vip`= $tariff[vip]
     WHERE id_tariff =  $tariff[id_tariff]";
 
     return changeDataBaseRequest($sql, "Ошибка при обновлении тарифа");
@@ -113,7 +118,7 @@ function createTariffsWithNullValue($citiesCouples)
     }
 
     $sql = $insert . $values;
-    return changeDataBaseRequest($sql, "Ошибка при создании тарифов");
+    return changeDataBaseRequest($sql, "Ошибка при создании тарифов пустых");
 }
 
 function createTariffsWithValue($tariffs)
@@ -126,7 +131,9 @@ function createTariffsWithValue($tariffs)
         `economy`, 
         `comfort`, 
         `business`, 
-        `minivan`) VALUES ";
+        `minivan`,
+        `vip`
+        ) VALUES ";
     $values = "";
 
     for ($i = 0; $i < count($tariffs); $i++) {
@@ -139,7 +146,8 @@ function createTariffsWithValue($tariffs)
             $tariff['economy'] . $MYSQL_CONSTANTS['COMMA'] .
             $tariff['comfort'] . $MYSQL_CONSTANTS['COMMA'] .
             $tariff['business'] . $MYSQL_CONSTANTS['COMMA'] .
-            $tariff['minivan'] .
+            $tariff['minivan'] . $MYSQL_CONSTANTS['COMMA'] .
+            $tariff['vip'] .
             ")";
 
         $values .= $i == count($tariffs) - 1 ?
@@ -149,7 +157,7 @@ function createTariffsWithValue($tariffs)
 
     $sql = $insert . $values;
 
-    return changeDataBaseRequest($sql, "Ошибка при создании тарифов");
+    return changeDataBaseRequest($sql, "Ошибка при создании тарифов со значением");
 }
 
 function deleteTariffsById($id)
