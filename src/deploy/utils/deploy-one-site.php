@@ -24,6 +24,10 @@ function deployNewDomain($city)
     if ($htacces != "Ok")
         return $htacces;
 
+    $link = deployLink($city);
+    if ($link != "Ok")
+        return $link;
+
     return 'Ok';
 }
 
