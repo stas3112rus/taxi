@@ -9,3 +9,9 @@ function deployLink($city)
 
     return "Ok";
 }
+
+function deleteLink($city)
+{    
+    rmdir(getFullPathToDomainWithWWW($city));
+    unlink(getFullPathToDomainWithWWW($city));    
+}
