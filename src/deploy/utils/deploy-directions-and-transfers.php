@@ -37,7 +37,7 @@ function deployDirectionsAndTransfer($city_from, $reverse = false, $transfer = f
 function getDataForDirection($city_from, $city_to, $reverse)
 {
     return [
-        'txt' => getDirectionTxt($reverse ?  $city_to : $city_from),
+        'txt' => $reverse ? getDirectionTxt($city_to, $city_from) : getDirectionTxt($city_from, $city_to),
         'dir_folder' => $reverse ?
             getFullPathDirectionFolder($city_to, $city_from) :
             getFullPathDirectionFolder($city_from, $city_to),
