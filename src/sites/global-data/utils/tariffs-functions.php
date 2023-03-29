@@ -50,15 +50,10 @@ function setDiscountField($tariff, $isDiscount)
 function upgradeDiscountTariffForTable($tariff)
 {
     if ($tariff) {
-        echo "<s>$tariff</s> <span>" . getTariffWithDiscount($tariff) . " руб</span>";
+        echo "<s>$tariff</s> <span>" . getTariffWithDiscount($tariff) . "</span>";
     } else {
         echo "Договорная";
     }
-}
-
-function upgradeTariffForTable($tariff)
-{
-    echo $tariff ?? "Договорная";
 }
 
 function getTariffWithDiscount($tariff)

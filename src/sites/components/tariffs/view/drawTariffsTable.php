@@ -36,18 +36,28 @@ function drawHeadOfTariffTable()
 function drawTariffRows()
 {
     global $TARIFFS_TABLE;
+
+    $counter = 0;
     foreach ($TARIFFS_TABLE as $tariff) {
-        $tariff['discount'] ? drawTariffRowWithDiscount($tariff) : drawTariffRow($tariff);
+        drawTariffRow($tariff, $counter);
+        $counter++;
     }
 }
 
-function  drawTariffRowWithDiscount($tariff)
+function drawTariffRow($tariff, $counter)
 {
-    global $STOP_DISCOUNT_DAY;
+    $showDiscountDay = false;
+
+    if ($counter < 2 || $tariff['discount']) {
+        $showDiscountDay = true;
+    }
 
 ?>
     <tr>
-        <td><? echo $tariff['cityFrom'] . "  - " . $tariff['cityTo'] ?> <span><b>АКЦИЯ</b> до <? echo $STOP_DISCOUNT_DAY ?></span></td>
+        <td>
+            <? echo $tariff['cityFrom'] . "  - " . $tariff['cityTo'] ?>
+            <? if ($showDiscountDay) getDiscountDay() ?>
+        </td>
         <td><? upgradeDiscountTariffForTable($tariff['economy']) ?></td>
         <td><? upgradeDiscountTariffForTable($tariff['comfort']) ?></td>
         <td><? upgradeDiscountTariffForTable($tariff['business']) ?></td>
@@ -57,20 +67,11 @@ function  drawTariffRowWithDiscount($tariff)
 <?
 }
 
-
-
-function drawTariffRow($tariff)
+function getDiscountDay()
 {
-?>
-    <tr>
-        <td><? echo $tariff['cityFrom'] . "  - " . $tariff['cityTo'] ?></td>
-        <td><? upgradeTariffForTable($tariff['economy']) ?></td>
-        <td><? upgradeTariffForTable($tariff['comfort']) ?></td>
-        <td><? upgradeTariffForTable($tariff['business']) ?></td>
-        <td><? upgradeTariffForTable($tariff['minivan']) ?></td>
-        <td><? upgradeTariffForTable($tariff['vip']) ?></td>
-    </tr>
-<?
+    global $STOP_DISCOUNT_DAY;
+
+    echo " <span><b>АКЦИЯ</b> до " . $STOP_DISCOUNT_DAY . "</span>";
 }
 
 function drawWaitInAirportRow()
