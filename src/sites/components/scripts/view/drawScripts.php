@@ -4,70 +4,23 @@ function drawScripts()
     global $CURRENT_SITE;
 
 ?>
-    <script src="https://use.fontawesome.com/bfbb6dd71f.js"></script>
-    <script src="<? echo $CURRENT_SITE ?>js/jquery-1.10.2.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+
+    <script src="<? echo $CURRENT_SITE ?>js/top.js"></script>
+    <script src='<? echo $CURRENT_SITE ?>js/flickity.pkgd.min.js'></script>
+    <script src="<? echo $CURRENT_SITE ?>js/testimonials.js"></script>
+    <script src="<? echo $CURRENT_SITE ?>js/counter.js"></script>
+    <script src="<? echo $CURRENT_SITE ?>js/jquery.waypoints.min.js"></script>
+    <script src="<? echo $CURRENT_SITE ?>js/jquery.counterup.js"></script>
     <script src="<? echo $CURRENT_SITE ?>js/bootstrap.min.js"></script>
-    <script src="<? echo $CURRENT_SITE ?>js/mask_input.js"></script>
-    <script src="<? echo $CURRENT_SITE ?>js/ventcamp.js"></script>
-    <script src="<? echo $CURRENT_SITE ?>js/mask.js"></script>
-
-    <script src="<? echo $CURRENT_SITE ?>js/flatpickr.js"></script>
-    <link rel="stylesheet" type="text/css" href="<? echo $CURRENT_SITE ?>css/flatpickr.css">
-
-    <script type="text/javascript">
-        flatpickr(".flatpickr", {
-            enableTime: true,
-            disableMobile: true,
-
-        });
-    </script>
-
-
-    <link rel="stylesheet" href="<? echo $CURRENT_SITE ?>css/owl.carousel.min.css">
-    <link rel="stylesheet" href="<? echo $CURRENT_SITE ?>css/owl.theme.default.min.css">
-    <script src="<? echo $CURRENT_SITE ?>js/owl.carousel.min.js"></script>
-
-    <script>
-        $(document).ready(function() {
-
-            $("#form").submit(function() {
-                $.ajax({
-                    type: "POST",
-                    url: "<? echo $CURRENT_SITE ?>mail.php",
-                    data: $(this).serialize()
-                }).done(function() {
-                    $(this).find("input").val("");
-                    $('#form').fadeOut(500);
-                    $("#form").trigger("reset");
-                    $('.msg').fadeIn(1000);
-
-                });
-                return false;
-            });
-
-        });
-
-
-        $(document).ready(function() {
-
-            $("#form2").submit(function() {
-                $.ajax({
-                    type: "POST",
-                    url: "<? echo $CURRENT_SITE ?>mail.php",
-                    data: $(this).serialize()
-                }).done(function() {
-                    $(this).find("input").val("");
-                    $('#form2').fadeOut(500);
-                    $("#form2").trigger("reset");
-                    $('.msg2').fadeIn(600);
-                });
-                return false;
-            });
-
-        });
-    </script>
-
-
-    <script src="<? echo $CURRENT_SITE ?>common.js"></script>
+    <script src="<? echo $CURRENT_SITE ?>js/contact.js"></script>
+    <script src="<? echo $CURRENT_SITE ?>js/validator.js"></script>
+    <script src="<? echo $CURRENT_SITE ?>js/navbar.js"></script>
+    <script src="<? echo $CURRENT_SITE ?>js/loader.js"></script>
+    <script src='<? echo $CURRENT_SITE ?>js/slick.min.js'></script>
+    <script src="<? echo $CURRENT_SITE ?>js/car.slider.js"></script>
+    <script src="<? echo $CURRENT_SITE ?>js/jquery.magnific-popup.min.js"></script>
+    <script src="<? echo $CURRENT_SITE ?>js/flatpickr/flatpickr.js"></script>
+    <script src="<? echo $CURRENT_SITE ?>js/common.js"></script>
 <?
 }

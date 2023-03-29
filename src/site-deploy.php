@@ -26,16 +26,6 @@ include('sites/components/main.php');
 
 <body>
     <?
-    drawPreloader();
-    drawHero();
-    drawHeader();
-    drawWhy();
-    drawTariffsBlock();
-    drawSteps();
-    drawAbout();
-    drawContact();
-    drawFooter();
-    drawOferta();
     drawScripts();
     ?>
     <!-- Виджеты  Футер -->
