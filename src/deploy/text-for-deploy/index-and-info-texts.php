@@ -16,12 +16,12 @@ function getIndexTxt($is_main = false)
         ');
 }
 
-function getDirectionTxt($city_to_id, $is_main = false)
+function getDirectionTxt($city)
 {
-    $text_type = $is_main ?  2 : 4;
+    $text_type = $city['main_city'] ?  2 : 4;
 
     return ('<?
-    $CITY_TO_ID = ' . $city_to_id . ';
+    $CITY_TO_ID = ' . $city['id_city'] . ';
     $TEXT_TYPE_INDEX = ' . $text_type  . ';
     include ("' . getPathToInfoFile(1) . '");
     include ("' . getPathToMainFile(1) . '");
