@@ -5,6 +5,7 @@ function drawCitiesTable()
     <table class='table table-striped'>
         <thead>
             <tr>
+                <th scope='col'>№</th>
                 <th scope='col' class='cities__mainSiteCol'>Главный сайт</th>
                 <th scope='col'>Город</th>
             </tr>
@@ -19,23 +20,29 @@ function drawCitiesTable()
 function drawCityRows()
 {
     $rows = "";
+    $count = 1;
 
     foreach (getAllCities() as $city) {
         $rows .= drawOneCityRow(
             $city,
-            $city['main_city'] == '+' ? "checked" : ""
-
+            $city['main_city'] == '+' ? "checked" : "",
+            $count
         );
+
+        $count++;
     }
 
     return $rows;
 }
 
-function drawOneCityRow($city, $checked)
+function drawOneCityRow($city, $checked, $number)
 {
     global $routs;
 ?>
     <tr>
+        <th scope='row'>
+            <? echo $number ?>
+        </th>
         <th scope='row'>
             <input type='radio' class='form-check-input' id='radio<? echo $city['id_city'] ?>' name='main_city' value='<? echo $city['id_city'] ?>' <? echo $checked ?> disabled>
             <label class='form-check-label' for='radio<? echo $city['id_city'] ?>'>Главный сайт</label>
