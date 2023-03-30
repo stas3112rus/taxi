@@ -51,7 +51,7 @@ function drawSelectToField()
 ?>
     <label for="subject">
         <select name="subject-from" class="select-field">
-            <option value="">Откуда</option>
+            <option value="">Куда</option>
             <? drawCitiesOptions($CITY_TO) ?>
         </select>
     </label>
@@ -83,6 +83,7 @@ function drawCLassTaxiField()
             <option value="Komfort">Комфорт</option>
             <option value="Biznes">Бизнес</option>
             <option value="BUS-MINIVAN">Микроавтобус</option>
+            <option value="VIP">VIP</option>
         </select>
     </label>
 <?
