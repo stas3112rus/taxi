@@ -16,18 +16,20 @@ $DIRECTION_URL = $CITY_TO ? getDirectionUrl($CITY_FROM, $CITY_TO) : false;
 
 $DEFAULT = getDefaults();
 
-$TARIFF = getTariffForDirection();
-
-$TARIFFS_TABLE = getTariffsForTable();
 
 $CURRENT_SITE = getMainUrl($CITY_FROM['eng'], $CITY_FROM['main_city']);
 $MAIN_SITE = getMainUrl($MAIN_CITY['eng'], $MAIN_CITY['main_city']);
 
-$TXT = getTXT();
+
 
 $STOP_DISCOUNT_DAY = getStopDiscountDay();
 
 $DISCOUNT_PERCENT = getDiscountPercent();
+
+$TXT = getTXT();
+$TARIFF = getTariffForDirection();
+
+$TARIFFS_TABLE = getTariffsForTable();
 
 $WIDGETS_HEADER = upgradedWidgets(true);
 $WIDGETS_BOTTOM = upgradedWidgets(false);
@@ -65,5 +67,3 @@ function isSitemap()
             return  false;
     }
 }
-
-

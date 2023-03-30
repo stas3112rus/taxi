@@ -54,7 +54,7 @@ function setDiscountField($tariff, $isDiscount)
 function upgradeDiscountTariffForTable($tariff)
 {
     if ($tariff) {
-        echo "<s>$tariff</s> <span>" . getTariffWithDiscount($tariff) . "</span>";
+        echo "<s>$tariff</s> <span style='color: #ff6600;'>" . getTariffWithDiscount($tariff) . "</span>";
     } else {
         echo "Договорная";
     }
