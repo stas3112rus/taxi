@@ -6,3 +6,5 @@ include('loader/view/drawLoader.php');
 include('navbar/view/drawNavBar.php');
 include('mainBlock/view/drawMainBlock.php');
 include('forms/view/drawForms.php');
+include('textBlock/view/drawTextBlock.php');
+include('premiums/view/drawPremiumBlocks.php');

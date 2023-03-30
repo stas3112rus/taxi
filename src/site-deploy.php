@@ -6,6 +6,7 @@ include('data/cities/functions.php');
 include('data/tariffs/functions.php');
 include('data/widgets/functions.php');
 include('data/defaults/functions.php');
+include('deploy/main.php');
 include('utils/functions.php');
 
 include('sites/constants/constants.php');
@@ -34,6 +35,8 @@ include('sites/components/main.php');
         <?
         drawNavBar();
         drawMainBlock();
+        drawTextBlock();
+        drawPremiumBlocks();
         ?>
 
 

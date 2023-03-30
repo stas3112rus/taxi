@@ -16,7 +16,7 @@ function getTXT()
 
 function upgradeTextLine($textLine)
 {
-    global $DEFAULT, $MAIN_SITE, $CURRENT_SITE;
+    global $DEFAULT, $MAIN_SITE, $CURRENT_SITE, $CITY_FROM, $CITY_TO;
 
     $textLine = replacePadeg($textLine);
     $textLine = str_replace("[min_price]", getMinPrice(), $textLine);
@@ -24,6 +24,7 @@ function upgradeTextLine($textLine)
     $textLine = str_replace("[domen]", $DEFAULT['domain'], $textLine);
     $textLine = str_replace("[main_url]", $MAIN_SITE, $textLine);
     $textLine = str_replace("[domain_url]", $CURRENT_SITE, $textLine);
+    $textLine = str_replace("[direction_url]", getDirectionUrl($CITY_FROM, $CITY_TO), $textLine);
 
     return $textLine;
 }
