@@ -26,8 +26,23 @@ include('sites/components/main.php');
 
 <body>
     <?
+    drawLoader();
+
     drawScripts();
     ?>
+    <section class="wrapper">
+        <?
+        drawNavBar();
+        drawMainBlock();
+        ?>
+
+
+    </section>
+    <?
+    drawScripts();
+    ?>
+
+
     <!-- Виджеты  Футер -->
     <? drawFooterWidgets(); ?>
     <!-- Виджеты  Футер -->
