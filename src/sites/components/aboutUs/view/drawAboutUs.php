@@ -1,5 +1,5 @@
 <?
-function drawPremiumBlocks()
+function drawAboutUs()
 {
     global $TXT;
 

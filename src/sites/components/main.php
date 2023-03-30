@@ -7,4 +7,6 @@ include('navbar/view/drawNavBar.php');
 include('mainBlock/view/drawMainBlock.php');
 include('forms/view/drawForms.php');
 include('textBlock/view/drawTextBlock.php');
-include('premiums/view/drawPremiumBlocks.php');
+include('aboutUs/view/drawAboutUs.php');
+include('tariffs/view/DrawTariffsBlock.php');
+include('tariffs/view/DrawTariffsTable.php');

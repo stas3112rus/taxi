@@ -17,23 +17,27 @@ function getTariffForDirection()
 
 function getTariffsForTable()
 {
-    global $CITY_FROM,  $CITY_TO, $MAIN_CITY;
+    global $CITY_FROM,  $CITY_TO, $MAIN_CITY, $TXT;
+
+    $city_from = $TXT['IS_REVERSE_TARIFFS'] ? $CITY_TO : $CITY_FROM;
+    $city_to = $TXT['IS_REVERSE_TARIFFS'] ? $CITY_FROM : $CITY_TO;
+
     $result = [];
 
-    if ($CITY_TO) {
-        array_push($result, setDiscountField(getTariff($CITY_FROM, $CITY_TO), true));
-        array_push($result, setDiscountField(getTariff($CITY_TO, $CITY_FROM), true));
+    if ($city_to) {
+        array_push($result, setDiscountField(getTariff($city_from, $city_to), true));
+        array_push($result, setDiscountField(getTariff($city_to, $city_from), true));
     }
 
-    if ($CITY_TO['id_city'] != $MAIN_CITY['id_city'] && $CITY_FROM['id_city'] != $MAIN_CITY['id_city']) {
-        array_push($result, setDiscountField(getTariff($CITY_FROM, $MAIN_CITY), true));
+    if ($city_to['id_city'] != $MAIN_CITY['id_city'] && $city_from['id_city'] != $MAIN_CITY['id_city']) {
+        array_push($result, setDiscountField(getTariff($city_from, $MAIN_CITY), true));
     }
 
-    $notPublishingCities = getNotPublishingCitiesForSite($CITY_FROM);
+    $notPublishingCities = getNotPublishingCitiesForSite($city_from);
 
-    array_push($notPublishingCities, $CITY_TO, $MAIN_CITY);
+    array_push($notPublishingCities, $city_to, $MAIN_CITY);
 
-    foreach (getTariffForCity($CITY_FROM, $notPublishingCities) as $tariff) {
+    foreach (getTariffForCity($city_from, $notPublishingCities) as $tariff) {
         array_push($result, setDiscountField($tariff, false));
     }
 

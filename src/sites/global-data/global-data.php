@@ -12,6 +12,8 @@ $CITY_TO = getCityTo();
 
 $MAIN_CITY = getMainCity();
 
+$DIRECTION_URL = $CITY_TO ? getDirectionUrl($CITY_FROM, $CITY_TO) : false;
+
 $DEFAULT = getDefaults();
 
 $TARIFF = getTariffForDirection();
@@ -63,3 +65,5 @@ function isSitemap()
             return  false;
     }
 }
+
+
