@@ -10,7 +10,7 @@ function drawNavBar()
                     <div class="container content-top">
                         <div class="leftside">
                             <div class="header-items">
-                                <p><i class="fa fa-location-arrow" aria-hidden="true"></i>
+                                <p style="display:flex; justify-content: space-between; gap: 15px; align-items: center;"><i class="fa fa-location-arrow" aria-hidden="true"></i>
                                     <? echo $CITY_FROM['street'] ?
                                         $CITY_FROM['im'] . ", " . $CITY_FROM['street'] :
                                         $CITY_FROM['im']
@@ -18,10 +18,15 @@ function drawNavBar()
                                 </p>
                             </div>
                             <div class="header-items">
-                                <p><i class="fa fa-envelope" aria-hidden="true"></i>taksi-aeroport@mail.ru</p>
+                                <p style="display:flex; justify-content: space-between; gap: 15px; align-items: center;">
+                                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                                    <a href="mailto:<? echo  $DEFAULT['email_for_site'] ?>">
+                                        <? echo  $DEFAULT['email_for_site'] ?>
+                                    </a>
+                                </p>
                             </div>
                             <div class="header-items">
-                                <p><i class="fa fa-phone" aria-hidden="true"></i>
+                                <p style="display:flex; justify-content: space-between; gap: 15px; align-items: center;"><i class="fa fa-phone" aria-hidden="true"></i>
                                     <a href="tel:<? echo  $DEFAULT['phone'] ?>">
                                         <? echo getFullPhone() ?>
                                     </a>

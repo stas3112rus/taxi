@@ -34,9 +34,10 @@ include('sites/components/main.php');
         drawNavBar();
         drawMainBlock();
         drawTextBlock();
-        drawAboutUs();
+        drawAboutUsTop();
         drawTariffsBlock();
         drawCarClasses();
+        drawAboutUsBottom();
         ?>
     </section>
     <?
