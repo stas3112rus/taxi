@@ -10,3 +10,4 @@ include('textBlock/view/drawTextBlock.php');
 include('aboutUs/view/drawAboutUs.php');
 include('tariffs/view/DrawTariffsBlock.php');
 include('tariffs/view/DrawTariffsTable.php');
+include('carClasses/view/drawClasses.php');

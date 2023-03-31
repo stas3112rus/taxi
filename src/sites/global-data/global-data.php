@@ -20,6 +20,7 @@ $DEFAULT = getDefaults();
 $CURRENT_SITE = getMainUrl($CITY_FROM['eng'], $CITY_FROM['main_city']);
 $MAIN_SITE = getMainUrl($MAIN_CITY['eng'], $MAIN_CITY['main_city']);
 
+$LEVEL = getLevelForSite();
 
 
 $STOP_DISCOUNT_DAY = getStopDiscountDay();
@@ -63,6 +64,26 @@ function isSitemap()
             return true;
         case 3:
             return true;
+        default:
+            return  false;
+    }
+}
+
+function getLevelForSite()
+{
+    global $TEXT_TYPE_INDEX;
+
+    switch ($TEXT_TYPE_INDEX) {
+        case 1:
+            return getLevel(0);
+        case 2:
+            return getLevel(1);
+        case 3:
+            return getLevel(0);
+        case 4:
+            return getLevel(1);
+        case 5:
+            return getLevel(1);
         default:
             return  false;
     }

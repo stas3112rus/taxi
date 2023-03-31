@@ -28,8 +28,6 @@ include('sites/components/main.php');
 <body>
     <?
     drawLoader();
-
-    drawScripts();
     ?>
     <section class="wrapper">
         <?
@@ -38,9 +36,8 @@ include('sites/components/main.php');
         drawTextBlock();
         drawAboutUs();
         drawTariffsBlock();
+        drawCarClasses();
         ?>
-
-
     </section>
     <?
     drawScripts();
