@@ -38,6 +38,12 @@ include('sites/components/main.php');
         drawTariffsBlock();
         drawCarClasses();
         drawAboutUsBottom();
+        drawReviews();
+        drawContacts();
+        drawMainFooter();
+        drawBottomFooter();
+        drawPolitics();
+        drawPopUp();
         ?>
     </section>
     <?

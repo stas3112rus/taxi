@@ -16,12 +16,14 @@ $DIRECTION_URL = $CITY_TO ? getDirectionUrl($CITY_FROM, $CITY_TO) : false;
 
 $DEFAULT = getDefaults();
 
+$ADDRESS = $CITY_FROM['street'] ? 
+    $CITY_FROM['im'] . ", " . $CITY_FROM['street'] :
+    $CITY_FROM['im'];
 
 $CURRENT_SITE = getMainUrl($CITY_FROM['eng'], $CITY_FROM['main_city']);
 $MAIN_SITE = getMainUrl($MAIN_CITY['eng'], $MAIN_CITY['main_city']);
 
 $LEVEL = getLevelForSite();
-
 
 $STOP_DISCOUNT_DAY = getStopDiscountDay();
 

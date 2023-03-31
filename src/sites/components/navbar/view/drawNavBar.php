@@ -1,7 +1,7 @@
 <?
 function drawNavBar()
 {
-    global $CITY_FROM, $DEFAULT, $CURRENT_SITE, $TXT;
+    global $CITY_FROM, $DEFAULT, $CURRENT_SITE, $TXT, $ADDRESS;
 ?>
     <div class="main-header">
         <div class="main-navbar">
@@ -11,10 +11,7 @@ function drawNavBar()
                         <div class="leftside">
                             <div class="header-items">
                                 <p style="display:flex; justify-content: space-between; gap: 15px; align-items: center;"><i class="fa fa-location-arrow" aria-hidden="true"></i>
-                                    <? echo $CITY_FROM['street'] ?
-                                        $CITY_FROM['im'] . ", " . $CITY_FROM['street'] :
-                                        $CITY_FROM['im']
-                                    ?>
+                                    <? echo $ADDRESS?>
                                 </p>
                             </div>
                             <div class="header-items">

@@ -21,6 +21,42 @@ function drawTopForm()
 <?
 }
 
+function drawContactForm()
+{
+?>
+    <form class='ajax-question' id="contact-form" method="post">
+        <div class="messages"></div>
+        <div class="controls">
+            <div class="row">
+                <div class="col-md-12">
+                    <? drawFieldPhone(false) ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <? drawFieldEmail(false) ?>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <? drawFieldMessage(false) ?>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <? drawFieldCheck() ?>
+                </div>
+                <div class="col-md-12">
+                    <p><input type="submit" class="btn btn-warning" value="Отправить сообщение"></p>
+                </div>
+            </div>
+        </div>
+    </form>
+<?
+}
+
 function drawDatePicker()
 {
 ?>
@@ -89,6 +125,8 @@ function drawCLassTaxiField()
 <?
 }
 
+
+
 function drawFieldName()
 {
 ?>
@@ -98,30 +136,38 @@ function drawFieldName()
     </label>
 <?
 }
-function drawFieldPhone()
+function drawFieldPhone($icon = true)
 {
 ?>
     <label>
         <input type="text" name="phones" maxlength="19" required placeholder="Телефон *" class="tel-number-field long" />
-        <i class="fa fa-phone form-icon" aria-hidden="true"></i>
+        <? if ($icon) { ?>
+            <i class="fa fa-phone form-icon" aria-hidden="true"></i>
+        <? } ?>
     </label>
 <?
 }
-function drawFieldEmail()
+function drawFieldEmail($icon = true)
 {
 ?>
     <label>
         <input name="email" class="input-field" placeholder="E-mail" type="email">
-        <i class="fa fa-envelope-o form-icon" aria-hidden="true"></i>
+
+        <? if ($icon) { ?>
+            <i class="fa fa-envelope-o form-icon" aria-hidden="true"></i>
+        <? } ?>
+
     </label>
 <?
 }
-function drawFieldMessage()
+function drawFieldMessage($icon = true)
 {
 ?>
     <label for="field5">
         <textarea name="message" id="message" class="textarea-field" placeholder="Ваше сообщение *"></textarea>
-        <i class="fa fa-commenting-o form-icon" aria-hidden="true"></i>
+        <? if ($icon) { ?>
+            <i class="fa fa-commenting-o form-icon" aria-hidden="true"></i>
+        <? } ?>
     </label>
 <?
 }
