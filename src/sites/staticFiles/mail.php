@@ -1,2 +1,2 @@
 <?
-    include('../../src/sitemap-deploy.php');
+include('../../src/mail-deploy.php');
