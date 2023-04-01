@@ -1,7 +1,7 @@
 <?
 function drawTariffsBlock()
 {
-    global $TXT;
+    global $TXT, $DEFAULT;
 ?>
     <div class="main section-table" id="tariff">
         <div class="section">
@@ -14,5 +14,9 @@ function drawTariffsBlock()
             </div>
         </div>
     </div>
+    <div style="text-align:center;">
+        <? echo $DEFAULT['discount_limit'] ?>
+    </div>
+
 <?
 }

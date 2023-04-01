@@ -28,9 +28,9 @@ $LEVEL = getLevelForSite();
 $STOP_DISCOUNT_DAY = getStopDiscountDay();
 
 $DISCOUNT_PERCENT = getDiscountPercent();
-
-$TXT = getTXT();
 $TARIFF = getTariffForDirection();
+$TXT = getTXT();
+
 
 $TARIFFS_TABLE = getTariffsForTable();
 

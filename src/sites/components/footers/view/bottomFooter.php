@@ -9,7 +9,7 @@ function drawBottomFooter()
             <div class="section">
                 <div class="column-left">
                     <p>
-                        <? echo $TXT['footer_bottom_title'] ?>
+                        <? echo mb_strtoupper($TXT['footer_bottom_title']) ?>
                     </p>
                     <? if ($IS_SITEMAP) { ?>
                         <p>

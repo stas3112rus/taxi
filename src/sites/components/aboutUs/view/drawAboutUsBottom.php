@@ -5,9 +5,9 @@ function drawAboutUsBottom()
 ?>
     <div class="main counter-parallax">
         <div class="section">
-            <div class="row">
+            <div class="row" style="display:flex; align-items: stretch;">
                 <div class="col-sm-3 col-md-3">
-                    <circle-counter>
+                    <circle-counter style="height: 100%;">
                         <div class="counter-icon">
                             <i class="fa fa-taxi" aria-hidden="true"></i>
                         </div>
@@ -16,7 +16,7 @@ function drawAboutUsBottom()
                     </circle-counter>
                 </div>
                 <div class="col-sm-3 col-md-3">
-                    <circle-counter>
+                    <circle-counter style="height: 100%;">
                         <div class="counter-icon">
                             <i class="fa fa-users" aria-hidden="true"></i>
                         </div>
@@ -25,7 +25,7 @@ function drawAboutUsBottom()
                     </circle-counter>
                 </div>
                 <div class="col-sm-3 col-md-3">
-                    <circle-counter>
+                    <circle-counter style="height: 100%;">
                         <div class="counter-icon">
                             <i class="fa fa-smile-o" aria-hidden="true"></i>
                         </div>
@@ -34,7 +34,7 @@ function drawAboutUsBottom()
                     </circle-counter>
                 </div>
                 <div class="col-sm-3 col-md-3">
-                    <circle-counter>
+                    <circle-counter style="height: 100%;">
                         <div class="counter-icon">
                             <i class="fa fa-calendar" aria-hidden="true"></i>
                         </div>

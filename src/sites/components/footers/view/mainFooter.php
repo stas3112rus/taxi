@@ -9,7 +9,7 @@ function drawMainFooter()
                 <div class="section">
                     <div class="row">
                         <div class="col-md-9 footer-column">
-                            <h3 class="footer-heading"><? echo $TXT['footer_title'] ?></h3>
+                            <h3 class="footer-heading"><? echo mb_strtoupper($TXT['footer_title']) ?></h3>
                             <hr class="short-footer">
 
                             <?php echo $TXT['footer_text'] ?>

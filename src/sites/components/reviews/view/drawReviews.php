@@ -23,23 +23,23 @@ function drawReviews()
                 </div>
                 <div class="gallery-cell">
                     <div class="testimonial-section">
-                        <div class="avatar"><img src="<?echo $CURRENT_SITE?>img\images\avatar2.jpg" title="<?echo $TXT['review_1_alt']?>" alt="<?echo $TXT['review_1_alt']?>"></div>
+                        <div class="avatar"><img src="<?echo $CURRENT_SITE?>img\images\avatar2.jpg" title="<?echo $TXT['review_2_alt']?>" alt="<?echo $TXT['review_1_alt']?>"></div>
                         <div class="testimonial-quote">
-                            <p>"<?echo $TXT['review_1_value']?>"</p>
+                            <p>"<?echo $TXT['review_2_value']?>"</p>
                         </div>
                         <div class="autor">
-                            <h5><?echo $TXT['review_1_name']?></h5>
+                            <h5><?echo $TXT['review_2_name']?></h5>
                         </div>
                     </div>
                 </div>
                 <div class="gallery-cell">
                     <div class="testimonial-section">
-                        <div class="avatar"><img src="<?echo $CURRENT_SITE?>img\images\avatar3.jpg" title="<?echo $TXT['review_1_alt']?>" alt="<?echo $TXT['review_1_alt']?>"></div>
+                        <div class="avatar"><img src="<?echo $CURRENT_SITE?>img\images\avatar3.jpg" title="<?echo $TXT['review_3_alt']?>" alt="<?echo $TXT['review_1_alt']?>"></div>
                         <div class="testimonial-quote">
-                            <p>"<?echo $TXT['review_1_value']?>"</p>
+                            <p>"<?echo $TXT['review_3_value']?>"</p>
                         </div>
                         <div class="autor">
-                            <h5><?echo $TXT['review_1_name']?></h5>
+                            <h5><?echo $TXT['review_3_name']?></h5>
                         </div>
                     </div>
                 </div>
