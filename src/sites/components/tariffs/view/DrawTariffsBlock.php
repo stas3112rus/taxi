@@ -15,7 +15,7 @@ function drawTariffsBlock()
         </div>
     </div>
     <div style="text-align:center;">
-        <? echo $DEFAULT['discount_limit'] ?>
+        <? echo $TXT['discount_limit'] ?>
     </div>
 
 <?
