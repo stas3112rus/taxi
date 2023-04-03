@@ -7,6 +7,7 @@ include('../../constants/routs.php');
 include('../../components/alerts/drawAlert.php');
 include('../../../../src/data/text-fields/functions.php');
 include('../../../../src/data/text/functions.php');
+include('../../components/text/constants/constants.php');
 include('../../components/text/utils/functions.php');
 include('../../components/text/view/drawTextForm.php');
 
@@ -53,6 +54,7 @@ if ($_POST)
                 } ?>
 
             </div>
+            <? include('../../components/sidebar/textCommentSideBar.php') ?>
         </div>
     </section>
 </body>
