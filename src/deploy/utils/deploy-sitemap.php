@@ -15,15 +15,14 @@ function deploySitemaps()
 function deployMainSitemapXML()
 {
     $txt = getMainSitemapTxt();
-    $dir =  getFullPathToSitemapXMLFile(getMainCity());
+    $dir =  getFullPathToMainSitemapXMLFile(getMainCity());
 
     return createFile($dir, $txt);
 }
 
 function deployNotMainSitemapsXML()
 {
-    $mainCity = getMainCity();
-    $cities = getAllWithoutOneCities($mainCity['id_city']);
+    $cities = getAllCities();
 
     foreach ($cities as $city_from) {
         $txt = getNotMainSitemapsTXT($city_from);

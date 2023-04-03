@@ -66,6 +66,11 @@ function getFullPathToSitemapXMLFile($city)
     return getFullPathToDomain($city) . "sitemap.xml";
 }
 
+function getFullPathToMainSitemapXMLFile($city)
+{
+    return getFullPathToDomain($city) . "sitemap-all.xml";
+}
+
 
 function getPathToMainFile($level = 0)
 {
@@ -80,6 +85,11 @@ function getPathToInfoFile($level = 0)
 function getUrlToSitemap($city)
 {
     return getMainUrl($city['eng'], $city['main_city']) . "sitemap.xml";
+}
+
+function getUrlToSitemapWithAllUrls($city)
+{
+    return getMainUrl($city['eng'], $city['main_city']) . "sitemap-all.xml";
 }
 
 function getDirectionUrl($city_from, $city_to)
