@@ -68,7 +68,7 @@ function getFullPathToSitemapXMLFile($city)
 
 function getFullPathToMainSitemapXMLFile($city)
 {
-    return getFullPathToDomain($city) . "sitemap-all.xml";
+    return getFullPathToDomain($city) . "sitemap2.xml";
 }
 
 
@@ -89,7 +89,7 @@ function getUrlToSitemap($city)
 
 function getUrlToSitemapWithAllUrls($city)
 {
-    return getMainUrl($city['eng'], $city['main_city']) . "sitemap-all.xml";
+    return getMainUrl($city['eng'], $city['main_city']) . "sitemap2.xml";
 }
 
 function getDirectionUrl($city_from, $city_to)
