@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     overflow: auto; 
-    padding: 20px 0;    
+    padding: 20px 5px;    
 
     &__menu{
         list-style: none;
@@ -33,5 +33,13 @@
     &__divider{
         width: 100%;
         border-top: 2px solid black;
+    }
+
+    &__right{
+        position: sticky;
+        width: 500px;   
+        top: 0px;
+        height: 100vh;
+        border-left: 2px solid black;
     }
 }

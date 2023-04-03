@@ -31,7 +31,8 @@ function updateTexts($post)
     return drawAlert("Виджеты обновлены", "alert-success");
 }
 
-function deleteTexts($text_type_id){
+function deleteTexts($text_type_id)
+{
     $delete = deleteTextsByTextType($text_type_id);
     if ($delete != 'Ok') {
         return drawAlert($delete, "alert-danger");
@@ -55,4 +56,23 @@ function upgradeTextDataPost($post)
 
     return $result;
 }
+
+
+function drawTextReductions()
+{
+    global $TEXT_REDUCTIONS;
 ?>
+    <table class='table table-striped'>
+        <?
+        foreach ($TEXT_REDUCTIONS as $reduction => $comment) {
+        ?>
+            <tr>
+                <td><? echo $reduction ?></td>
+                <td><? echo $comment ?></td>
+            </tr>
+        <?
+        }
+        ?>
+    </table>
+<?
+}
