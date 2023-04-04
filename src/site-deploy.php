@@ -27,13 +27,8 @@ include('sites/components/main.php');
 
 <body>
     <?
-    drawLoader();
+    // Content
     ?>
-    <section class="wrapper">
-        <?
-        // Content
-        ?>
-    </section>
     <?
     drawScripts();
     ?>
