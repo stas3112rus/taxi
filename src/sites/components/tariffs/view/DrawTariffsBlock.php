@@ -1,22 +1,24 @@
 <?
 function drawTariffsBlock()
 {
-    global $TXT, $DEFAULT;
+    global $TXT;
 ?>
-    <div class="main section-table" id="tariff">
-        <div class="section">
-            <div class="section-title">
-                <h3><? echo mb_strtoupper($TXT['tariff_title']) ?></h3>
+    <section id="price-table" class="price-table">
+        <div class="container">
+            <h3 class="title-black">
+                <? echo $TXT['tariffs_title'] ?>
+            </h3>
+            <div class="line-orange"></div>
+            <div class="subtitle-black space30">
+                <? echo $TXT['tariffs_subtitle'] ?>
             </div>
-
             <div class="r-tbl">
                 <? drawTariffsTable() ?>
             </div>
         </div>
-    </div>
-    <div style="text-align:center;">
-        <? echo $DEFAULT['discount_limit'] ?>
-    </div>
-
+        <div style="text-align: center; padding: 30px 0px;">
+            <? echo $TXT['tariffs_text_restriction'] ?>
+        </div>
+    </section>
 <?
 }

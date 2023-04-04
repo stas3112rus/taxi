@@ -2,19 +2,21 @@
 function drawTariffsTable()
 {
 ?>
-    <div class="r-tbl">
-        <table class="highlight">
-            <thead>
-                <? drawHeadOfTariffTable() ?>
-            </thead>
-            <tbody>
-                <? drawTariffRows() ?>
-                <? drawWaitInTripRow() ?>
-                <? drawArmChairRow() ?>
-                <? drawRentAutoRow() ?>
-            </tbody>
-        </table>
-    </div>
+    <table class="highlight">
+        <thead>
+            <? drawHeadOfTariffTable() ?>
+        </thead>
+        <tbody>
+            <?
+            drawTariffRows();
+            drawWaitInAirportRow();
+            drawWaitInTripRow();
+            drawArmChairRow();
+            drawRentAutoRow();
+            ?>
+
+        </tbody>
+    </table>
 <?
 }
 
@@ -25,9 +27,9 @@ function drawHeadOfTariffTable()
         <th data-field="id">Направление</th>
         <th data-field="name">Эконом</th>
         <th data-field="price">Комфорт</th>
-        <th data-field="price">Бизнес</th>
         <th data-field="price">Мини-Бус</th>
-        <th data-field="price">Вип</th>
+        <th data-field="price">Бизнес</th>
+        <th data-field="price">VIP</th>
     </tr>
 <?
 }
@@ -61,27 +63,37 @@ function drawTariffRow($tariff, $counter)
 
 function drawTariffDirectionField($counter, $tariff)
 {
-    global $TXT;
-    $prefix = "";
-    if ($counter < $TXT['COUNT_TaxiWord']) {
-        $prefix .= $TXT['TaxiWordInTariffsTable'] . " ";
-    }
 
-    $cities = $TXT['CityFromInTariffsTable'] ? $tariff['cityFrom'] . "  - " . $tariff['cityTo'] : $tariff['cityTo'];
+    $cities = $tariff['cityFrom'] . "  - " . $tariff['cityTo'];
 
     $discount = "";
-    if ($counter < 2 || $tariff['discount']) {
+    if ($counter < 2) {
         $discount = " " . getDiscountDay();
     }
 
-    return $prefix . $cities . $discount;
+    return $cities . $discount;
 }
 
 function getDiscountDay()
 {
     global $STOP_DISCOUNT_DAY;
 
-    return "<span style='color: #ff6600;'><b>АКЦИЯ</b> до " . $STOP_DISCOUNT_DAY . "</span>";
+    return "<span style='color: #ff6600;'><b>АКЦИЯ!</b>  до " . $STOP_DISCOUNT_DAY . "</span>";
+}
+
+function drawWaitInAirportRow()
+{
+    global $DEFAULT;
+?>
+    <tr>
+        <td><span style="color: #ff6600;"><? echo $DEFAULT['wait_in_airport_title'] ?></span></td>
+        <td><span style="color: #ff6600;"><? echo $DEFAULT['wait_in_airport_economy'] ?></span></td>
+        <td><span style="color: #ff6600;"><? echo $DEFAULT['wait_in_airport_comfort'] ?></span></td>
+        <td><span style="color: #ff6600;"><? echo $DEFAULT['wait_in_airport_minivan'] ?></span></td>
+        <td><span style="color: #ff6600;"><? echo $DEFAULT['wait_in_airport_business'] ?></span></td>
+        <td><span style="color: #ff6600;"><? echo $DEFAULT['wait_in_airport_vip'] ?></span></td>
+    </tr>
+<?
 }
 
 function drawWaitInTripRow()

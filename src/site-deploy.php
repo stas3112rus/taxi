@@ -27,7 +27,11 @@ include('sites/components/main.php');
 
 <body>
     <?
-    // Content
+    drawPreloader();
+    drawNavBar();
+    drawMainBlock();
+    drawTextBlock();
+    drawTariffsBlock();
     ?>
     <?
     drawScripts();

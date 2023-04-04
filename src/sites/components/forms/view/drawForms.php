@@ -1,21 +1,60 @@
 <?
 function drawTopForm()
 {
+    global  $TXT;
 ?>
-    <form method="post" class="ajax-contact-form contact_form form-style" id="contact_form-1" action="mail.php">
-        <div id="contact_body">
-            <?
-            drawDatePicker();
-            drawSelectFromField();
-            drawSelectToField();
-            drawCLassTaxiField();
-            drawFieldName();
-            drawFieldPhone();
-            drawFieldEmail();
-            drawFieldMessage();
-            drawFieldCheck();
-            drawButtonSend();
-            ?>
+    <form method="POST" class="order-form">
+        <div class="row">
+            <div class="col-lg-12">
+                <h3><? echo $TXT['top_form_title'] ?></h3>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group has-icon ">
+                    <? drawSelectFromField() ?>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group has-icon ">
+                    <? drawSelectToField() ?>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group has-icon ">
+                    <? drawCLassTaxiField() ?>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group has-icon ">
+                    <? drawDatePicker() ?>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <div class="form-group ">
+                        <? drawFieldName() ?>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <? drawFieldPhone() ?>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <? drawFieldEmail() ?>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="form-group">
+                    <? drawFieldMessage() ?>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="picking-btn text-center">
+                    <? drawButtonSend() ?>
+                </div>
+            </div>
         </div>
     </form>
 <?
@@ -60,10 +99,8 @@ function drawContactForm()
 function drawDatePicker()
 {
 ?>
-    <label class="flatpickr" alt="Select Date and Time *">
-        <input class="input-field flatpickr" data-enabletime=true data-time_24hr=true data-timeFormat="H:i" name="date" type="text" placeholder="Выберите дату и время *">
-        <i class="fa fa-calendar form-icon" aria-hidden="true"></i>
-    </label>
+    <input class="input-field  form-control flatpickr" data-enabletime=true data-time_24hr=true data-timeFormat="H:i" name="date" type="text" placeholder="Выберите Дату и Время *">
+
 <?
 }
 
@@ -71,12 +108,10 @@ function drawSelectFromField()
 {
     global $CITY_FROM;
 ?>
-    <label for="subject">
-        <select name="subject-from" class="select-field">
-            <option value="">Откуда</option>
-            <? drawCitiesOptions($CITY_FROM) ?>
-        </select>
-    </label>
+    <select name="subject-from" class="form-control moz-select">
+        <option value="">Откуда</option>
+        <? drawCitiesOptions($CITY_FROM) ?>
+    </select>
 <?
 }
 
@@ -85,12 +120,10 @@ function drawSelectToField()
     global $CITY_TO;
 
 ?>
-    <label for="subject">
-        <select name="subject-from" class="select-field">
-            <option value="">Куда</option>
-            <? drawCitiesOptions($CITY_TO) ?>
-        </select>
-    </label>
+    <select name="subject-from" class="form-control moz-select">
+        <option value="">Куда</option>
+        <? drawCitiesOptions($CITY_TO) ?>
+    </select>
 <?
 }
 
@@ -112,16 +145,13 @@ function drawCitiesOptions($city)
 function drawCLassTaxiField()
 {
 ?>
-    <label for="taxi" class="taxi">
-        <select name="taxi">
-            <option value="">Выберите класс такси</option>
-            <option value="Standart">Эконом</option>
-            <option value="Komfort">Комфорт</option>
-            <option value="Biznes">Бизнес</option>
-            <option value="BUS-MINIVAN">Микроавтобус</option>
-            <option value="VIP">VIP</option>
-        </select>
-    </label>
+    <select name="taxi" class="form-control moz-select">
+        <option value=''>Выберите класс Такси</option>
+        <option value='Econom'>Эконом</option>
+        <option value='Komfot'>Комфорт</option>
+        <option value='Bussines'>Бизнес</option>
+        <option value='Mini-bus'>Микроавтобус</option>
+    </select>
 <?
 }
 
@@ -130,45 +160,26 @@ function drawCLassTaxiField()
 function drawFieldName()
 {
 ?>
-    <label alt="Name *">
-        <input type="text" name="name" id="name" required class="input-field" placeholder="Имя *" />
-        <i class="fa fa-user form-icon" aria-hidden="true"></i>
-    </label>
-<?
-}
-function drawFieldPhone($icon = true)
-{
-?>
-    <label>
-        <input type="text" name="phones" maxlength="19" required placeholder="Телефон *" class="tel-number-field long" />
-        <? if ($icon) { ?>
-            <i class="fa fa-phone form-icon" aria-hidden="true"></i>
-        <? } ?>
-    </label>
-<?
-}
-function drawFieldEmail($icon = true)
-{
-?>
-    <label>
-        <input name="email" class="input-field" placeholder="E-mail" type="email">
+    <input type="text" name='name' class="form-control" id="formSearchUpDate2" placeholder="Имя *">
 
-        <? if ($icon) { ?>
-            <i class="fa fa-envelope-o form-icon" aria-hidden="true"></i>
-        <? } ?>
-
-    </label>
 <?
 }
-function drawFieldMessage($icon = true)
+function drawFieldPhone()
 {
 ?>
-    <label for="field5">
-        <textarea name="message" id="message" class="textarea-field" placeholder="Ваше сообщение *"></textarea>
-        <? if ($icon) { ?>
-            <i class="fa fa-commenting-o form-icon" aria-hidden="true"></i>
-        <? } ?>
-    </label>
+    <input type="text" name='phones' class="form-control input-phone" id="formSearchUpDate2" placeholder="Телефон *">
+<?
+}
+function drawFieldEmail()
+{
+?>
+    <input type="text" name='email' class="form-control" id="formSearchUpDate2" placeholder="Email *">
+<?
+}
+function drawFieldMessage()
+{
+?>
+    <textarea class="form-control" name='message' cols="58" rows="5" placeholder="Ваше сообщение *"></textarea>
 <?
 }
 function drawFieldCheck()
@@ -182,8 +193,6 @@ function drawFieldCheck()
 function drawButtonSend()
 {
 ?>
-    <label>
-        <input type="submit" id="submit_btn" class="wbutton" value="ЗАБРОНИРОВАТЬ" />
-    </label>
+    <button type="submit" class="carspace-btn">Заказать такси</button>
 <?
 }
