@@ -1,0 +1,92 @@
+<?
+include('utils/tariffs-functions.php');
+include('utils/text-functions.php');
+include('utils/default-functions.php');
+include('utils/phone-functions.php');
+include('utils/discount-functions.php');
+include('utils/widgets-functions.php');
+
+$ALL_CITIES = getAllCities();
+$CITY_FROM = getCityById($CITY_FROM_ID);
+$CITY_TO = getCityTo();
+
+$MAIN_CITY = getMainCity();
+
+$DIRECTION_URL = $CITY_TO ? getDirectionUrl($CITY_FROM, $CITY_TO) : false;
+
+$DEFAULT = getDefaults();
+
+$ADDRESS = $CITY_FROM['street'] ? 
+    $CITY_FROM['im'] . ", " . $CITY_FROM['street'] :
+    $CITY_FROM['im'];
+
+$CURRENT_SITE = getMainUrl($CITY_FROM['eng'], $CITY_FROM['main_city']);
+$MAIN_SITE = getMainUrl($MAIN_CITY['eng'], $MAIN_CITY['main_city']);
+
+$LEVEL = getLevelForSite();
+
+$STOP_DISCOUNT_DAY = getStopDiscountDay();
+
+$DISCOUNT_PERCENT = getDiscountPercent();
+$TARIFF = getTariffForDirection();
+$TXT = getTXT();
+
+
+$TARIFFS_TABLE = getTariffsForTable();
+
+$WIDGETS_HEADER = upgradedWidgets(true);
+$WIDGETS_BOTTOM = upgradedWidgets(false);
+
+$IS_SITEMAP = isSitemap();
+
+function getCityTo()
+{
+    global $TEXT_TYPE_INDEX, $CITY_TO_ID;
+
+    switch ($TEXT_TYPE_INDEX) {
+        case 2:
+            return getCityById($CITY_TO_ID);
+        case 3:
+            return getMainCity();
+        case 4:
+            return getCityById($CITY_TO_ID);
+        case 5:
+            return getCityById($CITY_TO_ID);
+        default:
+            return  false;
+    }
+}
+
+function isSitemap()
+{
+    global $TEXT_TYPE_INDEX;
+
+    switch ($TEXT_TYPE_INDEX) {
+        case 1:
+            return true;
+        case 3:
+            return true;
+        default:
+            return  false;
+    }
+}
+
+function getLevelForSite()
+{
+    global $TEXT_TYPE_INDEX;
+
+    switch ($TEXT_TYPE_INDEX) {
+        case 1:
+            return getLevel(0);
+        case 2:
+            return getLevel(1);
+        case 3:
+            return getLevel(0);
+        case 4:
+            return getLevel(1);
+        case 5:
+            return getLevel(1);
+        default:
+            return  false;
+    }
+}

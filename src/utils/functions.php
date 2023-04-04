@@ -16,7 +16,7 @@ function getRootPath()
     $dir = str_replace("/www/admin.$domain", '', $dir);
     $dir = str_replace("taxi2023/www", 'taxi2023', $dir);
 
-    return $dir."/";
+    return $dir . "/";
 }
 
 function getSubDomainName($eng, $isMain = false)
@@ -44,3 +44,5 @@ function isNotPublicMainInDirections()
 {
     return !!getDefaultValueByName('not_public_main_in_directions');
 }
+
+
