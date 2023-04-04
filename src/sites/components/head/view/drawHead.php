@@ -1,34 +1,22 @@
 <?
 function drawHead()
 {
-    global $TXT, $LEVEL, $DEFAULT, $TEXT_TYPE_INDEX;
+    global $TXT, $LEVEL;
 ?>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- ==============================================
-    Title and Meta Tags
-    =============================================== -->
-    <title><?php echo $TXT['title'] ?></title>
-
-    <meta name="description" content="<?php echo $TXT['description'] ?>">
-    <? if ($TEXT_TYPE_INDEX == 1 || $TEXT_TYPE_INDEX == 3) { ?>
-        <meta property="og:title" content="<?php echo $TXT['title'] ?>">
-        <meta property="og:description" content="<?php echo $TXT['description'] ?>">
-        <meta property="og:image" content="<? echo $LEVEL ?>img/master/logo.png" />
-        <meta property="og:url" content="<? echo $LEVEL ?>" />
-        <meta property="og:site_name" content="<?php echo $DEFAULT['domain'] ?>" />
-        <meta property="og:locale" content="ru_RU" />
-    <? } ?>
-    <meta name="keywords" content="<? echo $TXT['keywords'] ?>">
-    <link rel="shortcut icon" href="<? echo $LEVEL ?>img/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&amp;subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="<? echo $LEVEL ?>css/bootstrap.min.css">
-    <link rel="stylesheet" href="<? echo $LEVEL ?>css/styles.css">
-    <link rel="stylesheet" href="<? echo $LEVEL ?>css/font-awesome.min.css">
-    <link rel='stylesheet' href='<? echo $LEVEL ?>css/animate.min.css'>
-    <link rel='stylesheet' href='<? echo $LEVEL ?>css/slick.min.css'>
-    <link rel='stylesheet' href='<? echo $LEVEL ?>js/flatpickr/dist/flatpickr.min.css'>
-    <link rel="stylesheet" href="<? echo $LEVEL ?>css/owl.carousel.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="<? echo $TXT['description'] ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><? echo $TXT['title'] ?></title>
+    <link rel="shortcut icon" href="<? echo $LEVEL ?>assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="<? echo $LEVEL ?>assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<? echo $LEVEL ?>assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="<? echo $LEVEL ?>assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="<? echo $LEVEL ?>assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="<? echo $LEVEL ?>assets/css/monthly.css">
+    <link rel="stylesheet" href="<? echo $LEVEL ?>assets/css/normalize.css">
+    <link rel="stylesheet" href="<? echo $LEVEL ?>assets/css/main.css">
+    <link rel="stylesheet" href="<? echo $LEVEL ?>assets/js/Magnific-Popup-master/dist/magnific-popup.css">
+    <link rel="stylesheet" href="<? echo $LEVEL ?>assets/css/responsive.css">
 <?
 }
