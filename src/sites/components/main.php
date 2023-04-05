@@ -15,3 +15,4 @@ include('carClasses/view/drawCarClasses.php');
 include('service/view/drawService.php');
 include('countSection/view/drawCountSection.php');
 include('faqs/view/drawFaqs.php');
+include('reviews/view/drawReviews.php');
