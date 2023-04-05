@@ -35,6 +35,8 @@ include('sites/components/main.php');
     drawCarClasses();
     drawServices();
     drawCountSection();
+    drawFaqs();
+
     drawScripts();
 
     // Виджеты  Футер 
