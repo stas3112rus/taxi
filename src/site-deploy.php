@@ -38,7 +38,16 @@ include('sites/components/main.php');
     drawFaqs();
     drawReviews();
     drawContact();
+    drawTopFooter();
+    drawBottomFooter();
+    ?>
+    <div id="form-popup" class="mfp-hide">
+        <? drawTopForm() ?>
+    </div>
+    <?
+    drawPolicy();
     drawScripts();
+
 
     // Виджеты  Футер 
     drawFooterWidgets();
