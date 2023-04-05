@@ -32,16 +32,14 @@ include('sites/components/main.php');
     drawMainBlock();
     drawTextBlock();
     drawTariffsBlock();
-    ?>
-    <?
+    drawCarClasses();
+
     drawScripts();
+
+    // Виджеты  Футер 
+    drawFooterWidgets();
+    /// Виджеты  Футер 
     ?>
-
-
-    <!-- Виджеты  Футер -->
-    <? drawFooterWidgets(); ?>
-    <!-- Виджеты  Футер -->
-
 </body>
 
 </html>

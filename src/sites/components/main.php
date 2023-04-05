@@ -11,3 +11,4 @@ include('navbar/view/drawTopLogo.php');
 include('mainBlock/view/drawMainBlock.php');
 include('mainBlock/view/drawHeroArea.php');
 include('textBlock/view/drawTextBlock.php');
+include('carClasses/view/drawCarClasses.php');

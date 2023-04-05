@@ -14,7 +14,6 @@ function drawTariffsTable()
             drawArmChairRow();
             drawRentAutoRow();
             ?>
-
         </tbody>
     </table>
 <?
