@@ -37,6 +37,7 @@ include('sites/components/main.php');
     drawCountSection();
     drawFaqs();
     drawReviews();
+    drawContact();
     drawScripts();
 
     // Виджеты  Футер 

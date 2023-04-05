@@ -63,32 +63,27 @@ function drawTopForm()
 function drawContactForm()
 {
 ?>
-    <form class='ajax-question' id="contact-form" method="post">
-        <div class="messages"></div>
-        <div class="controls">
-            <div class="row">
-                <div class="col-md-12">
-                    <? drawFieldPhone(false) ?>
+    <form class="cmxform" id="contact-form-footer" method="POST">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Ваше имя" name="name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Ваш телефон" name="tel" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Ваш email" name="email" required>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <? drawFieldEmail(false) ?>
-                    </div>
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <textarea class="form-control" rows="6" placeholder="Сообщение" name="message" required></textarea>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <? drawFieldMessage(false) ?>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <? drawFieldCheck() ?>
-                </div>
-                <div class="col-md-12">
-                    <p><input type="submit" class="btn btn-warning" value="Отправить сообщение"></p>
+            <div class="col-lg-12">
+                <div class="confirm">
+                    <button type="submit" class="carspace-btn submit" value="submit">Отправить</button>
                 </div>
             </div>
         </div>
@@ -182,14 +177,7 @@ function drawFieldMessage()
     <textarea class="form-control" name='message' cols="58" rows="5" placeholder="Ваше сообщение *"></textarea>
 <?
 }
-function drawFieldCheck()
-{
-?>
-    <label for="field6">
-        <input name="check" class="input-field" placeholder="1+1=" type="text">
-    </label>
-<?
-}
+
 function drawButtonSend()
 {
 ?>
