@@ -49,15 +49,19 @@ function drawTopFooter()
 
 function drawBottomFooter()
 {
-    global $TXT;
+    global $TXT, $IS_SITEMAP;
 ?>
     <footer class="footer-area">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="footer-text text-center">
-                        <p><?echo $TXT['footer_bottom_title']?></p>
+                        <p><? echo $TXT['footer_bottom_title'] ?></p>
                         <p><a href="#offert" class="open-popup">Политика конфиденциальности, оферта.</a></p>
+
+                        <? if ($IS_SITEMAP) { ?>
+                            <p><a href="sitemap.php" class="open-popup">Карта сайта</a></p>
+                        <? } ?>
                     </div>
                 </div>
             </div>
