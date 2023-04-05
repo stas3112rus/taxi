@@ -30,7 +30,7 @@ function drawTextBlock()
                 </div>
                 <div class="col-lg-12">
                     <div class="hidden-text-more">
-                        <? echo $TXT['section_text_first_text'] ?>
+                        <? echo $TXT['section_text_second_text'] ?>
                     </div>
                     <a href="#" class="carspace-btn wbutton">
                         <? echo $TXT['section_text_button'] ?>
