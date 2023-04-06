@@ -1,5 +1,7 @@
 <?php
 include('data/mysql.php');
+include('data/defaults/functions.php');
+include('sites/global-data/utils/default-functions.php');
 
 $DEFAULT = getDefaults();
 
