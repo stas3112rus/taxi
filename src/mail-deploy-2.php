@@ -1,5 +1,7 @@
 <?php
 include('data/mysql.php');
+include('data/defaults/functions.php');
+include('sites/global-data/utils/default-functions.php');
 
 $DEFAULT = getDefaults();
 
@@ -61,7 +63,7 @@ E-mail - $email\r
 Сообщение - $message";
 
   
-  $to_email = "taxi-crimea24@yandex.ru"; // куда отправлять
+  $to_email = $DEFAULT['email_for_leads']; // куда отправлять
 
 
   $emailgo = new TEmail; // инициaлизируeм супeр клaсс oтпрaвки
