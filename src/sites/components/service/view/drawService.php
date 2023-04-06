@@ -8,7 +8,7 @@ function  drawServices()
             <div class="row">
                 <div class="col-lg-12">
                     <div class="carspace-header text-center">
-                        <div class="title"><?$TXT['services_block_title']?></div>
+                        <div class="title"><? echo $TXT['services_block_title'] ?></div>
                     </div>
                 </div>
             </div>

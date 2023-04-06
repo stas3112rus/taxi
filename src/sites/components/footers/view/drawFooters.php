@@ -60,7 +60,7 @@ function drawBottomFooter()
                         <p><a href="#offert" class="open-popup">Политика конфиденциальности, оферта.</a></p>
 
                         <? if ($IS_SITEMAP) { ?>
-                            <p><a href="sitemap.php" class="open-popup">Карта сайта</a></p>
+                            <p><a href="sitemap.php">Карта сайта</a></p>
                         <? } ?>
                     </div>
                 </div>

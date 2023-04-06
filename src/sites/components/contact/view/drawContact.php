@@ -9,7 +9,7 @@ function drawContact()
                 <div class="col-lg-12">
                     <div class="carspace-header text-center">
                         <div class="title"><? echo $TXT['contact_title'] ?></div>
-                        <p><? echo $TXT['contact_title'] ?></p>
+                        <p><? echo $TXT['contact_subtitle'] ?></p>
                     </div>
                     <div class="contact-bg">
                         <? drawContactForm() ?>

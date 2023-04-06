@@ -39,7 +39,7 @@ function drawReview($img, $alt, $name, $review)
             <h5><? echo $name ?></h5>
         </div>
         <div class="review-text">
-            <?php echo $review ?>
+            <p> <?php echo $review ?></p>
         </div>
     </div>
 <?

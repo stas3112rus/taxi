@@ -17,22 +17,26 @@ $LEVEL = '';
 <html lang="ru">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Карта сайта <? echo $CURRENT_SITE ?></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
+    <meta name="author" content="lpbuilding.ru">
+    <link rel="icon" type="png" href="favicon.png">
+    <title>Карта сайта <?php echo $CURRENT_SITE ?></title>
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <link rel="shortcut icon" href="<? echo $LEVEL ?>img/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&amp;subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="<? echo $LEVEL ?>css/bootstrap.min.css">
-    <link rel="stylesheet" href="<? echo $LEVEL ?>css/styles.css">
-    <link rel="stylesheet" href="<? echo $LEVEL ?>css/font-awesome.min.css">
-    <link rel='stylesheet' href='<? echo $LEVEL ?>css/animate.min.css'>
-    <link rel='stylesheet' href='<? echo $LEVEL ?>css/slick.min.css'>
-    <link rel='stylesheet' href='<? echo $LEVEL ?>js/flatpickr/dist/flatpickr.min.css'>
-    <link rel="stylesheet" href="<? echo $LEVEL ?>css/owl.carousel.min.css">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/monthly.css">
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/js/Magnific-Popup-master/dist/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 
 <body>
