@@ -26,26 +26,8 @@ include('sites/components/main.php');
 </head>
 
 <body>
-    <?
-    drawLoader();
-    ?>
-    <section class="wrapper">
-        <?
-        drawNavBar();
-        drawMainBlock();
-        drawTextBlock();
-        drawAboutUsTop();
-        drawTariffsBlock();
-        drawCarClasses();
-        drawAboutUsBottom();
-        drawReviews();
-        drawContacts();
-        drawMainFooter();
-        drawBottomFooter();
-        drawPolitics();
-        drawPopUp();
-        ?>
-    </section>
+
+
     <?
     drawScripts();
     ?>
