@@ -2,19 +2,25 @@
 function drawTariffsTable()
 {
 ?>
-    <div class="r-tbl">
-        <table class="highlight">
-            <thead>
-                <? drawHeadOfTariffTable() ?>
-            </thead>
-            <tbody>
-                <? drawTariffRows() ?>
-                <? drawWaitInTripRow() ?>
-                <? drawArmChairRow() ?>
-                <? drawRentAutoRow() ?>
-            </tbody>
-        </table>
-    </div>
+    <table class="highlight">
+        <? drawHeadOfTariffTable() ?>
+        <tbody>
+            <tr>
+                <td>Ожидание в аэропорту</td>
+                <td><span style="color: #ff6600;">бесплатно</span></td>
+                <td><span style="color: #ff6600;">бесплатно</span></td>
+                <td><span style="color: #ff6600;">бесплатно</span></td>
+                <td><span style="color: #ff6600;">бесплатно</span></td>
+            </tr>
+            <?
+            drawWaitInTripRow();
+            drawArmChairRow();
+            drawRentAutoRow();
+            ?>
+
+
+        </tbody>
+    </table>
 <?
 }
 

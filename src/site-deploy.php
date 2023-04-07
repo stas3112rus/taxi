@@ -33,6 +33,7 @@ include('sites/components/main.php');
         drawNavBarBottom();
         drawMainBlock();
         drawTextBlock();
+        drawTariffsBlock();
         ?>
     </div>
 
