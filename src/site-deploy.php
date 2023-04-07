@@ -29,7 +29,8 @@ include('sites/components/main.php');
     <div class="wrapp">
         <?
         drawLoader();
-        drawNavBar();
+        drawNavBarTop();
+        drawNavBarBottom();
         ?>
     </div>
 
