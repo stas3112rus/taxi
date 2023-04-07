@@ -1,9 +1,9 @@
 <?
-function drawTopForm()
+function drawTopForm($id)
 {
     global $TXT;
 ?>
-    <form action="" class="form-style" id="contact_form">
+    <form action="" class="form-style" id="<?echo $id?>">
         <div id="contact_body">
             <div class="popup_title"><? echo $TXT['top_form_title'] ?></div>
 

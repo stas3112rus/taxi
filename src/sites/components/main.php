@@ -15,3 +15,6 @@ include('carClasses/view/drawCarClasses.php');
 include('reliableTaxi/view/drawReliableTaxi.php');
 include('faqs/view/drawFaqs.php');
 include('reviews/view/drawReviews.php');
+include('contacts/view/drawContacts.php');
+include('footer/view/drawFooter.php');
+include('politics/view/drawPolitics.php');

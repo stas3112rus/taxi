@@ -40,10 +40,15 @@ include('sites/components/main.php');
         drawReliableTaxi();
         drawFaqs();
         drawReviews();
+        drawContacts();
+        drawFooter();
         ?>
     </div>
-
+    <div id="order-time" class="white-popup-block mfp-hide">
+        <? drawTopForm("contact_form_2") ?>
+    </div>
     <?
+    drawPolitics();
     drawScripts();
     ?>
 
