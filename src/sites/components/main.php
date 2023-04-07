@@ -12,3 +12,5 @@ include('textBlock/view/drawTextBlock.php');
 include('services/view/drawServices.php');
 include('discountBlock/view/drawDiscountBlock.php');
 include('carClasses/view/drawCarClasses.php');
+include('reliableTaxi/view/drawReliableTaxi.php');
+include('faqs/view/drawFaqs.php');
