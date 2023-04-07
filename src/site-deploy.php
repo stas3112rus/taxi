@@ -35,6 +35,7 @@ include('sites/components/main.php');
         drawTextBlock();
         drawTariffsBlock();
         drawServices();
+        drawDiscountBlock();
         ?>
     </div>
 

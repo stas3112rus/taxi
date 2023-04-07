@@ -10,3 +10,4 @@ include('navbar/view/drawNavBar.php');
 include('mainBlock/view/drawMainBlock.php');
 include('textBlock/view/drawTextBlock.php');
 include('services/view/drawServices.php');
+include('discountBlock/view/drawDiscountBlock.php');

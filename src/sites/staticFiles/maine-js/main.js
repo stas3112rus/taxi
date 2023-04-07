@@ -247,12 +247,21 @@ jQuery(document).ready(function($) {
     $('.simple-ajax-popup').magnificPopup({
         type: 'ajax'
     });
-    timer();
+    
 
-    function timer() {
-        var now = new Date();
-        var newDate = new Date("<? echo $date_akzia_timer ?> 23:59:59");
-        var totalRemains = (newDate.getTime() - now.getTime());
+    var now = new Date();
+    var newDate = new Date();
+    newDate.setDate(newDate.getDate() + 3);
+    var totalRemains = (newDate.getTime() - now.getTime());
+
+    const timer = setInterval(()=>{
+
+        const dayDom = document.querySelector(".day");
+        const hourDom = document.querySelector(".hour");
+        const minDom = document.querySelector(".min");
+        const secDom = document.querySelector(".sec");            
+
+        
         if (totalRemains > 1) {
             var Days = (parseInt(parseInt(totalRemains / 1000) / (24 * 3600)));
             var Hours = (parseInt((parseInt(totalRemains / 1000) - Days * 24 * 3600) / 3600));
@@ -270,21 +279,18 @@ jQuery(document).ready(function($) {
             if (Sec < 10) {
                 Sec = "0" + Sec
             }
-            $(".day").each(function() {
-                $(this).text(Days);
-            });
-            $(".hour").each(function() {
-                $(this).text(Hours);
-            });
-            $(".min").each(function() {
-                $(this).text(Min);
-            });
-            $(".sec").each(function() {
-                $(this).text(Sec);
-            });
-            setTimeout(timer, 1000);
+
+            dayDom.innerHTML = Days;
+            hourDom.innerHTML = Hours;
+            minDom.innerHTML = Min;
+            secDom.innerHTML = Sec;
+
+            totalRemains -= 1000;           
         }
-    }
+    }, 1000);
+
+    timer();
+        
     flatpickr(".flatpickr", {
         enableTime: true,
         disableMobile: true,
