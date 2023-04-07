@@ -39,6 +39,7 @@ include('sites/components/main.php');
         drawDiscountBlock();
         drawReliableTaxi();
         drawFaqs();
+        drawReviews();
         ?>
     </div>
 

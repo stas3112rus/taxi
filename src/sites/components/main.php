@@ -14,3 +14,4 @@ include('discountBlock/view/drawDiscountBlock.php');
 include('carClasses/view/drawCarClasses.php');
 include('reliableTaxi/view/drawReliableTaxi.php');
 include('faqs/view/drawFaqs.php');
+include('reviews/view/drawReviews.php');
