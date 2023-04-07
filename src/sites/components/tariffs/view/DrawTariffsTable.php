@@ -5,20 +5,13 @@ function drawTariffsTable()
     <table class="highlight">
         <? drawHeadOfTariffTable() ?>
         <tbody>
-            <tr>
-                <td>Ожидание в аэропорту</td>
-                <td><span style="color: #ff6600;">бесплатно</span></td>
-                <td><span style="color: #ff6600;">бесплатно</span></td>
-                <td><span style="color: #ff6600;">бесплатно</span></td>
-                <td><span style="color: #ff6600;">бесплатно</span></td>
-            </tr>
             <?
+            drawTariffRows();
+            drawWaitInAirportRow();
             drawWaitInTripRow();
             drawArmChairRow();
             drawRentAutoRow();
             ?>
-
-
         </tbody>
     </table>
 <?
@@ -87,7 +80,22 @@ function getDiscountDay()
 {
     global $STOP_DISCOUNT_DAY;
 
-    return "<span style='color: #ff6600;'><b>АКЦИЯ</b> до " . $STOP_DISCOUNT_DAY . "</span>";
+    return '<span style="color: #ff6600;"><b>АКЦИЯ! до ' . $STOP_DISCOUNT_DAY . '</b> </span>';
+}
+
+function drawWaitInAirportRow()
+{
+    global $DEFAULT;
+?>
+    <tr>
+        <td><? echo $DEFAULT['wait_in_airport_title'] ?></td>
+        <td><span style="color: #ff6600;"><? echo $DEFAULT['wait_in_airport_economy'] ?></span></td>
+        <td><span style="color: #ff6600;"><? echo $DEFAULT['wait_in_airport_comfort'] ?></span></td>
+        <td><span style="color: #ff6600;"><? echo $DEFAULT['wait_in_airport_minivan'] ?></span></td>
+        <td><span style="color: #ff6600;"><? echo $DEFAULT['wait_in_airport_business'] ?></span></td>
+        <td><span style="color: #ff6600;"><? echo $DEFAULT['wait_in_airport_vip'] ?></span></td>
+    </tr>
+<?
 }
 
 function drawWaitInTripRow()
