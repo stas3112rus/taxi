@@ -26,7 +26,12 @@ include('sites/components/main.php');
 </head>
 
 <body>
-
+    <div class="wrapp">
+        <?
+        drawLoader();
+        drawNavBar();
+        ?>
+    </div>
 
     <?
     drawScripts();
