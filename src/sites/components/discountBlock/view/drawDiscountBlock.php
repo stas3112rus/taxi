@@ -1,7 +1,7 @@
 <?
 function drawDiscountBlock()
 {
-    global $TXT;
+    global $TXT, $STOP_DISCOUNT_FOR_TIMER;
 ?>
     <section class="discont-1 select_transparent no_padding gray_bg flex overflow-hidden">
         <div class="six no_padding no_margin line-height0">
@@ -17,8 +17,9 @@ function drawDiscountBlock()
             </div>
 
             <div class="timer">
+                <div class="stop_timer" style="display: none;"><? echo $STOP_DISCOUNT_FOR_TIMER ?></div>
                 <div class="day_block">
-                    <div class="day">03</div>
+                    <div class="day">00</div>
                     <div class="desc">Дней</div>
                 </div>
                 <div class="hour_block">
@@ -36,8 +37,6 @@ function drawDiscountBlock()
             </div>
 
             <div class="clear space50"></div>
-
-
             <div class="text_center"><a class="btn popup-modal" href="#order-time">
                     <? echo $TXT['discount_button'] ?>
                 </a>

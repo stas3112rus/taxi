@@ -26,6 +26,8 @@ $MAIN_SITE = getMainUrl($MAIN_CITY['eng'], $MAIN_CITY['main_city']);
 $LEVEL = getLevelForSite();
 
 $STOP_DISCOUNT_DAY = getStopDiscountDay();
+$STOP_DISCOUNT_FOR_TIMER = getStopDiscountForTimer();
+
 
 $DISCOUNT_PERCENT = getDiscountPercent();
 $TARIFF = getTariffForDirection();

@@ -249,18 +249,16 @@ jQuery(document).ready(function($) {
     });
     
 
-    var now = new Date();
-    var newDate = new Date();
-    newDate.setDate(newDate.getDate() + 3);
+    var now = new Date();  
+    var newDate = new Date( document.querySelector(".stop_timer").innerHTML);   
     var totalRemains = (newDate.getTime() - now.getTime());
 
-    const timer = setInterval(()=>{
+    const dayDom = document.querySelector(".day");
+    const hourDom = document.querySelector(".hour");
+    const minDom = document.querySelector(".min");
+    const secDom = document.querySelector(".sec");   
 
-        const dayDom = document.querySelector(".day");
-        const hourDom = document.querySelector(".hour");
-        const minDom = document.querySelector(".min");
-        const secDom = document.querySelector(".sec");            
-
+    setInterval(()=>{
         
         if (totalRemains > 1) {
             var Days = (parseInt(parseInt(totalRemains / 1000) / (24 * 3600)));
@@ -289,7 +287,6 @@ jQuery(document).ready(function($) {
         }
     }, 1000);
 
-    timer();
         
     flatpickr(".flatpickr", {
         enableTime: true,
