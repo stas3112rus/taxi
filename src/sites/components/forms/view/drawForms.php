@@ -1,21 +1,25 @@
 <?
 function drawTopForm()
 {
+    global $TXT;
 ?>
-    <form method="post" class="ajax-contact-form contact_form form-style" id="contact_form-1" action="mail.php">
+    <form action="" class="form-style" id="contact_form">
         <div id="contact_body">
+            <div class="popup_title"><? echo $TXT['top_form_title'] ?></div>
+
             <?
-            drawDatePicker();
+            drawDateField();
+            drawTimeField();
             drawSelectFromField();
             drawSelectToField();
             drawCLassTaxiField();
             drawFieldName();
             drawFieldPhone();
-            drawFieldEmail();
             drawFieldMessage();
-            drawFieldCheck();
             drawButtonSend();
             ?>
+        </div>
+        <div id="contact_results"></div>
         </div>
     </form>
 <?
@@ -57,14 +61,65 @@ function drawContactForm()
 <?
 }
 
-function drawDatePicker()
+function drawDateField()
 {
 ?>
-    <label class="flatpickr" alt="Select Date and Time *">
-        <input class="input-field flatpickr" data-enabletime=true data-time_24hr=true data-timeFormat="H:i" name="date" type="text" placeholder="Выберите дату и время *">
-        <i class="fa fa-calendar form-icon" aria-hidden="true"></i>
+    <label class="flatpickr" alt="Когда подать авто *">
+        <select class="select-field" name="date">
+            <option value="">Когда подать авто</option>
+
+            <?php
+
+            for ($i = 0; $i <= 180; $i++) {
+                $date = getRusDate($i);
+            ?>
+                <option value="<?php echo $date ?>"><?php echo $date ?></option>
+            <?php } ?>
+        </select>
     </label>
 <?
+}
+
+function drawTimeField()
+{
+?>
+    <label class="flatpickr" alt="Время подачи  *">
+        <select class="select-field" name="mmm">
+            <option value="">Время подачи</option>
+            <? foreach (getTime() as $time) {
+            ?>
+                <option value="<?php echo $time ?>"><?php echo $time ?></option>
+
+            <?  } ?>
+        </select>
+    </label>
+<?
+}
+
+function getRusDate($plus_day)
+{
+    global $MONTHS;
+
+    $mes_pod = date('n', strtotime('+' . $plus_day . ' day'));
+    $day_pod = date('d', strtotime('+' . $plus_day . ' day'));
+    $year_pod = date('Y', strtotime('+' . $plus_day . ' day'));
+
+    $mes_pod_name = $MONTHS[$mes_pod  - 1];
+
+    return $day_pod . " " . $mes_pod_name . " " . $year_pod;
+}
+
+function getTime()
+{
+    $result = [];
+
+    for ($hour = 0; $hour <= 23; $hour++) {
+        $full_hours = $hour < 10 ? "0" . $hour : $hour;
+
+        array_push($result, $full_hours . ":00", $full_hours . ":30");
+    }
+
+    return $result;
 }
 
 function drawSelectFromField()
@@ -76,6 +131,7 @@ function drawSelectFromField()
             <option value="">Откуда</option>
             <? drawCitiesOptions($CITY_FROM) ?>
         </select>
+        <i class="fa fa-globe form-icon" aria-hidden="true"></i>
     </label>
 <?
 }
@@ -86,10 +142,12 @@ function drawSelectToField()
 
 ?>
     <label for="subject">
-        <select name="subject-from" class="select-field">
+        <select name="subject-to" class="select-field">
             <option value="">Куда</option>
             <? drawCitiesOptions($CITY_TO) ?>
         </select>
+
+        <i class="fa fa-globe form-icon" aria-hidden="true"></i>
     </label>
 <?
 }
@@ -113,40 +171,39 @@ function drawCLassTaxiField()
 {
 ?>
     <label for="taxi" class="taxi">
-        <select name="taxi">
-            <option value="">Выберите класс такси</option>
-            <option value="Standart">Эконом</option>
-            <option value="Komfort">Комфорт</option>
-            <option value="Biznes">Бизнес</option>
-            <option value="BUS-MINIVAN">Микроавтобус</option>
-            <option value="VIP">VIP</option>
+        <select name="taxi2">
+            <option value="">Выберите класс Такси</option>
+            <option value="Эконом">Эконом</option>
+            <option value="Комфорт">Комфорт</option>
+            <option value="Бизнес">Бизнес</option>
+            <option value="Микроавтобус">Микроавтобус</option>
         </select>
+        <i class="fa fa-car form-icon" aria-hidden="true"></i>
     </label>
 <?
 }
-
-
 
 function drawFieldName()
 {
 ?>
+
     <label alt="Name *">
         <input type="text" name="name" id="name" required class="input-field" placeholder="Имя *" />
-        <i class="fa fa-user form-icon" aria-hidden="true"></i>
+        <i class="fa fa-user-o form-icon" aria-hidden="true"></i>
     </label>
 <?
 }
-function drawFieldPhone($icon = true)
+
+function drawFieldPhone()
 {
 ?>
     <label>
         <input type="text" name="phones" maxlength="19" required placeholder="Телефон *" class="tel-number-field long" />
-        <? if ($icon) { ?>
-            <i class="fa fa-phone form-icon" aria-hidden="true"></i>
-        <? } ?>
+        <i class="fa fa-phone form-icon" aria-hidden="true"></i>
     </label>
 <?
 }
+
 function drawFieldEmail($icon = true)
 {
 ?>
@@ -160,17 +217,18 @@ function drawFieldEmail($icon = true)
     </label>
 <?
 }
-function drawFieldMessage($icon = true)
+
+function drawFieldMessage()
 {
 ?>
     <label for="field5">
         <textarea name="message" id="message" class="textarea-field" placeholder="Ваше сообщение *"></textarea>
-        <? if ($icon) { ?>
-            <i class="fa fa-commenting-o form-icon" aria-hidden="true"></i>
-        <? } ?>
+        <i class="fa fa-commenting-o form-icon" aria-hidden="true"></i>
+
     </label>
 <?
 }
+
 function drawFieldCheck()
 {
 ?>
@@ -179,11 +237,12 @@ function drawFieldCheck()
     </label>
 <?
 }
+
 function drawButtonSend()
 {
 ?>
     <label>
-        <input type="submit" id="submit_btn" class="wbutton" value="ЗАБРОНИРОВАТЬ" />
+        <input type="submit" id="submit_btn" class="btn " value="Забронировать" />
     </label>
 <?
 }

@@ -7,3 +7,4 @@ include('tariffs/view/DrawTariffsBlock.php');
 include('tariffs/view/DrawTariffsTable.php');
 include('loader/view/drawLoader.php');
 include('navbar/view/drawNavBar.php');
+include('mainBlock/view/drawMainBlock.php');
