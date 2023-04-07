@@ -5,7 +5,7 @@ function drawHead()
 ?>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="<? echo $LEVEL ?>favicon.png" rel="shortcut icon" type="image/png" />
+    <link href="<? echo $LEVEL ?>img/favicon.png" rel="shortcut icon" type="image/png" />
     <title><? echo $TXT['title'] ?></title>
     <meta name="description" content="<? echo $TXT['description'] ?>" />
     <meta name="keywords" content="<? echo $TXT['keywords'] ?>" />

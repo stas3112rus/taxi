@@ -32,6 +32,7 @@ include('sites/components/main.php');
         drawNavBarTop();
         drawNavBarBottom();
         drawMainBlock();
+        drawTextBlock();
         ?>
     </div>
 
