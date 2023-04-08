@@ -53,7 +53,7 @@ function getFullPathDirectionFile($city_from, $city_to)
 
 function getFullPathToRobotFile($city)
 {
-    return getFullPathToDomain($city) . "robot.txt";
+    return getFullPathToDomain($city) . "robots.txt";
 }
 
 function getFullPathToHtaccesFile($city)
