@@ -1,10 +1,10 @@
 <?
-include('../../../../src/data/mysql.php');
+include('../../../../src-taxi-krim/data/mysql.php');
 include('../../../../migtration/migration_yandex.php');
-include('../../../../src/data/cities/functions.php');
-include('../../../../src/data/defaults/functions.php');
-include('../../../../src/utils/functions.php');
-include('../../../../src/deploy/main.php');
+include('../../../../src-taxi-krim/data/cities/functions.php');
+include('../../../../src-taxi-krim/data/defaults/functions.php');
+include('../../../../src-taxi-krim/utils/functions.php');
+include('../../../../src-taxi-krim/deploy/main.php');
 
 checkAuthorization();
 

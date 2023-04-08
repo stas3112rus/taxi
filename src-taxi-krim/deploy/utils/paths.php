@@ -18,7 +18,7 @@ function getFullPathToStaticFiles()
 {
     $domain = getDomain();
 
-    return getRootPath($domain) . "src/sites/staticFiles";
+    return getRootPath($domain) . "src-taxi-krim/sites/staticFiles";
 }
 
 function getFullPathToInfoFile($city)
@@ -74,7 +74,7 @@ function getFullPathToMainSitemapXMLFile($city)
 
 function getPathToMainFile($level = 0)
 {
-    return getLevel($level) . "../../src/site-deploy.php";
+    return getLevel($level) . "../../src-taxi-krim/site-deploy.php";
 };
 
 function getPathToInfoFile($level = 0)

@@ -1,5 +1,5 @@
 <?
-include('../../src/data/mysql.php');
+include('../../src-taxi-krim/data/mysql.php');
 include('./components/authorization/utils/functions.php');
 include('./constants/routs.php');
 

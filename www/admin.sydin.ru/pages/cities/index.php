@@ -1,11 +1,11 @@
 <?
-include('../../../../src/data/mysql.php');
-include('../../../../src/data/text-types/functions.php');
-include('../../../../src/data/defaults/functions.php');
-include('../../../../src/utils/functions.php');
+include('../../../../src-taxi-krim/data/mysql.php');
+include('../../../../src-taxi-krim/data/text-types/functions.php');
+include('../../../../src-taxi-krim/data/defaults/functions.php');
+include('../../../../src-taxi-krim/utils/functions.php');
 include('../../components/authorization/utils/functions.php');
 include('../../constants/routs.php');
-include('../../../../src/data/cities/functions.php');
+include('../../../../src-taxi-krim/data/cities/functions.php');
 include('../../components/cities/view/drawCitiesTable.php');
 include('../../components/alerts/drawAlert.php');
 include('../../components/cities/utils/functions-cities.php');
