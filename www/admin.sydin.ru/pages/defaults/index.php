@@ -1,10 +1,10 @@
 <?
-include('../../../../src/data/mysql.php');
-include('../../../../src/data/text-types/functions.php');
+include('../../../../src-aeroport-simferopol/data/mysql.php');
+include('../../../../src-aeroport-simferopol/data/text-types/functions.php');
 include('../../components/authorization/utils/functions.php');
 include('../../constants/routs.php');
 include('../../components/alerts/drawAlert.php');
-include('../../../../src/data/defaults/functions.php');
+include('../../../../src-aeroport-simferopol/data/defaults/functions.php');
 include('../../components/defaults/view/drawDefaults.php');
 include('../../components/defaults/utils/functions.php');
 include('../../components/defaults/constants/constants.php');

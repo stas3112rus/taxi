@@ -1,5 +1,5 @@
 <?
-include('../../src/data/mysql.php');
+include('../../src-aeroport-simferopol/data/mysql.php');
 
 function getCities()
 {
@@ -98,10 +98,10 @@ function upgradeOldTariffs($tariffs)
 
 function compareOldAndNewTariffs($reverse = false)
 {
-    if ($reverse){
+    if ($reverse) {
         $tariffOne = upgradeOldTariffs(getOldTariffs());
         $tariffTwo = upgradeNewTariff(getNewTariffs());
-    }else {
+    } else {
         $tariffOne = upgradeNewTariff(getNewTariffs());
         $tariffTwo = upgradeOldTariffs(getOldTariffs());
     }

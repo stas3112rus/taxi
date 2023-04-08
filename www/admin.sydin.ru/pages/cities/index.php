@@ -1,11 +1,11 @@
 <?
-include('../../../../src/data/mysql.php');
-include('../../../../src/data/text-types/functions.php');
-include('../../../../src/data/defaults/functions.php');
-include('../../../../src/utils/functions.php');
+include('../../../../src-aeroport-simferopol/data/mysql.php');
+include('../../../../src-aeroport-simferopol/data/text-types/functions.php');
+include('../../../../src-aeroport-simferopol/data/defaults/functions.php');
+include('../../../../src-aeroport-simferopol/utils/functions.php');
 include('../../components/authorization/utils/functions.php');
 include('../../constants/routs.php');
-include('../../../../src/data/cities/functions.php');
+include('../../../../src-aeroport-simferopol/data/cities/functions.php');
 include('../../components/cities/view/drawCitiesTable.php');
 include('../../components/alerts/drawAlert.php');
 include('../../components/cities/utils/functions-cities.php');

@@ -1,10 +1,10 @@
 <?
-include('../../../../src/data/mysql.php');
+include('../../../../src-aeroport-simferopol/data/mysql.php');
 include('../../../../migtration/migration_yandex.php');
-include('../../../../src/data/cities/functions.php');
-include('../../../../src/data/defaults/functions.php');
-include('../../../../src/utils/functions.php');
-include('../../../../src/deploy/main.php');
+include('../../../../src-aeroport-simferopol/data/cities/functions.php');
+include('../../../../src-aeroport-simferopol/data/defaults/functions.php');
+include('../../../../src-aeroport-simferopol/utils/functions.php');
+include('../../../../src-aeroport-simferopol/deploy/main.php');
 
 checkAuthorization();
 

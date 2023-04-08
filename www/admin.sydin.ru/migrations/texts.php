@@ -1,7 +1,7 @@
 <?
-include('../../../src/data/mysql.php');
-include('../../../src/data/text-fields/functions.php');
-include('../../../src/data/text/functions.php');
+include('../../../src-aeroport-simferopol/data/mysql.php');
+include('../../../src-aeroport-simferopol/data/text-fields/functions.php');
+include('../../../src-aeroport-simferopol/data/text/functions.php');
 include('data/data.php');
 
 $fields =  upgradeTextFields(getAllTextFields());
@@ -31,7 +31,7 @@ function setTextArray($values, $text_type_ref)
 {
   global $fields;
   global $textData;
- 
+
   foreach ($values as $value) {
     if (!$fields[$value['id']]) {
       return "Нет поля $value[id]";
@@ -44,5 +44,5 @@ function setTextArray($values, $text_type_ref)
     ];
 
     array_push($textData, $data);
-  } 
+  }
 }

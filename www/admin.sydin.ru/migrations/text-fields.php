@@ -1,6 +1,6 @@
 <?
-include('../../../src/data/mysql.php');
-include('../../../src/data/text-fields/functions.php');
+include('../../../src-aeroport-simferopol/data/mysql.php');
+include('../../../src-aeroport-simferopol/data/text-fields/functions.php');
 
 $text_domain = array(
   array('num' => '34', 'id' => 'about_1', 'text' => '<span>Безопасно</span>

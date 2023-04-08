@@ -3,6 +3,7 @@
 !admin.taxi24h.ru
 *aeroport-simferopol.taxi*
 src/data/mysql.php
+src-aeroport-simferopol/data/mysql.php
 *taxi-krim.com*
 *simferopol-aeroport.taxi*
 README.TXT

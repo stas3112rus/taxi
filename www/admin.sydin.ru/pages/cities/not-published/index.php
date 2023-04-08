@@ -1,11 +1,11 @@
 <?
-include('../../../../../src/data/mysql.php');
-include('../../../../../src/data/text-types/functions.php');
+include('../../../../../src-aeroport-simferopol/data/mysql.php');
+include('../../../../../src-aeroport-simferopol/data/text-types/functions.php');
 include('../../../components/authorization/utils/functions.php');
 include('../../../constants/routs.php');
 include('../../../components/alerts/drawAlert.php');
-include('../../../../../src/data/cities/functions.php');
-include('../../../../../src/data/not-published/functions.php');
+include('../../../../../src-aeroport-simferopol/data/cities/functions.php');
+include('../../../../../src-aeroport-simferopol/data/not-published/functions.php');
 include('../../../components/not-published/view/drawNotPublished.php');
 include('../../../components/not-published/utils/functions.php');
 
@@ -54,4 +54,5 @@ if ($_POST)
     </section>
 </body>
 <script src="../../../js/main.js"></script>
+
 </html>

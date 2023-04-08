@@ -1,12 +1,12 @@
 <?
-include('../../../../src/data/mysql.php');
-include('../../../../src/data/text-types/functions.php');
+include('../../../../src-aeroport-simferopol/data/mysql.php');
+include('../../../../src-aeroport-simferopol/data/text-types/functions.php');
 include('../../components/authorization/utils/functions.php');
-include('../../../../src/data/cities/functions.php');
+include('../../../../src-aeroport-simferopol/data/cities/functions.php');
 include('../../constants/routs.php');
 include('../../components/alerts/drawAlert.php');
-include('../../../../src/data/widgets-types/functions.php');
-include('../../../../src/data/widgets/functions.php');
+include('../../../../src-aeroport-simferopol/data/widgets-types/functions.php');
+include('../../../../src-aeroport-simferopol/data/widgets/functions.php');
 include('../../components/widgets/utils/functions.php');
 include('../../components/widgets/view/drawWidgetForm.php');
 
