@@ -5,7 +5,7 @@ $sql = mysql_query("SELECT eng
 while ($dp = mysql_fetch_object($sql)) {
     $eng = $dp->eng;
 
-    $src = "../" . $eng . ".aeroport-simferopol.taxi/info.php";
+    $src = "../" . $eng . ".simferopol-aeroport.taxi/info.php";
 
     include($src);
     $uliza = iconv('windows-1251', 'utf-8', $uliza);
