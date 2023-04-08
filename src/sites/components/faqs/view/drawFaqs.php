@@ -24,13 +24,15 @@ function drawFaqs()
             <div class="clear"></div>
         </div>
     </section>
-<?
+    <?
 }
 
 function drawFaq($question, $answer)
 {
-?>
-    <div class="round accordion_title"><? echo $question ?></div>
-    <div class="accordion_hide"><? echo $answer ?></div>
+    if ($question) {
+    ?>
+        <div class="round accordion_title"><? echo $question ?></div>
+        <div class="accordion_hide"><? echo $answer ?></div>
 <?
+    }
 }

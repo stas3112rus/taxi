@@ -59,5 +59,31 @@ function drawNavBarBottom()
             <div class="clear"></div>
         </div>
     </section>
+    <section class="scrollMenu">
+        <div class="container relative">
+            <a href="#home" class="logo" data-scroll>
+                <h1><? echo $TXT['H1'] ?></h1>
+            </a>
+            <span href="#" id="nav-toggle" aria-hidden="false" class="">
+                <div></div>
+                <div></div>
+                <div></div>
+            </span>
+            <nav class="nav-collapse">
+                <ul>
+                    <li class="menu-item"><a href="#what-we-do">О Нас</a></li>
+                    <li class="menu-item"><a href="#price-table">Тарифы</a></li>
+                    <li class="menu-item"><a href="#taxi-class">Классы Такси</a></li>
+                    <li class="menu-item"><a href="#learn-mone">Сервис</a></li>
+                    <li class="menu-item"><a href="#why_choose_certified_service">ЧАВО</a></li>
+                    <li class="menu-item"><a href="#reviews">Отзывы</a></li>
+                    <li class="menu-item"><a href="#contact">Контакты</a></li>
+
+                </ul>
+                <div class="clear"></div>
+            </nav>
+            <div class="clear"></div>
+        </div>
+    </section>
 <?
 }
