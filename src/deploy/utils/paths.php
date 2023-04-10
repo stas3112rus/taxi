@@ -33,12 +33,25 @@ function getFullPathToIndexFile($city)
 
 function getFullPathDirectionFolder($city_from, $city_to)
 {
-    return  getFullPathToDomain($city_from) . "$city_to[eng]/";
+    if ($city_from['main_city']) {
+        $folder = $city_to['eng'] . '-simferopol';
+    } else {
+        $folder = $city_to['eng'];
+    }
+
+    return  getFullPathToDomain($city_from) . $folder . "/";
 }
 
 function getFullPathTransferFolder($city_from, $city_to)
 {
-    return  getFullPathToDomain($city_from) . "transfer-$city_to[eng]/";
+
+    if ($city_from['main_city']) {
+        $folder = 'transfer-simferopol-' . $city_to['eng'] . "/";
+    } else {
+        $folder = "transfer-" . $city_to['eng'] . "/";
+    }
+
+    return  getFullPathToDomain($city_from) . $folder;
 }
 
 function getFullPathTransferFile($city_from, $city_to)
@@ -94,16 +107,27 @@ function getUrlToSitemapWithAllUrls($city)
 
 function getDirectionUrl($city_from, $city_to)
 {
+    if ($city_from['main_city']) {
+        $folder = $city_to['eng'] . '-simferopol';
+    } else {
+        $folder = $city_to['eng'];
+    }
+
     return getMainUrl($city_from['eng'], $city_from['main_city'])
-        . $city_to['eng']
+        . $folder
         . '/';
 }
 
 function getTransferUrl($city_from, $city_to)
 {
+    if ($city_from['main_city']) {
+        $folder = 'transfer-simferopol-' . $city_to['eng'];
+    } else {
+        $folder = "transfer-" . $city_to['eng'];
+    }
+
     return getMainUrl($city_from['eng'], $city_from['main_city'])
-        . 'transfer-'
-        . $city_to['eng']
+        . $folder
         . '/';
 }
 
