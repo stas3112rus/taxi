@@ -5,10 +5,13 @@ include('utils/default-functions.php');
 include('utils/phone-functions.php');
 include('utils/discount-functions.php');
 include('utils/widgets-functions.php');
+include('utils/copy-city-without-main.php');
 
 $ALL_CITIES = getAllCities();
 $CITY_FROM = getCityById($CITY_FROM_ID);
 $CITY_TO = getCityTo();
+
+doReverse();
 
 $MAIN_CITY = getMainCity();
 
@@ -16,7 +19,7 @@ $DIRECTION_URL = $CITY_TO ? getDirectionUrl($CITY_FROM, $CITY_TO) : false;
 
 $DEFAULT = getDefaults();
 
-$ADDRESS = $CITY_FROM['street'] ? 
+$ADDRESS = $CITY_FROM['street'] ?
     $CITY_FROM['im'] . ", " . $CITY_FROM['street'] :
     $CITY_FROM['im'];
 
@@ -90,5 +93,21 @@ function getLevelForSite()
             return getLevel(1);
         default:
             return  false;
+    }
+}
+
+function doReverse()
+{
+    global $CITY_FROM, $CITY_TO, $IS_REVERSE;
+
+    if ($IS_REVERSE) {
+        $city_from = copyCityWithoutMain($CITY_TO);
+        $city_to = copyCityWithoutMain($CITY_FROM);
+
+        $city_from['main_city'] = $CITY_FROM['main_city'];
+        $city_to['main_city'] = $CITY_TO['main_city'];
+
+        $CITY_FROM = $city_from;
+        $CITY_TO = $city_to;
     }
 }

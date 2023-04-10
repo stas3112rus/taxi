@@ -5,16 +5,4 @@ include('widgets/view/drawWidgets.php');
 include('forms/view/drawForms.php');
 include('tariffs/view/DrawTariffsBlock.php');
 include('tariffs/view/DrawTariffsTable.php');
-include('loader/view/drawLoader.php');
-include('navBar/view/drawNavBar.php');
-include('mainBlock/view/drawMainBlock.php');
-include('textBlock/view/drawTextBlock.php');
-include('services/view/drawServices.php');
-include('discountBlock/view/drawDiscountBlock.php');
-include('carClasses/view/drawCarClasses.php');
-include('reliableTaxi/view/drawReliableTaxi.php');
-include('faqs/view/drawFaqs.php');
-include('reviews/view/drawReviews.php');
-include('contacts/view/drawContacts.php');
-include('footer/view/drawFooter.php');
-include('politics/view/drawPolitics.php');
+

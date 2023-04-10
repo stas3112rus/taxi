@@ -3,21 +3,24 @@ function drawHead()
 {
     global $TXT, $LEVEL;
 ?>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="<? echo $LEVEL ?>img/favicon.png" rel="shortcut icon" type="image/png" />
-    <title><? echo $TXT['title'] ?></title>
-    <meta name="description" content="<? echo $TXT['description'] ?>" />
-    <meta name="keywords" content="<? echo $TXT['keywords'] ?>" />
-    <link rel="stylesheet" href="<? echo $LEVEL ?>builder/disc/elements/css/fonts/font-awesome/css/font-awesome.min.css" type='text/css'>
-    <link rel="stylesheet" href="<? echo $LEVEL ?>builder/disc/elements/css/style.css" type='text/css' />
-    <link rel="stylesheet" href="<? echo $LEVEL ?>builder/disc/elements/css/animate.css" type='text/css' />
-    <link rel="stylesheet" href="<? echo $LEVEL ?>builder/disc/elements/css/owl.carousel.css" type='text/css' />
-    <link rel="stylesheet" href="<? echo $LEVEL ?>builder/disc/elements/css/fixed-nav.css">
-    <link rel="stylesheet" href="<? echo $LEVEL ?>builder/disc/elements/css/fonts/car-serive-icon.css" type='text/css'>
-    <link rel="stylesheet" href="<? echo $LEVEL ?>builder/disc/elements/css/magnific-popup.css" type='text/css' />
-    <link rel="stylesheet" href="<? echo $LEVEL ?>builder/disc/elements/css/twentytwenty.css">
-    <link rel="stylesheet" href="<? echo $LEVEL ?>builder/disc/elements/js/flatpickr/flatpickr.css">
-    <link rel=" stylesheet" href="<? echo $LEVEL ?>builder/disc/elements/css/color/yellow.css" />
+    <meta name="description" content="<? echo  $TXT['description'] ?>" />
+    <link rel="shortcut icon" href="<? echo $LEVEL ?>favicon.ico" />
+    <title><? echo  $TXT['title'] ?></title>
+    <link href="<? echo $LEVEL ?>css/reset-min.css" rel="stylesheet" />
+    <link href="<? echo $LEVEL ?>css/bootstrap.css" rel="stylesheet" />
+    <link href="<? echo $LEVEL ?>css/styles.css" rel="stylesheet" />
+    <link href="<? echo $LEVEL ?>css/style-form.css" rel="stylesheet">
+    <link href="<? echo $LEVEL ?>css/flatpickr.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="<? echo $LEVEL ?>css/bootstrap-grid.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&amp;subset=cyrillic" rel="stylesheet" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
 <?
 }
