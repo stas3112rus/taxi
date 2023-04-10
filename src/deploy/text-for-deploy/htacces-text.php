@@ -13,7 +13,18 @@ function getHtaccesMain()
     
     RewriteCond %{HTTP_HOST} ^www\.(.*)$
     RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
-    RewriteRule ^index\.html$ "http\:\/\/simferopol-aeroport\.taxi\/" [R=301,L]';
+    RewriteRule ^index\.html$ "http\:\/\/taksi24\.taxi\/" [R=301,L]
+    
+    
+    Redirect 301 /tarifi-taxi-simferopol-aeroport.php https://taksi24.taxi/
+    Redirect 301 /autopark.php https://taksi24.taxi/
+    
+    RewriteCond %{THE_REQUEST} GET\ .*/index\.(php|html)\ HTTP
+    RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+    RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+    RewriteRule ^(.*)index\.(php|html)$ /$1 [R=301,L]
+    
+    AddDefaultCharset UTF-8';
 }
 
 function getHtaccesNotMain($city)
