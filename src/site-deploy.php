@@ -26,8 +26,11 @@ include('sites/components/main.php');
 </head>
 
 <body>
-    
+
     <?
+    drawNavBar();
+    drawMainBlock();
+    drawTextBlock();
     drawScripts();
     ?>
 
