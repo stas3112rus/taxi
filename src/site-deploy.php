@@ -34,6 +34,7 @@ include('sites/components/main.php');
     drawTopForm();
     drawTariffsBlock();
     drawButtonTextBlock();
+    drawReasons();
     drawScripts();
     ?>
 

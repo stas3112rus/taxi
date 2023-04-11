@@ -8,4 +8,5 @@ include('tariffs/view/DrawTariffsTable.php');
 include('navbar/view/drawNavBar.php');
 include('mainBlock/view/drawMainBlock.php');
 include('textBlock/view/drawTextBlock.php');
+include('reasons/view/drawReasons.php');
 
