@@ -18,3 +18,41 @@ function drawTextBlock()
     </div>
 <?
 }
+
+function drawButtonTextBlock()
+{
+    global $TXT, $LEVEL;
+?>
+    <div class="container-fluid fourth_scr">
+        <div class="container">
+            <div class="row marg_top_90">
+                <div class="col-md-2"></div>
+                <div class="col-md-8 text-center header_4_scr" style="color: white;">
+                    <? echo $TXT['text_bottom_title'] ?>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+            <div class="row ">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 text-center header_4_scr">
+                    <hr />
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row ">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 text-center header_4_scr">
+                    <p><? echo $TXT['text_bottom_subtitle'] ?></p>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+            <div class="row marg_top_60">
+                <div class="col-md-12 text-center">
+                    <a href="#o-nas">
+                        <img src="<?echo $LEVEL?>images/circle_down.png" alt="<?echo $TXT['text_bottom_alt']?>" title="<?echo $TXT['text_bottom_alt']?>" />
+                    </a></div>
+            </div>
+        </div>
+    </div>
+<?
+}
