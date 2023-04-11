@@ -13,6 +13,7 @@ function drawHead()
     <link href="<? echo $LEVEL ?>css/bootstrap.css" rel="stylesheet" />
     <link href="<? echo $LEVEL ?>css/styles.css" rel="stylesheet" />
     <link href="<? echo $LEVEL ?>css/style-form.css" rel="stylesheet">
+    <link href="<? echo $LEVEL ?>css/style-form-grid.css" rel="stylesheet">
     <link href="<? echo $LEVEL ?>css/flatpickr.css" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="<? echo $LEVEL ?>css/bootstrap-grid.css" rel="stylesheet">
