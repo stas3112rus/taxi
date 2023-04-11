@@ -32,6 +32,7 @@ include('sites/components/main.php');
     drawMainBlock();
     drawTextBlock();
     drawTopForm();
+    drawTariffsBlock();
     drawScripts();
     ?>
 
