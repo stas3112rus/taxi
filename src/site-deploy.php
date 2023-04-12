@@ -36,6 +36,8 @@ include('sites/components/main.php');
     drawButtonTextBlock();
     drawReasons();
     drawCarClasses();
+    drawHowWeWork();
+    drawReviews();
     drawScripts();
     ?>
 
