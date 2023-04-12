@@ -38,6 +38,8 @@ include('sites/components/main.php');
     drawCarClasses();
     drawHowWeWork();
     drawReviews();
+    drawFooter();
+    drawPolitic();
     drawScripts();
     ?>
 
