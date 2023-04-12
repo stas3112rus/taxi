@@ -1,18 +1,8 @@
 <?
-function drawMainSitemap()
+
+function drawHTMLContentForOneCity($city_from, $main_city)
 {
-    $content = '';
-
-    foreach (getAllCities() as $city_from) {
-        $content .= drawHTMLContentForOneCity($city_from);
-    }
-
-    return $content;
-}
-
-function drawHTMLContentForOneCity($city_from)
-{
-    $content =  getSitemapHTMLLine($city_from);
+    $content =  getSitemapHTMLLineForDomain($city_from, $main_city);
 
     $isNotPublicMainInDirections = isNotPublicMainInDirections();
 
@@ -32,7 +22,7 @@ function drawHTMLContentForOneCity($city_from)
 }
 
 
-function getSitemapHTMLLine($city_from, $city_to = false, $directionTypeTaxi = true)
+function getSitemapHTMLLine($city_from, $city_to, $directionTypeTaxi = true)
 {
     if ($city_to) {
         $url = $directionTypeTaxi
@@ -44,9 +34,26 @@ function getSitemapHTMLLine($city_from, $city_to = false, $directionTypeTaxi = t
 
     $type = $directionTypeTaxi ? "Такси" : "Трансфер";
 
-    $dir = $city_to ?
-        $city_from['im'] . " - " . $city_to['im'] :
-        $city_from['im'];
+    if ($directionTypeTaxi) {
+        $dir = $city_from['main_city'] ?
+            $city_to['im'] . " - " . $city_from['im'] :
+            $city_from['im'] . " - " . $city_to['im'];
+    } else {
+        $dir = $city_from['im'] . " - " . $city_to['im'];
+    }
 
     return "<a href='" . $url . "'>" . $type . " " . $dir . "</a><br>";
+}
+
+function getSitemapHTMLLineForDomain($city_from, $main_city)
+{
+
+    $url =  getMainUrl($city_from['eng'], $city_from['main_city']);
+
+
+    $txt = $city_from['id_city'] == $main_city['id_city'] ?
+        "Такси " . $main_city['im'] :
+        "Такси " . $main_city['im'] . " - " . $city_from['im'];
+
+    return "<a href='" . $url . "'>" . $txt . "</a><br>";
 }

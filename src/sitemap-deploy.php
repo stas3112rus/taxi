@@ -5,11 +5,15 @@ include('data/defaults/functions.php');
 include('utils/functions.php');
 include('deploy/utils/paths.php');
 include('sites/global-data/utils/sitemap.php');
+include('sites/components/navbar/view/drawNavBar.php');
+include('sites/global-data/utils/phone-functions.php');
+include('sites/global-data/utils/default-functions.php');
 
 $CITY_FROM = getCityById($CITY_FROM_ID);
 $MAIN_CITY = getMainCity();
 $CURRENT_SITE = getMainUrl($CITY_FROM['eng'], $CITY_FROM['main_city']);
 $LEVEL = '';
+$DEFAULT = getDefaults();
 
 ?>
 
@@ -19,41 +23,41 @@ $LEVEL = '';
 <head>
 
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="yandex-verification" content="15e75242a69b0299" />
-
-        <link href="favicon.png" rel="shortcut icon" type="image/png" />
-        <title>Карта сайта <? echo $CURRENT_SITE ?></title>
         <meta name="description" content="" />
-        <link rel="stylesheet" href="builder/disc/elements/css/fonts/font-awesome/css/font-awesome.min.css" type='text/css'>
+        <link rel="shortcut icon" href="favicon.ico" />
+        <title>Карта сайта https://taksi24.taxi/</title>
+        <link href="css/reset-min.css" rel="stylesheet" />
+        <link href="css/bootstrap.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <link href="css/style-form.css" rel="stylesheet">
+        <link href="css/flatpickr.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link href="css/bootstrap-grid.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="builder/disc/elements/css/style.css" type='text/css' />
-        <link rel="stylesheet" href="builder/disc/elements/css/animate.css" type='text/css' />
-
-        <link rel="stylesheet" href="builder/disc/elements/css/owl.carousel.css" type='text/css' />
-
-        <link rel="stylesheet" href="builder/disc/elements/css/fixed-nav.css">
-        <link rel="stylesheet" href="builder/disc/elements/css/fonts/car-serive-icon.css" type='text/css'>
-
-        <link rel="stylesheet" href="builder/disc/elements/css/magnific-popup.css" type='text/css' />
-
-        <link href="builder/disc/elements/css/twentytwenty.css" rel="stylesheet">
-
-        <link rel="stylesheet" href="builder/disc/elements/js/flatpickr/flatpickr.css">
-
-        <link rel=" stylesheet" href="builder/disc/elements/css/color/yellow.css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=PT+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&amp;subset=cyrillic" rel="stylesheet" />
 
     </head>
 </head>
 
 <body>
-    <h1>Карта сайта <? echo $CURRENT_SITE ?></h1>
 
     <?
-    if ($CITY_FROM['id_city'] == $MAIN_CITY['id_city']) {
-        echo drawMainSitemap();
-    } else {
-        echo drawHTMLContentForOneCity($CITY_FROM);
-    }
+    drawNavBar();
     ?>
+    <div class="container-fluid" id="o-nas">
+        <div class="container fifth_scr">
+            <div class="row">
+                <div class="col-md-12 text-center text_5_scr six_scr_h3">
+                    <?
+                    echo drawHTMLContentForOneCity($CITY_FROM, $MAIN_CITY);
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
