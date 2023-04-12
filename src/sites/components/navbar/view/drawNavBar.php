@@ -29,13 +29,13 @@ function drawNavBar()
     <div class="container top_header">
         <div class="row top_header_row">
             <div class="col-md-4 text-left hide_mob">
-                <img src='<?echo $LEVEL?>images/dots.png'  alt="<?echo $TXT['logo_alt']?>" tilt="<?echo $TXT['logo_alt']?>">
+                <img src='<? echo $LEVEL ?>images/dots.png' alt="<? echo $TXT['navbar_logo_alt'] ?>" tilt="<? echo $TXT['navbar_logo_alt'] ?>">
             </div>
             <div class="col-md-3 text-center hide_mob">
                 <p>Служба заказа такси</p>
             </div>
             <div class="col-md-3 text-right col-sm-12 center_mob">
-                <img class="tel_img" src='<?echo $LEVEL?>images/tel.png' alt="<?echo $TXT['phone_alt']?>" title="<?echo $TXT['phone_alt']?>" />
+                <img class="tel_img" src='<? echo $LEVEL ?>images/tel.png' alt="<? echo $TXT['navbar_phone_alt'] ?>" title="<? echo $TXT['navbar_phone_alt'] ?>" />
                 <p><? echo getFullPhone() ?></p>
             </div>
         </div>

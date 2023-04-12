@@ -20,11 +20,11 @@ function drawMainBlock()
                 <div class="col-md-8 text-left">
                     <div class="row">
                         <?
-                        drawSmDots($TXT['main_block_col_1']);
-                        drawSmDots($TXT['main_block_col_2']);
-                        drawSmDots($TXT['main_block_col_3']);
-                        drawSmDots($TXT['main_block_col_4']);
-                        drawSmDots($TXT['main_block_col_5']);
+                        drawSmDots($TXT['main_block_col_1'], 3);
+                        drawSmDots($TXT['main_block_col_2'], 2);
+                        drawSmDots($TXT['main_block_col_3'], 2);
+                        drawSmDots($TXT['main_block_col_4'], 3);
+                        drawSmDots($TXT['main_block_col_5'], 2, true);
                         ?>
                     </div>
                 </div>
@@ -40,16 +40,21 @@ function drawMainBlock()
             </div>
         </div>
     </div>
-<?
+    <?
 }
 
-function drawSmDots($text)
+function drawSmDots($text, $md, $bold_wh = false)
 {
-?>
-    <div class="col-md-2 bold_wh">
-        <p><span class="sm_dots">• </span>
-            <? echo $text ?>
-        </p>
-    </div>
+    if ($text) {
+    ?>
+
+        <div class="col-md-<? echo $md ?> 
+        <? echo $bold_wh ? "bold_wh" : "bord_right" ?>       
+        ">
+            <p><span class="sm_dots">• </span>
+                <? echo $text ?>
+            </p>
+        </div>
 <?
+    }
 }
