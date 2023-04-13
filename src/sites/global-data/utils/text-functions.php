@@ -20,6 +20,7 @@ function upgradeTextLine($textLine)
 
     $textLine = replacePadeg($textLine);
     $textLine = str_replace("[min_price]", getMinPrice(), $textLine);
+    $textLine = str_replace("[title_price]", getTitlePrice(), $textLine);
     $textLine = str_replace("[phone]", getFullPhone(), $textLine);
     $textLine = str_replace("[domen]", $DEFAULT['domain'], $textLine);
     $textLine = str_replace("[main_url]", $MAIN_SITE, $textLine);
@@ -69,4 +70,11 @@ function getMinPrice()
     global $TARIFF, $DEFAULT;
 
     return round($TARIFF['economy'] * $DEFAULT['min_price_percent'] / 100);
+}
+
+function getTitlePrice()
+{
+    global $TARIFF, $DEFAULT;
+
+    return round($TARIFF['economy'] * $DEFAULT['discount_title'] / 100);
 }
