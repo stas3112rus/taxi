@@ -16,6 +16,7 @@ $TEXT_REDUCTIONS = [
 
     '[phone]' => 'Телефон',
     '[min_price]' => 'минимальная цена',
+    '[title_price]' => 'цена title',
     '[domen]' => 'домен',
     '[main_url]' => 'ссылка на главный сайт',
     '[domain_url]' => 'ссылка на поддомен',
