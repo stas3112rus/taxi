@@ -115,7 +115,7 @@ function drawSelectToField()
     global $CITY_TO;
 
 ?>
-    <select name="subject-from" class="form-control moz-select">
+    <select name="subject-to" class="form-control moz-select">
         <option value="">Куда</option>
         <? drawCitiesOptions($CITY_TO) ?>
     </select>
