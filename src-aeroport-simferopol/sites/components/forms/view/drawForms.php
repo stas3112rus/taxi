@@ -86,7 +86,7 @@ function drawSelectToField()
 
 ?>
     <label for="subject">
-        <select name="subject-from" class="select-field">
+        <select name="subject-to" class="select-field">
             <option value="">Куда</option>
             <? drawCitiesOptions($CITY_TO) ?>
         </select>
