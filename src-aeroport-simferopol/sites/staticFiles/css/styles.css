@@ -5420,3 +5420,9 @@ h3.footer-heading {
     font-weight: normal;
     text-align: left;
 }
+
+@media (max-width: 500px) {
+    .seo{
+      margin-top: 98px;
+    }
+  }
