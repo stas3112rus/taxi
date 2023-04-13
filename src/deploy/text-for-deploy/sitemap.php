@@ -12,6 +12,12 @@ function getMainSitemapTxt()
         . getPostSitemapXml());
 }
 
+function getMainSitemapPHPTxt()
+{   return "<?
+    include('info.php');
+    include('../../src/sitemap-domains-deploy.php');";
+}
+
 function getNotMainSitemapsTXT($city_from)
 {
     return getPrevSitemapXml() . getContentForOneCity($city_from) . getPostSitemapXml();

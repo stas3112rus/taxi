@@ -9,6 +9,10 @@ function deploySitemaps()
     if ($deployNotMainSiteMapsXML != "Ok")
         return $deployNotMainSiteMapsXML;
 
+    $deployMainSitemapPHP = deployMainSitemapPHP();
+    if ($deployMainSitemapPHP != "Ok")
+        return $deployMainSitemapPHP;
+
     return "Ok";
 }
 
@@ -16,6 +20,14 @@ function deployMainSitemapXML()
 {
     $txt = getMainSitemapTxt();
     $dir =  getFullPathToMainSitemapXMLFile(getMainCity());
+
+    return createFile($dir, $txt);
+}
+
+function deployMainSitemapPHP()
+{
+    $txt = getMainSitemapPHPTxt();
+    $dir =  getFullPathToMainSitemapPHPFile(getMainCity());
 
     return createFile($dir, $txt);
 }

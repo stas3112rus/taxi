@@ -84,6 +84,11 @@ function getFullPathToMainSitemapXMLFile($city)
     return getFullPathToDomain($city) . "sitemap2.xml";
 }
 
+function getFullPathToMainSitemapPHPFile($city)
+{
+    return getFullPathToDomain($city) . "sitemap-2.php";
+}
+
 
 function getPathToMainFile($level = 0)
 {

@@ -21,6 +21,16 @@ function drawHTMLContentForOneCity($city_from, $main_city)
     return $content;
 }
 
+function drawHTMLContentForAllDomains($main_city)
+{
+    $content = "";
+    foreach (getAllCities() as $city) {
+        $content .= getSitemapHTMLLineForDomain($city, $main_city);
+    }
+
+    return $content;
+}
+
 
 function getSitemapHTMLLine($city_from, $city_to, $directionTypeTaxi = true)
 {
