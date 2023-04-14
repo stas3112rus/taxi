@@ -16,7 +16,7 @@ function drawTariffsBlock()
                 <? drawTariffsTable() ?>
             </div>
         </div>
-        <div style="text-align: center; padding: 30px 0px;">
+        <div class="tariffs__restriction">
             <? echo $TXT['tariffs_text_restriction'] ?>
         </div>
     </section>

@@ -1488,3 +1488,12 @@ td {
 .modal-header .close{
 	margin: 0;
 }
+
+.tariffs__restriction{
+    text-align: center; 
+    padding: 30px 0px;
+}
+
+.tariffs__restriction a {
+    color: black;
+}
