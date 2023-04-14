@@ -1,23 +1,17 @@
 <?
 function drawNavBar()
 {
+    drawMobileMenu();
+    drawNavbarSection("scroll_header");
+    drawNavbarSection("scrollMenu");
+}
+
+
+function drawNavbarSection($wrapSection)
+{
     global $DEFAULT, $LEVEL, $TXT;
 ?>
-    <nav class="wrp-menu-toggle">
-        <div class="menu-toggle">
-            <div class="wrapper">
-                <div class="btn-close">x</div>
-                <ul class="menuMenu">
-                    <li class="menu-item"><a href="#what-we-do" data-scroll>О Нас</a></li>
-                    <li class="menu-item"><a href="#price-table" data-scroll>Тарифы</a></li>
-                    <li class="menu-item"><a href="#taxi-class" data-scroll>Классы Такси</a></li>
-                    <li class="menu-item"><a href="#facts" data-scroll>4 Факта</a></li>
-                    <li class="menu-item"><a href="#reviews" data-scroll>Отзывы</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <section class="scroll_header ">
+    <section class="<? echo $wrapSection ?>">
         <div class="container relative flexbox">
             <a href="#home" class="logo" data-scroll>
                 <img src="<? echo $LEVEL ?>images/logo.png" title="<? echo $TXT['navbar_logo_alt'] ?>" alt="<? echo $TXT['navbar_logo_alt'] ?>">
@@ -28,14 +22,7 @@ function drawNavBar()
                 <div></div>
             </span>
             <nav class="nav-collapse">
-                <ul class="menuMenu">
-                    <li class="menu-item"><a href="#what-we-do" data-scroll>О Нас</a></li>
-                    <li class="menu-item"><a href="#price-table" data-scroll>Тарифы</a></li>
-                    <li class="menu-item"><a href="#taxi-class" data-scroll>Классы Такси</a></li>
-                    <li class="menu-item"><a href="#facts" data-scroll>4 Факта</a></li>
-                    <li class="menu-item"><a href="#reviews" data-scroll>Отзывы</a></li>
-
-                </ul>
+                <? drawMenuNavBar() ?>
                 <div class="clear"></div>
             </nav>
             <div class="contact-information">
@@ -58,5 +45,32 @@ function drawNavBar()
             <div class="clear"></div>
         </div>
     </section>
+<?
+}
+
+function drawMobileMenu()
+{
+?>
+    <nav class="wrp-menu-toggle">
+        <div class="menu-toggle">
+            <div class="wrapper">
+                <div class="btn-close">x</div>
+                <? drawMenuNavBar() ?>
+            </div>
+        </div>
+    </nav>
+<?
+}
+
+function drawMenuNavBar()
+{
+?>
+    <ul class="menuMenu">
+        <li class="menu-item"><a href="#what-we-do" data-scroll>О Нас</a></li>
+        <li class="menu-item"><a href="#price-table" data-scroll>Тарифы</a></li>
+        <li class="menu-item"><a href="#taxi-class" data-scroll>Классы Такси</a></li>
+        <li class="menu-item"><a href="#facts" data-scroll>4 Факта</a></li>
+        <li class="menu-item"><a href="#reviews" data-scroll>Отзывы</a></li>
+    </ul>
 <?
 }
