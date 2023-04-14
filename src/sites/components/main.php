@@ -11,3 +11,4 @@ include('textBlock/view/drawTextBlock.php');
 include('carClasses/view/drawCarClasses.php');
 include('benefits/view/drawBenefits.php');
 include('facts/view/drawFacts.php');
+include('reviews/view/drawReviews.php');

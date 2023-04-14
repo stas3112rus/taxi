@@ -36,6 +36,7 @@ include('sites/components/main.php');
     drawTariffsBlock();
     drawBenefits();
     drawFacts();
+    drawReviews();
     ?>
 
 
