@@ -37,6 +37,7 @@ function drawMainBlock()
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 <?
 }
