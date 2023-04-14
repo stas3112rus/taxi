@@ -29,6 +29,7 @@ include('sites/components/main.php');
 
     <?
     drawNavBar();
+    drawMainBlock();
     drawScripts();
     ?>
 

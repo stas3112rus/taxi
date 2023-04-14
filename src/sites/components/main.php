@@ -6,3 +6,4 @@ include('forms/view/drawForms.php');
 include('tariffs/view/DrawTariffsBlock.php');
 include('tariffs/view/DrawTariffsTable.php');
 include('navbar/view/drawNavBar.php');
+include('mainBlock/view/drawMainBlock.php');
