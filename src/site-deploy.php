@@ -26,7 +26,6 @@ include('sites/components/main.php');
 </head>
 
 <body>
-
     <?
     drawNavBar();
     drawMainBlock();
@@ -37,8 +36,9 @@ include('sites/components/main.php');
     drawBenefits();
     drawFacts();
     drawReviews();
+    drawContactForm();
+    drawFooter();
     ?>
-
 
     <!-- Виджеты  Футер -->
     <? drawFooterWidgets(); ?>

@@ -24,37 +24,27 @@ function drawTopForm()
 
 function drawContactForm()
 {
+    global $TXT, $LEVEL;
 ?>
-    <form class='ajax-question' id="contact-form" method="post">
-        <div class="messages"></div>
-        <div class="controls">
-            <div class="row">
-                <div class="col-md-12">
-                    <? drawFieldPhone(false) ?>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <? drawFieldEmail(false) ?>
+    <section class="counter-section parallax position-relative" style="background-image: url(<? echo $LEVEL ?>images/section_bg.jpg); color:#fff;">
+        <div class="opacity-dark bg-black"></div>
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+                <div class="signup-box">
+                    <div class="signup-box-headling">
+                        <h2><? echo  $TXT['bottom_form_title'] ?></h2>
+                        <span class="arrow-down"></span>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <? drawFieldMessage(false) ?>
-                    </div>
-                </div>
-                <div class="col-md-12">
-
-                </div>
-                <div class="col-md-12">
-                    <p><input type="submit" class="btn btn-warning" value="Отправить сообщение"></p>
+                    <? drawTopForm() ?>
                 </div>
             </div>
         </div>
-    </form>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+
+            </div>
+        </div>
+    </section>
 <?
 }
 
