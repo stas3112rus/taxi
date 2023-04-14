@@ -19,8 +19,8 @@ function getTariffsForTable()
 {
     global $CITY_FROM,  $CITY_TO, $MAIN_CITY, $TXT;
 
-    $city_from = $TXT['IS_REVERSE_TARIFFS'] ? $CITY_TO : $CITY_FROM;
-    $city_to = $TXT['IS_REVERSE_TARIFFS'] ? $CITY_FROM : $CITY_TO;
+    $city_from = $CITY_FROM;
+    $city_to = $CITY_TO ? $CITY_TO : getCityByEng('simferopol');
 
     $result = [];
 

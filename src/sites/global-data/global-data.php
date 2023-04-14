@@ -16,7 +16,7 @@ $DIRECTION_URL = $CITY_TO ? getDirectionUrl($CITY_FROM, $CITY_TO) : false;
 
 $DEFAULT = getDefaults();
 
-$ADDRESS = $CITY_FROM['street'] ? 
+$ADDRESS = $CITY_FROM['street'] ?
     $CITY_FROM['im'] . ", " . $CITY_FROM['street'] :
     $CITY_FROM['im'];
 

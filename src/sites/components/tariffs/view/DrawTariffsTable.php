@@ -3,10 +3,35 @@ function drawTariffsTable()
 {
 ?>
     <table class="highlight">
-        <? drawHeadOfTariffTable() ?>
+        <thead>
+            <? drawHeadOfTariffTable() ?>
+        </thead>
         <tbody>
+            <? drawTariffRows() ?>
+            <!-- <tr>
+                <td>
+                    Севастополь - Ялта
+                    <span style="color: #ff6600;">
+                        <b>АКЦИЯ!</b> до 9999
+                    </span>
+                </td>
+                <td>
+                    <s>123</s> <span style="color: #ff6600;">456</span>
+                </td>
+                <td>
+                    <s>123</s> <span style="color: #ff6600;">456</span>
+                </td>
+                <td>
+                    <s>123</s> <span style="color: #ff6600;">456</span>
+                </td>
+                <td>
+                    <s>123</s> <span style="color: #ff6600;">456</span>
+                </td>
+                <td>
+                    <s>123</s> <span style="color: #ff6600;">456</span>
+                </td>
+            </tr> -->
             <?
-            drawTariffRows();
             drawWaitInAirportRow();
             drawWaitInTripRow();
             drawArmChairRow();
@@ -26,7 +51,7 @@ function drawHeadOfTariffTable()
         <th data-field="price">Комфорт</th>
         <th data-field="price">Бизнес</th>
         <th data-field="price">Мини-Бус</th>
-        <th data-field="price">Вип</th>
+        <th data-field="price">VIP</th>
     </tr>
 <?
 }
@@ -61,19 +86,15 @@ function drawTariffRow($tariff, $counter)
 function drawTariffDirectionField($counter, $tariff)
 {
     global $TXT;
-    $prefix = "";
-    if ($counter < $TXT['COUNT_TaxiWord']) {
-        $prefix .= $TXT['TaxiWordInTariffsTable'] . " ";
-    }
 
-    $cities = $TXT['CityFromInTariffsTable'] ? $tariff['cityFrom'] . "  - " . $tariff['cityTo'] : $tariff['cityTo'];
+    $cities =  $tariff['cityFrom'] . "  - " . $tariff['cityTo'];
 
     $discount = "";
     if ($counter < 2 || $tariff['discount']) {
         $discount = " " . getDiscountDay();
     }
 
-    return $prefix . $cities . $discount;
+    return $cities . $discount;
 }
 
 function getDiscountDay()

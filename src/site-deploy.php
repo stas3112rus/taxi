@@ -33,6 +33,7 @@ include('sites/components/main.php');
     drawScripts();
     drawTextBlock();
     drawCarClasses();
+    drawTariffsBlock();
     ?>
 
 
