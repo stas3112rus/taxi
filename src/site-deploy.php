@@ -38,6 +38,7 @@ include('sites/components/main.php');
     drawReviews();
     drawContactForm();
     drawFooter();
+    drawPolitics();
     ?>
 
     <!-- Виджеты  Футер -->

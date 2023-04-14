@@ -1,9 +1,9 @@
 <?
 function drawCarClasses()
 {
-    global $TXT;
+    global $TXT, $LEVEL;
 ?>
-    <section id="taxi-class" class="banner fix-background parallax rate" style="background-image:url(images/section_bg.jpg)">
+    <section id="taxi-class" class="banner fix-background parallax rate" style="background-image:url(<? echo $LEVEL ?>images/section_bg.jpg)">
         <div class="rate__container container">
             <h2 class="box-header text-shadow"><? echo $TXT['car_classes_title'] ?></h2>
             <div class="rate__scene">

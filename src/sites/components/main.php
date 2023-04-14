@@ -13,3 +13,4 @@ include('benefits/view/drawBenefits.php');
 include('facts/view/drawFacts.php');
 include('reviews/view/drawReviews.php');
 include('footer/view/drawFooters.php');
+include('politics/view/drawPolitics.php');
