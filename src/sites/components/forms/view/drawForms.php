@@ -1,7 +1,6 @@
 <?
 function drawTopForm()
 {
-    global $TXT;
 ?>
     <form class="contact_form form-style" id="contact_form">
         <div id="contact_body">
@@ -48,7 +47,7 @@ function drawContactForm()
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <? drawFieldCheck() ?>
+
                 </div>
                 <div class="col-md-12">
                     <p><input type="submit" class="btn btn-warning" value="Отправить сообщение"></p>
