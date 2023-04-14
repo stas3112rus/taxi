@@ -4,7 +4,7 @@ function getAllCities()
     $sql = "SELECT 
     *
     FROM `cities`
-    ORDER BY main_city  DESC, id_city
+    ORDER BY main_city  DESC, im
     ";
 
     return getAllRowsFromDataBase($sql);
@@ -17,7 +17,7 @@ function getAllWithoutOneCities($id)
     FROM `cities`
     WHERE 
         `id_city` <> '$id'
-    ORDER BY main_city  DESC 
+    ORDER BY main_city  DESC, im
     ";
 
     return getAllRowsFromDataBase($sql);
