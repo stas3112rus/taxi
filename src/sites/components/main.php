@@ -9,3 +9,4 @@ include('navbar/view/drawNavBar.php');
 include('mainBlock/view/drawMainBlock.php');
 include('textBlock/view/drawTextBlock.php');
 include('carClasses/view/drawCarClasses.php');
+include('benefits/view/drawBenefits.php');
