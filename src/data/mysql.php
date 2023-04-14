@@ -5,7 +5,7 @@ include('utils/functions.php');
 $host = "localhost";
 $user = "root";
 $pass = "";
-$database = "taxi-simferopol";
+$database = "taxi-sevastopol-24";
 
 
 $base = new mysqli($host, $user, $pass, $database);
