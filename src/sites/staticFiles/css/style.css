@@ -1305,3 +1305,11 @@ form input {color: #222}
 .popup-with-form{
     cursor: pointer;
 }
+
+.tariffs__restrictions{
+    text-align: center;
+}
+
+.tariffs__restrictions a{
+    color: black;
+}

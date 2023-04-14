@@ -10,9 +10,10 @@ function drawTariffsBlock()
                 <? drawTariffsTable() ?>
             </div>
         </div>
-        <div class="row">
-            <? echo $TXT['tariffs_restrictions'] ?>
-        </div>
+
     </section>
+    <div class="row tariffs__restrictions">
+        <? echo $TXT['tariffs_restrictions'] ?>
+    </div>
 <?
 }
