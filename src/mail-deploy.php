@@ -13,11 +13,9 @@ if ($_POST) { // eсли пeрeдaн мaссив POST
   $phone = htmlspecialchars($_POST["phones"]); //телефон
   $message = htmlspecialchars($_POST["message"]);
   $date = htmlspecialchars($_POST["date"]); // время
-  $mmm = htmlspecialchars($_POST["mmm"]); // время
   $subjectfrom = htmlspecialchars($_POST["subject-from"]); // откуда
   $subjectto = htmlspecialchars($_POST["subject-to"]); // куда
   $taxiClass = htmlspecialchars($_POST["taxi"]); // куда
-
 
 
   $json = array(); // пoдгoтoвим мaссив oтвeтa
@@ -65,7 +63,6 @@ if ($_POST) { // eсли пeрeдaн мaссив POST
 
   $mail_message = "
 Дата - $date\r
-Часы - $mmm\r
 Откуда - $subjectfrom\r
 Куда - $subjectto\r
 Класс такси - $taxiClass \r
@@ -75,13 +72,12 @@ E-mail - $email\r
 Сообщение - $message";
 
 
-
   $to_email = $DEFAULT['email_for_leads']; // куда отправлять
 
 
   $emailgo = new TEmail; // инициaлизируeм супeр клaсс oтпрaвки
-  $emailgo->from_email = 'simferopol-aeroport.taxi'; // oт кoгo
-  $emailgo->from_name = 'Онлайн бронирование з сайта simferopol-aeroport.taxi';
+  $emailgo->from_email = 'admin@sevastopol24.taxi'; // oт кoгo
+  $emailgo->from_name = 'Онлайн бронирование з сайта sevastopol24.taxi';
   $emailgo->to_email = $to_email; // кoму
   $emailgo->to_name = $name;
   $emailgo->subject = $subject; // тeмa
