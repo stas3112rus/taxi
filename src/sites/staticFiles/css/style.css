@@ -1308,6 +1308,7 @@ form input {color: #222}
 
 .tariffs__restrictions{
     text-align: center;
+    margin: 50px 0;
 }
 
 .tariffs__restrictions a{

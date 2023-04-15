@@ -11,14 +11,14 @@ function drawMainBlock()
                     <div class="banner-text menuMenu">
 
                         <h1>
-                            <?php echo $TXT['main_block_h1'] ?>
+                            <?php echo mb_strtoupper($TXT['main_block_h1']) ?>
                         </h1>
                         <p class="text-shadow">
-                            <?php echo $TXT['main_block_subtitle'] ?>
+                            <?php echo mb_strtoupper($TXT['main_block_subtitle']) ?>
                         </p>
                         <a href="#price-table">
                             <button class="wbutton-bordered white">
-                                <?php echo $TXT['main_block_button'] ?>
+                                <?php echo mb_strtoupper($TXT['main_block_button']) ?>
                             </button>
                         </a>
                     </div>
@@ -27,7 +27,7 @@ function drawMainBlock()
                     <div class="signup-box">
                         <div class="signup-box-headling">
                             <h2>
-                                <?php echo $TXT['main_block_form_title'] ?>
+                                <?php echo mb_strtoupper($TXT['main_block_form_title']) ?>
                             </h2>
                             <span class="arrow-down"></span>
                         </div>

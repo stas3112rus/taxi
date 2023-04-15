@@ -29,7 +29,6 @@ include('sites/components/main.php');
     <?
     drawNavBar();
     drawMainBlock();
-    drawScripts();
     drawTextBlock();
     drawCarClasses();
     drawTariffsBlock();
@@ -39,6 +38,7 @@ include('sites/components/main.php');
     drawContactForm();
     drawFooter();
     drawPolitics();
+    drawScripts();
     ?>
 
     <!-- Виджеты  Футер -->
