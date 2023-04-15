@@ -35,7 +35,11 @@ function drawContactForm()
                         <h2><? echo  $TXT['bottom_form_title'] ?></h2>
                         <span class="arrow-down"></span>
                     </div>
-                    <? drawTopForm() ?>
+                    <div class="signup-box-body">
+
+                        <? drawTopForm() ?>
+                    </div>
+
                 </div>
             </div>
         </div>
