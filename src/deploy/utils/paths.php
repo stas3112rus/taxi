@@ -11,7 +11,7 @@ function getFullPathToDomainWithWWW($city)
 {
     $domain = getDomain();
 
-    return  getRootPath($domain) . "www/www." . getSubDomainName($city['eng'],  $city['main_city']) . "/";
+    return  getRootPath($domain) . "www/www." . getSubDomainName($city['eng'],  $city['main_city']);
 }
 
 function getFullPathToStaticFiles()
@@ -74,7 +74,7 @@ function getFullPathToMainSitemapXMLFile($city)
 
 function getPathToMainFile($level = 0)
 {
-    return getLevel($level) . "../../src/sites/build/main.php";
+    return getLevel($level) . "../../src/site-deploy.php";
 };
 
 function getPathToInfoFile($level = 0)

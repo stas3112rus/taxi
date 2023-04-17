@@ -54,6 +54,59 @@ function getAllTariffForCity($city_id)
     return getAllRowsFromDataBase($sql);
 }
 
+function getTariffForCity($city, $exceptions)
+{
+    $exceptionsSql = "";
+
+    foreach ($exceptions as $exception) {
+        if ($exception)
+            $exceptionsSql .= " AND city_to_ref <> $exception[id_city]";
+    }
+
+    $sql = "SELECT
+        cityFrom.im as cityFrom,
+        cityFrom.eng as cityFromEng,
+        cityTo.im as cityTo,    
+        cityTo.eng as cityToEng,
+        economy, 
+        comfort, 
+        business, 
+        minivan
+    FROM `tariffs`
+    JOIN cities cityFrom ON cityFrom.id_city = tariffs.city_from_ref
+	JOIN cities cityTo ON cityTo.id_city = tariffs.city_to_ref
+
+    WHERE 
+        `city_from_ref` = '$city[id_city]'  $exceptionsSql
+    ORDER BY cityTo
+    ";
+
+    return getAllRowsFromDataBase($sql);
+}
+
+function getTariff($city_from, $city_to)
+{
+    $sql = "SELECT
+        cityFrom.im as cityFrom,
+        cityFrom.eng as cityFromEng,
+        cityTo.im as cityTo,    
+        cityTo.eng as cityToEng,
+        economy, 
+        comfort, 
+        business, 
+        minivan,
+        vip
+    FROM `tariffs`
+    JOIN cities cityFrom ON cityFrom.id_city = tariffs.city_from_ref
+	JOIN cities cityTo ON cityTo.id_city = tariffs.city_to_ref
+    WHERE 
+        `city_from_ref` = '$city_from[id_city]' AND 
+        `city_to_ref` = '$city_to[id_city]'
+    ";
+
+    return getOneRowFromDataBase($sql);
+}
+
 function updateTariffOneWay($tariff, $city_from_id, $city_to_id)
 {
     $tariff = emptyStringToNull($tariff);
