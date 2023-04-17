@@ -30,6 +30,7 @@ include('sites/components/main.php');
     <?
     drawLoader();
     drawNavBar();
+    drawMainBlock();
     drawScripts();
     ?>
 
