@@ -26,29 +26,8 @@ include('sites/components/main.php');
 </head>
 
 <body>
-    <div class="wrapp">
-        <?
-        drawLoader();
-        drawNavBarTop();
-        drawNavBarBottom();
-        drawMainBlock();
-        drawTextBlock();
-        drawTariffsBlock();
-        drawCarClasses();
-        drawServices();
-        drawDiscountBlock();
-        drawReliableTaxi();
-        drawFaqs();
-        drawReviews();
-        drawContacts();
-        drawFooter();
-        ?>
-    </div>
-    <div id="order-time" class="white-popup-block mfp-hide">
-        <? drawTopForm("contact_form_2") ?>
-    </div>
+
     <?
-    drawPolitics();
     drawScripts();
     ?>
 
