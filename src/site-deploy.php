@@ -36,8 +36,8 @@ include('sites/components/main.php');
     drawCarClasses();
     drawService();
     drawScripts();
+    drawDigitals();
     ?>
-
 
     <!-- Виджеты  Футер -->
     <? drawFooterWidgets(); ?>
