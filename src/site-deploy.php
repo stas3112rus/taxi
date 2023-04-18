@@ -37,6 +37,7 @@ include('sites/components/main.php');
     drawService();
     drawDigitals();
     drawReviews();
+    drawFaqs();
 
     drawScripts();
     ?>

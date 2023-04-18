@@ -15,8 +15,8 @@ function drawReviews()
             </div>
             <div class="review">
                 <?
-                drawReviewItem($TXT['reviews_review_1'], $TXT['reviews_review_1'], "client1.png", $TXT['reviews_name_1']);
-                drawReviewItem($TXT['reviews_review_2'], $TXT['reviews_review_2'], "client2.png", $TXT['reviews_name_2']);
+                drawReviewItem($TXT['reviews_review_1'], $TXT['reviews_alt_1'], "client1.png", $TXT['reviews_name_1']);
+                drawReviewItem($TXT['reviews_review_2'], $TXT['reviews_alt_2'], "client2.png", $TXT['reviews_name_2']);
                 ?>
             </div>
         </div>
