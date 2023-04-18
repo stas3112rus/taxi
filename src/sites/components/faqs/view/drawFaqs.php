@@ -36,7 +36,7 @@ function drawFaqItem($question, $answer, $id, $default = true)
         <div class="title">
             <a data-toggle="collapse" data-parent="#only-one" href="#collapse<? echo $id ?>" <? if (!$default) echo 'aria-expanded="true"'  ?>><?php echo $question ?></a>
         </div>
-        <div id="collapse<? echo $id ?>" class="panel-collapse collapse in">
+        <div id="collapse<? echo $id ?>" class="panel-collapse collapse <? if (!$default) echo 'in' ?>">
             <div class="panel-body desc">
                 <p>
                     <?php echo $answer ?>

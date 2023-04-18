@@ -18,7 +18,7 @@ function drawFooterBottom()
             </div>
         </div>
         <div class="footer_line text-center">
-            <p><?php echo $TXT['footer_title_bottom'] ?></p>
+            <p><?php echo mb_strtoupper($TXT['footer_title_bottom']) ?></p>
             <p><a href="#" data-toggle="modal" data-target="#myModal2">Политика конфиденциальности и оферта</a></p>
             <? if ($IS_SITEMAP) { ?>
                 <p><a href="sitemap.php">Карта сайта</a></p>
