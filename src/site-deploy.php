@@ -39,7 +39,15 @@ include('sites/components/main.php');
     drawReviews();
     drawFaqs();
     drawContacts();
+    ?>
+    <footer>
+        <?
+        drawFooterTop();
+        drawFooterBottom();
+        ?>
+    </footer>
 
+    <?
     drawScripts();
     ?>
 

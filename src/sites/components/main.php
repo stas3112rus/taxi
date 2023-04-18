@@ -15,3 +15,5 @@ include('digitals/view/drawDigitals.php');
 include('reviews/view/drawReviews.php');
 include('faqs/view/drawFaqs.php');
 include('contacts/view/drawContacts.php');
+include('footers/view/drawFooterTop.php');
+include('footers/view/drawFooterBottom.php');
