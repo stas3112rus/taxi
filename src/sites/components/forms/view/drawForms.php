@@ -24,33 +24,23 @@ function drawTopForm($title)
 function drawContactForm()
 {
 ?>
-    <form class='ajax-question' id="contact-form" method="post">
-        <div class="messages"></div>
-        <div class="controls">
-            <div class="row">
-                <div class="col-md-12">
-                    <? drawFieldPhone(false) ?>
-                </div>
+    <form id="contact_form_2" method="POST" class="form-horizontal">
+        <div class="form-group">
+            <div class="col-sm-6">
+                <input type="text" class="form-control mob_control" id="email" name="phone" placeholder="Ваш телефон">
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <? drawFieldEmail(false) ?>
-                    </div>
-                </div>
+            <div class="col-sm-6">
+                <input type="email" class="form-control" id="e_mail" name="email" placeholder="Ваш Email">
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <? drawFieldMessage(false) ?>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <? drawFieldCheck() ?>
-                </div>
-                <div class="col-md-12">
-                    <p><input type="submit" class="btn btn-warning" value="Отправить сообщение"></p>
-                </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <textarea name="message" class="form-control" rows="4" cols="50" placeholder="Ваше сообщение"></textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center mb30">
+                <button class="btn theme_btn">ОТПРАВИТЬ СООБЩЕНИЕ</button>
             </div>
         </div>
     </form>

@@ -14,3 +14,4 @@ include('service/view/drawService.php');
 include('digitals/view/drawDigitals.php');
 include('reviews/view/drawReviews.php');
 include('faqs/view/drawFaqs.php');
+include('contacts/view/drawContacts.php');
