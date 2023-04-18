@@ -12,3 +12,4 @@ include('textBlock/view/drawTextBlock.php');
 include('carClasses/view/drawCarClasses.php');
 include('service/view/drawService.php');
 include('digitals/view/drawDigitals.php');
+include('reviews/view/drawReviews.php');
