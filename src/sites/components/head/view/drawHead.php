@@ -15,7 +15,9 @@ function drawHead()
     <link rel="shortcut icon" href="<? echo $LEVEL ?>favicon.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="<? echo $LEVEL ?>assets/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<? echo $LEVEL ?>assets/css/themify-icons.css">
-    <link href="fonts.googleapis.com/css-family=Lato-100,300,400,700,900.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<? echo $LEVEL ?>assets/css/jarallax.css">
     <link rel="stylesheet" type="text/css" href="<? echo $LEVEL ?>assets/css/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="<? echo $LEVEL ?>assets/css/owl.theme.default.css">

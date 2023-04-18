@@ -1,7 +1,7 @@
 <?
 function drawTextBlock()
 {
-    global $TXT;
+    global $TXT, $LEVEL;
 ?>
     <section id="about" class="about">
         <div class="container">
@@ -13,7 +13,7 @@ function drawTextBlock()
                 </div>
                 <div class="col-sm-12 accordion">
 
-                    <img class="comfort-img" src="assets/images/comfort.png" style="float: right;" title="<? echo $TXT['text_block_alt'] ?>" alt="<? echo $TXT['text_block_alt'] ?>">
+                    <img class="comfort-img" src="<? echo $LEVEL ?>assets/images/comfort.png" style="float: right;" title="<? echo $TXT['text_block_alt'] ?>" alt="<? echo $TXT['text_block_alt'] ?>">
                     <? echo $TXT['text_block_text_first'] ?>
                     <a class="fd-link collapsed" data-toggle="collapse" data-parent="#only-one" href="#collapse10" aria-expanded="false">читать далее</a>
                     </p>
