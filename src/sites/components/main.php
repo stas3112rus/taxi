@@ -17,3 +17,4 @@ include('faqs/view/drawFaqs.php');
 include('contacts/view/drawContacts.php');
 include('footers/view/drawFooterTop.php');
 include('footers/view/drawFooterBottom.php');
+include('politics/view/drawPolitics.php');

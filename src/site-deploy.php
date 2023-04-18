@@ -48,6 +48,8 @@ include('sites/components/main.php');
     </footer>
 
     <?
+    drawPolitics();
+
     drawScripts();
     ?>
 
