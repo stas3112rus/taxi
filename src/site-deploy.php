@@ -30,8 +30,10 @@ include('sites/components/main.php');
     <?
     drawNavBar();
     drawMainBlock();
-    drawScripts();
     drawTextBlock();
+    drawTariffsBlock();
+
+    drawScripts();
     ?>
 
     <!-- Виджеты  Футер -->

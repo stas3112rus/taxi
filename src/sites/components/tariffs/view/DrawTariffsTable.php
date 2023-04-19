@@ -12,8 +12,9 @@ function drawTariffsTable()
             drawWaitInAirportRow();
             drawWaitInTripRow();
             drawArmChairRow();
-            drawRentAutoRow();
+            drawArmChairRow();
             ?>
+
         </tbody>
     </table>
 <?
@@ -28,7 +29,7 @@ function drawHeadOfTariffTable()
         <th data-field="price">Комфорт</th>
         <th data-field="price">Бизнес</th>
         <th data-field="price">Мини-Бус</th>
-        <th data-field="price">VIP</th>
+        <th data-field="price">ВИП</th>
     </tr>
 <?
 }
