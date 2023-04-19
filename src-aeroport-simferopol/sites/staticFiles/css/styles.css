@@ -5426,3 +5426,11 @@ h3.footer-heading {
       margin-top: 98px;
     }
   }
+
+.content-top a, .footer-location a {
+    color: #fff;
+}
+
+.content-top a:hover, .footer-location a:hover {
+    color: #FDBE01;
+}
