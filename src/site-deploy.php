@@ -28,28 +28,6 @@ include('sites/components/main.php');
 <body>
 
     <?
-    drawLoader();
-    drawNavBar();
-    drawMainBlock();
-    drawTextBlock();
-    drawTariffsBlock();
-    drawCarClasses();
-    drawService();
-    drawDigitals();
-    drawReviews();
-    drawFaqs();
-    drawContacts();
-    ?>
-    <footer>
-        <?
-        drawFooterTop();
-        drawFooterBottom();
-        ?>
-    </footer>
-
-    <?
-    drawPolitics();
-
     drawScripts();
     ?>
 
