@@ -19,36 +19,31 @@ $LEVEL = '';
 <head>
 
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="yandex-verification" content="15e75242a69b0299" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="png" href="favicon.png">
+        <title>Карта сайта <?php echo $CURRENT_SITE ?></title>
+        <meta name="description" content="<?php echo $description ?>">
+        <meta name="keywords" content="">
+        <link href="assets\css\bootstrap-grid.css" rel="stylesheet">
+        <link href="assets\css\font-awesome.css" rel="stylesheet">
+        <link href="assets\css\swiper.css" rel="stylesheet">
+        <link href="assets\css\swipebox.css" rel="stylesheet">
+        <link href="assets\css\zoomslider.css" rel="stylesheet">
+        <link href="assets\css\style.css?03" rel="stylesheet">
+        <link href="assets\css\style2.css?03" rel="stylesheet">
 
-        <link href="favicon.png" rel="shortcut icon" type="image/png" />
-        <title>Карта сайта <? echo $CURRENT_SITE ?></title>
-        <meta name="description" content="" />
-        <link rel="stylesheet" href="builder/disc/elements/css/fonts/font-awesome/css/font-awesome.min.css" type='text/css'>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
-        <link rel="stylesheet" href="builder/disc/elements/css/style.css" type='text/css' />
-        <link rel="stylesheet" href="builder/disc/elements/css/animate.css" type='text/css' />
-
-        <link rel="stylesheet" href="builder/disc/elements/css/owl.carousel.css" type='text/css' />
-
-        <link rel="stylesheet" href="builder/disc/elements/css/fixed-nav.css">
-        <link rel="stylesheet" href="builder/disc/elements/css/fonts/car-serive-icon.css" type='text/css'>
-
-        <link rel="stylesheet" href="builder/disc/elements/css/magnific-popup.css" type='text/css' />
-
-        <link href="builder/disc/elements/css/twentytwenty.css" rel="stylesheet">
-
-        <link rel="stylesheet" href="builder/disc/elements/js/flatpickr/flatpickr.css">
-
-        <link rel=" stylesheet" href="builder/disc/elements/css/color/yellow.css" />
-
+        <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:700,800|Open+Sans:400,600,700&amp;subset=cyrillic" rel="stylesheet">
+        <link rel="stylesheet" href="assets/css/magnific-popup.css" type='text/css' />
+        <link rel="stylesheet" href="assets/js/flatpickr/flatpickr.css">
     </head>
 </head>
 
 <body>
-    <h1>Карта сайта <? echo $CURRENT_SITE ?></h1>
+    <h2>Карта сайта <? echo $CURRENT_SITE ?></h2>
 
     <?
     if ($CITY_FROM['id_city'] == $MAIN_CITY['id_city']) {
