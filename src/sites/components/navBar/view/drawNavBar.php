@@ -50,5 +50,6 @@ function drawNavBar()
                 </div>
             </nav>
         </div>
-    <?
+    </div>
+<?
 }
