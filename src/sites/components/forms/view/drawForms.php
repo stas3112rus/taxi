@@ -27,7 +27,7 @@ function drawContactForm()
     <form id="contact_form_2" method="POST" class="form-horizontal">
         <div class="form-group">
             <div class="col-sm-6">
-                <input type="text" class="form-control mob_control" id="email" name="phone" placeholder="Ваш телефон">
+                <input type="text" class="form-control mob_control" id="phone" name="phone" placeholder="Ваш телефон">
             </div>
             <div class="col-sm-6">
                 <input type="email" class="form-control" id="e_mail" name="email" placeholder="Ваш Email">
