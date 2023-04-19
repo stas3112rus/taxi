@@ -28,6 +28,7 @@ include('sites/components/main.php');
 <body>
 
     <?
+    drawNavBar();
     drawScripts();
     ?>
 
