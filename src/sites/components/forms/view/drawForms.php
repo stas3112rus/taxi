@@ -1,13 +1,13 @@
 <?
 function drawTopForm()
 {
-    global $TXT;
+    global $TXT, $LEVEL;
 ?>
     <div id="zakazat_taxi"></div>
     <div class="" id="homepage-block-2">
         <div class="container">
             <h3 style="font-weight: 600;"><? echo $TXT['form_title'] ?></h3>
-            <form class="forms form-validate" id="contact-form" action="mail.php" method="post">
+            <form class="forms form-validate" id="contact-form" action="<? echo $LEVEL ?>mail.php" method="post">
                 <div class="form__grid">
                     <?
                     drawDateField();

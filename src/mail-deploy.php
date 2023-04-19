@@ -36,6 +36,15 @@ sendMail();
   <? drawFooterWidgets(); ?>
   <!-- Виджеты  Футер -->
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        window.location.href = '<? echo $CURRENT_SITE ?>';
+      }, 5000);
+    });
+  </script>
+
 </body>
+
 
 </html>
