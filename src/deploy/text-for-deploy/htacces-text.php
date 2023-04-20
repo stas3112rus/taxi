@@ -13,7 +13,36 @@ function getHtaccesMain()
     
     RewriteCond %{HTTP_HOST} ^www\.(.*)$
     RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
-    RewriteRule ^index\.html$ "http\:\/\/simferopol-aeroport\.taxi\/" [R=301,L]';
+    RewriteRule ^index\.html$ "http\:\/\/alushta24\.taxi\/" [R=301,L]
+    
+    RewriteCond %{THE_REQUEST} GET\ .*/index\.(php|html)\ HTTP
+    RewriteRule ^(.*)index\.(php|html)$ /$1 [R=301,L]
+    
+    AddType application/force-download doc 
+    
+    FileETag MTime Size 
+    <ifmodule mod_expires.c> 
+    <filesmatch ".(jpg|gif|png|css|js|woff)$"> 
+    ExpiresActive on 
+    ExpiresDefault "access plus 31 day"
+    </filesmatch> 
+    </ifmodule>
+    
+    AddDefaultCharset UTF-8
+    
+    ErrorDocument 404 /index.php
+    
+    
+    <ifModule mod_deflate.c>
+      <IfModule mod_filter.c>
+          AddOutputFilterByType DEFLATE text/plain text/html
+          AddOutputFilterByType DEFLATE text/css
+          AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+          AddOutputFilterByType DEFLATE text/xml application/xml application/xhtml+xml application/rss+xml
+          AddOutputFilterByType DEFLATE application/json
+          AddOutputFilterByType DEFLATE application/vnd.ms-fontobject application/x-font-ttf font/opentype image/svg+xml image/x-icon
+      </ifModule>
+    </ifModule>';
 }
 
 function getHtaccesNotMain($city)
