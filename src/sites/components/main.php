@@ -12,3 +12,5 @@ include('carClasses/view/drawCarClasses.php');
 include('advantages/view/drawAdvantages.php');
 include('reviews/view/drawReviews.php');
 include('footer/view/drawFooter.php');
+include('politics/view/drawPolitics.php');
+

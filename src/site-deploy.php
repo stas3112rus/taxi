@@ -37,6 +37,7 @@ include('sites/components/main.php');
     drawReviews();
     drawFooter();
     drawContactForm();
+    drawPolitics();
 
     drawScripts();
     ?>
