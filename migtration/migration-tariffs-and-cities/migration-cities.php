@@ -1,5 +1,5 @@
 <?
-include('../../../src/data/mysql.php');
+include('../../../src-taxi-krim/data/mysql.php');
 
 $old_cities = upgradeCites(getAllCities('cities'));
 $new_cities = upgradeCites(getAllCities('cities_migration'));

@@ -1,5 +1,5 @@
 <?
-include('../../../src/data/mysql.php');
+include('../../../src-taxi-krim/data/mysql.php');
 
 $tariffs_old = upgradeTariffs(getALLTariffs('tariffs', 'cities'));
 $tariffs_new = upgradeTariffs(getALLTariffs('tariffs_migration', 'cities_migration'));
