@@ -33,8 +33,10 @@ include('sites/components/main.php');
     drawTextBlock();
     drawTariffsBlock();
     drawCarClasses();
+    drawAdvantages();
 
     drawScripts();
+
     ?>
 
     <!-- Виджеты  Футер -->

@@ -4,11 +4,11 @@ $('.accordion_title').click(function() {
 	$(this).hide();
   $(this).toggleClass('active').next().slideToggle(500);
 });
-$('.popup-modal').magnificPopup({
-  type: 'inline',
-  preloader: false,
-  focus: '#username'
-});
+// $('.popup-modal').magnificPopup({
+//   type: 'inline',
+//   preloader: false,
+//   focus: '#username'
+// });
 
 $("#contact-form").submit(function(){
 
