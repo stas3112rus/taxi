@@ -36,6 +36,7 @@ include('sites/components/main.php');
     drawAdvantages();
     drawReviews();
     drawFooter();
+    drawContactForm();
 
     drawScripts();
     ?>
