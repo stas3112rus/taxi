@@ -13,7 +13,7 @@ function drawTariffsBlock()
             </div>
         </div>
         <div style="text-align: center; margin: 25px 0;">
-            <? echo $TXT['tariffs_title'] ?>
+            <? echo $TXT['tariffs_restriction'] ?>
         </div>
         <div class="round btn btn-yellow btn-lg popup-modal" href="#order-time"><? echo $TXT['tariffs_button'] ?></div>
     </section>
