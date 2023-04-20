@@ -34,9 +34,10 @@ include('sites/components/main.php');
     drawTariffsBlock();
     drawCarClasses();
     drawAdvantages();
+    drawReviews();
+    drawFooter();
 
     drawScripts();
-
     ?>
 
     <!-- Виджеты  Футер -->
