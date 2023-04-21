@@ -23,6 +23,7 @@ function drawTopForm()
 
 function drawContactForm()
 {
+    global $CITY_FROM, $CITY_TO;
 ?>
     <div id="order-time" class="white-popup-block mfp-hide">
         <form action="" class="form-style" id="contact_form_2">
@@ -37,14 +38,14 @@ function drawContactForm()
                 <label for="subject-from">
                     <select class='myselect' name='subject-from'>
                         <option value="">Откуда</option>
-
+                        <? drawCitiesOptions($CITY_FROM) ?>
                     </select>
                     <i class="fa fa-map-marker form-icon" aria-hidden="true"></i>
                 </label>
                 <label for="subject-to">
                     <select class='myselect' name="subject-to">
                         <option value="">Куда</option>
-
+                        <? drawCitiesOptions($CITY_TO) ?>
                     </select>
                     <i class="fa fa-map-marker form-icon" aria-hidden="true"></i>
                 </label>
