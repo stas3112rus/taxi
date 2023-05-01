@@ -5,3 +5,4 @@ include('widgets/view/drawWidgets.php');
 include('forms/view/drawForms.php');
 include('tariffs/view/DrawTariffsBlock.php');
 include('tariffs/view/DrawTariffsTable.php');
+include('preloader/view/drawPreloader.php');

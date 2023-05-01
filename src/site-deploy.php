@@ -27,7 +27,8 @@ include('sites/components/main.php');
 
 <body>
     <?
-   
+    drawPreloader();
+    
     drawScripts();
     ?>
 
