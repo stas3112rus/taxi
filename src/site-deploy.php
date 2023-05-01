@@ -27,17 +27,7 @@ include('sites/components/main.php');
 
 <body>
     <?
-    drawNavBar();
-    drawMainBlock();
-    drawTextBlock();
-    drawCarClasses();
-    drawTariffsBlock();
-    drawBenefits();
-    drawFacts();
-    drawReviews();
-    drawContactForm();
-    drawFooter();
-    drawPolitics();
+   
     drawScripts();
     ?>
 
