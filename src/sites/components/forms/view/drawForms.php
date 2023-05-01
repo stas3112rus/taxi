@@ -2,7 +2,7 @@
 function drawTopForm($title)
 {
 ?>
-    <form action="" class="form-style" id="contact_form_2">
+    <form action="" class="form-style" id="contact_form">
         <div id="contact_body">
             <div class="popup_title"><? echo $title ?></div>
             <?

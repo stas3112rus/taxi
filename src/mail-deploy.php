@@ -80,7 +80,7 @@ E-mail - $email\r
   $emailgo->from_name = 'Онлайн бронирование c сайта yalta-24.taxi';
   $emailgo->to_email = $to_email; // кoму
   $emailgo->to_name = $name;
-  $emailgo->subject = $subject; // тeмa
+  $emailgo->subject = 'Заявка ' . $subjectfrom . " - " . $subjectto; // тeмa
   $emailgo->body = $mail_message; // сooбщeниe
   $emailgo->send(); // oтпрaвляeм
 
