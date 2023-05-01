@@ -28,7 +28,13 @@ include('sites/components/main.php');
 <body>
     <?
     drawPreloader();
-    
+    ?>
+    <div class="wrapper">
+        <?
+        drawNavBar();
+        ?>
+    </div>
+    <?
     drawScripts();
     ?>
 
