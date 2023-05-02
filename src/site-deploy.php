@@ -45,6 +45,8 @@ include('sites/components/main.php');
         <div id="to-top" class="to-top"><i class="fa fa-angle-up"></i></div>
     </div>
     <?
+    drawPolitics();
+
     drawScripts();
     ?>
 
