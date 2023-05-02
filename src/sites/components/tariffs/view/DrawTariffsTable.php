@@ -4,34 +4,11 @@ function drawTariffsTable()
 ?>
     <table class="highlight">
         <thead>
-            <? drawHeadOfTariffTable() ?>
+            <? drawHeadOfTariffTable(); ?>
         </thead>
         <tbody>
-            <? drawTariffRows() ?>
-            <!-- <tr>
-                <td>
-                    Севастополь - Ялта
-                    <span style="color: #ff6600;">
-                        <b>АКЦИЯ!</b> до 9999
-                    </span>
-                </td>
-                <td>
-                    <s>123</s> <span style="color: #ff6600;">456</span>
-                </td>
-                <td>
-                    <s>123</s> <span style="color: #ff6600;">456</span>
-                </td>
-                <td>
-                    <s>123</s> <span style="color: #ff6600;">456</span>
-                </td>
-                <td>
-                    <s>123</s> <span style="color: #ff6600;">456</span>
-                </td>
-                <td>
-                    <s>123</s> <span style="color: #ff6600;">456</span>
-                </td>
-            </tr> -->
             <?
+            drawTariffRows();
             drawWaitInAirportRow();
             drawWaitInTripRow();
             drawArmChairRow();
@@ -51,7 +28,7 @@ function drawHeadOfTariffTable()
         <th data-field="price">Комфорт</th>
         <th data-field="price">Бизнес</th>
         <th data-field="price">Мини-Бус</th>
-        <th data-field="price">VIP</th>
+        <th data-field="price">ВИП</th>
     </tr>
 <?
 }
@@ -85,7 +62,6 @@ function drawTariffRow($tariff, $counter)
 
 function drawTariffDirectionField($counter, $tariff)
 {
-    global $TXT;
 
     $cities =  $tariff['cityFrom'] . "  - " . $tariff['cityTo'];
 
