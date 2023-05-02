@@ -82,6 +82,38 @@ function drawContactForm()
 <?
 }
 
+function drawModalForm()
+{
+?>
+    <form action="#" id='contact-form2'>
+        <div class="row row-inputs">
+            <div class="container-fluid">
+                <?
+                drawDateField();
+                drawSelectFromField();
+                drawSelectToField();
+                drawCLassTaxiField();
+                drawFieldName();
+                drawFieldPhone();
+                drawFieldEmail();
+                ?>
+                <div class='col-sm-12'>
+                    <?
+                    drawFieldMessage();
+                    drawButtonSendModal();
+                    ?>
+                </div>
+
+            </div>
+        </div>
+        <div class="row row-submit">
+            <div class="container-fluid">
+            </div>
+        </div>
+    </form>
+<?
+}
+
 function drawDateField()
 {
 ?>
@@ -213,7 +245,17 @@ function drawButtonSend()
 {
 ?>
     <div class="form-group">
-        <button type="submit" class="btn btn-submit btn-theme btn-block pull-right">Заказать</button>
+        <button type="submit" class="btn btn-submit ripple-effect btn-theme">Заказать</button>
+    </div>
+<?
+}
+
+function drawButtonSendModal()
+{
+?>
+
+    <div class='form-group'>
+        <button type="submit" id="formSearchSubmit2" class="btn btn-submit ripple-effect btn-theme">Отправить</button>
     </div>
 <?
 }

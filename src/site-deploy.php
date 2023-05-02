@@ -46,7 +46,7 @@ include('sites/components/main.php');
     </div>
     <?
     drawPolitics();
-
+    drawModal();
     drawScripts();
     ?>
 
