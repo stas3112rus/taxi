@@ -38,31 +38,47 @@ function drawTopForm()
 
 function drawContactForm()
 {
-    global $TXT, $LEVEL;
 ?>
-    <section class="counter-section parallax position-relative" style="background-image: url(<? echo $LEVEL ?>images/section_bg.jpg); color:#fff;">
-        <div class="opacity-dark bg-black"></div>
+    <form name="contact-form" method="post" class="contact-form" id="contact-form3">
+
         <div class="row">
-            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-                <div class="signup-box">
-                    <div class="signup-box-headling">
-                        <h2><? echo  $TXT['bottom_form_title'] ?></h2>
-                        <span class="arrow-down"></span>
-                    </div>
-                    <div class="signup-box-body">
+            <div class="col-md-6">
 
-                        <? drawTopForm() ?>
+                <div class="outer">
+                    <div class="form-group af-inner has-icon">
+                        <label class="sr-only" for="name">Имя</label>
+                        <input type="text" name="name" id="name" placeholder="Имя" value="" size="30" data-toggle="tooltip" title="Name is required" class="form-control placeholder">
+                        <span class="form-control-icon"><i class="fa fa-user"></i></span>
                     </div>
-
                 </div>
+
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-6">
+
+                <div class="outer">
+                    <div class="form-group af-inner has-icon">
+                        <label class="sr-only" for="email">Email</label>
+                        <input type="text" name="email" id="email" placeholder="Email" value="" size="30" data-toggle="tooltip" class="form-control placeholder">
+                        <span class="form-control-icon"><i class="fa fa-envelope"></i></span>
+                    </div>
+                </div>
 
             </div>
         </div>
-    </section>
+
+        <div class="form-group af-inner has-icon">
+            <label class="sr-only" for="input-message">Ваш вопрос</label>
+            <textarea name="message" id="input-message" placeholder="Ваш вопрос" rows="5" data-toggle="tooltip" title="Message is required" class="form-control placeholder"></textarea>
+            <span class="form-control-icon"><i class="fa fa-bars"></i></span>
+        </div>
+
+        <div class="outer required">
+            <div class="form-group af-inner">
+                <input type="submit" name="submit" class="form-button form-button-submit btn btn-block btn-theme ripple-effect btn-theme-dark" id="submit_btn" value="Задать вопрос">
+            </div>
+        </div>
+
+    </form>
 <?
 }
 

@@ -39,6 +39,7 @@ include('sites/components/main.php');
         drawCarClasses();
         drawReviews();
         drawFaq();
+        drawContacts();
         ?>
     </div>
     <?
