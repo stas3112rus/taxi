@@ -40,7 +40,9 @@ include('sites/components/main.php');
         drawReviews();
         drawFaq();
         drawContacts();
+        drawFooter();
         ?>
+        <div id="to-top" class="to-top"><i class="fa fa-angle-up"></i></div>
     </div>
     <?
     drawScripts();
