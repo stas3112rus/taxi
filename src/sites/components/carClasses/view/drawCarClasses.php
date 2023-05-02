@@ -27,12 +27,13 @@ function drawCarClasses()
 
 function drawCarClassItem($img, $alt, $className)
 {
+    global $LEVEL;
 ?>
     <div class="col-md-3">
         <div class="thumbnail no-border no-padding thumbnail-car-card">
             <div class="media">
-                <a class="media-link" data-gal="prettyPhoto" href="assets\img\preview\cars\<? echo $img ?>">
-                    <img src="assets\img\preview\cars\<? echo $img ?>" title="<? echo $alt ?>" alt="<? echo $alt ?>">
+                <a class="media-link" data-gal="prettyPhoto" href="<? echo $LEVEL ?>assets\img\preview\cars\<? echo $img ?>">
+                    <img src="<? echo $LEVEL ?>assets\img\preview\cars\<? echo $img ?>" title="<? echo $alt ?>" alt="<? echo $alt ?>">
                     <span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>
                 </a>
             </div>
