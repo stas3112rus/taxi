@@ -32,6 +32,8 @@ include('sites/components/main.php');
     <div class="wrapper">
         <?
         drawNavBar();
+        drawMainBlock();
+        drawTextBlock();
         ?>
     </div>
     <?
