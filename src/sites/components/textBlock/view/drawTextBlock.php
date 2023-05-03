@@ -12,7 +12,7 @@ function drawTextBlock()
             <div class="what-we-do-block flex">
                 <div class="col-2 order-last">
                     <div class="what-we-do-title">
-                        <h2><? echo $TXT['text_title'] ?></h2>
+                        <h2><? echo mb_strtoupper($TXT['text_title'])  ?></h2>
                     </div>
                     <div class="what-we-do-desc">
                         <div class="accordion-wrapp">
