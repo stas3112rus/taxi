@@ -1,16 +1,39 @@
 <?
 function getRobotTxt($city)
 {
-    $allUrls = "";
 
     if ($city['main_city']) {
-        $allUrls = 'Sitemap: ' . getUrlToSitemapWithAllUrls($city);
+        return "User-agent: *
+Disallow: /cgi-bin
+Disallow: /link.php
+Disallow: /silki.php
+Disallow: /curt.php
+Disallow: *curt=*
+Sitemap: https://aeroport-simferopol.taxi/sitemap.xml
+Sitemap: https://aeroport-simferopol.taxi/sitemap2.xml
+
+User-agent: Googlebot
+Disallow: /cgi-bin
+Disallow: /link.php
+Disallow: /silki.php
+Disallow: /curt.php
+Disallow: *curt=*
+Sitemap: https://aeroport-simferopol.taxi/sitemap.xml
+Sitemap: https://aeroport-simferopol.taxi/sitemap2.xml
+
+User-agent: Yandex
+Disallow: /cgi-bin
+Disallow: /cgi-bin
+Disallow: /link
+Disallow: /curt.php
+Disallow: *curt=*
+Host: https://aeroport-simferopol.taxi
+Sitemap: https://aeroport-simferopol.taxi/sitemap.xml
+Sitemap: https://aeroport-simferopol.taxi/sitemap2.xml";
     }
 
     return ('User-agent: *
 Disallow: /' . $city['eng'] . '
 Disallow: /transfer-' . $city['eng'] . '
-Sitemap: ' . getUrlToSitemap($city) . '
-' . $allUrls
-    );
+Sitemap: ' . getUrlToSitemap($city));
 }
