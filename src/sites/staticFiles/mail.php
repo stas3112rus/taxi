@@ -1,2 +1,2 @@
 <?
-include('../../src/mail-deploy.php');
+include('../../src/mail-deploy-1.php');
