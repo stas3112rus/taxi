@@ -18,24 +18,24 @@ $LEVEL = '';
 <head>
 
     <head>
+
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Карта сайта <?php echo $CURRENT_SITE ?></title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Карта сайта <? echo $CURRENT_SITE ?></title>
-        <meta name="description" content="<? echo $TXT['description'] ?>" />
-        <meta name="keywords" content="<? echo $TXT['keywords'] ?>" />
-        <link href="<? echo $LEVEL ?>images/logo.png" rel="icon" type="image/png" />
-        <link href="<? echo $LEVEL ?>images/logo.png" rel="apple-touch-icon" />
-        <link href="https://fonts.googleapis.com/css?family=Oswald|Roboto:300,400,500,700|Pacifico" rel="stylesheet" />
-        <link href="<? echo $LEVEL ?>css/bootstrap.min.css" rel="stylesheet">
-        <link href="<? echo $LEVEL ?>css/line-icon.css" rel="stylesheet" />
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
-        <link href="<? echo $LEVEL ?>js/Magnific-Popup-master/dist/magnific-popup.css" rel="stylesheet" />
-        <link href="<? echo $LEVEL ?>css/animate.css" rel="stylesheet" />
-        <link href="<? echo $LEVEL ?>css/lib/style.css" rel="stylesheet" />
-        <link href="<? echo $LEVEL ?>js/flatpickr/flatpickr.css" rel="stylesheet" />
-        <link href="<? echo $LEVEL ?>js/slick/slick.css" rel="stylesheet" />
-        <link href="<? echo $LEVEL ?>css/style.css" rel="stylesheet" />
+        <link rel="apple-touch-icon-precomposed" sizes="16x16" href="<? echo $LEVEL ?>assets\ico\favicon.png">
+        <link rel="shortcut icon" href="<? echo $LEVEL ?>assets\ico\favicon.png">
+        <link href="<? echo $LEVEL ?>assets\plugins\bootstrap\css\bootstrap.min.css" rel="stylesheet">
+        <link href="<? echo $LEVEL ?>assets\plugins\bootstrap-select\css\bootstrap-select.min.css" rel="stylesheet">
+        <link href="<? echo $LEVEL ?>assets\plugins\fontawesome\css\font-awesome.min.css" rel="stylesheet">
+        <link href="<? echo $LEVEL ?>assets\plugins\prettyphoto\css\prettyPhoto.css" rel="stylesheet">
+        <link href="<? echo $LEVEL ?>assets\plugins\owl-carousel2\assets\owl.carousel.min.css" rel="stylesheet">
+        <link href="<? echo $LEVEL ?>assets\plugins\owl-carousel2\assets\owl.theme.default.min.css" rel="stylesheet">
+        <link href="<? echo $LEVEL ?>assets\plugins\animate\animate.min.css" rel="stylesheet">
+        <link href="<? echo $LEVEL ?>assets\plugins\swiper\css\swiper.min.css" rel="stylesheet">
+        <link href="<? echo $LEVEL ?>assets\plugins\datetimepicker\css\bootstrap-datetimepicker.min.css" rel="stylesheet">
+        <link href="<? echo $LEVEL ?>assets\js\flatpickr\flatpickr.css" rel="stylesheet">
+        <link href="<? echo $LEVEL ?>assets\css\theme.css" rel="stylesheet">
+        <script src="<? echo $LEVEL ?>assets\plugins\modernizr.custom.js"></script>
     </head>
 </head>
 
