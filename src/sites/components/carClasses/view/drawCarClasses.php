@@ -38,7 +38,7 @@ function drawCarClassItem($img, $alt, $className)
                 </a>
             </div>
             <div class="caption text-center">
-                <h4 class="caption-title"><? $className ?></h4>
+                <h4 class="caption-title"><? echo $className ?></h4>
                 <div class="buttons">
                     <a class="btn btn-theme ripple-effect" href="#" data-toggle="modal" data-target="#form-modal">Забронировать</a>
                 </div>

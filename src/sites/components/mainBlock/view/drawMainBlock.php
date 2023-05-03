@@ -14,7 +14,7 @@ function drawMainBlock()
                                     <div class="div-cell">
                                         <div class="caption-content">
                                             <div class="col-lg-7 col-sm-12">
-                                                <h1 class="caption-subtitle"><? echo $TXT['main_block_h1'] ?></h1>
+                                                <h1 class="caption-subtitle"><? echo mb_strtoupper($TXT['main_block_h1'])  ?></h1>
                                                 <p class="caption-text">
                                                     <? echo $TXT['main_block_subtitle'] ?>
                                                 </p>
