@@ -32,6 +32,8 @@ function drawTopForm()
             <div class="container-fluid">
             </div>
         </div>
+        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+        <input type="hidden" name="action" value="validate_captcha">
     </form>
 <?
 }
@@ -77,6 +79,9 @@ function drawContactForm()
                 <input type="submit" name="submit" class="form-button form-button-submit btn btn-block btn-theme ripple-effect btn-theme-dark" id="submit_btn" value="Задать вопрос">
             </div>
         </div>
+        <input type="hidden" id="g-recaptcha-response-2" name="g-recaptcha-response">
+        <input type="hidden" name="action" value="validate_captcha">
+
 
     </form>
 <?
@@ -110,6 +115,8 @@ function drawModalForm()
             <div class="container-fluid">
             </div>
         </div>
+        <input type="hidden" id="g-recaptcha-response-3" name="g-recaptcha-response">
+        <input type="hidden" name="action" value="validate_captcha">
     </form>
 <?
 }

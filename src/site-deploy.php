@@ -42,7 +42,6 @@ include('sites/components/main.php');
         drawContacts();
         drawFooter();
         ?>
-        <div id="to-top" class="to-top"><i class="fa fa-angle-up"></i></div>
     </div>
     <?
     drawPolitics();
