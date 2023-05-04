@@ -1,12 +1,10 @@
 <?
 function drawScripts()
 {
-    global $LEVEL;
+    global $LEVEL, $DEFAULT;
 
 ?>
-    <a href="#top">
-        <p id="back-top"><i class="fa fa-chevron-up"></i> </p>
-    </a>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="<? echo $LEVEL ?>builder/disc/elements/js/jquery.magnific-popup.js"></script>
     <script src="<? echo $LEVEL ?>builder/disc/elements/js/waypoints.min.js"></script>
@@ -22,6 +20,19 @@ function drawScripts()
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="https://cdn.jsdelivr.net/stickynavbar.js/1.3.2/jquery.stickyNavbar.min.js"></script>
     <script src="<? echo $LEVEL ?>maine-js/jquery.cookie.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=<? echo $DEFAULT['recaptcha_site_key'] ?>"></script>
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('<? echo $DEFAULT['recaptcha_site_key'] ?>', {
+                    action: 'validate_captcha'
+                })
+                .then(function(token) {
+                    document.getElementById('g-recaptcha-response').value = token;
+                    document.getElementById('g-recaptcha-response-2').value = token;
+                });
+        });
+    </script>
+
     <script src="<? echo $LEVEL ?>maine-js/main.js"></script>
 <?
 }

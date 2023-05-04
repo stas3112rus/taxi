@@ -3,7 +3,7 @@ function drawTopForm($id)
 {
     global $TXT;
 ?>
-    <form action="" class="form-style" id="<?echo $id?>">
+    <form action="" class="form-style" id="<? echo $id ?>">
         <div id="contact_body">
             <div class="popup_title"><? echo $TXT['top_form_title'] ?></div>
 
@@ -21,6 +21,8 @@ function drawTopForm($id)
         </div>
         <div id="contact_results"></div>
         </div>
+        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+        <input type="hidden" name="action" value="validate_captcha">
     </form>
 <?
 }
@@ -57,6 +59,8 @@ function drawContactForm()
                 </div>
             </div>
         </div>
+        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+        <input type="hidden" name="action" value="validate_captcha">
     </form>
 <?
 }
