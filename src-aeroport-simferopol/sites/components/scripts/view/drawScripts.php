@@ -1,10 +1,9 @@
 <?
 function drawScripts()
 {
-    global $LEVEL;
+    global $LEVEL, $DEFAULT;
 
 ?>
-    <a href="#0" class="cd-top">Top</a>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
 
     <script src="<? echo $LEVEL ?>js/top.js"></script>
@@ -22,6 +21,19 @@ function drawScripts()
     <script src="<? echo $LEVEL ?>js/car.slider.js"></script>
     <script src="<? echo $LEVEL ?>js/jquery.magnific-popup.min.js"></script>
     <script src="<? echo $LEVEL ?>js/flatpickr/flatpickr.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=<? echo $DEFAULT['recaptcha_site_key'] ?>"></script>
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('<? echo $DEFAULT['recaptcha_site_key'] ?>', {
+                    action: 'validate_captcha'
+                })
+                .then(function(token) {
+                    document.getElementById('g-recaptcha-response').value = token;
+                    document.getElementById('g-recaptcha-response-2').value = token;
+                });
+        });
+    </script>
+
     <script src="<? echo $LEVEL ?>js/common.js"></script>
 <?
 }

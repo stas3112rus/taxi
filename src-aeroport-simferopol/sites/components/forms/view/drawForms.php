@@ -15,8 +15,12 @@ function drawTopForm()
             drawFieldMessage();
             drawFieldCheck();
             drawButtonSend();
+
             ?>
         </div>
+        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+        <input type="hidden" name="action" value="validate_captcha">
+
     </form>
 <?
 }
@@ -53,6 +57,9 @@ function drawContactForm()
                 </div>
             </div>
         </div>
+        <input type="hidden" id="g-recaptcha-response-2" name="g-recaptcha-response">
+        <input type="hidden" name="action" value="validate_captcha">
+
     </form>
 <?
 }
