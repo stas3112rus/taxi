@@ -5,25 +5,45 @@ include('sites/global-data/utils/default-functions.php');
 
 $DEFAULT = getDefaults();
 
-$to = $DEFAULT['email_for_leads'];
+if (isset($_POST['g-recaptcha-response'])) {
+  $captcha = $_POST['g-recaptcha-response'];
+} else {
+  $captcha = false;
+}
 
-$headers = "MIME-Version: 1.0\r\n";
-$headers .= "Content-type: text/html; charset=utf-8\r\n";
-$headers .= "From: Такси24 <admin@taxi24h.ru>\r\n";
+if ($_POST && $captcha) {
 
-$name = trim($_POST['name']);
-$phone = trim($_POST['phone']);
-$email = trim($_POST['email']);
-$car = trim($_POST['car']);
-$carselect = trim($_POST['carselect']);
-$from = trim($_POST['from']);
-$too = trim($_POST['too']);
-$date = trim($_POST['date']);
-$msg = trim($_POST['msg']);
-$message = "<b>Имя:</b> $name <br> <b>Телефон:</b> $phone <br> <b>Email:</b> $email <br> <b>Авто:</b> $car <br> <b>Откуда:</b> $from <br> <b>Куда:</b> $too <br> <b>Дата:</b> $date <br> <b>Сообщение:</b> $msg";
+  $secret   = $DEFAULT['recaptcha_secret_key'];
 
-$subject = "Заявка";
-mail($to, $subject, $message, $headers);
+  $response = file_get_contents(
+    "https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR']
+  );
+  $response = json_decode($response);
+
+  if ($response->success == true && $response->score >= 0.5) {
+
+    $to = $DEFAULT['email_for_leads'];
+
+    $headers = "MIME-Version: 1.0\r\n";
+    $headers .= "Content-type: text/html; charset=utf-8\r\n";
+    $headers .= "From: Такси24 <admin@taxi24h.ru>\r\n";
+
+    $name = trim($_POST['name']);
+    $phone = trim($_POST['phone']);
+    $email = trim($_POST['email']);
+    $car = trim($_POST['car']);
+    $carselect = trim($_POST['carselect']);
+    $from = trim($_POST['from']);
+    $too = trim($_POST['too']);
+    $date = trim($_POST['date']);
+    $msg = trim($_POST['msg']);
+    $message = "<b>Имя:</b> $name <br> <b>Телефон:</b> $phone <br> <b>Email:</b> $email <br> <b>Авто:</b> $car <br> <b>Откуда:</b> $from <br> <b>Куда:</b> $too <br> <b>Дата:</b> $date <br> <b>Сообщение:</b> $msg";
+
+    $subject = "Заявка";
+    mail($to, $subject, $message, $headers);
+  }
+}
+
 
 $token = "1734502778:AAF3B_jFqdRSuBgQQzzxU7a7upUEo9kDy5w";
 $chat_id = "-522682165";

@@ -1,7 +1,7 @@
 <?
 function drawScripts()
 {
-    global $CURRENT_SITE;
+    global $CURRENT_SITE, $DEFAULT;
 
 ?>
     <script src="https://use.fontawesome.com/bfbb6dd71f.js"></script>
@@ -26,6 +26,20 @@ function drawScripts()
     <link rel="stylesheet" href="<? echo $CURRENT_SITE ?>css/owl.carousel.min.css">
     <link rel="stylesheet" href="<? echo $CURRENT_SITE ?>css/owl.theme.default.min.css">
     <script src="<? echo $CURRENT_SITE ?>js/owl.carousel.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=<? echo $DEFAULT['recaptcha_site_key'] ?>"></script>
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('<? echo $DEFAULT['recaptcha_site_key'] ?>', {
+                    action: 'validate_captcha'
+                })
+                .then(function(token) {
+                    document.getElementById('g-recaptcha-response').value = token;
+                    document.getElementById('g-recaptcha-response-2').value = token;
+                });
+        });
+    </script>
+
+    
 
     <script>
         $(document).ready(function() {
