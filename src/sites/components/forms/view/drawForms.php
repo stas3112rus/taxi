@@ -17,6 +17,8 @@ function drawTopForm($title)
             ?>
         </div>
         <div id="contact_results"></div>
+        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+        <input type="hidden" name="action" value="validate_captcha">
     </form>
 <?
 }
@@ -43,6 +45,8 @@ function drawContactForm()
                 <button class="btn theme_btn">ОТПРАВИТЬ СООБЩЕНИЕ</button>
             </div>
         </div>
+        <input type="hidden" id="g-recaptcha-response-2" name="g-recaptcha-response">
+        <input type="hidden" name="action" value="validate_captcha">
     </form>
 <?
 }
