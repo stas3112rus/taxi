@@ -14,7 +14,27 @@ include('sites/global-data/global-data.php');
 include('sites/utils/mail-function.php');
 
 include('sites/components/main.php');
-sendMail();
+
+if (isset($_POST['g-recaptcha-response'])) {
+  $captcha = $_POST['g-recaptcha-response'];
+} else {
+  $captcha = false;
+}
+
+if ($captcha) {
+
+  $secret   = $DEFAULT['recaptcha_secret_key'];
+
+  $response = file_get_contents(
+    "https://www.google.com/recaptcha/api/siteverify?secret=" . $secret . "&response=" . $captcha . "&remoteip=" . $_SERVER['REMOTE_ADDR']
+  );
+  $response = json_decode($response);
+
+  if ($response->success == true && $response->score >= 0.5) {
+    sendMail();
+  }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">

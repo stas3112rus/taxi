@@ -21,6 +21,8 @@ function drawTopForm()
                     ?>
                 </div>
                 <? drawButtonSend($TXT['form_button']) ?>
+                <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+                <input type="hidden" name="action" value="validate_captcha">
             </form>
         </div>
     </div>
