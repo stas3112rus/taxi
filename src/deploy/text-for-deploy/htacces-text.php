@@ -13,7 +13,12 @@ function getHtaccesMain()
     
     RewriteCond %{HTTP_HOST} ^www\.(.*)$
     RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
-    RewriteRule ^index\.html$ "http\:\/\/simferopol-aeroport\.taxi\/" [R=301,L]';
+    RewriteRule ^index\.html$ "http\:\/\/simferopol-aeroport\.taxi\/" [R=301,L]
+    
+    RewriteCond %{THE_REQUEST} GET\ .*/index\.(php|html)\ HTTP
+    RewriteRule ^(.*)index\.(php|html)$ /$1 [R=301,L]
+    ';
+    
 }
 
 function getHtaccesNotMain($city)
