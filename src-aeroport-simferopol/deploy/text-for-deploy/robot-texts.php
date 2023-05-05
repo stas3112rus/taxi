@@ -35,5 +35,6 @@ Sitemap: https://aeroport-simferopol.taxi/sitemap2.xml";
     return ('User-agent: *
 Disallow: /' . $city['eng'] . '
 Disallow: /transfer-' . $city['eng'] . '
+Host: '.getMainUrl($city['eng'], $city['main_city']).'
 Sitemap: ' . getUrlToSitemap($city));
 }

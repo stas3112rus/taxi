@@ -20,9 +20,9 @@ function getHtaccesMain()
     Redirect 301 /autopark.php https://aeroport-simferopol.taxi/
     
     RewriteCond %{THE_REQUEST} GET\ .*/index\.(php|html)\ HTTP
+    RewriteRule ^(.*)index\.(php|html)$ /$1 [R=301,L]
     RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
     RewriteCond %{REQUEST_URI} !^/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-    RewriteRule ^(.*)index\.(php|html)$ /$1 [R=301,L]
     
     AddDefaultCharset UTF-8';
 }
