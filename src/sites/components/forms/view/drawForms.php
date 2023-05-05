@@ -17,6 +17,9 @@ function drawTopForm()
         </div>
         <? drawButtonSend() ?>
         <input type="hidden" id="type" name="type" value="2" class="ajaxField">
+
+        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+        <input type="hidden" name="action" value="validate_captcha">
     </form>
 <?
 }
@@ -81,6 +84,9 @@ function drawContactForm()
                     <input type="submit" id="submit_btn_2" class="btn" value="Забронировать" /> </label>
             </div>
             <div id="contact_results_2"></div>
+
+            <input type="hidden" id="g-recaptcha-response-2" name="g-recaptcha-response">
+            <input type="hidden" name="action" value="validate_captcha">
         </form>
     </div>
 <?
