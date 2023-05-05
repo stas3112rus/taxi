@@ -10,10 +10,12 @@ function getHtaccesMain()
     return 'RewriteEngine On
     RewriteCond %{SERVER_PORT} ^80$
     RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+    RewriteCond %{THE_REQUEST} GET\ .*/index\.(php|html)\ HTTP
     
     RewriteCond %{HTTP_HOST} ^www\.(.*)$
     RewriteRule ^(.*)$ http://%1/$1 [L,R=301]
-    RewriteRule ^index\.html$ "http\:\/\/taxi24h\.ru\/" [R=301,L]';
+    RewriteCond %{THE_REQUEST} GET\ .*/index\.(php|html)\ HTTP
+    RewriteRule ^(.*)index\.(php|html)$ /$1 [R=301,L]';
 }
 
 function getHtaccesNotMain($city)

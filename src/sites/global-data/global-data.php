@@ -1,80 +1,65 @@
 <?
-function getTXT()
-{
-    $result = [];
+include('utils/tariffs-functions.php');
+include('utils/text-functions.php');
+include('utils/default-functions.php');
+include('utils/phone-functions.php');
+include('utils/discount-functions.php');
+include('utils/widgets-functions.php');
 
+$ALL_CITIES = getAllCities();
+$CITY_FROM = getCityById($CITY_FROM_ID);
+$CITY_TO = getCityTo();
+
+$MAIN_CITY = getMainCity();
+
+$DEFAULT = getDefaults();
+
+$TARIFF = getTariffForDirection();
+
+$TARIFFS_TABLE = getTariffsForTable();
+
+$CURRENT_SITE = getMainUrl($CITY_FROM['eng'], $CITY_FROM['main_city']);
+$MAIN_SITE = getMainUrl($MAIN_CITY['eng'], $MAIN_CITY['main_city']);
+
+$TXT = getTXT();
+
+$STOP_DISCOUNT_DAY = getStopDiscountDay();
+
+$DISCOUNT_PERCENT = getDiscountPercent();
+
+$WIDGETS_HEADER = upgradedWidgets(true);
+$WIDGETS_BOTTOM = upgradedWidgets(false);
+
+$IS_SITEMAP = isSitemap();
+
+function getCityTo()
+{
+    global $TEXT_TYPE_INDEX, $CITY_TO_ID;
+
+    switch ($TEXT_TYPE_INDEX) {
+        case 2:
+            return getCityById($CITY_TO_ID);
+        case 3:
+            return getMainCity();
+        case 4:
+            return getCityById($CITY_TO_ID);
+        case 5:
+            return getCityById($CITY_TO_ID);
+        default:
+            return  false;
+    }
+}
+
+function isSitemap()
+{
     global $TEXT_TYPE_INDEX;
 
-    $texts = geTextsByTypeForSite($TEXT_TYPE_INDEX);
-
-    foreach ($texts as $text) {
-        $result[$text['field_name']] =  upgradeTextLine($text['value']);
+    switch ($TEXT_TYPE_INDEX) {
+        case 1:
+            return true;
+        case 3:
+            return true;
+        default:
+            return  false;
     }
-
-    return $result;
-}
-
-function upgradeTextLine($textLine)
-{
-    global $DEFAULT, $MAIN_SITE, $CURRENT_SITE, $DIRECTION_URL, $YEAR, $STOP_DISCOUNT_DAY;
-
-    $textLine = replacePadeg($textLine);
-    $textLine = str_replace("[min_price]", getMinPrice(), $textLine);
-    $textLine = str_replace("[title_price]", getTitlePrice(), $textLine);
-    $textLine = str_replace("[phone]", getFullPhone(), $textLine);
-    $textLine = str_replace("[domen]", $DEFAULT['domain'], $textLine);
-    $textLine = str_replace("[main_url]", $MAIN_SITE, $textLine);
-    $textLine = str_replace("[domain_url]", $CURRENT_SITE, $textLine);
-    $textLine = str_replace("[year]", $YEAR, $textLine);
-    $textLine = str_replace("[discount_day]", $STOP_DISCOUNT_DAY, $textLine);
-
-
-
-    if ($DIRECTION_URL) {
-        $textLine =  str_replace("[direction_url]", $DIRECTION_URL, $textLine);
-    }
-
-    return $textLine;
-}
-
-function replacePadeg($textLine)
-{
-    global $CITY_FROM, $CITY_TO;
-
-    $padeges = [
-        "im",
-        "rod",
-        "dat",
-        "vin",
-        "tvor",
-        "pred"
-    ];
-
-    foreach ($padeges as $padeg) {
-        $textLine = str_replace(getOneLineForReplacePadeg($padeg, 1), $CITY_FROM[$padeg], $textLine);
-        if ($CITY_TO)
-            $textLine = str_replace(getOneLineForReplacePadeg($padeg, 2), $CITY_TO[$padeg], $textLine);
-    }
-
-    return $textLine;
-}
-
-
-function getOneLineForReplacePadeg($padeg, $city_number)
-{
-    return "[city_" . $city_number . "_" . $padeg . "]";
-}
-
-function getMinPrice()
-{
-    global $TARIFF, $DEFAULT;
-
-    return round($TARIFF['economy'] * $DEFAULT['min_price_percent'] / 100);
-}
-
-function getTitlePrice()
-{
-    global $TARIFF, $DEFAULT;
-
-    return round($TARIFF['economy'] * $DEFAULT['discount_title'] / 100);
 }
