@@ -1,5 +1,5 @@
 <?
-function drawTopForm()
+function drawTopForm($recaptcha_id = "")
 {
 ?>
     <form class="contact_form form-style" id="contact_form">
@@ -18,6 +18,8 @@ function drawTopForm()
 
         </div>
         <div id="contact_results"></div>
+        <input type="hidden" id="g-recaptcha-response<? echo $recaptcha_id ?>" name="g-recaptcha-response">
+        <input type="hidden" name="action" value="validate_captcha">
     </form>
 <?
 }
@@ -37,7 +39,7 @@ function drawContactForm()
                     </div>
                     <div class="signup-box-body">
 
-                        <? drawTopForm() ?>
+                        <? drawTopForm(2) ?>
                     </div>
 
                 </div>
