@@ -1,7 +1,30 @@
 <?
+function getAllTexts()
+{
+    $sql = "SELECT 
+    value,
+    field_name,
+    field_text_type
+    FROM `texts` 
+    INNER JOIN text_fields ON text_field_ref = id_text_field";
+    return getAllRowsFromDataBase($sql);
+}
+
 function getTextsByType($text_type_id)
 {
     $sql = "SELECT * FROM `texts` WHERE `text_type_ref` = '$text_type_id'";
+    return getAllRowsFromDataBase($sql);
+}
+
+function geTextsByTypeForSite($text_type_id)
+{
+    $sql = "SELECT 
+        value,
+        field_name  
+        FROM `texts` 
+        INNER JOIN text_fields ON text_field_ref = id_text_field
+        WHERE `text_type_ref` = '$text_type_id'";
+
     return getAllRowsFromDataBase($sql);
 }
 
@@ -37,4 +60,22 @@ function addText($value)
         ('$value[text_field_id]', '$value[text_type_id]', '$value[value]')";
 
     return changeDataBaseRequest($sql, "Ошибка внесении текста");
+}
+
+function migrationText($values)
+{
+    $sql = "INSERT INTO `texts` (`text_field_ref`, `text_type_ref`, `value`)  VALUES ";
+
+    $count = 0;
+
+    foreach ($values as $value) {
+        $count++;
+
+        $value = trimValues($value);
+        $sql .= "($value[text_field_ref], '$value[text_type_ref]', '$value[value]')";
+
+        $sql .= $count == count($values) ? ";" : ",";
+    }
+
+    echo changeDataBaseRequest($sql, "Ошибка создании текстового поля");
 }

@@ -1,0 +1,141 @@
+<?
+function drawTariffsTable()
+{
+?>
+    <table class="highlight">
+        <thead>
+            <? drawHeadOfTariffTable(); ?>
+        </thead>
+        <tbody>
+            <?
+            drawTariffRows();
+            drawWaitInAirportRow();
+            drawWaitInTripRow();
+            drawArmChairRow();
+            drawRentAutoRow();
+            ?>
+        </tbody>
+    </table>
+<?
+}
+
+function drawHeadOfTariffTable()
+{
+?>
+    <tr>
+        <th data-field="id">Направление</th>
+        <th data-field="name">Эконом</th>
+        <th data-field="price">Комфорт</th>
+        <th data-field="price">Бизнес</th>
+        <th data-field="price">Мини-Бус</th>
+        <th data-field="price">ВИП</th>
+    </tr>
+<?
+}
+
+function drawTariffRows()
+{
+    global $TARIFFS_TABLE;
+
+    $counter = 0;
+    foreach ($TARIFFS_TABLE as $tariff) {
+        drawTariffRow($tariff, $counter);
+        $counter++;
+    }
+}
+
+function drawTariffRow($tariff, $counter)
+{
+?>
+    <tr>
+        <td>
+            <? echo drawTariffDirectionField($counter, $tariff) ?>
+        </td>
+        <td><? upgradeDiscountTariffForTable($tariff['economy']) ?></td>
+        <td><? upgradeDiscountTariffForTable($tariff['comfort']) ?></td>
+        <td><? upgradeDiscountTariffForTable($tariff['business']) ?></td>
+        <td><? upgradeDiscountTariffForTable($tariff['minivan']) ?></td>
+        <td><? upgradeDiscountTariffForTable($tariff['vip']) ?></td>
+    </tr>
+<?
+}
+
+function drawTariffDirectionField($counter, $tariff)
+{
+
+    $cities =  $tariff['cityFrom'] . "  - " . $tariff['cityTo'];
+
+    $discount = "";
+    if ($counter < 2 || $tariff['discount']) {
+        $discount = " " . getDiscountDay();
+    }
+
+    return $cities . $discount;
+}
+
+function getDiscountDay()
+{
+    global $STOP_DISCOUNT_DAY;
+
+    return '<span style="color: #ff6600;"><b>АКЦИЯ! до ' . $STOP_DISCOUNT_DAY . '</b> </span>';
+}
+
+function drawWaitInAirportRow()
+{
+    global $DEFAULT;
+?>
+    <tr>
+        <td><? echo $DEFAULT['wait_in_airport_title'] ?></td>
+        <td><span style="color: #ff6600;"><? echo $DEFAULT['wait_in_airport_economy'] ?></span></td>
+        <td><span style="color: #ff6600;"><? echo $DEFAULT['wait_in_airport_comfort'] ?></span></td>
+        <td><span style="color: #ff6600;"><? echo $DEFAULT['wait_in_airport_minivan'] ?></span></td>
+        <td><span style="color: #ff6600;"><? echo $DEFAULT['wait_in_airport_business'] ?></span></td>
+        <td><span style="color: #ff6600;"><? echo $DEFAULT['wait_in_airport_vip'] ?></span></td>
+    </tr>
+<?
+}
+
+function drawWaitInTripRow()
+{
+    global $DEFAULT;
+?>
+    <tr>
+        <td><? echo $DEFAULT['wait_in_trip_title'] ?></td>
+        <td><? echo $DEFAULT['wait_in_trip_economy'] ?></td>
+        <td><? echo $DEFAULT['wait_in_trip_comfort'] ?></td>
+        <td><? echo $DEFAULT['wait_in_trip_minivan'] ?></td>
+        <td><? echo $DEFAULT['wait_in_trip_business'] ?></td>
+        <td><? echo $DEFAULT['wait_in_trip_vip'] ?></td>
+    </tr>
+<?
+}
+
+function drawArmChairRow()
+{
+    global $DEFAULT;
+?>
+    <tr>
+        <td><? echo $DEFAULT['child_armchair_title'] ?></td>
+        <td><? echo $DEFAULT['child_armchair_economy'] ?></td>
+        <td><? echo $DEFAULT['child_armchair_comfort'] ?></td>
+        <td><? echo $DEFAULT['child_armchair_minivan'] ?></td>
+        <td><? echo $DEFAULT['child_armchair_business'] ?></td>
+        <td><? echo $DEFAULT['child_armchair_vip'] ?></td>
+    </tr>
+<?
+}
+
+function drawRentAutoRow()
+{
+    global $DEFAULT;
+?>
+    <tr>
+        <td><? echo $DEFAULT['rent_auto_title'] ?></td>
+        <td><? echo $DEFAULT['rent_auto_economy'] ?></td>
+        <td><? echo $DEFAULT['rent_auto_comfort'] ?></td>
+        <td><? echo $DEFAULT['rent_auto_minivan'] ?></td>
+        <td><? echo $DEFAULT['rent_auto_business'] ?></td>
+        <td><? echo $DEFAULT['rent_auto_vip'] ?></td>
+    </tr>
+<?
+}
