@@ -1,39 +1,23 @@
 <?
-function drawTopForm()
+function drawTopForm($popup = false)
 {
-    global $TXT;
 ?>
-    <form action="#" id='contact-form'>
-        <div class="form-title">
-            <i class="fa fa-globe"></i>
-            <h3><? echo $TXT['main_block_form_title'] ?></h3>
+    <form class="contact_form form-style <? echo $popup ? "mfp-hide white-popup-block" : "" ?> " id="contact_form">
+        <div id="contact_body">
+            <?
+            drawDateField();
+            drawSelectFromField();
+            drawSelectToField();
+            drawCLassTaxiField();
+            drawFieldName();
+            drawFieldPhone();
+            drawFieldEmail();
+            drawFieldMessage();
+            drawButtonSend();
+            ?>
         </div>
-
-        <div class="row row-inputs">
-            <div class="container-fluid">
-                <?
-                drawDateField();
-                drawSelectFromField();
-                drawSelectToField();
-                drawCLassTaxiField();
-                drawFieldName();
-                drawFieldPhone();
-                drawFieldEmail();
-                ?>
-                <div class="col-sm-12">
-                    <?
-                    drawFieldMessage();
-                    drawButtonSend();
-                    ?>
-                </div>
-            </div>
+        <div id="contact_results"></div>
         </div>
-        <div class="row row-submit">
-            <div class="container-fluid">
-            </div>
-        </div>
-        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
-        <input type="hidden" name="action" value="validate_captcha">
     </form>
 <?
 }
@@ -87,49 +71,15 @@ function drawContactForm()
 <?
 }
 
-function drawModalForm()
-{
-?>
-    <form action="#" id='contact-form2'>
-        <div class="row row-inputs">
-            <div class="container-fluid">
-                <?
-                drawDateField();
-                drawSelectFromField();
-                drawSelectToField();
-                drawCLassTaxiField();
-                drawFieldName();
-                drawFieldPhone();
-                drawFieldEmail();
-                ?>
-                <div class='col-sm-12'>
-                    <?
-                    drawFieldMessage();
-                    drawButtonSendModal();
-                    ?>
-                </div>
 
-            </div>
-        </div>
-        <div class="row row-submit">
-            <div class="container-fluid">
-            </div>
-        </div>
-        <input type="hidden" id="g-recaptcha-response-3" name="g-recaptcha-response">
-        <input type="hidden" name="action" value="validate_captcha">
-    </form>
-<?
-}
 
 function drawDateField()
 {
 ?>
-    <div class="col-sm-12">
-        <div class="form-group has-icon ">
-            <input class="input-field  form-control flatpickr" data-enabletime=true data-time_24hr=true data-timeFormat="H:i" name="date" type="text" placeholder="Выберите Дату и Время *">
-            <span class="form-control-icon"><i class="fa fa-calendar form-icon" aria-hidden="true"></i></span>
-        </div>
-    </div>
+    <label class="flatpickr" alt="Select Date and Time *">
+        <input class="input-field flatpickr" data-enabletime=true data-time_24hr=true data-timeFormat="H:i" name="date" type="text" placeholder="Выберите Дату и Время *">
+        <i class="fa fa-calendar form-icon" aria-hidden="true"></i>
+    </label>
 <?
 }
 
@@ -137,15 +87,13 @@ function drawSelectFromField()
 {
     global $CITY_FROM;
 ?>
-    <div class="col-sm-12">
-        <div class="form-group has-icon ">
-            <select name="subject-from" class="form-control moz-select">
-                <option value="">Откуда такси</option>
-                <? drawCitiesOptions($CITY_FROM) ?>
-            </select>
-            <span class="form-control-icon"><i class="fa fa-map-marker"></i></span>
-        </div>
-    </div>
+    <label for="subject">
+        <select name="subject-from" class="select-field">
+            <option value="">Откуда</option>
+            <? drawCitiesOptions($CITY_FROM) ?>
+        </select>
+        <i class="fa fa-globe form-icon" aria-hidden="true"></i>
+    </label>
 <?
 }
 
@@ -154,15 +102,13 @@ function drawSelectToField()
     global $CITY_TO;
 
 ?>
-    <div class="col-sm-12">
-        <div class="form-group has-icon ">
-            <select name="subject-to" class="form-control moz-select">
-                <option value="">Куда</option>
-                <? drawCitiesOptions($CITY_TO) ?>
-            </select>
-            <span class="form-control-icon"><i class="fa fa-map-marker"></i></span>
-        </div>
-    </div>
+    <label for="subject">
+        <select name="subject-to" class="select-field">
+            <option value="">Куда</option>
+            <? drawCitiesOptions($CITY_TO) ?>
+        </select>
+        <i class="fa fa-globe form-icon" aria-hidden="true"></i>
+    </label>
 <?
 }
 
@@ -184,65 +130,56 @@ function drawCitiesOptions($city)
 function drawCLassTaxiField()
 {
 ?>
-    <div class="col-sm-12">
-        <div class="form-group has-icon ">
-            <select name="taxi" class="form-control moz-select">
-                <option value=''>Выберите класс Такси</option>
-                <option value='Econom'>Эконом</option>
-                <option value='Komfot'>Комфорт</option>
-                <option value='Bussines'>Бизнес</option>
-                <option value='Mini-bus'>Микроавтобус</option>
-            </select>
-
-            <span class="form-control-icon"><i class="fa fa-car"></i></span>
-        </div>
-    </div>
+    <label for="taxi" class="taxi">
+        <select name="taxi">
+            <option value="">Выберите класс Такси</option>
+            <option value="Эконом">Эконом</option>
+            <option value="Комфорт">Комфорт</option>
+            <option value="Бизнес">Бизнес</option>
+            <option value="Микроавтобус">Микроавтобус</option>
+        </select>
+        <i class="fa fa-car form-icon" aria-hidden="true"></i>
+    </label>
 <?
 }
 
 function drawFieldName()
 {
 ?>
-    <div class="col-sm-12">
-        <div class="form-group ">
-            <input type="text" name='name' class="form-control" id="formSearchUpDate2" placeholder="Имя *">
-        </div>
-    </div>
+    <label alt="Name *">
+        <input type="text" name="name" id="name" required class="input-field" placeholder="Имя *" />
+        <i class="fa fa-user-o form-icon" aria-hidden="true"></i>
+    </label>
 <?
 }
 
 function drawFieldPhone()
 {
 ?>
-    <div class="col-sm-12">
-        <div class="form-group has-icon ">
-            <!--<label for="formSearchOffLocation2">Телефон</label>-->
-            <input type="text" name='phones' class="form-control input-phone" id="formSearchUpDate2" placeholder="Телефон *">
-            <span class="form-control-icon"><i class="fa fa-phone"></i></span>
-        </div>
-    </div>
+    <label>
+        <input type="text" name="phones" maxlength="19" required placeholder="Телефон *" class="tel-number-field long input-phone" />
+        <i class="fa fa-phone form-icon" aria-hidden="true"></i>
+    </label>
 <?
 }
 
 function drawFieldEmail()
 {
 ?>
-    <div class="col-sm-12">
-        <div class="form-group has-icon ">
-            <input type="text" name='email' class="form-control" id="formSearchUpDate2" placeholder="Email *">
-            <span class="form-control-icon"><i class="fa fa-envelope"></i></span>
-        </div>
-    </div>
+    <label>
+        <input name="email" class="input-field" placeholder="E-mail" type="email">
+        <i class="fa fa-envelope-o form-icon" aria-hidden="true"></i>
+    </label>
 <?
 }
 
 function drawFieldMessage()
 {
 ?>
-    <div class="form-group has-icon ">
-        <textarea name='message' cols="58" rows="5" placeholder="Ваше сообщение *"></textarea>
-        <span class="form-control-icon"><i class="fa fa-comment-o "></i></span>
-    </div>
+    <label for="field5">
+        <textarea name="message" id="message" class="textarea-field" placeholder="Ваше сообщение *"></textarea>
+        <i class="fa fa-commenting-o form-icon" aria-hidden="true"></i>
+    </label>
 <?
 }
 
@@ -251,9 +188,9 @@ function drawFieldMessage()
 function drawButtonSend()
 {
 ?>
-    <div class="form-group">
-        <button type="submit" class="btn btn-submit ripple-effect btn-theme">Заказать</button>
-    </div>
+    <label>
+        <input type="submit" id="submit_btn" class="btn" value="ЗАБРОНИРОВАТЬ" />
+    </label>
 <?
 }
 
