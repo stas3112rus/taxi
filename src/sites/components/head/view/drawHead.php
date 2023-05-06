@@ -4,23 +4,26 @@ function drawHead()
     global $TXT, $LEVEL;
 ?>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><? echo $TXT['title'] ?></title>
     <meta name="description" content="<? echo $TXT['description'] ?>">
-    <meta name="keywords" content="<? echo $TXT['keywords'] ?>">
-    <link rel="apple-touch-icon-precomposed" sizes="16x16" href="<? echo $LEVEL ?>assets\ico\favicon.png">
-    <link rel="shortcut icon" href="<? echo $LEVEL ?>assets\ico\favicon.png">
-    <link href="<? echo $LEVEL ?>assets\plugins\bootstrap\css\bootstrap.min.css" rel="stylesheet">
-    <link href="<? echo $LEVEL ?>assets\plugins\bootstrap-select\css\bootstrap-select.min.css" rel="stylesheet">
-    <link href="<? echo $LEVEL ?>assets\plugins\fontawesome\css\font-awesome.min.css" rel="stylesheet">
-    <link href="<? echo $LEVEL ?>assets\plugins\prettyphoto\css\prettyPhoto.css" rel="stylesheet">
-    <link href="<? echo $LEVEL ?>assets\plugins\owl-carousel2\assets\owl.carousel.min.css" rel="stylesheet">
-    <link href="<? echo $LEVEL ?>assets\plugins\owl-carousel2\assets\owl.theme.default.min.css" rel="stylesheet">
-    <link href="<? echo $LEVEL ?>assets\plugins\animate\animate.min.css" rel="stylesheet">
-    <link href="<? echo $LEVEL ?>assets\plugins\swiper\css\swiper.min.css" rel="stylesheet">
-    <link href="<? echo $LEVEL ?>assets\plugins\datetimepicker\css\bootstrap-datetimepicker.min.css" rel="stylesheet">
-    <link href="<? echo $LEVEL ?>assets\js\flatpickr\flatpickr.css" rel="stylesheet">
-    <link href="<? echo $LEVEL ?>assets\css\theme.css" rel="stylesheet">
-    <script src="<? echo $LEVEL ?>assets\plugins\modernizr.custom.js"></script>
+    <meta name="keywords" content="<? echo $TXT['keyword'] ?>">
+    <link href="<? echo $LEVEL ?>img/logo-dark.jpg" rel="icon" type="image/jpg">
+    <link href="<? echo $LEVEL ?>img/logo-dark.jpg" rel="apple-touch-icon">
+    <link href="<? echo $LEVEL ?>js/Magnific-Popup-master/dist/magnific-popup.css" <? echo $LEVEL ?> rel="stylesheet">
+    <link href="<? echo $LEVEL ?>css/bootstrap.min.css" rel="stylesheet">
+    <link href="<? echo $LEVEL ?>css/lib/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="<? echo $LEVEL ?>css/font-awesome.css" rel="stylesheet">
+    <link href="<? echo $LEVEL ?>css/themify-icons.css" rel="stylesheet">
+    <link href="<? echo $LEVEL ?>css/animate.css" rel="stylesheet">
+    <link href="<? echo $LEVEL ?>css/theme.css" rel="stylesheet">
+    <link href="<? echo $LEVEL ?>css/responsive.css" rel="stylesheet">
+    <link href="<? echo $LEVEL ?>js/flatpickr/flatpickr.min.css" rel="stylesheet">
+    <link href="<? echo $LEVEL ?>css/owl.carousel.css" rel="stylesheet">
+    <link href="<? echo $LEVEL ?>css/owl.theme.default.css" rel="stylesheet">
+    <link href="<? echo $LEVEL ?>css/nivo-lightbox.css" rel="stylesheet">
+    <link href="<? echo $LEVEL ?>css/nivo/default.css" rel="stylesheet">
 <?
 }
