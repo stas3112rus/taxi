@@ -9,4 +9,5 @@ include('menu/view/drawMenu.php');
 include('popup/view/drawPopUpMenu.php');
 include('preloader/view/drawPreloader.php');
 include('navBar/view/drawNavBar.php');
+include('mainBlock/view/drawMainBlock.php');
 

@@ -31,6 +31,7 @@ include('sites/components/main.php');
     drawTopForm(true);
     drawPreloader();
     drawNavBar();
+    drawMainBlock();
 
     drawScripts();
     ?>
