@@ -37,6 +37,7 @@ include('sites/components/main.php');
     drawCarClasses();
     drawTariffsBlock();
     drawDigitals();
+    drawReviews();
 
     drawScripts();
     ?>
