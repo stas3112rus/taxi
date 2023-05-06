@@ -13,3 +13,4 @@ include('mainBlock/view/drawMainBlock.php');
 include('textBlock/view/drawTextBlock.php');
 include('advantages/view/drawAdvantages.php');
 include('carClasses/view/drawCarClasses.php');
+include('digitals/view/drawDigitals.php');

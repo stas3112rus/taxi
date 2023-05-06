@@ -5,17 +5,19 @@ function drawTariffsBlock()
 ?>
     <section id="price-table" class="price-table">
         <div class="container">
-            <h2 class="title-black"><? echo $TXT['tariffs_title'] ?></h2>
-            <div class="line-orange"></div>
-            <div class="subtitle-black space30"><? echo $TXT['tariffs_subtitle'] ?></div>
+            <h2 class="text-center"><?echo $TXT['tariffs_title']?></h2>
+            <div class="lead text-center"><?echo $TXT['tariffs_subtitle']?></div>
             <div class="r-tbl">
-                <?
-                drawTariffsTable();
-                ?>
+                <? drawTariffsTable() ?>
             </div>
         </div>
-        <div style="text-align: center; margin: 30px 0;">
-            <? echo $TXT['tariffs_restrictions'] ?>
+        <div class="row">
+            <br><br>
+            <div style="margin: 22px 0; text-align: center;">
+            <?echo $TXT['tariffs_restriction']?>
+            </div>
+            <br><br>
+            <a href="#contact_form" class="btn popup-with-form"><?echo $TXT['tariffs_btn']?></a>
         </div>
     </section>
 <?

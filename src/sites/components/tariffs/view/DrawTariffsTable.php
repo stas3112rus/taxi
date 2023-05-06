@@ -4,9 +4,10 @@ function drawTariffsTable()
 ?>
     <table class="highlight">
         <thead>
-            <? drawHeadOfTariffTable(); ?>
+            <? drawHeadOfTariffTable() ?>
         </thead>
         <tbody>
+
             <?
             drawTariffRows();
             drawWaitInAirportRow();
@@ -28,7 +29,7 @@ function drawHeadOfTariffTable()
         <th data-field="price">Комфорт</th>
         <th data-field="price">Бизнес</th>
         <th data-field="price">Мини-Бус</th>
-        <th data-field="price">ВИП</th>
+        <th data-field="price">VIP</th>
     </tr>
 <?
 }
