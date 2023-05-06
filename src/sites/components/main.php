@@ -11,3 +11,4 @@ include('preloader/view/drawPreloader.php');
 include('navBar/view/drawNavBar.php');
 include('mainBlock/view/drawMainBlock.php');
 include('textBlock/view/drawTextBlock.php');
+include('advantages/view/drawAdvantages.php');
