@@ -38,6 +38,8 @@ include('sites/components/main.php');
     drawTariffsBlock();
     drawDigitals();
     drawReviews();
+    drawFaq();
+    drawContacts();
 
     drawScripts();
     ?>

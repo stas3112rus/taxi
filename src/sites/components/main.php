@@ -15,3 +15,5 @@ include('advantages/view/drawAdvantages.php');
 include('carClasses/view/drawCarClasses.php');
 include('digitals/view/drawDigitals.php');
 include('reviews/view/drawReviews.php');
+include('faqs/view/drawFaq.php');
+include('contacts/view/drawContacts.php');

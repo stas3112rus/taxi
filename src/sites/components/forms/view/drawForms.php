@@ -25,48 +25,14 @@ function drawTopForm($popup = false)
 function drawContactForm()
 {
 ?>
-    <form name="contact-form" method="post" class="contact-form" id="contact-form3">
-
-        <div class="row">
-            <div class="col-md-6">
-
-                <div class="outer">
-                    <div class="form-group af-inner has-icon">
-                        <label class="sr-only" for="name">Имя</label>
-                        <input type="text" name="name" id="name" placeholder="Имя" value="" size="30" data-toggle="tooltip" title="Name is required" class="form-control placeholder">
-                        <span class="form-control-icon"><i class="fa fa-user"></i></span>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col-md-6">
-
-                <div class="outer">
-                    <div class="form-group af-inner has-icon">
-                        <label class="sr-only" for="email">Email</label>
-                        <input type="text" name="email" id="email" placeholder="Email" value="" size="30" data-toggle="tooltip" class="form-control placeholder">
-                        <span class="form-control-icon"><i class="fa fa-envelope"></i></span>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="form-group af-inner has-icon">
-            <label class="sr-only" for="input-message">Ваш вопрос</label>
-            <textarea name="message" id="input-message" placeholder="Ваш вопрос" rows="5" data-toggle="tooltip" title="Message is required" class="form-control placeholder"></textarea>
-            <span class="form-control-icon"><i class="fa fa-bars"></i></span>
-        </div>
-
-        <div class="outer required">
-            <div class="form-group af-inner">
-                <input type="submit" name="submit" class="form-button form-button-submit btn btn-block btn-theme ripple-effect btn-theme-dark" id="submit_btn" value="Задать вопрос">
-            </div>
-        </div>
-        <input type="hidden" id="g-recaptcha-response-2" name="g-recaptcha-response">
-        <input type="hidden" name="action" value="validate_captcha">
-
-
+    <form action="" method="POST" class="form-horizontal footer_form" id="contact" novalidate>
+        <input class="form-control m-t-20 input-phone" name="number" id="number" placeholder="Ваш Номер*" type="text" required>
+        <input class="form-control m-t-20" name="email" id="email" placeholder="Ваш Email*" type="email">
+        <textarea name="message" id="message" rows="5" class="form-control m-t-20" placeholder="Ваш вопрос или сообщение*"></textarea>
+        <p>*Ваши контакты не будут переданы третим лицам</p>
+        <button id="submit" type="submit" class="btn">задать вопрос</button>
+        <p class="email-success-text hide">Form Submitted Successfully</p>
+        <p class="email-error-text hide">Please enter valid details</p>
     </form>
 <?
 }

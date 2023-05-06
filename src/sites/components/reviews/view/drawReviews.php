@@ -24,7 +24,9 @@ function drawReviews()
                     <div class="grey-bg p-30">
                         <h4 class="m-b-10"><? echo $TXT['reviews_subtitle'] ?></h4>
                         <p class="m-b-20"><? echo $TXT['reviews_description'] ?></p>
-                        <a href="#contact_form" class="btn btn-sm popup-with-form btn-secondary radius green-2"><? echo $TXT['reviews_btn'] ?></a>
+                        <a href="#contact_form" class="btn btn-sm popup-with-form btn-secondary radius green-2">
+                            <? echo $TXT['reviews_btn'] ?>
+                        </a>
                     </div>
                 </div>
             </div>
