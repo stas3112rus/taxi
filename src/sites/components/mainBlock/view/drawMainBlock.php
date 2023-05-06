@@ -9,7 +9,7 @@ function drawMainBlock()
                 <div class="row">
                     <div class="col-md-7 intro-text wow fadeInUp" data-wow-delay="1000ms" data-wow-duration="1500ms"">
 					
-					<h1 class=" m-t-80 text_shadow">
+					    <h1 class=" m-t-80 text_shadow">
                         <? echo  mb_strtoupper($TXT['main_block_title']) ?>
                         </h1>
 
