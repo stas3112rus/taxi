@@ -19,9 +19,7 @@ function drawContacts()
                     drawContactForm();
                     ?>
                 </div>
-
                 <div class="col-md-6 col-sm-12 text wow fadeInRight" data-wow-delay="700ms" data-wow-duration="1500ms" style="visibility: visible; animation-duration: 1500ms; animation-delay: 1500ms; animation-name: fadeInRight;">
-                    <!-- Right Side Title -->
                     <h4>
                         <? echo $TXT['contacts_title_2'] ?>
                     </h4>
@@ -44,9 +42,7 @@ function drawContacts()
                     ?>
                 </div>
             </div>
-
         </div>
-
     </section>
 <?
 }

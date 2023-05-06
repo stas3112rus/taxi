@@ -40,6 +40,7 @@ include('sites/components/main.php');
     drawReviews();
     drawFaq();
     drawContacts();
+    drawPolitics();
 
     drawScripts();
     ?>
