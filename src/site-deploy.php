@@ -29,6 +29,8 @@ include('sites/components/main.php');
     <?
     drawPopUpMenu();
     drawTopForm(true);
+    drawPreloader();
+    drawNavBar();
 
     drawScripts();
     ?>
