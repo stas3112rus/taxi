@@ -17,6 +17,19 @@ function drawScripts()
     <script src="<? echo $LEVEL ?>js/jquery.validate.min.js" type="text/javascript"></script>
     <script src="<? echo $LEVEL ?>js/waypoints.min.js" type="text/javascript"></script>
     <script src="<? echo $LEVEL ?>js/maskedinput.js" type="text/javascript"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=<? echo $DEFAULT['recaptcha_site_key'] ?>"></script>
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('<? echo $DEFAULT['recaptcha_site_key'] ?>', {
+                    action: 'validate_captcha'
+                })
+                .then(function(token) {
+                    document.getElementById('g-recaptcha-response').value = token;
+                    document.getElementById('g-recaptcha-response-2').value = token;
+                });
+        });
+    </script>
+
     <script src="<? echo $LEVEL ?>js/custom.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function($) {
