@@ -2,7 +2,7 @@
 function drawTopForm($popup = false)
 {
 ?>
-    <form class="contact_form form-style <? echo $popup ? "mfp-hide white-popup-block" : "" ?> " id="contact_form">
+    <form class="contact_form form-style <? echo $popup ? "mfp-hide white-popup-block" : "" ?> " id="<? echo $popup ? "contact_form" : "contact_form-2" ?>">
         <div id="contact_body">
             <?
             drawDateField();
@@ -18,7 +18,7 @@ function drawTopForm($popup = false)
         </div>
         <div id="contact_results"></div>
         </div>
-        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+        <input type="hidden" id="g-recaptcha-response-<? echo $popup ? "1" : "2" ?>" name="g-recaptcha-response">
         <input type="hidden" name="action" value="validate_captcha">
     </form>
 <?
@@ -35,7 +35,7 @@ function drawContactForm()
         <button id="submit" type="submit" class="btn">задать вопрос</button>
         <p class="email-success-text hide">Form Submitted Successfully</p>
         <p class="email-error-text hide">Please enter valid details</p>
-        <input type="hidden" id="g-recaptcha-response-2" name="g-recaptcha-response">
+        <input type="hidden" id="g-recaptcha-response-3" name="g-recaptcha-response">
         <input type="hidden" name="action" value="validate_captcha">
     </form>
 <?

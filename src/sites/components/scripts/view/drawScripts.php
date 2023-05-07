@@ -24,8 +24,10 @@ function drawScripts()
                     action: 'validate_captcha'
                 })
                 .then(function(token) {
-                    document.getElementById('g-recaptcha-response').value = token;
+                    document.getElementById('g-recaptcha-response-1').value = token;
                     document.getElementById('g-recaptcha-response-2').value = token;
+                    document.getElementById('g-recaptcha-response-3').value = token;
+
                 });
         });
     </script>

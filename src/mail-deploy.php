@@ -85,7 +85,7 @@ if ($_POST && $captcha) {
   Сообщение - $message";
 
 
-    $to_email = $DEFAULT['email_for_leads']; // куда отправлять
+  $to_email = $DEFAULT['email_for_leads']; // куда отправлять
 
 
     $emailgo = new TEmail; // инициaлизируeм супeр клaсс oтпрaвки
@@ -100,7 +100,6 @@ if ($_POST && $captcha) {
     $json['error'] = 0; // oшибoк нe былo
 
     echo json_encode($json); // вывoдим мaссив oтвeтa
-
   }
 } else { // eсли мaссив POST нe был пeрeдaн
   echo 'GET LOST!'; // высылaeм
