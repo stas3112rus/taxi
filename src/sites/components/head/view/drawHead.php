@@ -11,7 +11,7 @@ function drawHead()
     <meta name="keywords" content="<? echo $TXT['keyword'] ?>">
     <link href="<? echo $LEVEL ?>img/logo-dark.jpg" rel="icon" type="image/jpg">
     <link href="<? echo $LEVEL ?>img/logo-dark.jpg" rel="apple-touch-icon">
-    <link href="<? echo $LEVEL ?>js/Magnific-Popup-master/dist/magnific-popup.css" <? echo $LEVEL ?> rel="stylesheet">
+    <link href="<? echo $LEVEL ?>js/Magnific-Popup-master/dist/magnific-popup.css" rel="stylesheet">
     <link href="<? echo $LEVEL ?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<? echo $LEVEL ?>css/lib/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
