@@ -5,14 +5,22 @@ $tariffs_old = upgradeTariffs(getALLTariffs('tariffs', 'cities'));
 $tariffs_new = upgradeTariffs(getALLTariffs('tariffs_migration', 'cities_migration'));
 $CITIES = upgradeCites(getAllCities('cities'));
 $tariffs_for_insert = [];
+$tariffs_for_update = [];
+
 
 foreach ($tariffs_new as $key => $tariff) {
     if (!$tariffs_old[$key]) {
         array_push($tariffs_for_insert, $tariff);
+    } else {
+        array_push($tariffs_for_update, $tariff);
     }
 }
 
-echo changeDataBaseRequest(getSQL($tariffs_for_insert), "Не обновили");
+if ($tariffs_for_insert) {
+    echo changeDataBaseRequest(getSQLInsert($tariffs_for_insert), "Не добавили");
+}
+
+getSQLUpdate($tariffs_for_update);
 
 function getALLTariffs($tariffs_table, $city_table)
 {
@@ -67,8 +75,10 @@ function upgradeCites($cities)
     return $result;
 }
 
-function getSQL($tariffs)
+function getSQLInsert($tariffs)
 {
+    if (count($tariffs) == 0) return;
+
     $sql = "INSERT INTO `tariffs` (
         `city_from_ref`, 
         `city_to_ref`, 
@@ -80,13 +90,49 @@ function getSQL($tariffs)
         ) VALUES ";;
 
     for ($i = 0; $i < count($tariffs); $i++) {
-        $sql .= tariffsSqlItem($tariffs[$i], $i == count($tariffs) - 1);
+        $sql .= tariffsSqlInsertItem($tariffs[$i], $i == count($tariffs) - 1);
     }
 
     return $sql;
 }
 
-function  tariffsSqlItem($tariff, $isEnd)
+function getSQLUpdate($tariffs)
+{
+    $sql = "";
+
+    for ($i = 0; $i < count($tariffs); $i++) {
+        $sql .= tariffsSqlUpdateItem($tariffs[$i]);
+    }
+
+    return $sql;
+}
+
+function tariffsSqlUpdateItem($tariff)
+{
+    global $CITIES;
+    $str = "UPDATE `tariffs` SET ";
+
+
+    $city_from_id = $CITIES[$tariff['cityFrom']]['id_city'];
+    $city_to_id = $CITIES[$tariff['cityTo']]['id_city'];
+
+    $str .= "
+        `economy`=" . updateValueIfNull($tariff['economy']) . ",
+        `comfort`=" . updateValueIfNull($tariff['comfort']) . ",
+        `business`=" . updateValueIfNull($tariff['business']) . ",
+        `minivan`=" . updateValueIfNull($tariff['minivan']) . ",
+        `vip`=" . updateValueIfNull($tariff['vip']) . "
+        WHERE
+        `city_from_ref`= $city_from_id AND
+        `city_to_ref`= $city_to_id;
+    ";
+
+    $update = changeDataBaseRequest($str, "Не обновили");
+
+    if ($update != "Ok") echo $str . "<br>";
+}
+
+function  tariffsSqlInsertItem($tariff, $isEnd)
 {
     global $CITIES;
 
@@ -94,9 +140,9 @@ function  tariffsSqlItem($tariff, $isEnd)
     $city_to_id = $CITIES[$tariff['cityTo']]['id_city'];
 
     $str = "(" .
-        updateValueIfNull($city_from_id) .
+        $city_from_id .
         ", " .
-        updateValueIfNull($city_to_id) .
+        $city_to_id .
         ", " .
         updateValueIfNull($tariff['economy']) .
         ", " .
