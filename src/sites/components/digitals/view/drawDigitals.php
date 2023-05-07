@@ -24,7 +24,7 @@ function drawDigitalItem($digital, $description)
 {
 ?>
     <div class="col-sm-3">
-        <div class="count"><? $digital ?></div>
+        <div class="count"><? echo $digital ?></div>
         <div class="title"><? echo $description ?></div>
     </div>
 <?

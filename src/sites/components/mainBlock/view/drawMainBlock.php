@@ -17,9 +17,7 @@ function drawMainBlock()
                             <? echo $TXT['main_block_subtitle'] ?>
                         </p>
 
-                        <a href="#price-table" class="btn btn-secondary white scroll">
-                            <? echo mb_strtoupper($TXT['main_block_btn'])  ?>
-                        </a>
+                        <a href="#price-table" class="btn btn-secondary white scroll"><? echo $TXT['main_block_btn']  ?></a>
                     </div>
                     <div class="col-md-5 wow fadeInUp" data-wow-delay="1500ms" data-wow-duration="1500ms">
                         <div id="signup_1" class="signup-form">

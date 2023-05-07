@@ -19,9 +19,7 @@ function drawTextBlock()
                         <div class="lead hidden-text-more">
                             <? echo $TXT['text_block_text_second'] ?>
                         </div>
-                        <a href="#" class="wbutton btn">
-                            <? echo $TXT['text_block_btn'] ?>
-                        </a>
+                        <a href="#" class="wbutton btn"><? echo $TXT['text_block_btn'] ?></a>
                     </div>
                 </div>
             </div>
