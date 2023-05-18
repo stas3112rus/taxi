@@ -1,5 +1,5 @@
 <?
-function drawTopForm()
+function drawTopForm($popup = false)
 {
 ?>
     <form method="post" class="ajax-contact-form contact_form form-style" id="contact_form-1" action="mail.php">
@@ -18,7 +18,7 @@ function drawTopForm()
 
             ?>
         </div>
-        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+        <input type="hidden" id="<? echo $popup ? "g-recaptcha-response" : "g-recaptcha-response-3" ?>" name="g-recaptcha-response">
         <input type="hidden" name="action" value="validate_captcha">
 
     </form>

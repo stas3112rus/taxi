@@ -7,7 +7,7 @@ function drawPopUp()
         <h6><? echo $TXT['pop-up-title'] ?></h6>
         <hr class="form-line">
         <div class="signup-box-body">
-            <? drawTopForm() ?>
+            <? drawTopForm(true) ?>
         </div>
     </div>
 <?
