@@ -20,8 +20,8 @@ function drawTopForm($id)
             ?>
         </div>
         <div id="contact_results"></div>
-        </div>
-        <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+        
+        <input type="hidden" id="<? echo $id == "contact_form" ? "g-recaptcha-response" : "g-recaptcha-response-2" ?>" name="g-recaptcha-response">
         <input type="hidden" name="action" value="validate_captcha">
     </form>
 <?
