@@ -124,6 +124,20 @@ function getHtaccesMain()
     Redirect /taxi-simferopol-uglovoe.php http://taxi-krim.com
     Redirect /taxi-simferopol-yalta.php http://taxi-krim.com
     Redirect /taxi-simferopol-zaozernoe.php http://taxi-krim.com
+    Redirect /zakaz-taxi-krim.php http://taxi-krim.com
+    Redirect /taxi-simferopol-sevastopol.phpl.php http://taxi-krim.com
+    Redirect /taxi-simferopol-sevastopol.php%22%3E http://taxi-krim.com
+    Redirect /kontakti.php http://taxi-krim.com
+    Redirect /taxi-simferopol-chernomorskoe http://taxi-krim.com
+    Redirect /less/styles.less http://taxi-krim.com
+    Redirect /images/1.gif http://taxi-krim.com
+    Redirect /images/6.gif http://taxi-krim.com
+    Redirect /images/14_14.jpg http://taxi-krim.com
+    Redirect /function.session-start http://taxi-krim.com
+    Redirect /function.mysql-query http://taxi-krim.com
+    Redirect /foros. http://taxi-krim.com
+    Redirect /process.php http://taxi-krim.com
+    Redirect /images/22_22.jpg http://taxi-krim.com
     ';
 }
 
