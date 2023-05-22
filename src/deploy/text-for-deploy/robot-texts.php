@@ -10,6 +10,7 @@ function getRobotTxt($city)
     return ('User-agent: *
 Disallow: /' . $city['eng'] . '
 Disallow: /transfer-' . $city['eng'] . '
+Disallow: /*?*
 Host: '.getMainUrl($city['eng'], $city['main_city']).' 
 Sitemap: ' . getUrlToSitemap($city) . '
 ' . $allUrls
