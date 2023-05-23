@@ -18,6 +18,26 @@ function getAllTariffsByCityFrom($city_from_id)
     return getAllRowsFromDataBase($sql);
 }
 
+function getAllTariffsForApi()
+{
+    $sql = "SELECT
+    cityFrom.im as cityFrom,
+    cityTo.im as cityTo,    
+
+    economy, 
+    comfort,
+    business,
+    minivan,
+    vip
+    FROM `tariffs`
+    JOIN cities cityFrom ON cityFrom.id_city = tariffs.city_from_ref
+	JOIN cities cityTo ON cityTo.id_city = tariffs.city_to_ref
+    ORDER BY cityFrom 
+    ";
+
+    return getAllRowsFromDataBase($sql);
+}
+
 function getEmptyTariffs()
 {
     $sql = "SELECT
@@ -169,5 +189,3 @@ function deleteTariffsById($id)
 
     changeDataBaseRequest($sql, "Ошибка при удалении тарифов");
 }
-
-
