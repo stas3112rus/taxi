@@ -13,4 +13,5 @@ $routs = array(
     "widget-types" => "$adminRoute/pages/widgets/widget-types",
     "text-fields" => "$adminRoute/pages/text/text-fields",
     "settings" => "$adminRoute/pages/settings/",
+    "synchronization" => "$adminRoute/pages/synchronization/",
 );
