@@ -1,15 +1,34 @@
 <?
 include('../../../../src/data/mysql.php');
 include('../../../../src/data/text-types/functions.php');
+include('../../../../src/data/cities/functions.php');
+include('../../../../src/data/tariffs/functions.php');
 include('../../../../src/data/defaults/functions.php');
 include('../../../../src/utils/functions.php');
 include('../../components/authorization/utils/functions.php');
 include('../../constants/routs.php');
 include('../../constants/sites-api-routes.php');
+include('../../components/synchronization/utils/functions-api-cities.php');
 include('../../components/synchronization/view/drawSynchronizationForm.php');
+include('../../components/tariffs/utils/createTariffs.php');
+include('../../components/alerts/drawAlert.php');
+include('../../api/utils/functions.php');
 
 
 checkAuthorization();
+
+switch ($_GET['type']) {
+    case "cities":
+        $alert = makeSynchronizationCities($_POST);
+        break;
+    case "not_published":
+        echo "not_published";
+        break;
+    case "tariffs":
+        echo "tariffs";
+        break;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
