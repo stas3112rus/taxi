@@ -1,16 +1,16 @@
 <?
-function makeSynchronizationCities($data)
+function makeSynchronizationCities()
 {
 
     global $SITES_API_ROUTES;
 
-    $citiesFromApi = getJsonArray($SITES_API_ROUTES[$data['site']]['cities']);
+    $citiesFromApi = getJsonArray($SITES_API_ROUTES[$_POST['site']]['cities']);
 
     if ($citiesFromApi['error']) {
         return drawAlert($citiesFromApi['error'], "alert-danger");
-    } else {
-        $citiesFromApi = getArrayByKey($citiesFromApi, 'im');
     }
+
+    $citiesFromApi = getArrayByKey($citiesFromApi, 'im');
 
     $citiesCurrent = getArrayByKey(getAllCities(), 'im');
 
@@ -20,7 +20,7 @@ function makeSynchronizationCities($data)
     $createNewCities = createNewCities($absentCities);
 
     if ($createNewCities != "Ok") {
-        return drawAlert($createNewCities, "alert-danger");;
+        return drawAlert($createNewCities, "alert-danger");
     }
 
     return drawAlert("Города успешно синхронизированы", "alert-success");

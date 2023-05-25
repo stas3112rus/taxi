@@ -2,6 +2,7 @@
 include('../../../../src/data/mysql.php');
 include('../../../../src/data/text-types/functions.php');
 include('../../../../src/data/cities/functions.php');
+include('../../../../src/data/not-published/functions.php');
 include('../../../../src/data/tariffs/functions.php');
 include('../../../../src/data/defaults/functions.php');
 include('../../../../src/deploy/main.php');
@@ -12,6 +13,7 @@ include('../../components/authorization/utils/functions.php');
 include('../../constants/routs.php');
 include('../../constants/sites-api-routes.php');
 include('../../components/synchronization/utils/functions-api-cities.php');
+include('../../components/synchronization/utils/functions-api-not-published.php');
 include('../../components/synchronization/view/drawSynchronizationForm.php');
 include('../../components/tariffs/utils/createTariffs.php');
 include('../../components/alerts/drawAlert.php');
@@ -25,10 +27,10 @@ checkAuthorization();
 
 switch ($_GET['type']) {
     case "cities":
-        $alert .= makeSynchronizationCities($_POST);
+        $alert .= makeSynchronizationCities();
         break;
     case "not_published":
-        echo "not_published";
+        $alert .= makeSynchronizationNotPublished();
         break;
     case "tariffs":
         echo "tariffs";

@@ -29,8 +29,12 @@ function drawSynchronizationForm()
                     <td>
                         <select class="form-control" name="not_published_type">
                             <option value="full">Полная синхронизация</option>
-                            <option value="add_new_line">Добавить записи направлений, которых нет</option>
+                            <option value="add_new_values">Добавить записи направлений, которых нет</option>
                         </select>
+                        <br>
+                        - <b>Полная синхронизация</b> <br> Таблица направлений полностью, как на сайте-доноре
+                        <br>
+                        - <b>Добавить записи направлений, которых нет</b> <br> Добавляем непубликуемые направления, которых нет в данный момент
                     </td>
                     <td>
                         <input class="btn btn-primary btn-synchronization" formaction="./?type=not_published" formmethod="post" type="submit" disabled value="Синхронизировать непубликуемые направления">
@@ -69,7 +73,7 @@ function drawSitesField()
         foreach ($SITES_API_ROUTES as $sites_name => $sites_option) {
             if ($domain != $sites_name) {
         ?>
-                <option value="<? echo $sites_name ?>"><? echo $sites_name ?></option>
+                <option value="<? echo $sites_name ?>" <? if ($_POST['site'] == $sites_name) echo 'selected' ?>><? echo $sites_name ?></option>
         <?
             }
         }

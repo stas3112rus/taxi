@@ -66,7 +66,7 @@ function drawFormDeployDomains($synchronization = false)
         <tr>
             <th scope='row'>
                 <label for="password">Пересобрать все домены и поддомены</label>
-                <input type="text" value="" class="form-control" id="password" name="password" aria-describedby="password" placeholder="Пароль" required>
+                <input type="text" value="" class="form-control" id="password" name="password" aria-describedby="password" placeholder="Пароль" <? if (!$synchronization) { ?>required <? } ?>>
             </th>
 
             <th scope='row' class="buttons">
