@@ -14,6 +14,7 @@ include('../../constants/routs.php');
 include('../../constants/sites-api-routes.php');
 include('../../components/synchronization/utils/functions-api-cities.php');
 include('../../components/synchronization/utils/functions-api-not-published.php');
+include('../../components/synchronization/utils/functions-api-tariffs.php');
 include('../../components/synchronization/view/drawSynchronizationForm.php');
 include('../../components/tariffs/utils/createTariffs.php');
 include('../../components/alerts/drawAlert.php');
@@ -33,7 +34,7 @@ switch ($_GET['type']) {
         $alert .= makeSynchronizationNotPublished();
         break;
     case "tariffs":
-        echo "tariffs";
+        $alert .= makeSynchronizationTariffs();
         break;
     case "deploy_domains":
         $alert .= deployDomains($_POST['password']);
