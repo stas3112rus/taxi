@@ -10,7 +10,6 @@ function getNotPublishedCities($city_from_id)
     return getAllRowsFromDataBase($sql);
 }
 
-
 function deleteNotPublishedCities($from)
 {
     $sql = "DELETE FROM 
@@ -41,7 +40,7 @@ function createNotPublishedCitiesWithArray($array)
 {
     if (count($array) == 0)
         return "Ok";
-    
+
     global $MYSQL_CONSTANTS;
 
     $insert =  "INSERT INTO `not_published_cities` (`city_from_ref`, `city_to_ref`) VALUES";
@@ -59,7 +58,7 @@ function createNotPublishedCitiesWithArray($array)
     }
 
 
-    $sql = $insert . $values;   
+    $sql = $insert . $values;
 
     return changeDataBaseRequest($sql, "Ошибка при создании тарифов пустых");
 }
@@ -67,6 +66,8 @@ function createNotPublishedCitiesWithArray($array)
 function getAllNotPublishedCitiesForApi()
 {
     $sql = "SELECT 
+    city_from_ref,
+    city_to_ref,
     cityFrom.im as cityFrom,
     cityTo.im as cityTo
 

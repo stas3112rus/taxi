@@ -32,16 +32,19 @@ function synchronizationNotPublishedFull($notPublishedFromApi)
 
     $notPublishedIds = prepareArrayNotPublishedForInsert($notPublishedFromApi);
 
-    $createNotPublishedCitiesWithArray = createNotPublishedCitiesWithArray($notPublishedIds);
-    if ($createNotPublishedCitiesWithArray != "Ok")
-        return $createNotPublishedCitiesWithArray;
-
-    return "Ok";
+    return createNotPublishedCitiesWithArray($notPublishedIds);
 }
 
 function synchronizationNotPublishedNewValues($notPublishedFromApi)
 {
-    return "Ok";
+    $notPublishedFromApi = getArrayByTwoKey($notPublishedFromApi, "cityFrom", "cityTo");
+    $notPublishedCurrent = getArrayByTwoKey(getAllNotPublishedCitiesForApi(), "cityFrom", "cityTo");
+
+    $notPublishedIds = prepareArrayNotPublishedForInsert(
+        getArrayWithAbsentValues($notPublishedCurrent, $notPublishedFromApi)
+    );
+
+    return createNotPublishedCitiesWithArray($notPublishedIds);
 }
 
 function prepareArrayNotPublishedForInsert($array)
