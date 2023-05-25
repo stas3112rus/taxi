@@ -4,6 +4,9 @@ include('../../../../src/data/text-types/functions.php');
 include('../../../../src/data/cities/functions.php');
 include('../../../../src/data/tariffs/functions.php');
 include('../../../../src/data/defaults/functions.php');
+include('../../../../src/deploy/main.php');
+include('../../../../src/files/utils/copy-delete-create.php');
+include('../../../../src/data/user/functions.php');
 include('../../../../src/utils/functions.php');
 include('../../components/authorization/utils/functions.php');
 include('../../constants/routs.php');
@@ -12,6 +15,9 @@ include('../../components/synchronization/utils/functions-api-cities.php');
 include('../../components/synchronization/view/drawSynchronizationForm.php');
 include('../../components/tariffs/utils/createTariffs.php');
 include('../../components/alerts/drawAlert.php');
+include('../../components/settings/view/drawSettingsTable.php');
+include('../../components/settings/utils/delete-domains.php');
+include('../../components/settings/utils/deploy-domains.php');
 include('../../api/utils/functions.php');
 
 
@@ -19,13 +25,16 @@ checkAuthorization();
 
 switch ($_GET['type']) {
     case "cities":
-        $alert = makeSynchronizationCities($_POST);
+        $alert .= makeSynchronizationCities($_POST);
         break;
     case "not_published":
         echo "not_published";
         break;
     case "tariffs":
         echo "tariffs";
+        break;
+    case "deploy_domains":
+        $alert .= deployDomains($_POST['password']);
         break;
 }
 
@@ -62,4 +71,5 @@ switch ($_GET['type']) {
     </section>
 </body>
 <script src="../../js/disableWithNotSelectedField.js"></script>
+
 </html>

@@ -45,6 +45,11 @@ function drawSynchronizationForm()
                         <input class="btn btn-primary btn-synchronization" formaction="./?type=tariffs" formmethod="post" type="submit" disabled value="Синхронизировать тарифы">
                     </td>
                 </tr>
+                <?
+                if ($_GET['type']) {
+                    drawFormDeployDomains(true);
+                }
+                ?>
             </tbody>
         </table>
     </form>

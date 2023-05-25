@@ -55,22 +55,38 @@ function drawFormDeleteDomains()
 <?
 }
 
-function drawFormDeployDomains()
+function drawFormDeployDomains($synchronization = false)
 {
 ?>
-    <form method="post">
+    <?
+    if (!$synchronization) {
+    ?>
+        <form method="post">
+        <? } ?>
         <tr>
             <th scope='row'>
                 <label for="password">Пересобрать все домены и поддомены</label>
                 <input type="text" value="" class="form-control" id="password" name="password" aria-describedby="password" placeholder="Пароль" required>
             </th>
+
             <th scope='row' class="buttons">
                 <div class="buttons__block">
                     <input type="hidden" name="type" value="deployDomains">
-                    <input class="btn btn-success" type="submit" value="Пуск!">
+                    <input class="btn btn-success" type="submit" <? if ($synchronization) { ?> formaction="./?type=deploy_domains" <? } ?> value="Пуск!">
                 </div>
             </th>
+            <?
+            if ($synchronization) {
+            ?>
+                <td></td>
+            <?
+            }
+            ?>
         </tr>
-    </form>
+        <?
+        if (!$synchronization) {
+        ?>
+        </form>
+    <? } ?>
 <?
 }
