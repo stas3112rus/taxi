@@ -4,9 +4,13 @@ function drawSettingsTable()
 ?>
     <table class='table table-striped'>
         <tbody>
-            <? drawFormChangePassword() ?>
-            <? drawFormDeleteDomains() ?>
-            <? drawFormDeployDomains() ?>
+            <?
+            drawFormChangePassword();
+            drawFormDeleteDomains();
+            drawFormDeployDomains();
+            drawFormDownloadCSVTariffsRow();
+            ?>
+
         </tbody>
     </table>
 
@@ -88,5 +92,28 @@ function drawFormDeployDomains($synchronization = false)
         ?>
         </form>
     <? } ?>
+<?
+}
+
+function drawFormDownloadCSVTariffsRow()
+{
+?>
+    <form method="post">
+
+        <tr>
+            <th scope='row'>
+                Скачать все тарифы в формате CSV
+            </th>
+
+            <th scope='row' class="buttons">
+                <div class="buttons__block">
+                    <input type="hidden" name="type" value="downLoadTariffs">
+                    <input class="btn btn-success" type="submit" formaction="./?type=down_load_tariffs" value="Скачать">
+                </div>
+            </th>
+
+        </tr>
+
+    </form>
 <?
 }
