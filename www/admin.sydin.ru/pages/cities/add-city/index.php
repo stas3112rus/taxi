@@ -2,6 +2,7 @@
 include('../../../../../src/data/mysql.php');
 include('../../../../../src/data/text-types/functions.php');
 include('../../../../../src/data/defaults/functions.php');
+include('../../../../../src/data/not-published/functions.php');
 include('../../../../../src/files/utils/copy-delete-create.php');
 include('../../../../../src/utils/functions.php');
 include('../../../../../src/deploy/main.php');
@@ -13,6 +14,8 @@ include('../../../../../src/data/tariffs/functions.php');
 include('../../../components/tariffs/utils/createTariffs.php');
 include('../../../components/cities/utils/functions-add-city.php');
 include('../../../components/cities/view/drawAddEditForms.php');
+include('../../../components/not-published/utils/functions.php');
+
 
 checkAuthorization();
 
