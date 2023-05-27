@@ -2,6 +2,7 @@
 include('../../../../../src-aeroport-simferopol/data/mysql.php');
 include('../../../../../src-aeroport-simferopol/data/text-types/functions.php');
 include('../../../../../src-aeroport-simferopol/data/defaults/functions.php');
+include('../../../../../src-aeroport-simferopol/data/not-published/functions.php');
 include('../../../../../src-aeroport-simferopol/files/utils/copy-delete-create.php');
 include('../../../../../src-aeroport-simferopol/utils/functions.php');
 include('../../../../../src-aeroport-simferopol/deploy/main.php');
@@ -13,6 +14,8 @@ include('../../../../../src-aeroport-simferopol/data/tariffs/functions.php');
 include('../../../components/tariffs/utils/createTariffs.php');
 include('../../../components/cities/utils/functions-add-city.php');
 include('../../../components/cities/view/drawAddEditForms.php');
+include('../../../components/not-published/utils/functions.php');
+
 
 checkAuthorization();
 

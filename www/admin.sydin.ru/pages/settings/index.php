@@ -2,7 +2,9 @@
 include('../../../../src-aeroport-simferopol/data/mysql.php');
 include('../../../../src-aeroport-simferopol/data/text-types/functions.php');
 include('../../../../src-aeroport-simferopol/data/cities/functions.php');
+include('../../../../src-aeroport-simferopol/data/tariffs/functions.php');
 include('../../../../src-aeroport-simferopol/files/utils/copy-delete-create.php');
+include('../../../../src-aeroport-simferopol/files/utils/csv-files.php');
 include('../../../../src-aeroport-simferopol/deploy/main.php');
 include('../../../../src-aeroport-simferopol/utils/functions.php');
 include('../../../../src-aeroport-simferopol/data/defaults/functions.php');
@@ -14,6 +16,8 @@ include('../../components/settings/view/drawSettingsTable.php');
 include('../../components/settings/utils/changePassword.php');
 include('../../components/settings/utils/delete-domains.php');
 include('../../components/settings/utils/deploy-domains.php');
+include('../../components/settings/utils/download-tariffs.php');
+
 checkAuthorization();
 
 if ($_POST['type'] == 'changePassword')
@@ -24,6 +28,9 @@ if ($_POST['type'] == 'deleteDomains')
 
 if ($_POST['type'] == 'deployDomains')
     $alert .= deployDomains($_POST['password']);
+
+if ($_POST['type'] == 'downLoadTariffs')
+    $alert .= downLoadTariffs();
 ?>
 <!DOCTYPE html>
 <html lang="en">
