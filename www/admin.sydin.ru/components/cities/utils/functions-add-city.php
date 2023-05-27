@@ -23,6 +23,12 @@ function createCity($city)
     if ($sitemapDeploy != "Ok")
         return cancelFilesAddCity($sitemapDeploy, $city);
 
+    if ($city['not_published_all']) {
+        $notPublishedAll = setAllNotPublished($city);
+        if ($notPublishedAll != "Ok")
+            return cancelFilesAddCity($notPublishedAll, $city);
+    }
+
     return drawAlert("Город добавлен", "alert-success");
 }
 
