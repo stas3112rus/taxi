@@ -7,7 +7,8 @@ function drawHead($title = false, $description = false)
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="<? echo $description ? $description : $TXT['description'] ?>" />
-    <link rel="shortcut icon" href="<? echo $LEVEL ?>favicon.ico" />
+    <link rel="icon" type="image/png" href="<? echo $LEVEL ?>favicon.png" />
+    <link rel="apple-touch-icon" href="<? echo $LEVEL ?>favicon.png"/>
     <title><? echo $title ? $title : $TXT['title'] ?></title>
     <link href="<? echo $LEVEL ?>css/reset-min.css" rel="stylesheet" />
     <link href="<? echo $LEVEL ?>css/bootstrap.css" rel="stylesheet" />
