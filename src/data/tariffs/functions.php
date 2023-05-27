@@ -18,6 +18,50 @@ function getAllTariffsByCityFrom($city_from_id)
     return getAllRowsFromDataBase($sql);
 }
 
+function getAllTariffsForApi()
+{
+    $sql = "SELECT
+    id_tariff,
+    city_from_ref,
+    city_to_ref,
+    cityFrom.im as cityFrom,
+    cityTo.im as cityTo,    
+
+    economy, 
+    comfort,
+    business,
+    minivan,
+    vip
+    FROM `tariffs`
+    JOIN cities cityFrom ON cityFrom.id_city = tariffs.city_from_ref
+	JOIN cities cityTo ON cityTo.id_city = tariffs.city_to_ref
+    ORDER BY cityFrom 
+    ";
+
+    return getAllRowsFromDataBase($sql);
+}
+
+function getAllTariffsForDownload()
+{
+    $sql = "SELECT
+    id_tariff,
+    cityFrom.im as cityFrom,
+    cityTo.im as cityTo,    
+
+    economy, 
+    comfort,
+    business,
+    minivan,
+    vip
+    FROM `tariffs`
+    JOIN cities cityFrom ON cityFrom.id_city = tariffs.city_from_ref
+	JOIN cities cityTo ON cityTo.id_city = tariffs.city_to_ref
+    ORDER BY cityFrom 
+    ";
+
+    return getAllRowsFromDataBase($sql);
+}
+
 function getEmptyTariffs()
 {
     $sql = "SELECT
@@ -151,6 +195,59 @@ function updateTariffById($tariff)
     WHERE id_tariff =  $tariff[id_tariff]";
 
     return changeDataBaseRequest($sql, "Ошибка при обновлении тарифа");
+}
+
+function updateTariffByArray($tariffs)
+{
+    global $MYSQL_CONSTANTS;
+
+    if (count($tariffs) == 0)
+        return "Ok";
+
+    $insert = "INSERT INTO `tariffs` (
+            `id_tariff`,
+            `city_from_ref`,
+            `city_to_ref`,
+            `economy`, 
+            `comfort`, 
+            `business`, 
+            `minivan`,
+            `vip`
+            ) VALUES ";
+    $values = "";
+
+    for ($i = 0; $i < count($tariffs); $i++) {
+
+        $tariff = emptyStringToNull($tariffs[$i]);
+        $values .=
+            "(" .
+            $tariff['id_tariff'] . $MYSQL_CONSTANTS['COMMA'] .
+            $tariff['city_from_ref'] . $MYSQL_CONSTANTS['COMMA'] .
+            $tariff['city_to_ref'] . $MYSQL_CONSTANTS['COMMA'] .
+            $tariff['economy'] . $MYSQL_CONSTANTS['COMMA'] .
+            $tariff['comfort'] . $MYSQL_CONSTANTS['COMMA'] .
+            $tariff['business'] . $MYSQL_CONSTANTS['COMMA'] .
+            $tariff['minivan'] . $MYSQL_CONSTANTS['COMMA'] .
+            $tariff['vip'] .
+            ")";
+
+        $values .= $i == count($tariffs) - 1 ?
+            "" :
+            $MYSQL_CONSTANTS['COMMA'];
+    }
+
+    $sql = $insert . $values;
+
+    $sql .= " ON DUPLICATE KEY UPDATE
+        economy=VALUES(economy), 
+        comfort=VALUES(comfort),
+        business=VALUES(business), 
+        minivan=VALUES(minivan),
+        vip=VALUES(vip)
+    ";
+
+
+    return changeDataBaseRequest($sql, "Ошибка при создании тарифов со значением");
 }
 
 function createTariffsWithNullValue($citiesCouples)

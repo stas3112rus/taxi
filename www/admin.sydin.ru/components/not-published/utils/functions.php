@@ -44,3 +44,18 @@ function updateNotPublishedCities($post)
 
     return drawAlert("Города, где не публикуем обновлены", "alert-success");
 }
+
+function setAllNotPublished($new_city){
+    $allCities = getAllWithoutOneCities($new_city['id_city']);
+
+    $notPublishedCities = [];
+
+    foreach($allCities as $old_city){
+        array_push($notPublishedCities,[
+            "city_from_ref" => $old_city['id_city'],
+            "city_to_ref" => $new_city['id_city']
+        ]);
+    }
+
+    return createNotPublishedCitiesWithArray($notPublishedCities);
+}
