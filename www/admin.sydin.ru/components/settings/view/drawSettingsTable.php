@@ -4,9 +4,13 @@ function drawSettingsTable()
 ?>
     <table class='table table-striped'>
         <tbody>
-            <? drawFormChangePassword() ?>
-            <? drawFormDeleteDomains() ?>
-            <? drawFormDeployDomains() ?>
+            <?
+            drawFormChangePassword();
+            drawFormDeleteDomains();
+            drawFormDeployDomains();
+            drawFormDownloadCSVTariffsRow();
+            ?>
+
         </tbody>
     </table>
 
@@ -55,22 +59,61 @@ function drawFormDeleteDomains()
 <?
 }
 
-function drawFormDeployDomains()
+function drawFormDeployDomains($synchronization = false)
 {
 ?>
-    <form method="post">
+    <?
+    if (!$synchronization) {
+    ?>
+        <form method="post">
+        <? } ?>
         <tr>
             <th scope='row'>
                 <label for="password">Пересобрать все домены и поддомены</label>
-                <input type="text" value="" class="form-control" id="password" name="password" aria-describedby="password" placeholder="Пароль" required>
+                <input type="text" value="" class="form-control" id="password" name="password" aria-describedby="password" placeholder="Пароль" <? if (!$synchronization) { ?>required <? } ?>>
             </th>
+
             <th scope='row' class="buttons">
                 <div class="buttons__block">
                     <input type="hidden" name="type" value="deployDomains">
-                    <input class="btn btn-success" type="submit" value="Пуск!">
+                    <input class="btn btn-success" type="submit" <? if ($synchronization) { ?> formaction="./?type=deploy_domains" <? } ?> value="Пуск!">
                 </div>
             </th>
+            <?
+            if ($synchronization) {
+            ?>
+                <td></td>
+            <?
+            }
+            ?>
         </tr>
+        <?
+        if (!$synchronization) {
+        ?>
+        </form>
+    <? } ?>
+<?
+}
+
+function drawFormDownloadCSVTariffsRow()
+{
+?>
+    <form method="post">
+
+        <tr>
+            <th scope='row'>
+                Скачать все тарифы в формате CSV
+            </th>
+
+            <th scope='row' class="buttons">
+                <div class="buttons__block">
+                    <input type="hidden" name="type" value="downLoadTariffs">
+                    <input class="btn btn-success" type="submit" formaction="./?type=down_load_tariffs" value="Скачать">
+                </div>
+            </th>
+
+        </tr>
+
     </form>
 <?
 }
