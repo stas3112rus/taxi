@@ -1,6 +1,6 @@
 <?
-include('../../../../src/data/mysql.php');
-include('../../../../src/data/tariffs/functions.php');
+include('../../../../src-taxi-krim/data/mysql.php');
+include('../../../../src-taxi-krim/data/tariffs/functions.php');
 
 include('../utils/functions.php');
 
