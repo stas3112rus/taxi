@@ -1,6 +1,6 @@
 <?
-include('../../../../src/data/mysql.php');
-include('../../../../src/data/tariffs/functions.php');
+include('../../../../src-aeroport-simferopol/data/mysql.php');
+include('../../../../src-aeroport-simferopol/data/tariffs/functions.php');
 
 include('../utils/functions.php');
 
