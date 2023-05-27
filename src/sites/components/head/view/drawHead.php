@@ -9,8 +9,8 @@ function drawHead()
     <title><? echo $TXT['title'] ?></title>
     <meta name="description" content="<? echo $TXT['description'] ?>">
     <meta name="keywords" content="<? echo $TXT['keyword'] ?>">
-    <link href="<? echo $LEVEL ?>img/logo-dark.jpg" rel="icon" type="image/jpg">
-    <link href="<? echo $LEVEL ?>img/logo-dark.jpg" rel="apple-touch-icon">
+    <link href="<? echo $LEVEL ?>img/favicon.png" rel="icon" type="image/png">
+    <link href="<? echo $LEVEL ?>img/favicon.png" rel="apple-touch-icon">
     <link href="<? echo $LEVEL ?>js/Magnific-Popup-master/dist/magnific-popup.css" rel="stylesheet">
     <link href="<? echo $LEVEL ?>css/bootstrap.min.css" rel="stylesheet">
     <link href="<? echo $LEVEL ?>css/lib/style.css" rel="stylesheet">
