@@ -18,8 +18,8 @@
         <?
         }
         ?>
-
-
+        <div class="sidebar__divider"></div>
+        <li class="sidebar__item"><a href="<? echo $routs['synchronization'] ?>" class="sidebar__link sidebar_linkTop">Синхронизация</a></li>
         <div class="sidebar__divider"></div>
         <li class="sidebar__item"><a href="<? echo $routs['defaults'] ?>" class="sidebar__link sidebar_linkTop">Константы</a></li>
         <div class="sidebar__divider"></div>
