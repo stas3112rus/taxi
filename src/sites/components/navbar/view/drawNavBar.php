@@ -14,7 +14,7 @@ function drawNavbarSection($wrapSection)
     <section class="<? echo $wrapSection ?>">
         <div class="container relative flexbox">
             <a href="#home" class="logo" data-scroll>
-                <img src="<? echo $LEVEL ?>images/logo.png" title="<? echo $TXT['navbar_logo_alt'] ?>" alt="<? echo $TXT['navbar_logo_alt'] ?>">
+                <img src="<? echo $LEVEL ?>images/logo.png" title="<? echo $TXT['navbar_logo_alt'] ?>" alt="<? echo $TXT['navbar_logo_alt'] ?>" width="70" height="70">
             </a>
             <span id="nav-toggle" class="toggle-scroll-btn">
                 <div></div>
