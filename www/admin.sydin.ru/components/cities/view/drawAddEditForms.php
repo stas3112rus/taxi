@@ -24,6 +24,7 @@ function drawAddCityForm()
             <tbody>
                 <? drawAddRows() ?>
                 <? drawDeclensionCityRows() ?>
+                <? drawAllNotPublishedCities() ?>
             </tbody>
         </table>
 
@@ -109,5 +110,20 @@ function drawBasicCitySelectOption()
             </option>
         <? } ?>
     </select>
+<?
+}
+
+function drawAllNotPublishedCities()
+{
+?>
+    <tr>
+        <th scope='row'>Не публиковать во всех старых городах</th>
+        <td>
+            <input class="form-check-input" type="checkbox" id="not_published_all" name="not_published_all"> <br>
+            <label class="form-check-label" for="not_published_all">
+                Не публиковать
+            </label>
+        </td>
+    </tr>
 <?
 }
