@@ -8,7 +8,8 @@ function drawHead()
     <meta name="description" content="<? echo $TXT['description'] ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><? echo $TXT['title'] ?></title>
-    <link rel="shortcut icon" href="<? echo $LEVEL ?>assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" href="<? echo $LEVEL ?>assets/img/favicon.png" />
+    <link rel="apple-touch-icon" href="<? echo $LEVEL ?>assets/img/favicon.png" />
     <link rel="stylesheet" href="<? echo $LEVEL ?>assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<? echo $LEVEL ?>assets/css/font-awesome.min.css">
     <link rel="stylesheet" href="<? echo $LEVEL ?>assets/css/owl.carousel.min.css">
