@@ -9,6 +9,7 @@ Disallow: /link.php
 Disallow: /silki.php
 Disallow: /curt.php
 Disallow: *curt=*
+Disallow: /*?*
 Sitemap: https://aeroport-simferopol.taxi/sitemap.xml
 Sitemap: https://aeroport-simferopol.taxi/sitemap2.xml
 
@@ -18,6 +19,7 @@ Disallow: /link.php
 Disallow: /silki.php
 Disallow: /curt.php
 Disallow: *curt=*
+Disallow: /*?*
 Sitemap: https://aeroport-simferopol.taxi/sitemap.xml
 Sitemap: https://aeroport-simferopol.taxi/sitemap2.xml
 
@@ -27,6 +29,7 @@ Disallow: /cgi-bin
 Disallow: /link
 Disallow: /curt.php
 Disallow: *curt=*
+Disallow: /*?*
 Host: https://aeroport-simferopol.taxi
 Sitemap: https://aeroport-simferopol.taxi/sitemap.xml
 Sitemap: https://aeroport-simferopol.taxi/sitemap2.xml";
