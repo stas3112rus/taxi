@@ -31,6 +31,10 @@ function getHtaccesNotMain($city)
 {
     return 'Options +FollowSymLinks
     RewriteEngine on
+
+    RewriteCond %{SERVER_PORT} ^80$
+    RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
     RewriteCond %{HTTP_HOST} ^www.' . $city['eng'] . '.' . getDomainForHtacces() . '
     RewriteRule ^(.*)$ ' . getMainUrl($city['eng'], $city['main_city']) . '$1 [R=permanent,L]
     
