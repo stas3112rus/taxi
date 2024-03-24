@@ -10,7 +10,7 @@ include('utils/functions.php');
 
 include('sites/constants/constants.php');
 include('sites/global-data/global-data.php');
-
+include('deploy/utils/paths.php');
 include('sites/components/main.php');
 
 ?>
@@ -33,6 +33,7 @@ include('sites/components/main.php');
     drawTariffsBlock();
     drawSteps();
     drawAbout();
+    drawTabs();
     drawContact();
     drawFooter();
     drawOferta();

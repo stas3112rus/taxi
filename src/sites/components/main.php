@@ -15,3 +15,4 @@ include('about/view/drawAbout.php');
 include('contact/view/drawContact.php');
 include('footer/view/drawFooter.php');
 include('oferta/view/drawOferta.php');
+include('tabs/view/drawTabs.php');
