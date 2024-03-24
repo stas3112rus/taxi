@@ -69,7 +69,7 @@ function isSitemap()
 
 function getBasicCityForTab()
 {
-    global $CITY_FROM_ID, $DEFAULT;
+    global $CITY_TO, $DEFAULT;
 
-    return $CITY_FROM_ID + $DEFAULT['tabs_offset'];
+    return $CITY_TO ? $CITY_TO['id_city'] + $DEFAULT['tabs_offset'] : $DEFAULT['tabs_offset'];
 }
