@@ -136,12 +136,13 @@ function getCitiesForTabs($basiCityId, $count)
 {
     $citiesBegin = [];
     $sqlAfter = "SELECT * FROM `cities` WHERE `id_city` > '$basiCityId' LIMIT 0, $count";
+
     $citiesAfter = getAllRowsFromDataBase($sqlAfter);
 
     if (count($citiesAfter) < $count) {
         $dif = $count - count($citiesAfter);
         $sqlBegin = "SELECT * FROM `cities`  LIMIT 0, $dif";
-       
+
 
         $citiesBegin = getAllRowsFromDataBase($sqlBegin);
     }

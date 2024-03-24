@@ -14,4 +14,4 @@ include('howWeWork/view/drawHowWeWork.php');
 include('reviews/view/drawReviews.php');
 include('footer/view/drawFooter.php');
 include('politic/view/drawPolitic.php');
-
+include('tabs/view/drawTabs.php');
