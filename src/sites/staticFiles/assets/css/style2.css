@@ -3908,3 +3908,32 @@ footer .developer img:hover{opacity: 1}
         font-size: 13px;
         font-weight: 900}
 }
+
+.tabs_list {
+  margin: 0;
+  padding: 15px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-start;
+  row-gap: 10px;
+}
+
+.tabs_item {
+  display: block;
+  border: 4px solid #FFC61A;
+  padding: 8px;
+  border-radius: 2px;
+  margin-right: 14px;
+}
+
+.tabs_item:hover {
+  background: #E6E6E6;
+}
+
+.tabs_item a,
+.tabs_item a:hover {
+  color: #1F1F1F;
+  text-decoration: none;
+}

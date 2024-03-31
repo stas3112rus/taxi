@@ -16,8 +16,8 @@ function drawHead()
     <link href="<? echo $LEVEL ?>assets/css/swiper.css" rel="stylesheet">
     <link href="<? echo $LEVEL ?>assets/css/swipebox.css" rel="stylesheet">
     <link href="<? echo $LEVEL ?>assets/css/zoomslider.css" rel="stylesheet">
-    <link href="<? echo $LEVEL ?>assets/css/style.css?03" rel="stylesheet">
-    <link href="<? echo $LEVEL ?>assets/css/style2.css?03" rel="stylesheet">
+    <link href="<? echo $LEVEL ?>assets/css/style.css?04" rel="stylesheet">
+    <link href="<? echo $LEVEL ?>assets/css/style2.css?04" rel="stylesheet">
 
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:700,800|Open+Sans:400,600,700&amp;subset=cyrillic">
