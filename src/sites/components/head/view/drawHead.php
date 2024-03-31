@@ -24,7 +24,7 @@ function drawHead()
     <link rel="stylesheet" type="text/css" href="<? echo $LEVEL ?>assets/css/slick.css">
     <link rel="stylesheet" type="text/css" href="<? echo $LEVEL ?>assets/css/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="<? echo $LEVEL ?>assets/css/swiper.css">
-    <link rel="stylesheet" type="text/css" href="<? echo $LEVEL ?>assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<? echo $LEVEL ?>assets/css/style.css?v=1.3">
     <link rel="stylesheet" href="<? echo $LEVEL ?>assets/js/flatpickr/flatpickr.css">
     <link rel="stylesheet" type="text/css" href="<? echo $LEVEL ?>assets/css/reset.css">
     <link rel="stylesheet" type="text/css" href="<? echo $LEVEL ?>assets/css/responsive.css">

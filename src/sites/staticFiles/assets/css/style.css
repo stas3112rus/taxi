@@ -2183,3 +2183,32 @@ td s{
 .popup-with-form{
     cursor: pointer;
 }
+
+.tabs_list {
+  margin: 0;
+  padding: 15px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  row-gap: 10px;
+}
+
+.tabs_item {
+  display: block;
+  border: 1px solid #FDBE01;
+  padding: 20px;
+  border-radius: 30px;
+  margin-right: 12px;
+}
+
+.tabs_item:hover {
+  background: #e7e7e7;
+}
+
+.tabs_item a,
+.tabs_item a:hover {
+  color: #333;
+  text-decoration: none;
+}
