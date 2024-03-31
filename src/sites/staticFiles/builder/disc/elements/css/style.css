@@ -4200,3 +4200,32 @@ footer .developer img:hover{opacity: 1}
 .popup-with-form{
     cursor: pointer;
 }
+
+.tabs_list {
+  margin: 0;
+  padding: 15px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-start;
+  row-gap: 10px;
+}
+
+.tabs_item {
+  display: block;
+  border: 3px solid #eeac00;
+  padding: 9px;
+  border-radius: 12px;
+  margin-right: 16px;
+}
+
+.tabs_item:hover {
+  background: rgb(242, 240, 240);
+}
+
+.tabs_item a,
+.tabs_item a:hover {
+  color: #606060;
+  text-decoration: none;
+}

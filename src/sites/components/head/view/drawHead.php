@@ -10,7 +10,7 @@ function drawHead()
     <meta name="description" content="<? echo $TXT['description'] ?>" />
     <meta name="keywords" content="<? echo $TXT['keywords'] ?>" />
     <link rel="stylesheet" href="<? echo $LEVEL ?>builder/disc/elements/css/fonts/font-awesome/css/font-awesome.min.css" type='text/css'>
-    <link rel="stylesheet" href="<? echo $LEVEL ?>builder/disc/elements/css/style.css" type='text/css' />
+    <link rel="stylesheet" href="<? echo $LEVEL ?>builder/disc/elements/css/style.css?v=1.1" type='text/css' />
     <link rel="stylesheet" href="<? echo $LEVEL ?>builder/disc/elements/css/animate.css" type='text/css' />
     <link rel="stylesheet" href="<? echo $LEVEL ?>builder/disc/elements/css/owl.carousel.css" type='text/css' />
     <link rel="stylesheet" href="<? echo $LEVEL ?>builder/disc/elements/css/fixed-nav.css">
