@@ -20,7 +20,7 @@ function drawHead()
     <link href="<? echo $LEVEL ?>assets\plugins\swiper\css\swiper.min.css" rel="stylesheet">
     <link href="<? echo $LEVEL ?>assets\plugins\datetimepicker\css\bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="<? echo $LEVEL ?>assets\js\flatpickr\flatpickr.css" rel="stylesheet">
-    <link href="<? echo $LEVEL ?>assets\css\theme.css" rel="stylesheet">
+    <link href="<? echo $LEVEL ?>assets\css\theme.css?v=1.2" rel="stylesheet">
     <script src="<? echo $LEVEL ?>assets\plugins\modernizr.custom.js"></script>
 <?
 }

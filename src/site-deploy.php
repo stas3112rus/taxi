@@ -11,7 +11,6 @@ include('utils/functions.php');
 
 include('sites/constants/constants.php');
 include('sites/global-data/global-data.php');
-
 include('sites/components/main.php');
 
 ?>
@@ -40,6 +39,7 @@ include('sites/components/main.php');
         drawReviews();
         drawFaq();
         drawContacts();
+        drawTabs();
         drawFooter();
         ?>
     </div>

@@ -8589,3 +8589,33 @@ margin-top: 3px;
   .mob-contacts span{
     font-size: 13px
 }
+}
+
+.tabs-list {
+  margin: 0;
+  padding: 15px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-start;
+  row-gap: 10px;
+}
+
+.tabs_item {
+  display: block;
+  border: 1px solid #FDBE01;
+  padding: 12px;
+  border-radius: 8px;
+  margin-right: 12px;
+}
+
+.tabs_item:hover {
+  background: #e9e9e9;
+}
+
+.tabs_item a,
+.tabs_item a:hover {
+  color: #5c5c5c;
+  text-decoration: none;
+}
