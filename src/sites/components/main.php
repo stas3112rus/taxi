@@ -18,3 +18,4 @@ include('reviews/view/drawReviews.php');
 include('faqs/view/drawFaq.php');
 include('contacts/view/drawContacts.php');
 include('politics/view/drawPolitics.php');
+include('tabs/view/drawTabs.php');

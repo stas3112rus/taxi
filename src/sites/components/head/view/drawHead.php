@@ -18,7 +18,7 @@ function drawHead()
     <link href="<? echo $LEVEL ?>css/font-awesome.css" rel="stylesheet">
     <link href="<? echo $LEVEL ?>css/themify-icons.css" rel="stylesheet">
     <link href="<? echo $LEVEL ?>css/animate.css" rel="stylesheet">
-    <link href="<? echo $LEVEL ?>css/theme.css" rel="stylesheet">
+    <link href="<? echo $LEVEL ?>css/theme.css?v=1.1" rel="stylesheet">
     <link href="<? echo $LEVEL ?>css/responsive.css" rel="stylesheet">
     <link href="<? echo $LEVEL ?>js/flatpickr/flatpickr.min.css" rel="stylesheet">
     <link href="<? echo $LEVEL ?>css/owl.carousel.css" rel="stylesheet">
