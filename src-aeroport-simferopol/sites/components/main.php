@@ -18,3 +18,4 @@ include('footers/view/bottomFooter.php');
 include('footers/view/mainFooter.php');
 include('politics/view/drawPolitics.php');
 include('popUp/view/drawPopUp.php');
+include('tabs/view/drawTabs.php');

@@ -5434,3 +5434,32 @@ h3.footer-heading {
 .content-top a:hover, .footer-location a:hover {
     color: #FDBE01;
 }
+
+.tabs-list {
+  margin: 0;
+  padding: 15px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: flex-start;
+  row-gap: 10px;
+}
+
+.tabs_item {
+  display: block;
+  border: 4px solid #fdbe01;
+  padding: 6px;
+  border-radius: 10px;
+  margin-right: 12px;
+}
+
+.tabs_item:hover {
+  background: #f0f0f0;
+}
+
+.tabs_item a,
+.tabs_item a:hover {
+  color: #333;
+  text-decoration: none;
+}

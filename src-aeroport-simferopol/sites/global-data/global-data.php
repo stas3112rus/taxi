@@ -39,6 +39,8 @@ $WIDGETS_BOTTOM = upgradedWidgets(false);
 
 $IS_SITEMAP = isSitemap();
 
+$CITIES_TABS = getCitiesForTabs(getBasicCityForTab(), $DEFAULT['tabs_count']);
+
 function getCityTo()
 {
     global $TEXT_TYPE_INDEX, $CITY_TO_ID;
@@ -89,4 +91,11 @@ function getLevelForSite()
         default:
             return  false;
     }
+}
+
+function getBasicCityForTab()
+{
+    global $CITY_TO, $DEFAULT;
+
+    return $CITY_TO ? $CITY_TO['id_city'] + $DEFAULT['tabs_offset'] : $DEFAULT['tabs_offset'];
 }

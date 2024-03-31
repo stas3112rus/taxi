@@ -24,7 +24,7 @@ function drawHead()
     <link rel="shortcut icon" href="<? echo $LEVEL ?>img/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=Oswald:400,700&amp;subset=cyrillic" rel="stylesheet">
     <link rel="stylesheet" href="<? echo $LEVEL ?>css/bootstrap.min.css">
-    <link rel="stylesheet" href="<? echo $LEVEL ?>css/styles.css">
+    <link rel="stylesheet" href="<? echo $LEVEL ?>css/styles.css?v=1.0">
     <link rel="stylesheet" href="<? echo $LEVEL ?>css/font-awesome.min.css">
     <link rel='stylesheet' href='<? echo $LEVEL ?>css/animate.min.css'>
     <link rel='stylesheet' href='<? echo $LEVEL ?>css/slick.min.css'>
