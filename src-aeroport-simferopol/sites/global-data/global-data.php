@@ -39,7 +39,7 @@ $WIDGETS_BOTTOM = upgradedWidgets(false);
 
 $IS_SITEMAP = isSitemap();
 
-$CITIES_TABS = getCitiesForTabs(getBasicCityForTab(), $DEFAULT['tabs_count']);
+$CITIES_TABS = getCitiesForTabs(getBasicCityForTab(), $DEFAULT['tabs_count'], $CITY_FROM_ID);
 
 function getCityTo()
 {
