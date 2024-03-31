@@ -17,9 +17,9 @@ function drawHead()
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="<? echo $LEVEL ?>js/Magnific-Popup-master/dist/magnific-popup.css" rel="stylesheet" />
     <link href="<? echo $LEVEL ?>css/animate.css" rel="stylesheet" />
-    <link href="<? echo $LEVEL ?>css/lib/style.css" rel="stylesheet" />
+    <link href="<? echo $LEVEL ?>css/lib/style.css?v=1.2" rel="stylesheet" />
     <link href="<? echo $LEVEL ?>js/flatpickr/flatpickr.css" rel="stylesheet" />
     <link href="<? echo $LEVEL ?>js/slick/slick.css" rel="stylesheet" />
-    <link href="<? echo $LEVEL ?>css/style.css" rel="stylesheet" />
+    <link href="<? echo $LEVEL ?>css/style.css?v=1.2" rel="stylesheet" />
 <?
 }
