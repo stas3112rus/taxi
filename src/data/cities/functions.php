@@ -132,16 +132,16 @@ function deleteCityById($id)
     return changeDataBaseRequest($sql, "Ошибка при добавлении города в БД");
 }
 
-function getCitiesForTabs($basiCityId, $count)
+function getCitiesForTabs($basiCityId, $count, $current_city_id)
 {
     $citiesBegin = [];
-    $sqlAfter = "SELECT * FROM `cities` WHERE `id_city` > '$basiCityId' LIMIT 0, $count";
+    $sqlAfter = "SELECT * FROM `cities` WHERE `id_city` > '$basiCityId' AND `id_city` <> '$current_city_id' LIMIT 0, $count";
+
     $citiesAfter = getAllRowsFromDataBase($sqlAfter);
 
     if (count($citiesAfter) < $count) {
         $dif = $count - count($citiesAfter);
-        $sqlBegin = "SELECT * FROM `cities`  LIMIT 0, $dif";
-       
+        $sqlBegin = "SELECT * FROM `cities`  WHERE `id_city` <> '$current_city_id'  LIMIT 0, $dif";
 
         $citiesBegin = getAllRowsFromDataBase($sqlBegin);
     }
