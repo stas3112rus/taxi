@@ -16,6 +16,7 @@ function drawTabs()
 				}
 				?>
 			</ul>
+		</div>
 	</section>
 <?
 }
@@ -23,6 +24,6 @@ function drawTabs()
 function drawTab($text, $url)
 {
 ?>
-	<li class='tabs_item'><a href='<? echo $url ?>'><? echo $text ?></li>
+	<li class='tabs_item'><a href='<? echo $url ?>'><? echo $text ?></a></li>
 <?
 }
