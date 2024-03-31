@@ -16,7 +16,7 @@ function drawHead()
     <link rel="stylesheet" href="<? echo $LEVEL ?>assets/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="<? echo $LEVEL ?>assets/css/monthly.css">
     <link rel="stylesheet" href="<? echo $LEVEL ?>assets/css/normalize.css">
-    <link rel="stylesheet" href="<? echo $LEVEL ?>assets/css/main.css">
+    <link rel="stylesheet" href="<? echo $LEVEL ?>assets/css/main.css?v=1.2">
     <link rel="stylesheet" href="<? echo $LEVEL ?>assets/js/Magnific-Popup-master/dist/magnific-popup.css">
     <link rel="stylesheet" href="<? echo $LEVEL ?>assets/css/responsive.css">
 <?
