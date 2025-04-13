@@ -1,7 +1,7 @@
 <?
 function drawMainFooter()
 {
-    global $TXT, $DEFAULT, $ADDRESS;
+    global $TXT, $DEFAULT, $ADDRESS, $CURRENT_SITE;
 ?>
     <div class="main-footer">
         <div class="main">
@@ -24,9 +24,15 @@ function drawMainFooter()
                                     <p><? echo $ADDRESS ?></p>
                                 </div>
                             </div>
-                            <div class="footer-location">
-                                <div class="location-fa"><i class="fa fa-phone" aria-hidden="true"></i></div>
-                                <div class="location-info">
+                            <div class="footer-location" style="display: flex; gap: 10px; align-items: center;">
+                                <a href="https://wa.me/<? echo getPhoneWithoutPlus() ?>" target="_blank">
+                                    <img src=" <? echo $CURRENT_SITE ?>img/images/whatsapp.svg" alt="whatsapp <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="30" height="30">
+                                </a>
+                                <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank">
+                                    <img src="<? echo  $CURRENT_SITE ?>img/images/telegram.svg" alt="telegram <? echo getFullPhone() ?>" title="telegram <? echo getFullPhone() ?>" width="30" height="30">
+                                </a>
+                                <div class="location-fa" style="margin-right: 0;"><i class="fa fa-phone" aria-hidden="true"></i></div>
+                                <div >
                                     <p>
                                         <a href="tel:<? echo  $DEFAULT['phone'] ?>">
                                             <? echo getFullPhone() ?>

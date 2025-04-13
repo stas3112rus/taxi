@@ -11,7 +11,7 @@ function drawNavBar()
                         <div class="leftside">
                             <div class="header-items">
                                 <p style="display:flex; justify-content: space-between; gap: 15px; align-items: center;"><i class="fa fa-location-arrow" aria-hidden="true"></i>
-                                    <? echo $ADDRESS?>
+                                    <? echo $ADDRESS ?>
                                 </p>
                             </div>
                             <div class="header-items">
@@ -23,11 +23,19 @@ function drawNavBar()
                                 </p>
                             </div>
                             <div class="header-items">
-                                <p style="display:flex; justify-content: space-between; gap: 15px; align-items: center;"><i class="fa fa-phone" aria-hidden="true"></i>
+                                <div style="display:flex; justify-content: space-between; gap: 15px; align-items: center;">
+                                    <a href="https://wa.me/<? echo getPhoneWithoutPlus() ?>" target="_blank">
+                                        <img src=" <? echo $CURRENT_SITE ?>img/images/whatsapp.svg" alt="whatsapp <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="24" height="24">
+                                    </a>
+                                    <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank">
+                                        <img src="<? echo  $CURRENT_SITE ?>img/images/telegram.svg" alt="telegram <? echo getFullPhone() ?>" title="telegram <? echo getFullPhone() ?>" width="24" height="24">
+                                    </a>
                                     <a href="tel:<? echo  $DEFAULT['phone'] ?>">
+                                        <i class="fa fa-phone" aria-hidden="true" style="margin-right: 12px;"></i>
+
                                         <? echo getFullPhone() ?>
                                     </a>
-                                </p>
+                                </div>
                             </div>
                         </div>
                         <div class="rightside">
