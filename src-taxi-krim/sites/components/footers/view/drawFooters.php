@@ -1,7 +1,7 @@
 <?
 function drawTopFooter()
 {
-    global $TXT, $DEFAULT, $ADDRESS;
+    global $TXT, $DEFAULT, $ADDRESS, $LEVEL;
 ?>
     <section class="widget-area section-padding">
         <div class="container">
@@ -25,11 +25,21 @@ function drawTopFooter()
                             </li>
                             <li class="clearfix">
                                 <span class="span-1">Телефон:</span>
-                                <span class="span-2"><? echo getFullPhone() ?></span>
+                                <div style="display: flex; gap: 4px">
+                                    <a href="https://wa.me/<? echo str_replace('+', '', $DEFAULT['phone']) ?>" target="_blank">
+                                        <img src="<? echo $LEVEL ?>assets/img/whatsapp.svg" alt="whatsapp <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="20" height="20">
+                                    </a>
+                                    <span class="span-2"><? echo getFullPhone() ?></span>
+                                </div>
                             </li>
                             <li class="clearfix">
                                 <span class="span-1">Телефон:</span>
-                                <span class="span-2"><? echo getFullPhone($DEFAULT['phone_2']) ?></span>
+                                <div style="display: flex; gap: 4px">
+                                    <a href="https://t.me/<? echo $DEFAULT['phone_2'] ?>" target="_blank">
+                                        <img src="<? echo $LEVEL ?>assets/img/telegram.svg" alt="telegram <? echo getFullPhone() ?>" title="telegram <? echo getFullPhone() ?>" width="20" height="20">
+                                    </a>
+                                    <span class="span-2"><? echo getFullPhone($DEFAULT['phone_2']) ?></span>
+                                </div>
                             </li>
                             <li class="clearfix">
                                 <span class="span-1">Email:</span>
