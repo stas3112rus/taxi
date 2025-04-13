@@ -36,7 +36,7 @@ function drawFooter()
                             <img src="<? echo $LEVEL ?>images/telegram.svg" alt="telegram <? echo getFullPhone() ?>" title="telegram <? echo getFullPhone() ?>" width="30" height="30">
                         </a>
                     </div>
-                    <p><? echo getFullPhone() ?></p>
+                    <p><a href="tel:<? echo $DEFAULT['phone'] ?>" style="text-decoration: none;"><? echo getFullPhone() ?></a></p>
                 </div>
 
             </div>

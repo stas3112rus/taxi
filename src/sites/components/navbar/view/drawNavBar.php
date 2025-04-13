@@ -44,7 +44,7 @@ function drawNavBar()
                         <img src="<? echo $LEVEL ?>images/telegram.svg" alt="telegram <? echo getFullPhone() ?>" title="telegram <? echo getFullPhone() ?>" width="30" height="30">
                     </a>
                 </div>
-                <p style="white-space: nowrap;"><? echo getFullPhone() ?></p>
+                <p style="white-space: nowrap;"><a href="tel:<? echo $DEFAULT['phone'] ?>" style="color: #282828;"><? echo getFullPhone() ?></a></p>
             </div>
         </div>
     </div>
