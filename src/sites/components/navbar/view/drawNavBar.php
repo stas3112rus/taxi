@@ -1,7 +1,7 @@
 <?
 function drawNavBar()
 {
-    global $TXT, $LEVEL;
+    global $TXT, $LEVEL, $DEFAULT;
 ?>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -35,8 +35,16 @@ function drawNavBar()
                 <p>Служба заказа такси</p>
             </div>
             <div class="col-md-3 text-right col-sm-12 center_mob">
-                <img class="tel_img" src='<? echo $LEVEL ?>images/tel.png' alt="<? echo $TXT['navbar_phone_alt'] ?>" title="<? echo $TXT['navbar_phone_alt'] ?>" />
-                <p><? echo getFullPhone() ?></p>
+                <div class="center_mob_icon">
+                    <img src='<? echo $LEVEL ?>images/tel.png' alt="<? echo $TXT['navbar_phone_alt'] ?>" title="<? echo $TXT['navbar_phone_alt'] ?>" width="30" height="30" />
+                    <a href="https://wa.me/<? echo getPhoneWithoutPlus() ?>" target="_blank">
+                        <img src=" <? echo $LEVEL ?>images/whatsapp.svg" alt="whatsapp <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="30" height="30">
+                    </a>
+                    <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank">
+                        <img src="<? echo $LEVEL ?>images/telegram.svg" alt="telegram <? echo getFullPhone() ?>" title="telegram <? echo getFullPhone() ?>" width="30" height="30">
+                    </a>
+                </div>
+                <p style="white-space: nowrap;"><? echo getFullPhone() ?></p>
             </div>
         </div>
     </div>

@@ -27,7 +27,15 @@ function drawFooter()
                     <? } ?>
                 </div>
                 <div class="col-md-2 text-left footer_scr_col center_sm_footer">
-                    <img class="tel_img tel_img_footer" src='<? echo $LEVEL ?>images/tel.png' />
+                    <div class="center_mob_icon">
+                        <img src='<? echo $LEVEL ?>images/tel.png' alt="<? echo $TXT['navbar_phone_alt'] ?>" title="<? echo $TXT['navbar_phone_alt'] ?>" width="30" height="30" />
+                        <a href="https://wa.me/<? echo getPhoneWithoutPlus() ?>" target="_blank">
+                            <img src=" <? echo $LEVEL ?>images/whatsapp.svg" alt="whatsapp <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="30" height="30">
+                        </a>
+                        <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank">
+                            <img src="<? echo $LEVEL ?>images/telegram.svg" alt="telegram <? echo getFullPhone() ?>" title="telegram <? echo getFullPhone() ?>" width="30" height="30">
+                        </a>
+                    </div>
                     <p><? echo getFullPhone() ?></p>
                 </div>
 

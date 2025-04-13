@@ -46,6 +46,18 @@ body {
   padding-right: 30px;
   position: relative;
 }
+.center_mob {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  gap: 12px;
+}
+.center_mob_icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 .top_header {
   background-color: #ffffff;
   height: 100px;
@@ -876,6 +888,7 @@ h3 {
   .box img {
     display: none;
   }
+
   .box_col {
     height: 280px;
     padding-left: 0px;
@@ -1080,9 +1093,7 @@ h3 {
     height: 90px;
     margin-top: 50px;
   }
-  .center_mob {
-    text-align: center;
-  }
+
   .header1 h1 {
     font-size: 21px;
     line-height: 25px;
