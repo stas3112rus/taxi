@@ -5,7 +5,7 @@ function drawNavBarTop()
 ?>
     <section class="sub_header_dark">
         <div class="container">
-            <div class="row">
+            <div class="row" style="display: flex; align-items: center; justify-content: center;">
                 <div class="col-3 hide-on-mobile hide-on-table">
                     <div class="left_block">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
@@ -13,13 +13,20 @@ function drawNavBarTop()
                     </div>
                 </div>
                 <div class="col-3 text-center hide-on-mobile hide-on-table">
-                    <a href="#home" class="logo" data-scroll>
+                    <a href="#home" class="hide-on-mobil" data-scroll>
                         <img src="<? echo $LEVEL ?>img/logo.png" title="<? echo $TXT['navbar_alt'] ?>" alt="<? echo $TXT['navbar_alt'] ?>">
                     </a>
                 </div>
                 <div class="col-md-4 col-sm-12">
-                    <div class="right_block"> <i class="fa fa-mobile" aria-hidden="true"></i>
-                        <p class="editContent"> <a href="tel:<? echo $DEFAULT['phone'] ?>"><? echo getFullPhone() ?></a></p>
+                    <div class="phoneBlock" style="display: flex; align-items: center; gap: 8px; width: 100%;">
+                        <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank">
+                            <img src="<? echo $LEVEL ?>img/telegram.svg" width="32" height="32" alt="Telegram <? echo getFullPhone() ?>" title="Telegram <? echo getFullPhone() ?>">
+                        </a>
+                        <a href="https://wa.me/<? echo getPhoneWithoutPlus() ?>" target="_blank">
+                            <img src="<? echo $LEVEL ?>img/whatsapp.svg" width="32" height="32" alt="Whatsapp <? echo getFullPhone() ?>" title="Whatsapp <? echo getFullPhone() ?>">
+                        </a>
+                        <i class="fa fa-mobile" aria-hidden="true" style="font-size: 32px;"></i>
+                        <p> <a href="tel:<? echo $DEFAULT['phone'] ?>" style="font-size: 20px;"><? echo getFullPhone() ?></a></p>
                     </div>
                 </div>
                 <div class="clear"></div>

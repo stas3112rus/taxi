@@ -19,3 +19,10 @@ function getFullPhone()
 
     return $result;
 }
+
+function getPhoneWithoutPlus()
+{
+    global $DEFAULT;
+
+    return str_replace('+', '', $DEFAULT['phone']);
+}

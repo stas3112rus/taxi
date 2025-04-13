@@ -161,6 +161,16 @@ a.btn:hover {
     border: 1px solid #fff;
     color: #000;
 }
+@media only screen and (max-width: 1024px) {
+      .hide-on-mobile  {
+        display: none;
+    }
+
+    .phoneBlock {
+        justify-content: center;
+    }
+}
+
 .btn_white:hover {
     background: #fff;
     color: #000;
@@ -3761,9 +3771,7 @@ td {
         margin-left: 20%;
     }
     .scroll_header .logo h1, .scrollMenu .logo h1{font-size: 20px}
-    .hide-on-mobile,  {
-        display: none;
-    }
+  
     .sub_header .right_block {
         text-align: center;
     }
