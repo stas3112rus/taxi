@@ -1205,7 +1205,7 @@ td span {
     display: none;
   }
   .phone-mob {
-    display: inline-block;
+    display:  inline-flex;
     margin-top: 8px;
   }
   .phone-mob a {

@@ -17,7 +17,15 @@ function  drawContact()
                 <div class="col-sm-5">
                     <div class="heading">
                         <h4><i class="fa fa-clock-o"></i> Работаем 24/7</h4>
-                        <h2><a href="tel:<? echo $DEFAULT['phone'] ?>"><? echo getFullPhone() ?></a></h2>
+                        <h2>
+                            <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank">
+                                <img src="<? echo $CURRENT_SITE ?>img/telegram.svg" width="32" height="32" alt="Telegram <? echo getFullPhone() ?>" title="Telegram <? echo getFullPhone() ?>">
+                            </a>
+                            <a href="https://wa.me/<? echo getPhoneWithoutPlus() ?>" target="_blank">
+                                <img src="<? echo $CURRENT_SITE ?>img/whatsapp.svg" width="32" height="32" alt="Whatsapp <? echo getFullPhone() ?>" title="Whatsapp <? echo getFullPhone() ?>">
+                            </a>
+                            <a href="tel:<? echo $DEFAULT['phone'] ?>"><? echo getFullPhone() ?></a>
+                        </h2>
                         <h2><a href="mailto:<? echo $DEFAULT['email_for_site'] ?>"><? echo $DEFAULT['email_for_site'] ?></a></h2>
                     </div>
                     <img class="footer-car" src="<? echo $CURRENT_SITE ?>img/car-big.png" alt="<? echo $TXT["footer_alt"] ?>" title="<? echo $TXT["footer_alt"] ?>">
