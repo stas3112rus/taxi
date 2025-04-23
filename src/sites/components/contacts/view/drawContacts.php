@@ -1,7 +1,7 @@
 <?
 function drawContacts()
 {
-    global $ADDRESS, $DEFAULT;
+    global $ADDRESS, $DEFAULT, $LEVEL;
 ?>
     <section class="contact contact-style-2 gray_bg eBlock text-center" id="contact">
         <div class="container">
@@ -21,7 +21,13 @@ function drawContacts()
                 <div class="contact-title">
                     Наши телефон
                 </div>
-                <div class="contact-desc">
+                <div class="contact-desc" style="display: flex; align-items: center; gap: 8px; width: 100%; justify-content: center;">
+                    <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank">
+                        <img src="<? echo $LEVEL ?>img/telegram.svg" width="32" height="32" alt="Telegram <? echo getFullPhone() ?>" title="Telegram <? echo getFullPhone() ?>">
+                    </a>
+                    <a href="https://wa.me/<? echo getPhoneWithoutPlus() ?>" target="_blank">
+                        <img src="<? echo $LEVEL ?>img/whatsapp.svg" width="32" height="32" alt="Whatsapp <? echo getFullPhone() ?>" title="Whatsapp <? echo getFullPhone() ?>">
+                    </a>
                     <a href="tel:<? echo $DEFAULT['phone'] ?>"><? echo getFullPhone() ?></a>
                 </div>
             </div>
