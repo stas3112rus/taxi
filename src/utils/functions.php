@@ -30,14 +30,33 @@ function getSubDomainName($eng, $isMain = false)
     }
 }
 
+function getProtocol()
+{
+    $protocol = '';
+
+    if (
+        isset($_SERVER['HTTPS']) &&
+        ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) ||
+        isset($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
+        $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https'
+    ) {
+        $protocol = 'https://';
+    } else {
+        $protocol = 'http://';
+    }
+
+    return $protocol;
+}
 
 function getMainUrl($eng, $isMain = false)
 {
+    $protocol = getProtocol();
+
     if ($isMain) {
-        return "http://" . getSubDomainName($eng, true) . "/";
+        return $protocol . getSubDomainName($eng, true) . "/";
     }
 
-    return "http://" . getSubDomainName($eng, false) . "/";
+    return $protocol . getSubDomainName($eng, false) . "/";
 }
 
 function isNotPublicMainInDirections()
