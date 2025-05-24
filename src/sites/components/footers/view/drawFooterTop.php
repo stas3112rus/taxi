@@ -1,7 +1,7 @@
 <?
 function drawFooterTop()
 {
-    global $DEFAULT, $ADDRESS;
+    global $DEFAULT, $ADDRESS, $LEVEL;
 ?>
     <div class="container contact_container">
         <div class="row">
@@ -12,7 +12,20 @@ function drawFooterTop()
                             <span class="contact"></span>
                             <div class="client_detail">
                                 <h4>КОНТАКТЫ</h4>
-                                <span><a href="tel:<? echo $DEFAULT['phone'] ?>"><? echo getFullPhone() ?></a></span>
+                                <span>
+                                    <div style="display: flex; gap:4px; align-items:center">
+                                        <a href="https://wa.me/<? echo getPhoneWithoutPlus() ?>" target="_blank">
+                                            <img src="<? echo $LEVEL ?>assets/images/whatsapp.svg" alt="whatsapp <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="22" height="22">
+                                        </a>
+                                        <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank">
+                                            <img src="<? echo $LEVEL ?>assets/images/telegram.svg" alt=telegram" <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="22" height="22">
+                                        </a>
+                                        <a href="tel:<? $DEFAULT['phone'] ?>">
+                                            <? echo getFullPhone() ?>
+                                        </a>
+                                    </div>
+
+                                </span>
                             </div>
                         </li>
                     </ul>

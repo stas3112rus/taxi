@@ -16,12 +16,23 @@ function drawNavBar()
                 </a>
                 <ul class="contacts">
                     <li>
-                        <a href="tel:<? $DEFAULT['phone'] ?>">
-                            <? echo getFullPhone() ?>
-                        </a>
-                        <a href="mail:<? echo $DEFAULT['email_for_site'] ?>">
-                            <? echo $DEFAULT['email_for_site'] ?>
-                        </a>
+                        <div style="display: flex; gap:4px; align-items:center">
+                            <a href="https://wa.me/<? echo getPhoneWithoutPlus() ?>" target="_blank">
+                                <img src="<? echo $LEVEL ?>assets/images/whatsapp.svg" alt="whatsapp <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="22" height="22">
+                            </a>
+                            <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank">
+                                <img src="<? echo $LEVEL ?>assets/images/telegram.svg" alt=telegram" <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="22" height="22">
+                            </a>
+                            <a href="tel:<? $DEFAULT['phone'] ?>">
+                                <? echo getFullPhone() ?>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="mail:<? echo $DEFAULT['email_for_site'] ?>">
+                                <? echo $DEFAULT['email_for_site'] ?>
+                            </a>
+                        </div>
+
                     </li>
                 </ul>
             </div>
