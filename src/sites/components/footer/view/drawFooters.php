@@ -1,7 +1,7 @@
 <?
 function drawFooter()
 {
-    global $ADDRESS, $TXT, $DEFAULT, $IS_SITEMAP;
+    global $ADDRESS, $TXT, $DEFAULT, $IS_SITEMAP, $LEVEL;
 ?>
     <footer id="page-footer">
         <div class="container">
@@ -27,6 +27,13 @@ function drawFooter()
                 <div class="col-sm-4 footer-contact">
                     <span class="icon-phone icon-lg"></span>
                     <br>
+                    <a href="https://wa.me/<? echo getPhoneWithoutPlus() ?>" target="_blank" style="text-decoration: none;">
+                        <img src="<? echo $LEVEL ?>images/whatsapp.svg" alt="whatsapp <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="22" height="22">
+
+                    </a>
+                    <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank" style="text-decoration: none;">
+                        <img src="<? echo $LEVEL ?>images/telegram.svg" alt="telegram <? echo getFullPhone() ?>" title="telegram <? echo getFullPhone() ?>" width="22" height="22">
+                    </a>
                     <b>
                         <a href="tel:<? echo $DEFAULT['phone'] ?>">
                             <? echo getFullPhone() ?>

@@ -27,6 +27,15 @@ function drawNavbarSection($wrapSection)
             </nav>
             <div class="contact-information">
                 <div class="contact-information__phone flexbox">
+                    <div style="display: flex; gap:5px;">
+                        <a href="https://wa.me/<? echo getPhoneWithoutPlus() ?>" target="_blank">
+                            <img src="<? echo $LEVEL ?>images/whatsapp.svg" alt="whatsapp <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="22" height="22">
+
+                        </a>
+                        <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank">
+                            <img src="<? echo $LEVEL ?>images/telegram.svg" alt="telegram <? echo getFullPhone() ?>" title="telegram <? echo getFullPhone() ?>" width="22" height="22">
+                        </a>
+                    </div>
                     <i class="fa fa-mobile" aria-hidden="true"></i>
                     <p class="editContent">
                         <a href="tel:<? echo $DEFAULT['phone'] ?>">
