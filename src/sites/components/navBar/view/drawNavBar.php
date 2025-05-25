@@ -21,10 +21,18 @@ function drawNavBar()
                     </div>
                     <div class="contact-information">
                         <div class='contact-block'>
-                            <p><a href="tel:<? echo $DEFAULT['phone'] ?>"><span class="fa fa-phone"></span>
+                            <div style="display: flex; justify-content:center; align-items:center; gap: 6px;">
+                                <a href="https://wa.me/<? echo getPhoneWithoutPlus() ?>" target="_blank">
+                                    <img src="<? echo $LEVEL ?>assets/images/whatsapp.svg" alt="whatsapp <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="20" height="20">
+                                </a>
+                                <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank">
+                                    <img src="<? echo $LEVEL ?>assets/images/telegram.svg" alt="telegram <? echo getFullPhone() ?>" title="telegram <? echo getFullPhone() ?>" width="20" height="20">
+                                </a>
+
+                                <a href="tel:<? echo $DEFAULT['phone'] ?>"><span class="fa fa-phone"></span>
                                     <? echo getFullPhone() ?>
                                 </a>
-                            </p>
+                            </div>
                         </div>
                         <div class='contact-block'>
                             <p><a href="mailto:<? echo $DEFAULT['email_for_site'] ?>"><? echo $DEFAULT['email_for_site'] ?></a></p>

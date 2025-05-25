@@ -1,7 +1,7 @@
 <?
 function drawFooter()
 {
-    global $TXT, $ADDRESS, $DEFAULT, $IS_SITEMAP;
+    global $TXT, $ADDRESS, $DEFAULT, $IS_SITEMAP, $LEVEL;
 ?>
     <section id="block-footer">
         <div class="container">
@@ -16,6 +16,12 @@ function drawFooter()
 
                     <ul class="address">
                         <li><span class="fa fa-phone"></span>
+                            <a href="https://wa.me/<? echo getPhoneWithoutPlus() ?>" target="_blank">
+                                <img src="<? echo $LEVEL ?>assets/images/whatsapp.svg" alt="whatsapp <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="16" height="16">
+                            </a>
+                            <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank">
+                                <img src="<? echo $LEVEL ?>assets/images/telegram.svg" alt="telegram <? echo getFullPhone() ?>" title="telegram <? echo getFullPhone() ?>" width="16" height="16">
+                            </a>
                             <a href="tel:<? echo $DEFAULT['phone'] ?>">
                                 <? echo getFullPhone() ?>
                             </a>
