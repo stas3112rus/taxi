@@ -1,7 +1,7 @@
 <?
 function drawContacts()
 {
-    global $TXT, $ADDRESS, $IS_SITEMAP, $DEFAULT;
+    global $TXT, $ADDRESS, $IS_SITEMAP, $DEFAULT, $LEVEL;
 ?>
     <section id="contact_1">
         <div class="container">
@@ -27,7 +27,15 @@ function drawContacts()
                         <? echo $TXT['contacts_subtitle_2'] ?>
                     </p>
                     <h5><span class="ti-location-pin"></span> <?php echo $ADDRESS ?></h5>
-                    <h5><span class="ti-mobile"></span> <a href="tel:<? echo $DEFAULT['phone'] ?>"><? echo getFullPhone() ?></a></h5>
+                    <h5><span class="ti-mobile"></span>
+                        <a href="https://wa.me/<? echo getPhoneWithoutPlus() ?>" target="_blank">
+                            <img src=" <? echo $LEVEL ?>img\whatsapp.svg" alt="whatsapp <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="25" height="25">
+                        </a>
+                        <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank">
+                            <img src=" <? echo $LEVEL ?>img\telegram.svg" alt="telegram <? echo getFullPhone() ?>" title="telegram <? echo getFullPhone() ?>" width="25" height="25">
+                        </a>
+                        <a href="tel:<? echo $DEFAULT['phone'] ?>"><? echo getFullPhone() ?></a>
+                    </h5>
                     <h5><span class="ti-email"></span> <a href="mailto:<? echo $DEFAULT['email_for_site'] ?>"><? echo $DEFAULT['email_for_site'] ?></a></h5>
                     <h5><span class="ti-time"></span><? echo $DEFAULT['work_time'] ?></h5>
                 </div>

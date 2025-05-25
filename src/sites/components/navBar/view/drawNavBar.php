@@ -21,6 +21,14 @@ function drawNavBar()
                     </a>
                     <div class="contact-information mob">
                         <div class="contact-information__phone flexbox">
+                            <div style="display: flex; gap: 10px;">
+                                <a href="https://wa.me/<? echo getPhoneWithoutPlus() ?>" target="_blank">
+                                    <img src=" <? echo $LEVEL ?>img\whatsapp.svg" alt="whatsapp <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="25" height="25">
+                                </a>
+                                <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank">
+                                    <img src=" <? echo $LEVEL ?>img\telegram.svg" alt="telegram <? echo getFullPhone() ?>" title="telegram <? echo getFullPhone() ?>" width="25" height="25">
+                                </a>
+                            </div>
                             <i class="fa fa-mobile" aria-hidden="true"></i>
                             <p class="editContent"> <a href="tel:<? echo $DEFAULT['phone'] ?>"><? echo getFullPhone() ?></a></p>
                         </div>
@@ -36,6 +44,14 @@ function drawNavBar()
                     </ul>
                     <div class="contact-information">
                         <div class="contact-information__phone flexbox">
+                            <div style="display: flex; gap: 10px;">
+                                <a href="https://wa.me/<? echo getPhoneWithoutPlus() ?>" target="_blank">
+                                    <img src=" <? echo $LEVEL ?>img\whatsapp.svg" alt="whatsapp <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="25" height="25">
+                                </a>
+                                <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank">
+                                    <img src=" <? echo $LEVEL ?>img\telegram.svg" alt="telegram <? echo getFullPhone() ?>" title="telegram <? echo getFullPhone() ?>" width="25" height="25">
+                                </a>
+                            </div>
                             <i class="fa fa-mobile" aria-hidden="true"></i>
                             <p class="editContent"> <a href="tel:<? echo $DEFAULT['phone'] ?>"><? echo getFullPhone() ?></a></p>
                         </div>
