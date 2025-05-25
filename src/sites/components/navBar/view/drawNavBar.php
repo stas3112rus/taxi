@@ -21,9 +21,11 @@ function drawNavBar()
                                 <img src="<? echo $LEVEL ?>assets/images/whatsapp.svg" alt="whatsapp <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="22" height="22">
                             </a>
                             <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank">
-                                <img src="<? echo $LEVEL ?>assets/images/telegram.svg" alt=telegram" <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="22" height="22">
+                                <img src="<? echo $LEVEL ?>assets/images/telegram.svg" alt="telegram <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="22" height="22">
                             </a>
+                            <img src="<? echo $LEVEL ?>assets/images/phone.svg" alt="Телефон <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="22" height="22" class="phoneIcon">
                             <a href="tel:<? $DEFAULT['phone'] ?>">
+
                                 <? echo getFullPhone() ?>
                             </a>
                         </div>
