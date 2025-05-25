@@ -5,7 +5,7 @@ function drawNavBar()
 ?>
     <header class="header fixed">
         <div class="header-wrapper">
-            <div class="container">
+            <div class="container" style="min-height: 56px;">
 
                 <div class="logo">
                     <a href="#">
@@ -17,8 +17,16 @@ function drawNavBar()
                     <i class="fa fa-bars"></i>
                 </a>
                 <div class='mob-contacts'>
-                    <span>
+
+                    <span style="padding-bottom: 12px;">
                         <? echo $DEFAULT['email_for_site'] ?><br>
+                        <a href="https://wa.me/<? echo getPhoneWithoutPlus() ?>" target="_blank">
+                            <img src="<? echo $LEVEL ?>assets\img\whatsapp.svg" alt="whatsapp <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="24" height="24">
+                        </a>
+                        <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank">
+                            <img src="<? echo $LEVEL ?>assets\img\telegram.svg" alt="telegram <? echo getFullPhone() ?>" title="telegram <? echo getFullPhone() ?>" width="24" height="24">
+                        </a>
+
                         <? echo getFullPhone() ?>
                     </span>
                 </div>
@@ -40,12 +48,23 @@ function drawNavBar()
                                             <span><i class="fa fa-envelope-open-o" aria-hidden="true"></i>
                                                 <? echo $DEFAULT['email_for_site'] ?>
                                             </span></a>
-                                        <a href="tel:<? echo $DEFAULT['phone'] ?>">
-                                            <span>
-                                                <i class="fa fa-mobile" aria-hidden="true"></i>
-                                                <? echo getFullPhone() ?>
-                                            </span>
-                                        </a>
+                                        <div style="display: flex; gap: 5px; align-items:center; padding-bottom: 4px;">
+                                            <a href="https://wa.me/<? echo getPhoneWithoutPlus() ?>" target="_blank">
+                                                <img src="<? echo $LEVEL ?>assets\img\whatsapp.svg" alt="whatsapp <? echo getFullPhone() ?>" title="whatsapp <? echo getFullPhone() ?>" width="24" height="24">
+                                            </a>
+                                            <a href="https://t.me/<? echo $DEFAULT['phone'] ?>" target="_blank">
+                                                <img src="<? echo $LEVEL ?>assets\img\telegram.svg" alt="telegram <? echo getFullPhone() ?>" title="telegram <? echo getFullPhone() ?>" width="24" height="24">
+                                            </a>
+                                            <a href="tel:<? echo $DEFAULT['phone'] ?>">
+
+                                                <span>
+
+                                                    <i class="fa fa-mobile" aria-hidden="true"></i>
+                                                    <? echo getFullPhone() ?>
+                                                </span>
+                                            </a>
+                                        </div>
+
                                     </div>
                                 </li>
                             </ul>
