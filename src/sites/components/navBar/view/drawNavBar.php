@@ -27,6 +27,8 @@ function drawNavBar()
                             <img src="<? echo $LEVEL ?>assets\img\telegram.svg" alt="telegram <? echo getFullPhone() ?>" title="telegram <? echo getFullPhone() ?>" width="24" height="24">
                         </a>
 
+                        <img src="<? echo $LEVEL ?>assets\img\phone.svg" alt="телефон <? echo getFullPhone() ?>" title="телефон <? echo getFullPhone() ?>" width="24" height="24">
+
                         <? echo getFullPhone() ?>
                     </span>
                 </div>
@@ -58,7 +60,6 @@ function drawNavBar()
                                             <a href="tel:<? echo $DEFAULT['phone'] ?>">
 
                                                 <span>
-
                                                     <i class="fa fa-mobile" aria-hidden="true"></i>
                                                     <? echo getFullPhone() ?>
                                                 </span>
